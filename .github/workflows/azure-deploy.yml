@@ -7,11 +7,6 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
     - name: 'Deploy to Azure'
       run: |
         ng run cv:deploy
