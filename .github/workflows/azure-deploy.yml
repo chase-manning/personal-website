@@ -10,5 +10,6 @@ jobs:
     - name: 'Deploy to Azure'
       run: |
         sudo npm install -g @angular/cli
+        cd..
         npm install
         ng run cv:deploy
