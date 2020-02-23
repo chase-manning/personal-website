@@ -13,21 +13,13 @@ export class LoadingComponent implements OnInit {
   private fuelCircles: Fuel[] = [];
 
   //Status
-  private circleDiameter: number = 1;
+  private circleDiameter: number = 100;
 
   constructor() { }
 
   ngOnInit() {
     this.mainCircle = document.querySelector('.circle') as HTMLElement;
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    console.log(this.generateFuel(1, this.generateRandomDirection()));
-    this.addFuelCircles();
+    setTimeout(() => { this.addFuelCircles() }, 1000);
   }
 
   //Getters
@@ -40,11 +32,11 @@ export class LoadingComponent implements OnInit {
   }
 
   get percentComplete(): number {
-    return this.circleDiameter / this.screenMiddleToCorner;
+    return Math.min(((this.circleDiameter -99) / 2) / this.screenMiddleToCorner, 1);
   }
 
   get fuelSize(): number {
-    return this.circleDiameter * 0.2 + this.screenMiddleToCorner * 0.1;
+    return this.screenMiddleToCorner * 0.05 + this.circleDiameter * 0.2 ;
   }
 
   //Functions
@@ -56,7 +48,12 @@ export class LoadingComponent implements OnInit {
     console.log(this.fuelCircles);
     this.setFuelEndLocation(fuel);
     setTimeout(() => { this.increaseMainCircleSize(fuel) }, 2000 * (1-this.percentComplete));
-    setTimeout(() => { this.addFuelCircles() }, 300);
+    let nextCircleDelay: number = 200 + 1800 * ( Math.max(1-this.percentComplete * 20, 0));
+    if (this.percentComplete === 1) {
+      this.processEnd();
+      return;
+    }
+    setTimeout(() => { this.addFuelCircles() }, nextCircleDelay);
   }
 
   generateFuel(fuelIndex: number, direction: string): Fuel {
@@ -126,5 +123,13 @@ export class LoadingComponent implements OnInit {
     let mainCircleSize: string = Math.round(this.circleDiameter) + "px";
     this.mainCircle.style.height = mainCircleSize;
     this.mainCircle.style.width = mainCircleSize;
+  }
+
+  processEnd(): void {
+    this.circleDiameter = this.screenMiddleToCorner * 4;
+    this.updateMainCircle();
+    this.fuelCircles = [];
+    let loadingText = document.querySelector('.loading__text') as HTMLElement;
+    loadingText.style.opacity = '0';
   }
 }
