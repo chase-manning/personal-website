@@ -126,10 +126,14 @@ export class LoadingComponent implements OnInit {
   }
 
   processEnd(): void {
-    this.circleDiameter = this.screenMiddleToCorner * 4;
+    this.circleDiameter = this.screenMiddleToCorner * 5;
     this.updateMainCircle();
     this.fuelCircles = [];
+    let blueBackground = document.querySelector('.blue__background') as HTMLElement;
+    blueBackground.style.opacity = '0';
     let loadingText = document.querySelector('.loading__text') as HTMLElement;
     loadingText.style.opacity = '0';
+    let circleContainer = document.querySelector('.circle__container') as HTMLElement;
+    setTimeout(() => { circleContainer.style.opacity = '0'; }, 4000);
   }
 }
