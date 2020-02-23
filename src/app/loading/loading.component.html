@@ -3,7 +3,9 @@
 <div class="circle__container">
     <div class="circle main-circle"></div>
     <div *ngFor="let fuel of fuelCircles">
-        <div id="{{fuel.id}}" class="circle" [ngStyle]="{'left.px': fuel.startingPositionLeft, 'top.px': fuel.startingPositionTop, 'width.px': fuel.size, 'height.px': fuel.size}"></div>
+        <div id="{{fuel.id}}" class="circle"
+            [ngStyle]="{'left.px': fuel.startingPositionLeft, 'top.px': fuel.startingPositionTop, 'width.px': fuel.size, 'height.px': fuel.size}">
+        </div>
     </div>
 </div>
 
