@@ -1,4 +1,11 @@
-.background {
+.glass__background {
+    background-color: red;
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0px; left: 0px;
+}
+
+.blue__background {
     background-color: #00A8E8;
     position: fixed;
     width: 100%; height: 100%;
@@ -32,6 +39,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 4s;
+    opacity: 1;
 }
 
 .circle {
