@@ -3,16 +3,29 @@
 <svg class="full-screen">
     <mask id="mask__filter">
         <rect class="mask__area" width="100%" height="100%" />
-        <circle *ngFor="let circle of circles" [attr.cx]="circle.x" [attr.cy]="circle.y" [attr.r]="circle.radius"
-            [attr.fill]="circle.fill">
-            <animate attributeType="CSS" attributeName="cx" [attr.from]="circle.x" to="1000" dur="5s" repeatCount="indefinite" />
-            <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="5s" repeatCount="indefinite" />
+
+        <circle *ngFor="let circle of circles" [attr.cx]="circle.x" [attr.cy]="circle.y" [attr.r]="circle.radius" [attr.fill]="circle.fill">
+            <animate attributeType="CSS" attributeName="cx" [attr.from]="circle.x" to="1000" dur="3s" id="animation-01" fill="freeze"/>
+            <animate attributeType="CSS" attributeName="r" from="100" to="0" dur="3s" begin="animation-01.end + 0s" fill="freeze"/>
         </circle>
+
+
         <path id="svg_1" d="m137.5,196.05c29,-25 30,-53 108,-32c78,21 18,55 8,64c-10,9 -57,0 -67,0c-10,0 -78,-7 -49,-32z" stroke-width="1.5" stroke="#000" fill="#000">
-            <animate attributeType="CSS" attributeName="d" 
+            <animate 
+                attributeType="CSS" 
+                attributeName="d" 
                 from="m137.5,196.05c29,-25 30,-53 108,-32c78,21 18,55 8,64c-10,9 -57,0 -67,0c-10,0 -78,-7 -49,-32z"
                 to="m134.5,178.85c38,-34 29,-70 70,-38c41,32 68,43 32,56c-36,13 -39,37 -60,13c-21,-24 -80,3 -42,-31z"
-                dur="5s" repeatCount="indefinite" />
+                id="anim-01"
+                fill="freeze"
+                dur="5s" />
+            <animate 
+                attributeType="CSS" 
+                attributeName="d" 
+                from="m134.5,178.85c38,-34 29,-70 70,-38c41,32 68,43 32,56c-36,13 -39,37 -60,13c-21,-24 -80,3 -42,-31z"
+                to="m279.5,15.45313c-19,14 237,-31.00001 227,193c-10,224 -119,176 -213,177c-94,1 -201,-26 -200,-163c1,-137 186,-207 186,-207z"
+                begin="anim-01.end + 0s"
+                dur="5s" />
         </path>
     </mask>
 </svg>
@@ -36,5 +49,6 @@
         </filter>
     </defs>
 </svg>
+
 
 <!-- <app-loading></app-loading> -->
