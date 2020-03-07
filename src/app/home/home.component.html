@@ -4,13 +4,10 @@
     <mask id="mask__filter">
         <rect class="mask__area" width="100%" height="100%" />
 
-        <circle *ngFor="let circle of circles" [attr.cx]="circle.x" [attr.cy]="circle.y" [attr.r]="circle.radius" [attr.fill]="circle.fill">
-            <animate attributeType="CSS" attributeName="cx" [attr.from]="circle.x" to="1000" dur="3s" id="animation-01" fill="freeze"/>
-            <animate attributeType="CSS" attributeName="r" from="100" to="0" dur="3s" begin="animation-01.end + 0s" fill="freeze"/>
-        </circle>
-
-
-        <path id="svg_1" d="m297.4714,49.02529c86.32455,2 127.27832,61.49988 125.77833,134.49974c-1.5,72.99986 -34.35178,139.49972 -128.27832,139.49972c-93.92654,0 -140.49899,-56.49989 -143.99898,-145.49971c-3.49999,-88.99982 60.17442,-130.49975 146.49897,-128.49975z" stroke-width="1.5" stroke="#000" fill="#000">
+        <path *ngFor="let circle of circles"
+            [ngStyle]="{'transform': 'scale(' + circle.scale + ') translateX(' + circle.xTransform + 'px) translateY(' + circle.yTransform + 'px)'}"
+            d="m297.4714,49.02529c86.32455,2 127.27832,61.49988 125.77833,134.49974c-1.5,72.99986 -34.35178,139.49972 -128.27832,139.49972c-93.92654,0 -140.49899,-56.49989 -143.99898,-145.49971c-3.49999,-88.99982 60.17442,-130.49975 146.49897,-128.49975z" 
+            stroke-width="1.5" stroke="#000" fill="#000">
             <animate 
                 id="anim-01"
                 attributeType="CSS" 
