@@ -1,7 +1,7 @@
 export class Circle {
     baseCircleRadius: number = 135;
-    baseCircleX: number = 245;
-    baseCircleY: number = 145;
+    baseCircleX: number = 295;
+    baseCircleY: number = 195;
 
     radius: number;
     x: number;
@@ -12,11 +12,11 @@ export class Circle {
     }
 
     get xTransform(): number {
-        return Math.round((this.x - this.baseCircleX) / this.scale);
+        return Math.round((this.x - this.baseCircleX * this.scale) / this.scale);
     }
 
     get yTransform(): number {
-        return Math.round((this.y - this.baseCircleY) / this.scale);
+        return Math.round((this.y - this.baseCircleY * this.scale) / this.scale);
     }
 
     constructor(radius: number, x: number, y: number){
