@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
 
   innitialiseCircles(): void {
     let circleCount: number = Math.round(Math.random() * 5) + 10;
-
     let i: number = 0;
     while (i < circleCount){
       // let radius: number = Math.round(Math.random() * 50) + 50;

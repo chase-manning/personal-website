@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingComponent } from './loading/loading.component';
 import { HomeComponent } from './home/home.component';
+import { MaskedLayerComponent } from './masked-layer/masked-layer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingComponent,
-    HomeComponent
+    HomeComponent,
+    MaskedLayerComponent
   ],
   imports: [
     BrowserModule,
