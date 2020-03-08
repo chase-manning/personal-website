@@ -110,7 +110,7 @@
 </svg>
 
 <svg class="full-screen gooey-filter">
-    <rect class="mask foreground" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + layer.startingTranslate.xTranslate + 'px) translateY(' + layer.startingTranslate.yTranslate + 'px)'}"></rect>
+    <rect class="mask foreground" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + layer.startingTranslate.xTranslate * this.mouseXMultiplier + 'px) translateY(' + layer.startingTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
