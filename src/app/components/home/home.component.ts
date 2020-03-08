@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Circle } from '../../models/circle';
+import { Layer } from 'src/app/models/layer';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
     this.mouseYMultiplier = (event.clientY / window.innerHeight) * -2 + 1;
   }
 
-  private circles: Circle[] = [];
+  private layers: Layer[] = [];
   private mouseXMultiplier: number = 0.5;
   private mouseYMultiplier: number = 0.5;
 
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   innitialiseCircles(): void {
+    let circles: Circle[] = [];
     let circleCount: number = Math.round(Math.random() * 5) + 10;
     let i: number = 0;
     while (i < circleCount){
@@ -32,9 +34,11 @@ export class HomeComponent implements OnInit {
       let radius: number = 100;
       let x: number = Math.round(Math.random() * (window.innerWidth/2 - 20)) + window.innerWidth/2;
       let y: number = Math.round(Math.random() * (window.innerHeight - 20 - window.innerHeight/3)) + window.innerHeight/3;
-      this.circles.push(new Circle(radius, x, y));
+      circles.push(new Circle(radius, x, y));
       i++;
     }
+
+    this.layers.push(new Layer(circles));
   }
 
 }
