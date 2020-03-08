@@ -12,11 +12,11 @@ export class Circle {
     }
 
     get xTransform(): number {
-        return this.x - this.baseCircleX;
+        return Math.round((this.x - this.baseCircleX) / this.scale);
     }
 
     get yTransform(): number {
-        return this.y - this.baseCircleY;
+        return Math.round((this.y - this.baseCircleY) / this.scale);
     }
 
     constructor(radius: number, x: number, y: number){
