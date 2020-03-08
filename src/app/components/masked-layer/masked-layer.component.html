@@ -2,7 +2,7 @@
     <mask id="mask__filter">
         <rect class="mask__area" width="100%" height="100%" />
 
-        <path *ngFor="let circle of circles"
+        <path *ngFor="let circle of layer.circles"
             [ngStyle]="{'transform': 'scale(' + circle.scale + ') translateX(' + circle.xTransform + 'px) translateY(' + circle.yTransform + 'px)'}"
             d="m297.4714,49.02529c86.32455,2 127.27832,61.49988 125.77833,134.49974c-1.5,72.99986 -34.35178,139.49972 -128.27832,139.49972c-93.92654,0 -140.49899,-56.49989 -143.99898,-145.49971c-3.49999,-88.99982 60.17442,-130.49975 146.49897,-128.49975z" 
             stroke-width="1.5" stroke="#000" fill="#000">
@@ -99,20 +99,19 @@
     </mask>
 </svg>
 
-<div *ngIf="isDropShadow" class="full-screen drop-shadow__container">
+<div class="full-screen drop-shadow__container">
     <svg class="full-screen gooey-filter">
-        <rect class="mask drop-shadow" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + translateX + 'px) translateY(' + translateY + 'px)'}"></rect>
+        <rect class="mask drop-shadow" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + shadowTranslate.xTranslate + 'px) translateY(' + shadowTranslate.yTranslate + 'px)'}"></rect>
     </svg>
 </div>
 
-<svg *ngIf="!isDropShadow && isMiddleLayer"  class="full-screen gooey-filter">
-    <rect class="mask middle-layer" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + translateX + 'px) translateY(' + translateY + 'px)'}"></rect>
+<svg *ngFor="let middleTranslate of middleTranslates" class="full-screen gooey-filter">
+    <rect class="mask middle-layer" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + middleTranslate.xTranslate + 'px) translateY(' + middleTranslate.yTranslate + 'px)'}"></rect>
 </svg>
 
-<svg *ngIf="!isDropShadow && !isMiddleLayer"  class="full-screen gooey-filter">
-    <rect class="mask foreground" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + translateX + 'px) translateY(' + translateY + 'px)'}"></rect>
+<svg class="full-screen gooey-filter">
+    <rect class="mask foreground" width="100%" height="100%" [ngStyle]="{'transform': 'translateX(' + layer.startingTranslate.xTranslate + 'px) translateY(' + layer.startingTranslate.yTranslate + 'px)'}"></rect>
 </svg>
-
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>
