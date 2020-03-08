@@ -1,0 +1,25 @@
+.mask__area {
+    fill: white;
+}
+
+.gooey-filter {
+    filter: url(#gooey-filter);
+}
+
+.drop-shadow__container {
+    filter: blur(15px);
+    opacity: 0.2;
+    transform: translateX(10px) translateY(5px);
+}
+
+.mask {
+    mask:url("#mask__filter");
+}
+
+.drop-shadow {
+    fill: black;
+}
+
+.foreground {
+    fill: white;
+}
