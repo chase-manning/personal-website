@@ -15,9 +15,13 @@ export class MaskedLayerComponent implements OnInit {
   @Input() mouseXMultiplier: number;
   @Input() mouseYMultiplier: number;
 
+  get startingDepth(): number {
+    return this.layer.totalDepth * (this.layer.layerIndex - 1);
+  }
+
   get shadowTranslate(): Translate {
-    let xTranslate: number = Math.round(this.layer.startingTranslate.xTranslate * this.mouseXMultiplier +  this.layer.totalDepth * this.mouseXMultiplier);
-    let yTranslate: number = Math.round(this.layer.startingTranslate.yTranslate * this.mouseYMultiplier +  this.layer.totalDepth * this.mouseYMultiplier);
+    let xTranslate: number = Math.round(this.startingDepth * this.mouseXMultiplier +  this.layer.totalDepth * this.mouseXMultiplier);
+    let yTranslate: number = Math.round(this.startingDepth * this.mouseYMultiplier +  this.layer.totalDepth * this.mouseYMultiplier);
     return new Translate(xTranslate, yTranslate);
   }
 
@@ -26,8 +30,8 @@ export class MaskedLayerComponent implements OnInit {
 
     let i = 1;
     while (i <= this.layer.middleLayerCount) {
-      let xTranslate: number = Math.round(this.layer.startingTranslate.xTranslate * this.mouseXMultiplier + (this.layer.layerDepth / this.layer.middleLayerCount) * i * this.mouseXMultiplier);
-      let yTranslate: number = Math.round(this.layer.startingTranslate.yTranslate * this.mouseYMultiplier + (this.layer.layerDepth / this.layer.middleLayerCount) * i * this.mouseYMultiplier);
+      let xTranslate: number = Math.round(this.startingDepth * this.mouseXMultiplier + (this.layer.layerDepth / this.layer.middleLayerCount) * i * this.mouseXMultiplier);
+      let yTranslate: number = Math.round(this.startingDepth * this.mouseYMultiplier + (this.layer.layerDepth / this.layer.middleLayerCount) * i * this.mouseYMultiplier);
       let newTranslate: Translate = new Translate(xTranslate, yTranslate);
       middleTranslates.push(newTranslate);
       i++;
