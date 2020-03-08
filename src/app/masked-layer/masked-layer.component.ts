@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Circle } from '../home/circle';
+import { Circle } from '../loading/circle';
 
 @Component({
   selector: 'app-masked-layer',

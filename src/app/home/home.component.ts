@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Circle } from './circle';
+import { Circle } from '../loading/circle';
 
 @Component({
   selector: 'app-home',
