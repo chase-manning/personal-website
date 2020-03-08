@@ -27,8 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   innitialiseLayers(): void {
-    this.innitialiseLayerOne();
     this.innitialiseLayerTwo();
+    this.innitialiseLayerOne();
+    console.log(this.layers);
   }
 
   innitialiseLayerOne(): void {
@@ -48,7 +49,7 @@ export class HomeComponent implements OnInit {
     circles.push(new Circle(br, bx - br, by + br / 2));
     circles.push(new Circle(br / 3, bx - br * 2, by - br));
 
-    this.layers.push(new Layer(circles, new Translate(24, 24)));
+    this.layers.push(new Layer(circles, 1));
   }
 
   innitialiseLayerTwo(): void {
@@ -61,14 +62,9 @@ export class HomeComponent implements OnInit {
     let bx: number = ww * 0.75;
     let by: number = wh / 2;
 
-    circles.push(new Circle(br, bx, by));
-    circles.push(new Circle(br * 0.75, bx - br / 2, by - br / 2));
-    circles.push(new Circle(br * 0.66, bx + br, by - br / 3));
-    circles.push(new Circle(br, bx + br / 3, by + br / 3));
-    circles.push(new Circle(br, bx - br, by + br / 2));
-    circles.push(new Circle(br / 3, bx - br * 2, by - br));
+    circles.push(new Circle(br / 2, bx, by));
 
-    this.layers.push(new Layer(circles, new Translate()));
+    this.layers.push(new Layer(circles, 2));
   }
 
 
