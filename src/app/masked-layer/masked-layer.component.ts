@@ -8,9 +8,14 @@ import { Circle } from '../home/circle';
 })
 export class MaskedLayerComponent implements OnInit {
 
-  @Input() circles: Circle[] = [];
+  @Input() circles: Circle[];
+  @Input() isDropShadow: boolean;
+  @Input() isMiddleLayer: boolean;
+  @Input() translateX: number;
+  @Input() translateY: number;
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
   }

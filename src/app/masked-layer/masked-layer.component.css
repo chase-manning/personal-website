@@ -7,8 +7,8 @@
 }
 
 .drop-shadow__container {
-    filter: blur(15px);
-    opacity: 0.2;
+    filter: blur(10px);
+    opacity: 0.25;
     transform: translateX(10px) translateY(5px);
 }
 
@@ -22,4 +22,7 @@
 
 .foreground {
     fill: white;
+}
+.middle-layer {
+    fill: #f9f9f9;
 }
