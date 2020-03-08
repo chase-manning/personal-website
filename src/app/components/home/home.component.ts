@@ -20,27 +20,56 @@ export class HomeComponent implements OnInit {
   private mouseYMultiplier: number = 0.5;
 
   constructor() { 
-    this.innitialiseCircles();
+    this.innitialiseLayers();
   }
 
   ngOnInit() {
   }
 
-  innitialiseCircles(): void {
+  innitialiseLayers(): void {
+    this.innitialiseLayerOne();
+    this.innitialiseLayerTwo();
+  }
+
+  innitialiseLayerOne(): void {
     let circles: Circle[] = [];
-    let circleCount: number = Math.round(Math.random() * 5) + 10;
-    
-    let i: number = 0;
-    while (i < circleCount){
-      // let radius: number = Math.round(Math.random() * 50) + 50;
-      let radius: number = 100;
-      let x: number = Math.round(Math.random() * (window.innerWidth/2 - 20)) + window.innerWidth/2;
-      let y: number = Math.round(Math.random() * (window.innerHeight - 20 - window.innerHeight/3)) + window.innerHeight/3;
-      circles.push(new Circle(radius, x, y));
-      i++;
-    }
+
+    let ww: number = window.innerWidth;
+    let wh: number = window.innerHeight;
+
+    let br: number = ww / 8;
+    let bx: number = ww * 0.75;
+    let by: number = wh / 2;
+
+    circles.push(new Circle(br, bx, by));
+    circles.push(new Circle(br * 0.75, bx - br / 2, by - br / 2));
+    circles.push(new Circle(br * 0.66, bx + br, by - br / 3));
+    circles.push(new Circle(br, bx + br / 3, by + br / 3));
+    circles.push(new Circle(br, bx - br, by + br / 2));
+    circles.push(new Circle(br / 3, bx - br * 2, by - br));
+
+    this.layers.push(new Layer(circles, new Translate(24, 24)));
+  }
+
+  innitialiseLayerTwo(): void {
+    let circles: Circle[] = [];
+
+    let ww: number = window.innerWidth;
+    let wh: number = window.innerHeight;
+
+    let br: number = ww / 8;
+    let bx: number = ww * 0.75;
+    let by: number = wh / 2;
+
+    circles.push(new Circle(br, bx, by));
+    circles.push(new Circle(br * 0.75, bx - br / 2, by - br / 2));
+    circles.push(new Circle(br * 0.66, bx + br, by - br / 3));
+    circles.push(new Circle(br, bx + br / 3, by + br / 3));
+    circles.push(new Circle(br, bx - br, by + br / 2));
+    circles.push(new Circle(br / 3, bx - br * 2, by - br));
 
     this.layers.push(new Layer(circles, new Translate()));
   }
+
 
 }
