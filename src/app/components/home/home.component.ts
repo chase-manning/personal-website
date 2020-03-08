@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Circle } from '../../models/circle';
 import { Layer } from 'src/app/models/layer';
+import { Translate } from '../masked-layer/translate';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   innitialiseCircles(): void {
     let circles: Circle[] = [];
     let circleCount: number = Math.round(Math.random() * 5) + 10;
+    
     let i: number = 0;
     while (i < circleCount){
       // let radius: number = Math.round(Math.random() * 50) + 50;
@@ -38,7 +40,7 @@ export class HomeComponent implements OnInit {
       i++;
     }
 
-    this.layers.push(new Layer(circles));
+    this.layers.push(new Layer(circles, new Translate()));
   }
 
 }
