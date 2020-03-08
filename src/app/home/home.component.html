@@ -1,7 +1,10 @@
 <div class="full-screen background"></div>
 
-<app-masked-layer [circles]="circles" [isDropShadow]="true" [isMiddleLayer]="false" [translateX]="6" [translateY]="6"></app-masked-layer>
-<app-masked-layer [circles]="circles" [isDropShadow]="false" [isMiddleLayer]="true" [translateX]="3" [translateY]="3"></app-masked-layer>
+<app-masked-layer [circles]="circles" [isDropShadow]="true" [isMiddleLayer]="false" [translateX]="24 * mouseXMultiplier" [translateY]="24 * mouseYMultiplier"></app-masked-layer>
+<app-masked-layer [circles]="circles" [isDropShadow]="false" [isMiddleLayer]="true" [translateX]="12 * mouseXMultiplier" [translateY]="12 * mouseYMultiplier"></app-masked-layer>
+<app-masked-layer [circles]="circles" [isDropShadow]="false" [isMiddleLayer]="true" [translateX]="9 * mouseXMultiplier" [translateY]="9 * mouseYMultiplier"></app-masked-layer>
+<app-masked-layer [circles]="circles" [isDropShadow]="false" [isMiddleLayer]="true" [translateX]="6 * mouseXMultiplier" [translateY]="6 * mouseYMultiplier"></app-masked-layer>
+<app-masked-layer [circles]="circles" [isDropShadow]="false" [isMiddleLayer]="true" [translateX]="3 * mouseXMultiplier" [translateY]="3 * mouseYMultiplier"></app-masked-layer>
 <app-masked-layer [circles]="circles" [isDropShadow]="false" [isMiddleLayer]="false" [translateX]="0" [translateY]="0"></app-masked-layer>
 
 <!-- <app-loading></app-loading> -->
