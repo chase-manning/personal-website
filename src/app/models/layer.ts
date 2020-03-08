@@ -8,11 +8,15 @@ export class Layer {
     layerDepth: number = 12;
     middleLayerCount: number = 6;
 
-    circles: Circle[];
-    startingTranslate: Translate;
+    get maskId(): string {
+        return 'maskId' + this.layerIndex;
+    }
 
-    constructor(circles: Circle[], startingTranslate: Translate){
+    circles: Circle[];
+    layerIndex: number;
+
+    constructor(circles: Circle[], layerIndex: number){
         this.circles = circles;
-        this.startingTranslate = startingTranslate;
+        this.layerIndex = layerIndex;
     }
 }
