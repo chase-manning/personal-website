@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Circle } from './circle';
 
 @Component({
@@ -7,8 +7,15 @@ import { Circle } from './circle';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  @HostListener('document:mousemove', ['$event']) 
+  onMouseMove(event: MouseEvent) {
+    this.mouseXMultiplier = (event.clientX / window.innerWidth) * -2 + 1;
+    this.mouseYMultiplier = (event.clientY / window.innerHeight) * -2 + 1;
+  }
 
   private circles: Circle[] = [];
+  private mouseXMultiplier: number = 1;
+  private mouseYMultiplier: number = 1;
 
   constructor() { 
     this.innitialiseCircles();
