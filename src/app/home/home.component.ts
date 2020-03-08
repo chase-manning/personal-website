@@ -14,8 +14,8 @@ export class HomeComponent implements OnInit {
   }
 
   private circles: Circle[] = [];
-  private mouseXMultiplier: number = 1;
-  private mouseYMultiplier: number = 1;
+  private mouseXMultiplier: number = 0.5;
+  private mouseYMultiplier: number = 0.5;
 
   constructor() { 
     this.innitialiseCircles();
