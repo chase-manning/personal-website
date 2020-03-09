@@ -1,5 +1,5 @@
 import { Circle } from './circle';
-import { Translate } from '../components/masked-layer/translate';
+import { Translate } from './translate';
 
 export class Layer {
 
