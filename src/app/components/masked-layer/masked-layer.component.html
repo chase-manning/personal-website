@@ -101,16 +101,16 @@
 
 <div class="full-screen drop-shadow__container">
     <svg class="full-screen">
-        <rect class="drop-shadow" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translateX(' + layer.shadowTranslate.xTranslate * this.mouseXMultiplier + 'px) translateY(' + layer.shadowTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
+        <rect class="drop-shadow" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + layer.shadowTranslate.xTranslate * this.mouseXMultiplier + 'px, ' + layer.shadowTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
     </svg>
 </div>
 
 <svg *ngFor="let middleTranslate of layer.middleTranslates" class="full-screen">
-    <rect class="middle-layer" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translateX(' + middleTranslate.xTranslate * this.mouseXMultiplier + 'px) translateY(' + middleTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
+    <rect class="middle-layer" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + middleTranslate.xTranslate * this.mouseXMultiplier + 'px, ' + middleTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
 </svg>
 
 <svg class="full-screen">
-    <rect class="foreground" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translateX(' + startingDepth * this.mouseXMultiplier + 'px) translateY(' + startingDepth * this.mouseYMultiplier + 'px)'}"></rect>
+    <rect class="foreground" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + startingDepth * this.mouseXMultiplier + 'px, ' + startingDepth * this.mouseYMultiplier + 'px)'}"></rect>
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
