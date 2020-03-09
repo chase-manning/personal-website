@@ -2,6 +2,10 @@
     fill: white;
 }
 
+.gooey-filter {
+    filter: url(#gooey-filter);
+}
+
 .drop-shadow__container {
     filter: blur(10px);
     opacity: 0.25;

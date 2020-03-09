@@ -100,16 +100,16 @@
 </svg>
 
 <div class="full-screen drop-shadow__container">
-    <svg class="full-screen">
+    <svg class="full-screen gooey-filter">
         <rect class="drop-shadow" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + layer.shadowTranslate.xTranslate * this.mouseXMultiplier + 'px, ' + layer.shadowTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
     </svg>
 </div>
 
-<svg *ngFor="let middleTranslate of layer.middleTranslates" class="full-screen">
+<svg *ngFor="let middleTranslate of layer.middleTranslates" class="full-screen gooey-filter">
     <rect class="middle-layer" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + middleTranslate.xTranslate * this.mouseXMultiplier + 'px, ' + middleTranslate.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
 </svg>
 
-<svg class="full-screen">
+<svg class="full-screen gooey-filter">
     <rect class="foreground" width="100%" height="100%" [ngStyle]="{'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + startingDepth * this.mouseXMultiplier + 'px, ' + startingDepth * this.mouseYMultiplier + 'px)'}"></rect>
 </svg>
 
