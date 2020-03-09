@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Circle } from '../../models/circle';
-import { Translate } from './translate';
+import { Translate } from '../../models/translate';
 import { Layer } from 'src/app/models/layer';
 
 @Component({

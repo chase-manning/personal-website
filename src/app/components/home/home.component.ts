@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Circle } from '../../models/circle';
 import { Layer } from 'src/app/models/layer';
-import { Translate } from '../masked-layer/translate';
+import { Translate } from '../../models/translate';
 
 @Component({
   selector: 'app-home',
