@@ -110,7 +110,7 @@
 </svg>
 
 <svg class="full-screen gooey-filter">
-    <rect class="foreground" width="100%" height="100%" [ngStyle]="{'fill': meow, 'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + layer.startingDepth * this.mouseXMultiplier + 'px, ' + layer.startingDepth * this.mouseYMultiplier + 'px)'}"></rect>
+    <rect class="foreground" width="100%" height="100%" [ngStyle]="{'fill': meow, 'mask': 'url(#' + layer.maskId + ')', 'transform': 'translate(' + layer.topSlice.xTranslate * this.mouseXMultiplier + 'px, ' + layer.topSlice.yTranslate * this.mouseYMultiplier + 'px)'}"></rect>
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
