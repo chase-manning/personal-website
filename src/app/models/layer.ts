@@ -1,5 +1,5 @@
 import { Circle } from './circle';
-import { Translate } from './translate';
+import { Slice } from './slice';
 
 export class Layer {
 
@@ -25,20 +25,20 @@ export class Layer {
         return this.totalDepth * (this.layerIndex - 1);
     }
 
-    get shadowTranslate(): Translate {
+    get shadowTranslate(): Slice {
         let xTranslate: number = Math.round(this.startingDepth + this.totalDepth);
         let yTranslate: number = Math.round(this.startingDepth + this.totalDepth);
-        return new Translate(xTranslate, yTranslate);
+        return new Slice('red', xTranslate, yTranslate);
     }
 
-    get middleTranslates(): Translate[] {
-        let middleTranslates: Translate[] = [];
+    get middleTranslates(): Slice[] {
+        let middleTranslates: Slice[] = [];
 
         let i = 1;
         while (i <= this.middleLayerCount) {
             let xTranslate: number = Math.round(this.startingDepth + (this.layerDepth / this.middleLayerCount) * i);
             let yTranslate: number = Math.round(this.startingDepth + (this.layerDepth / this.middleLayerCount) * i);
-            let newTranslate: Translate = new Translate(xTranslate, yTranslate);
+            let newTranslate: Slice = new Slice('red', xTranslate, yTranslate);
             middleTranslates.push(newTranslate);
             i++;
         }
