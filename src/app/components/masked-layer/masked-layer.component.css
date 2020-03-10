@@ -15,14 +15,3 @@
 .mask {
     mask:url("#mask__filter");
 }
-
-.drop-shadow {
-    fill: black;
-}
-
-.foreground {
-    fill: white;
-}
-.middle-layer {
-    fill: #f6f6f6;
-}
