@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Circle } from '../../models/circle';
-import { Translate } from '../../models/translate';
+import { Slice } from '../../models/slice';
 import { Layer } from 'src/app/models/layer';
 
 @Component({
@@ -14,6 +14,8 @@ export class MaskedLayerComponent implements OnInit {
   @Input() layer: Layer;
   @Input() mouseXMultiplier: number;
   @Input() mouseYMultiplier: number;
+
+  meow: string = "#fff000";
 
   constructor() { 
   }
