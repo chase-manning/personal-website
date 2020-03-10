@@ -47,6 +47,6 @@ export class Layer {
     }
 
     get topSlice(): Slice {
-        return null;
+        return new Slice('red', this.startingDepth, this.startingDepth);
     }
 }
