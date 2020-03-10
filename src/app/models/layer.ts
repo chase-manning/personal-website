@@ -25,13 +25,13 @@ export class Layer {
         return this.totalDepth * (this.layerIndex - 1);
     }
 
-    get shadowTranslate(): Slice {
+    get shadowSlice(): Slice {
         let xTranslate: number = Math.round(this.startingDepth + this.totalDepth);
         let yTranslate: number = Math.round(this.startingDepth + this.totalDepth);
         return new Slice('red', xTranslate, yTranslate);
     }
 
-    get middleTranslates(): Slice[] {
+    get middleSlices(): Slice[] {
         let middleTranslates: Slice[] = [];
 
         let i = 1;
@@ -44,5 +44,9 @@ export class Layer {
         }
 
         return middleTranslates;
+    }
+
+    get topSlice(): Slice {
+        return null;
     }
 }
