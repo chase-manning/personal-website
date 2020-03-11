@@ -9,6 +9,7 @@ import { Slice } from '../../models/slice';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
   @HostListener('document:mousemove', ['$event']) 
   onMouseMove(event: MouseEvent) {
     this.mouseXMultiplier = (event.clientX / window.innerWidth) * -2 + 1;
@@ -29,7 +30,6 @@ export class HomeComponent implements OnInit {
   innitialiseLayers(): void {
     this.innitialiseLayerTwo();
     this.innitialiseLayerOne();
-    console.log(this.layers);
   }
 
   innitialiseLayerOne(): void {
