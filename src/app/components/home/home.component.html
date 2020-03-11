@@ -1,6 +1,57 @@
 <div class="full-screen background"></div>
 
 <div *ngFor="let layer of layers">
-    <app-masked-layer [layer]="layer" [mouseXMultiplier]="mouseXMultiplier" [mouseYMultiplier]="mouseYMultiplier"></app-masked-layer>
+    <app-masked-layer [layer]="layer" [mouseXMultiplier]="mouseXMultiplier" [mouseYMultiplier]="mouseYMultiplier">
+    </app-masked-layer>
 </div>
-<!-- <app-loading></app-loading> -->
+
+<div class="home-page__container">
+
+    <div class="header__container">
+        <div class="home-page__title">
+            Chase Manning
+        </div>
+        <div class="menu__container">
+            <div class="menu__item">
+                Portfolio
+            </div>
+            <div class="menu__item">
+                Resume
+            </div>
+            <div class="menu__item">
+                Contact
+            </div>
+        </div>
+    </div>
+
+    <div class="content__container">
+        <div class="home-page-content__container">
+            <div class="content-header__text">
+                Full-stack Developer
+            </div>
+            <div class="seperator__line"></div>
+            <div class="content-description__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique, augue et condimentum blandit, magna urna viverra ante, in eleifend justo orci sit amet lorem.
+            </div>
+            <button class="call-to-action__button">View Portfolio</button>
+        </div>
+    </div>
+
+    <div class="footer__container">
+        <div class="socials__container">
+            <div class="socials__item">
+                G
+            </div>
+            <div class="socials__item">
+                G
+            </div>
+            <div class="socials__item">
+                G
+            </div>
+            <div class="socials__item">
+                G
+            </div>
+        </div>
+    </div>
+</div>
+<!--app-loading></app-loading-->
