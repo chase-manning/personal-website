@@ -3,8 +3,8 @@
         Chase Manning
     </a>
     <div class="menu__container">
-        <a routerLink="/portfolio" class="remove-link-styling menu-item__text">Portfolio</a>
-        <a routerLink="/resume" class="remove-link-styling menu-item__text">Resume</a>
-        <a routerLink="/contact" class="remove-link-styling menu-item__text">Contact</a>
+        <a routerLink="/portfolio" class="remove-link-styling menu-item__text" [ngClass]="{'navigation-underline': isPortfolioPage}">Portfolio</a>
+        <a routerLink="/resume" class="remove-link-styling menu-item__text" [ngClass]="{'navigation-underline': isResumePage}">Resume</a>
+        <a routerLink="/contact" class="remove-link-styling menu-item__text" [ngClass]="{'navigation-underline': isContactPage}">Contact</a>
     </div>
 </div>
