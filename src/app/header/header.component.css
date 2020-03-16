@@ -29,3 +29,7 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+.navigation-underline {
+    border-bottom: 2px solid #00A8E8;
+}

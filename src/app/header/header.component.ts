@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  get isPortfolioPage(): boolean {
+    return this.router.url === '/portfolio';
+  }
+  get isResumePage(): boolean {
+    return this.router.url === '/resume';
+  }
+  get isContactPage(): boolean {
+    return this.router.url === '/contact';
+  }
 }
