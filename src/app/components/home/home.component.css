@@ -68,7 +68,3 @@
 .call-to-action__button:hover {
     transform: scale(1.1);
 }
-
-a {
-    all: none;
-}
