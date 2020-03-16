@@ -28,9 +28,13 @@
 }
 
 .menu__item {
+}
+
+.menu-item__text {
+    color: black;
     margin-left: 40px;
+    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .content__container {
@@ -86,9 +90,13 @@
     cursor: pointer;
     will-change: transform;
     transition: transform 0.5s;
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 .call-to-action__button:hover {
     transform: scale(1.1);
+}
+
+a {
+    all: none;
 }
