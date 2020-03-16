@@ -28,7 +28,7 @@
     transform-style: preserve-3d;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    transform:  perspective(4cm) rotateX(15deg) translate3d(0.5px, -3px, 0);
+    transform:  perspective(4cm) rotateX(15deg) translate3d(0, -3px, 0);
     z-index: -1;
 }
 
