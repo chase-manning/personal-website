@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HomeComponent } from './components/home/home.component';
-import { MaskedLayerComponent } from './components/masked-layer/masked-layer.component';
+import { MaskedLayerComponent } from './components/home/masked-layer/masked-layer.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ContactComponent } from './contact/contact.component';
