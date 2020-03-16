@@ -8,40 +8,15 @@
     position: absolute; top: 0px; left: 0px;
     padding: 30px 60px;
 }
-
-.header__container {
-    display: block;
-    width: 100%; height: 10%;
-}
-
-.home-page__title {
-    float: left;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.menu__container {
-    display: flex;
-    flex-direction: row;
-    float: right;
-}
-
-.menu-item__text {
-    color: black;
-    margin-left: 40px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
+ 
 .content__container {
     display: block;
-    width: 100%; height: 80%;
+    width: 100%; height: 85%;
 }
 
 .footer__container {
     display: flex;
-    width: 100%; height: 10%;
+    width: 100%; height: 15%;
     align-items: flex-end;
 }
 
