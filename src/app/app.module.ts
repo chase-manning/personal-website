@@ -9,7 +9,7 @@ import { MaskedLayerComponent } from './components/home/masked-layer/masked-laye
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
