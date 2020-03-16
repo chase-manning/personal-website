@@ -66,5 +66,5 @@
 }
 
 .call-to-action__button:hover {
-    transform: scale(1.1);
+    background-color: #007EA7;
 }
