@@ -10,6 +10,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
     PortfolioComponent,
     ResumeComponent,
     ContactComponent,
-    HeaderComponent
+    HeaderComponent,
+    PortfolioDesktopComponent
   ],
   imports: [
     BrowserModule,
