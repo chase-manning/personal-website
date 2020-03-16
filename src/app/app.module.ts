@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MaskedLayerComponent } from './components/home/masked-layer/masked-layer.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ResumeComponent } from './resume/resume.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
