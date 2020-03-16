@@ -7,7 +7,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaskedLayerComponent } from './components/home/masked-layer/masked-layer.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ResumeComponent } from './resume/resume.component';
+import { ResumeComponent } from './components/resume/resume.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 
