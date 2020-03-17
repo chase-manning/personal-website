@@ -28,6 +28,7 @@
 .nav-page__text {
     margin-left: 10px;
     font-size: small;
+    cursor: pointer;
 }
 
 .main-content__container {
@@ -59,6 +60,7 @@
     color: #CFD0D1;
     padding: 8px 8px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .footer__container {
