@@ -11,6 +11,7 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop.component';
+import { PortfolioDesktopOhRentMeComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop-oh-rent-me/portfolio-desktop-oh-rent-me.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desk
     ResumeComponent,
     ContactComponent,
     HeaderComponent,
-    PortfolioDesktopComponent
+    PortfolioDesktopComponent,
+    PortfolioDesktopOhRentMeComponent
   ],
   imports: [
     BrowserModule,
