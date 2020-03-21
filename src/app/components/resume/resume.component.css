@@ -1,0 +1,49 @@
+.resume__container {
+    width: 100%;
+    display: flex;
+    box-shadow: 1px 1px 30px 0px rgba(0,0,0,0.3);
+    border-radius: 20px;
+
+}
+
+.left-section__container {
+    background-color: #434343;
+    width: 30%;
+    padding: 8% 4%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: #E6E6E6;
+}
+
+.right-section__container {
+    width: 70%;
+    padding: 8rem 4rem;
+    color: #434343;
+}
+
+.header__text {
+    text-transform: uppercase;
+    font-family: 'lato';
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.content__text {
+    font-family: 'lato';
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.divider-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 4rem 0;
+    background-color: #BBBBBB;
+}
+
+.profile-picture {
+    width: 100%;
+}
