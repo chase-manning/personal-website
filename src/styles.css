@@ -20,5 +20,10 @@
 
 @font-face {
     font-family: lato;
-    src: url(assets/fonts/Lato/Lato-Bold.ttf) fomat("truetype");
+    src: url(assets/fonts/Lato/Lato-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: bebas-neue;
+    src: url(assets/fonts/bebas_neue/BebasNeue-Regular.ttf) format("truetype");
 }
