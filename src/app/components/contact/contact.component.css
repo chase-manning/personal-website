@@ -9,3 +9,17 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+.contact__container {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+}
+
+.blur {
+    filter: url(#blur);
+}
+
+.shadow {
+    mask: url(#circle__mask);
+}
