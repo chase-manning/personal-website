@@ -35,16 +35,9 @@
     transform: translateY(-50%);
 }
 
-.content-header__text {
-    font-size: 4rem;
-    font-weight: bold;
-}
-
-.seperator__line {
-    background-color: #00A8E8;
-    width: 29%;
-    height: 0.2rem;
-    margin-top: 10px;
+.sub-text__container {
+    max-width: 28rem;
+    font-family: rob;
 }
 
 .content-description__text {
