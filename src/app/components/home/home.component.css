@@ -39,12 +39,6 @@
     max-width: 28rem;
 }
 
-.content-description__text {
-    color: #6d6d6d;
-    width: 50%;
-    margin: 50px 0px;
-}
-
 .call-to-action__button {
     background-color: #00A8E8;
     border: none;
