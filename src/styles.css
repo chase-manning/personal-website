@@ -27,10 +27,33 @@ h1 {
     letter-spacing: -0.025em;
 }
 
+h2 {
+    font-family: basier-circle;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 0.7em;
+    color: rgb(25, 28, 31);
+    letter-spacing: -0.025em;
+}
+
 p {
     font-family: roberto;
     color: rgb(139, 149, 158);
     line-height: 1.65em;
+}
+
+button {
+    background-color: #00A8E8;
+    font-family: roberto;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    padding: 1rem 4.125rem;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    transition: all 0.2s ease;
 }
 
 @font-face {
