@@ -1,45 +1,45 @@
 <div class="full-screen">
     <svg height="100%" width="100%">
+
+        <!-- ******* ELEMENTS *********-->
+
+        <!-- Circles -->
         <circle cx="50%" cy="50%" r="200" fill="#00A8E8"></circle>
+
+        <!-- Highlights -->
         <circle class="blur" cx="50%" cy="50%" r="100" opacity="0.7" fill="white"></circle>
-    </svg>
-</div>
 
-<div class="full-screen">
-    <svg height="100%" width="100%">
-        <mask id="circle-inverted__mask">
-            <rect width="100%" height="100%" fill="white" />
-            <circle cx="50%" cy="50%" r="200" fill="black"></circle>
-        </mask>
-    </svg>
-</div>
-
-<div class="full-screen">
-    <svg height="100%" width="100%">
-        <mask id="circle__mask">
-            <rect width="100%" height="100%" fill="black" />
-            <circle cx="50%" cy="50%" r="200" fill="white"></circle>
-        </mask>
-    </svg>
-</div>
-
-<div class="full-screen">
-    <svg height="100%" width="100%">
+        <!-- Shadows -->
         <g mask="url(#circle__mask)">
             <g class="blur">
                 <rect width="100%" height="100%" fill="black" opacity="0.5" mask="url(#circle-inverted__mask)" />
             </g>
         </g>
+
+        
+        <!-- ******* MASKS *********-->
+
+        <!-- Circle Mask -->
+        <mask id="circle__mask">
+            <rect width="100%" height="100%" fill="black" />
+            <circle cx="50%" cy="50%" r="200" fill="white"></circle>
+        </mask>
+
+        <!-- Background Mask -->
+        <mask id="circle-inverted__mask">
+            <rect width="100%" height="100%" fill="white" />
+            <circle cx="50%" cy="50%" r="200" fill="black"></circle>
+        </mask>
+
+        
+        <!-- ******* FILTERS *********-->
+
+        <!-- Blur Filter -->
+        <defs>
+            <filter id="blur" x="-100%" y="-100%" width="400%" height="400%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="60" result="blur" />
+            </filter>
+        </defs>
+
     </svg>
 </div>
-
-
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
-        <filter id="blur" x="-100%" y="-100%" width="400%" height="400%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="60" result="blur" />
-        </filter>
-    </defs>
-</svg>
-
