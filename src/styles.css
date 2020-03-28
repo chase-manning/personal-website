@@ -29,6 +29,8 @@ h1 {
 
 p {
     font-family: roberto;
+    color: rgb(139, 149, 158);
+    line-height: 1.65em;
 }
 
 @font-face {
