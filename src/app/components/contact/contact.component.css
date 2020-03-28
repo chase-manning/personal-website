@@ -1,0 +1,11 @@
+.logo {
+    position: absolute;
+    font-size: 200px;
+    background: linear-gradient(red, yellow);
+    font-weight: bold;
+    left: 50%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
