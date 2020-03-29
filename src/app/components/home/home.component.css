@@ -40,6 +40,15 @@
     margin-bottom: 2rem;
 }
 
-.call-to-action__button:hover {
-    background-color: #007EA7;
+.secondary__button {
+    background-color: white;
+    color: #00A8E8;
+}
+
+.secondary__button:hover {
+    color: #007EA7;
+}
+
+.call-to-action__button {
+    margin-right: 2rem;
 }
