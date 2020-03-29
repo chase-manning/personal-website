@@ -35,6 +35,11 @@
     line-height: 1.65em;
     float: right;
     margin: auto 0 auto 40px;
+    transition: all 0.2s ease;
+}
+
+.menu-item__text:hover {
+    color: rgb(25, 28, 31);
 }
 
 .menu-item__button {
