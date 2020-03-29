@@ -1,11 +1,18 @@
 
 .header__container {
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0; top: 0;
-    padding: 30px 60px;
+    padding: 40px 60px;
     width: 100%;
     z-index: 100;
+    background-color: white;
+    transition: all 0.5s ease;
+}
+
+.header__sticky {
+    padding: 25px 60px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.066);
 }
 
 .navigation__container {
