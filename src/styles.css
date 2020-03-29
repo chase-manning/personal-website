@@ -64,10 +64,15 @@ button {
     color: white;
     cursor: pointer;
     padding: 1rem 4.125rem;
-    border: none;
+    border: solid 2px #00A8E8;
     border-radius: 2rem;
     outline: none;
     transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #007EA7;
+    border: solid 2px #007EA7;
 }
 
 @font-face {
