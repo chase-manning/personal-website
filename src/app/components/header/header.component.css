@@ -29,12 +29,6 @@
     cursor: pointer;
 }
 
-.menu__container {
-    display: flex;
-    flex-direction: row;
-    float: right;
-}
-
 .menu-item__text {
     font-family: roberto;
     color: rgb(139, 149, 158);
@@ -43,7 +37,7 @@
     margin: auto 0 auto 40px;
 }
 
-.menu-item-focus__text {
+.menu-item__button {
     font-family: basier-circle;
     margin-left: 40px;
     line-height: 1.5rem;
