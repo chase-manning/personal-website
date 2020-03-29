@@ -1,13 +1,30 @@
 
 .header__container {
     display: block;
-    position: sticky;
-    width: 100%; height: 50px;
+    position: absolute;
+    left: 0; top: 0;
     padding: 30px 60px;
+    width: 100%;
     z-index: 100;
 }
 
+.navigation__container {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
 .home-page__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: basier-circle;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 0.7em;
+    color: rgb(25, 28, 31);
+    letter-spacing: -0.025em;
+    margin: auto 0;
     float: left;
     cursor: pointer;
 }
@@ -19,7 +36,22 @@
 }
 
 .menu-item__text {
+    font-family: roberto;
+    color: rgb(139, 149, 158);
+    line-height: 1.65em;
+    float: right;
+    margin: auto 0 auto 40px;
+}
+
+.menu-item-focus__text {
+    font-family: basier-circle;
     margin-left: 40px;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    padding: 0.625em 1.5em;
+    float: right;
 }
 
 .navigation-underline {
