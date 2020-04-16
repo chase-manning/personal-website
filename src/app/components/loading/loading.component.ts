@@ -10,7 +10,7 @@ export class LoadingComponent implements OnInit {
 
   //Elements
   private mainCircle: HTMLElement;
-  private fuelCircles: Fuel[] = [];
+  public fuelCircles: Fuel[] = [];
 
   //Status
   private circleDiameter: number = 100;
