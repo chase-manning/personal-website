@@ -16,9 +16,9 @@ export class HomeComponent implements OnInit {
     this.mouseYMultiplier = (event.clientY / window.innerHeight) * -2 + 1;
   }
 
-  private layers: Layer[] = [];
-  private mouseXMultiplier: number = 0.5;
-  private mouseYMultiplier: number = 0.5;
+  public layers: Layer[] = [];
+  public mouseXMultiplier: number = 0.5;
+  public mouseYMultiplier: number = 0.5;
 
   constructor() { 
     this.innitialiseLayers();
