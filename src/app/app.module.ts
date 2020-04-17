@@ -12,6 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop.component';
 import { PortfolioDesktopOhRentMeComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop-oh-rent-me/portfolio-desktop-oh-rent-me.component';
+import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PortfolioDesktopOhRentMeComponent } from './components/portfolio/portfo
     ContactComponent,
     HeaderComponent,
     PortfolioDesktopComponent,
-    PortfolioDesktopOhRentMeComponent
+    PortfolioDesktopOhRentMeComponent,
+    PortfolioMobileComponent
   ],
   imports: [
     BrowserModule,
