@@ -26,5 +26,5 @@ jobs:
     
     - name: Building Application
       run: |
-        npm install,
+        npm install
         npm run build:prod
