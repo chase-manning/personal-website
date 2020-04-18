@@ -13,7 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop.component';
 import { PortfolioDesktopOhRentMeComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop-oh-rent-me/portfolio-desktop-oh-rent-me.component';
 import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile.component';
-import { PortfolioMobileWeathaComponent } from './portfolio-mobile-weatha/portfolio-mobile-weatha.component';
+import { PortfolioMobileWeathaComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile-weatha/portfolio-mobile-weatha.component';
 import { PortfolioLaptopComponent } from './components/portfolio/portfolio-laptop/portfolio-laptop.component';
 
 @NgModule({
