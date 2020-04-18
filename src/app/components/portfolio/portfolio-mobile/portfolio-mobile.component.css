@@ -61,6 +61,8 @@
 
 .line {
    background-color: #E0E1E4;
+   border-right: solid 1px #E5E6E9;
+   border-left: solid 1px #DBDCDF;
    position: absolute;
    top: 0;
    width: 6px; height: 100%;
