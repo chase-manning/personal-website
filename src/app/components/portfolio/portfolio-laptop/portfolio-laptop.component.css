@@ -1,0 +1,54 @@
+.border {
+    position: relative;
+    width: 614px; height: 401px;
+    background-color: #F1F3F6;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 30px;
+    border-top: solid 1px rgba(255, 255, 255, 0.8);
+    border-left: solid 1px rgba(255, 255, 255, 0.8);
+    border-right: solid 1px rgba(255, 255, 255, 0.4);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+}
+
+.outside {
+    position: relative;
+    width: 608px; height: 395px;
+    background-color: white;
+    border-radius: 12px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inside {
+    width: 568px; height: 356px;
+    position: relative;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F1F3F6;
+}
+
+.outside-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+            135deg, 
+            rgba(255, 255, 255, 0.8),
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.05)
+        );
+    border-radius: 12px;
+}
+
+.inside-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+            135deg, 
+            rgba(255, 255, 255, 0.8),
+            rgba(0, 0, 0, 0.1)
+        );
+}
