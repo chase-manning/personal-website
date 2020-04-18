@@ -14,6 +14,7 @@ import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desk
 import { PortfolioDesktopOhRentMeComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop-oh-rent-me/portfolio-desktop-oh-rent-me.component';
 import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile.component';
 import { PortfolioMobileWeathaComponent } from './portfolio-mobile-weatha/portfolio-mobile-weatha.component';
+import { PortfolioLaptopComponent } from './components/portfolio/portfolio-laptop/portfolio-laptop.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PortfolioMobileWeathaComponent } from './portfolio-mobile-weatha/portfo
     PortfolioDesktopComponent,
     PortfolioDesktopOhRentMeComponent,
     PortfolioMobileComponent,
-    PortfolioMobileWeathaComponent
+    PortfolioMobileWeathaComponent,
+    PortfolioLaptopComponent
   ],
   imports: [
     BrowserModule,
