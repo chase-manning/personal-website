@@ -1,3 +1,21 @@
-.background {
-    background-color: white;
+.svg__container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.svg-container {
+    width: 2320px;
+    height: 1600px;
+    position: relative;
+    top: 50%; left: 50%;
+    transform: translate(-35%, -47%) scale(0.5);
+}
+
+.mask__area {
+    fill: white;
+}
+
+.gooey-filter {
+    filter: url(#gooey-filter);
 }
