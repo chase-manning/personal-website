@@ -22,5 +22,5 @@
 
 .drop-shadow {
     filter: url(#drop-shadow-filter);
-    opacity: 0.4;
+    opacity: 0.3;
 }
