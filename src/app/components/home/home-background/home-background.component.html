@@ -1,14 +1,23 @@
 <div class="svg__container">
     <svg class="svg-container">
         
-        <!-- Gooey Filter -->
         <defs>
+            <!-- Gooey Filter -->
             <filter id="gooey-filter">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                 <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
                 <feComposite in="SourceGraphic" in2="goo" operator="atop" />
             </filter>
+
+            <!-- Drop Shadow Filter -->
+            <filter id="drop-shadow-filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur" />
+            </filter>
         </defs>
+
+
+
+
 
         <!-- Bottom Layer -->
         <rect class="full-screen" fill="#003459"></rect>
@@ -45,6 +54,13 @@
             </path>
         </mask>
         
+        <!-- Drop Shadow -->
+        <g class="drop-shadow">
+            <g class="full-screen gooey-filter">
+                <rect fill="black" width="100%" height="100%" mask="url(#mask4)"></rect>
+            </g>
+        </g>
+
         <!-- Layer 1 -->
         <g class="full-screen gooey-filter">
             <rect fill="#007EA7" width="100%" height="100%" mask=url(#mask4)></rect>
@@ -82,6 +98,13 @@
             </path>
         </mask>
         
+        <!-- Drop Shadow -->
+        <g class="drop-shadow">
+            <g class="full-screen gooey-filter">
+                <rect fill="black" width="100%" height="100%" mask="url(#mask3)"></rect>
+            </g>
+        </g>
+
         <!-- Layer 1 -->
         <g class="full-screen gooey-filter">
             <rect fill="#00A8E8" width="100%" height="100%" mask=url(#mask3)></rect>
@@ -141,10 +164,17 @@
                     dur="10s" /-->
             </path>
         </mask>
+
+        <!-- Drop Shadow -->
+        <g class="drop-shadow">
+            <g class="full-screen gooey-filter">
+                <rect fill="black" width="100%" height="100%" mask="url(#mask2)"></rect>
+            </g>
+        </g>
         
         <!-- Layer 1 -->
         <g class="full-screen gooey-filter">
-            <rect fill="#F7F6F8" width="100%" height="100%" mask=url(#mask2)></rect>
+            <rect fill="#F7F7F9" width="100%" height="100%" mask=url(#mask2)></rect>
         </g>
         
 
@@ -199,6 +229,13 @@
                     dur="10s" /--> 
             </path>
         </mask>
+
+        <!-- Drop Shadow -->
+        <g class="drop-shadow">
+            <g class="full-screen gooey-filter">
+                <rect fill="black" width="100%" height="100%" mask="url(#mask1)"></rect>
+            </g>
+        </g>
         
         <!-- Layer 1 -->
         <g class="full-screen gooey-filter">
