@@ -25,27 +25,27 @@
     opacity: 0.3;
 }
 
-.layer1-main__mask {
+.層いちでかマスク {
     animation: layer1-main__animation 10s ease-in-out infinite alternate;
 }
 
-.layer1-mini__mask {
+.層いち小さいマスク {
     animation: layer1-mini__animation 10s ease-in-out infinite alternate;
 }
 
-.layer2-main__mask {
+.層にでかマスク {
     animation: layer2-main__animation 8s ease-in-out infinite alternate;
 }
 
-.layer2-mini__mask {
+.層に小さいマスク {
     animation: layer2-mini__animation 8s ease-in-out infinite alternate;
 }
 
-.layer3__mask {
+.層さんマスク {
     animation: layer3__animation 6s ease-in-out infinite alternate;
 }
 
-.layer4__mask {
+.層しマスク {
     animation: layer4__animation 6s ease-in-out infinite alternate;
 }
 

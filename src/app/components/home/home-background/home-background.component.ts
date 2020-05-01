@@ -11,12 +11,12 @@ export class HomeBackgroundComponent implements OnInit {
   
   @HostListener('document:mousemove', ['$event']) 
   onMouseMove(event: MouseEvent) {
-    this.mouseXMultiplier = (event.clientX / window.innerWidth) * -2 + 1;
-    this.mouseYMultiplier = (event.clientY / window.innerHeight) * -2 + 1;
+    this.マウスX乗数 = (event.clientX / window.innerWidth) * -2 + 1;
+    this.マウスY乗数 = (event.clientY / window.innerHeight) * -2 + 1;
   }
 
-  public mouseXMultiplier: number = 0.5;
-  public mouseYMultiplier: number = 0.5;
+  public マウスX乗数: number = 0.5;
+  public マウスY乗数: number = 0.5;
 
   ngOnInit() {
   }
