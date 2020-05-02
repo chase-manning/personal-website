@@ -9,7 +9,6 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
-import { PortfolioDesktopComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop.component';
 import { PortfolioDesktopOhRentMeComponent } from './components/portfolio/portfolio-desktop/portfolio-desktop-oh-rent-me/portfolio-desktop-oh-rent-me.component';
 import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile.component';
 import { PortfolioMobileWeathaComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile-weatha/portfolio-mobile-weatha.component';
@@ -25,7 +24,6 @@ import { HomeBackgroundComponent } from './components/home/home-background/home-
     ResumeComponent,
     ContactComponent,
     HeaderComponent,
-    PortfolioDesktopComponent,
     PortfolioDesktopOhRentMeComponent,
     PortfolioMobileComponent,
     PortfolioMobileWeathaComponent,
