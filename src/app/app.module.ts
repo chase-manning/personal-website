@@ -11,7 +11,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LaptopOhRentMeComponent } from './components/portfolio/portfolio-laptop/laptop-oh-rent-me/laptop-oh-rent-me.component';
 import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile.component';
-import { PortfolioMobileWeathaComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile-weatha/portfolio-mobile-weatha.component';
 import { PortfolioLaptopComponent } from './components/portfolio/portfolio-laptop/portfolio-laptop.component';
 import { HomeBackgroundComponent } from './components/home/home-background/home-background.component';
 
@@ -26,7 +25,6 @@ import { HomeBackgroundComponent } from './components/home/home-background/home-
     HeaderComponent,
     LaptopOhRentMeComponent,
     PortfolioMobileComponent,
-    PortfolioMobileWeathaComponent,
     PortfolioLaptopComponent,
     HomeBackgroundComponent,
   ],
