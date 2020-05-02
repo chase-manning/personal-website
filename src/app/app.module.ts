@@ -16,7 +16,6 @@ import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobil
 import { PortfolioMobileWeathaComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile-weatha/portfolio-mobile-weatha.component';
 import { PortfolioLaptopComponent } from './components/portfolio/portfolio-laptop/portfolio-laptop.component';
 import { HomeBackgroundComponent } from './components/home/home-background/home-background.component';
-import { LayerComponent } from './components/layer/layer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { LayerComponent } from './components/layer/layer.component';
     PortfolioMobileWeathaComponent,
     PortfolioLaptopComponent,
     HomeBackgroundComponent,
-    LayerComponent
   ],
   imports: [
     BrowserModule,
