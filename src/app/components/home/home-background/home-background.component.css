@@ -23,29 +23,36 @@
 .drop-shadow {
     filter: url(#drop-shadow-filter);
     opacity: 0.3;
+    transform: translate(30px, 30px);
 }
 
 .層いちでかマスク {
+    will-change: d;
     animation: layer1-main__animation 15s ease-in-out infinite alternate;
 }
 
 .層いち小さいマスク {
+    will-change: d;
     animation: layer1-mini__animation 15s ease-in-out infinite alternate;
 }
 
 .層にでかマスク {
+    will-change: d;
     animation: layer2-main__animation 13s ease-in-out infinite alternate;
 }
 
 .層に小さいマスク {
+    will-change: d;
     animation: layer2-mini__animation 13s ease-in-out infinite alternate;
 }
 
 .層さんマスク {
+    will-change: d;
     animation: layer3__animation 11s ease-in-out infinite alternate;
 }
 
 .層しマスク {
+    will-change: d;
     animation: layer4__animation 9s ease-in-out infinite alternate;
 }
 
