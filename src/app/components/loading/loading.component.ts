@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Fuel } from './fuel';
 
 @Component({
@@ -7,6 +7,10 @@ import { Fuel } from './fuel';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
+
+  //Outputs
+  @Output() loadingComplete = new EventEmitter();
+  @Output() transitionComplete = new EventEmitter();
 
   //Elements
   private mainCircle: HTMLElement;
@@ -43,9 +47,7 @@ export class LoadingComponent implements OnInit {
   addFuelCircles(): void {
     let direction: string = this.generateRandomDirection();
     let fuel: Fuel = this.generateFuel(this.fuelCircles.length, direction);
-    console.log(this.fuelCircles);
     this.fuelCircles.push(fuel);
-    console.log(this.fuelCircles);
     this.setFuelEndLocation(fuel);
     setTimeout(() => { this.increaseMainCircleSize(fuel) }, 2000 * (1-this.percentComplete));
     let nextCircleDelay: number = 200 + 1800 * ( Math.max(1-this.percentComplete * 20, 0));
@@ -126,6 +128,7 @@ export class LoadingComponent implements OnInit {
   }
 
   processEnd(): void {
+    this.loadingComplete.emit();
     this.circleDiameter = this.screenMiddleToCorner * 5;
     this.updateMainCircle();
     this.fuelCircles = [];
@@ -135,5 +138,6 @@ export class LoadingComponent implements OnInit {
     loadingText.style.opacity = '0';
     let circleContainer = document.querySelector('.circle__container') as HTMLElement;
     setTimeout(() => { circleContainer.style.opacity = '0'; }, 4000);
+    setTimeout(() => { this.transitionComplete.emit(); }, 8000);
   }
 }
