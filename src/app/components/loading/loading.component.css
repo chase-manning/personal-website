@@ -3,6 +3,7 @@
     position: fixed;
     width: 100%; height: 100%;
     top: 0px; left: 0px;
+    z-index: 200;
 }
 
 .loading-text__container {
@@ -12,7 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 400;
 }
+
 .loading__text {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
@@ -34,6 +37,7 @@
     justify-content: center;
     transition: opacity 4s;
     opacity: 1;
+    z-index: 300;
 }
 
 .circle {
