@@ -8,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
+  backgroundEnabled: boolean = false;
+  loadingEnabled: boolean = true;
+
   constructor() { }
 
   ngOnInit() { }
+
+  enableBackground(): void {
+    this.backgroundEnabled = true;
+  }
+  
+  disableLoading(): void {
+    this.loadingEnabled = false;
+  }
 
 }
