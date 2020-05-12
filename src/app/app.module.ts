@@ -13,6 +13,7 @@ import { LaptopOhRentMeComponent } from './components/portfolio/portfolio-laptop
 import { PortfolioMobileComponent } from './components/portfolio/portfolio-mobile/portfolio-mobile.component';
 import { PortfolioLaptopComponent } from './components/portfolio/portfolio-laptop/portfolio-laptop.component';
 import { HomeBackgroundComponent } from './components/home/home-background/home-background.component';
+import { PortfolioServerComponent } from './components/portfolio/portfolio-server/portfolio-server.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HomeBackgroundComponent } from './components/home/home-background/home-
     PortfolioMobileComponent,
     PortfolioLaptopComponent,
     HomeBackgroundComponent,
+    PortfolioServerComponent,
   ],
   imports: [
     BrowserModule,
