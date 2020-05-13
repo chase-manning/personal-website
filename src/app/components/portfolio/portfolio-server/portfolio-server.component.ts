@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioServerComponent implements OnInit {
 
-  constructor() { }
+  topSectionLayers: number[] = []
+
+  constructor() { 
+    for (var i = 0; i < 60; i++){ 
+      this.topSectionLayers.push(i);
+    }
+  }
 
   ngOnInit() {
   }

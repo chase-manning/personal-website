@@ -1,1 +1,10 @@
-<p>portfolio-server works!</p>
+<div class="server__container">
+    <div class="temp__background"></div>
+    <div *ngFor="let layer of topSectionLayers">
+        <div class="body__shape body__main" [ngStyle]="{'top.px': layer}"></div>
+    </div>
+    <div class="body__shape body__top"></div>
+    <div class="right__container">
+        <div class="button__center"></div>
+    </div>
+</div>
