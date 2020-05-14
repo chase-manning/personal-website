@@ -1,12 +1,6 @@
-.temp__background {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: blue;
-}
-
 .server__container {
     position: relative;
+    top: 80px;
     width: 100%; height: 100%;
 }
 
@@ -20,11 +14,18 @@
 
 .body__top {
     border: 1px solid white;
-    background-color: lightgrey;
+    background-color: rgb(245, 245, 245);
 }
 
 .body__main {
-    background-color: grey;
+    background-image: linear-gradient(35deg, 
+        rgb(250, 250, 250), 
+        rgb(240, 240, 240) 5%, 
+        rgb(240, 240, 240) 45%, 
+        rgb(210, 210, 210) 55%, 
+        rgb(210, 210, 210) 95%, 
+        rgb(180, 180, 180) 100%
+    );
 }
 
 .right__container {
@@ -32,6 +33,22 @@
     width: 110px; height: 60px;
     left: 50%; top: 55px;
     transform: skewX(-25deg) rotate(-24deg) translateX(10px);
+}
+
+.left__container {
+    position: absolute;
+    width: 100px; height: 60px;
+    left: 50%; top: 92px;
+    transform: skewX(30deg) rotate(30deg) translateX(-92%);
+}
+
+.extractor-fan {
+    position: relative;
+    top: 30%; left: 50%;
+    transform: translateX(-50%);
+    height: 15%; width: 55%;
+    background-color: #E0E1E4;
+    border-radius: 7px;
 }
 
 .button__center {
