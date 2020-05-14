@@ -3,7 +3,7 @@
         
         <defs>
             <filter id="gooey-filter">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
                 <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
                 <feComposite in="SourceGraphic" in2="goo" operator="atop" />
             </filter>
