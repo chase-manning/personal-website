@@ -1,64 +1,64 @@
-
 .header__container {
-    display: block;
-    position: fixed;
-    left: 0; top: 0;
-    padding: 40px 60px;
-    width: 100%;
-    z-index: 100;
-    transition: all 0.5s ease;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 40px 60px;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.5s ease;
 }
 
 .header__sticky {
-    padding: 25px 60px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.066);
+  padding: 25px 60px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.066);
 }
 
 .navigation__container {
-    display: flex;
-    align-items: center;
-    float: right;
+  display: flex;
+  align-items: center;
+  float: right;
 }
 
 .home-page__title {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: basier-circle;
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 0.7em;
-    color: rgb(25, 28, 31);
-    letter-spacing: -0.025em;
-    margin: auto 0;
-    float: left;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: basier-circle;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 0.7em;
+  color: rgb(25, 28, 31);
+  letter-spacing: -0.025em;
+  margin: auto 0;
+  float: left;
+  cursor: pointer;
 }
 
 .menu-item__text {
-    font-family: roberto;
-    color: rgb(139, 149, 158);
-    line-height: 1.65em;
-    float: right;
-    margin: auto 0 auto 40px;
-    transition: all 0.2s ease;
+  font-family: roberto;
+  color: rgb(139, 149, 158);
+  line-height: 1.65em;
+  float: right;
+  margin: auto 0 auto 40px;
+  transition: all 0.2s ease;
 }
 
 .menu-item__text:hover {
-    color: rgb(25, 28, 31);
+  color: rgb(25, 28, 31);
 }
 
 .menu-item__button {
-    font-family: basier-circle;
-    margin-left: 40px;
-    line-height: 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: -0.025em;
-    padding: 0.625em 1.5em;
-    float: right;
+  font-family: basier-circle;
+  margin-left: 40px;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  padding: 0.625em 1.5em;
+  float: right;
 }
 
 .navigation-underline {
-    border-bottom: 2px solid #00A8E8;
+  border-bottom: 2px solid #00a8e8;
 }

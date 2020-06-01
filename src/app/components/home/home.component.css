@@ -1,54 +1,59 @@
 .background {
-    background-color: white;
-    z-index: -1;
+  background-color: white;
+  z-index: -1;
 }
 
 .home-page__container {
-    width: 100%; height: 100%;
-    position: absolute; top: 0px; left: 0px;
-    padding: 40px 60px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 40px 60px;
 }
- 
+
 .content__container {
-    display: block;
-    width: 100%; height: 85%;
+  display: block;
+  width: 100%;
+  height: 85%;
 }
 
 .footer__container {
-    display: flex;
-    width: 100%; height: 15%;
-    align-items: flex-end;
+  display: flex;
+  width: 100%;
+  height: 15%;
+  align-items: flex-end;
 }
 
 .socials__container {
-    display: flex;
+  display: flex;
 }
 
 .socials__item {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .home-page-content__container {
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .sub-text__container {
-    max-width: 28rem;
-    margin-bottom: 2rem;
+  max-width: 28rem;
+  margin-bottom: 2rem;
 }
 
 .secondary__button {
-    background-color: white;
-    color: #00A8E8;
+  background-color: white;
+  color: #00a8e8;
 }
 
 .secondary__button:hover {
-    color: #007EA7;
+  color: #007ea7;
 }
 
 .call-to-action__button {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }

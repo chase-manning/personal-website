@@ -1,109 +1,113 @@
 .resume-page__container {
-    position: absolute;
-    width: 100%;
-    top: 0; left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .resume__container {
-    display: flex;
+  display: flex;
 }
 
 .resume-left__container {
-    background-color: #434343;
-    width: 30%;
-    padding: 4vw;
-    color: #E6E6E6;
+  background-color: #434343;
+  width: 30%;
+  padding: 4vw;
+  color: #e6e6e6;
 }
 
 .resume-right__container {
-    width: 70%;
-    padding: 9vw 4vw;
-    color: #818181;
+  width: 70%;
+  padding: 9vw 4vw;
+  color: #818181;
 }
 
 .header__text {
-    text-transform: uppercase;
-    font-family: 'lato';
-    font-size: 1.8vw;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 2.7vw;
+  text-transform: uppercase;
+  font-family: "lato";
+  font-size: 1.8vw;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 2.7vw;
 }
 
 .content__text {
-    display: block;
-    font-family: 'lato';
-    font-size: 0.9vw;
-    line-height: 1.35vw;
+  display: block;
+  font-family: "lato";
+  font-size: 0.9vw;
+  line-height: 1.35vw;
 }
 
 .divider-line {
-    display: block;
-    width: 100%;
-    height: 2px;
-    margin: 3.6vw 0;
-    background-color: #BBBBBB;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 3.6vw 0;
+  background-color: #bbbbbb;
 }
 
 .profile-picture__container {
-    margin: 0 2.7vw 2.7vw 2.7vw;
+  margin: 0 2.7vw 2.7vw 2.7vw;
 }
 
 .profile-picture {
-    width: 100%;
-    border-radius: 50%;
+  width: 100%;
+  border-radius: 50%;
 }
 
 .name__text {
-    color: #646464;
-    font-family: bebas-neue;
-    display: block;
-    font-size: 5.4vw;
-    line-height: 4.95vw;
+  color: #646464;
+  font-family: bebas-neue;
+  display: block;
+  font-size: 5.4vw;
+  line-height: 4.95vw;
 }
 
 .experience__container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .experience-left__container {
-    width: 30%;
+  width: 30%;
 }
 
 .experience-right__container {
-    width: 70%;
-    border-left: solid 2px #BBBBBB;
-    padding-left: 2vw;
-    padding-bottom: 2vw;
+  width: 70%;
+  border-left: solid 2px #bbbbbb;
+  padding-left: 2vw;
+  padding-bottom: 2vw;
 }
 
 .subheader__text {
-    text-transform: uppercase;
-    font-family: 'lato';
-    font-size: 1.3vw;
-    display: block;
+  text-transform: uppercase;
+  font-family: "lato";
+  font-size: 1.3vw;
+  display: block;
 }
 
 .time-dot {
-    width: 1vw; height: 1vw;
-    position: relative;
-    top: 0.3vw; left: 0.54vw;
-    background-color: #BBBBBB;
-    border-radius: 50%;
+  width: 1vw;
+  height: 1vw;
+  position: relative;
+  top: 0.3vw;
+  left: 0.54vw;
+  background-color: #bbbbbb;
+  border-radius: 50%;
 }
 
 .skills__container {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .hobbies__container {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .hobbies__item {
-    width: 3vw; height: 3vw;
-    border: solid 2px #BBBBBB;
+  width: 3vw;
+  height: 3vw;
+  border: solid 2px #bbbbbb;
 }

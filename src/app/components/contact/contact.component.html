@@ -1,63 +1,78 @@
 <div class="full-screen">
-    <svg height="100%" width="100%">
+  <svg height="100%" width="100%">
+    <!-- ******* ELEMENTS ********* -->
 
-        
-        <!-- ******* ELEMENTS ********* -->
+    <!-- Circles -->
+    <g filter="url(#liquify-filter)">
+      <rect
+        width="100%"
+        height="100%"
+        fill="#00A8E8"
+        mask="url(#circle__mask)"
+      />
+    </g>
 
-        <!-- Circles -->
-        <g filter="url(#liquify-filter)">
-            <rect width="100%" height="100%" fill="#00A8E8" mask="url(#circle__mask)" />
-        </g>
+    <!-- Highlights -->
+    <g mask="url(#circle__mask)">
+      <g class="blur">
+        <rect
+          width="100%"
+          height="100%"
+          fill="white"
+          opacity="0.5"
+          mask="url(#circle__mask)"
+        />
+      </g>
+    </g>
 
-        <!-- Highlights -->
-        <g mask="url(#circle__mask)">
-            <g class="blur">
-                <rect width="100%" height="100%" fill="white" opacity="0.5" mask="url(#circle__mask)" />
-            </g>
-        </g>
+    <!-- Shadows -->
+    <g mask="url(#circle__mask)">
+      <g class="blur">
+        <rect
+          width="100%"
+          height="100%"
+          fill="black"
+          opacity="0.5"
+          mask="url(#background__mask)"
+        />
+      </g>
+    </g>
 
-        <!-- Shadows -->
-        <g mask="url(#circle__mask)">
-            <g class="blur">
-                <rect width="100%" height="100%" fill="black" opacity="0.5" mask="url(#background__mask)" />
-            </g>
-        </g>
+    <!-- ******* MASKS ********* -->
 
+    <!-- Circle Mask -->
+    <mask id="circle__mask">
+      <g filter="url(#liquify-filter)">
+        <rect width="100%" height="100%" fill="black" />
+        <circle cx="50%" cy="50%" r="200" fill="white"></circle>
+        <circle cx="37%" cy="50%" r="200" fill="white"></circle>
+      </g>
+    </mask>
 
-        <!-- ******* MASKS ********* -->
+    <!-- Background Mask -->
+    <mask id="background__mask">
+      <rect width="100%" height="100%" fill="white" />
+      <rect width="100%" height="100%" fill="black" mask="url(#circle__mask)" />
+    </mask>
 
-        <!-- Circle Mask -->
-        <mask id="circle__mask">
-            <g filter="url(#liquify-filter)">
-                <rect width="100%" height="100%" fill="black" />
-                <circle cx="50%" cy="50%" r="200" fill="white"></circle>
-                <circle cx="37%" cy="50%" r="200" fill="white"></circle>
-            </g>
-        </mask>
+    <!-- ******* FILTERS ********* -->
+    <defs>
+      <!-- Blur Filter -->
+      <filter id="blur" x="-100%" y="-100%" width="400%" height="400%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="60" result="blur" />
+      </filter>
 
-        <!-- Background Mask -->
-        <mask id="background__mask">
-            <rect width="100%" height="100%" fill="white" />
-            <rect width="100%" height="100%" fill="black" mask="url(#circle__mask)" />
-        </mask>
-
-        
-        <!-- ******* FILTERS ********* -->
-        <defs>
-
-            <!-- Blur Filter -->
-            <filter id="blur" x="-100%" y="-100%" width="400%" height="400%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="60" result="blur" />
-            </filter>
-
-            <!-- Liquify Filter -->
-            <filter id="liquify-filter">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-            </filter>
-
-        </defs>
-
-    </svg>
+      <!-- Liquify Filter -->
+      <filter id="liquify-filter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix
+          in="blur"
+          type="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+          result="goo"
+        />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
 </div>

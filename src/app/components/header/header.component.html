@@ -1,7 +1,18 @@
-<div class="header__container" [ngClass]="{'header__sticky': isSticky}">
-    <a routerLink="" class="home-page__title">Chase</a>
-    <div class="navigation__container">
-        <a routerLink="/portfolio" class="menu-item__text" [ngClass]="{'navigation-underline': isPortfolioPage}">Portfolio</a>
-        <button routerLink="/contact" class="menu-item__button" [ngClass]="{'navigation-underline': isContactPage}">Contact</button>
-    </div>
+<div class="header__container" [ngClass]="{ header__sticky: isSticky }">
+  <a routerLink="" class="home-page__title">Chase</a>
+  <div class="navigation__container">
+    <a
+      routerLink="/portfolio"
+      class="menu-item__text"
+      [ngClass]="{ 'navigation-underline': isPortfolioPage }"
+      >Portfolio</a
+    >
+    <button
+      routerLink="/contact"
+      class="menu-item__button"
+      [ngClass]="{ 'navigation-underline': isContactPage }"
+    >
+      Contact
+    </button>
+  </div>
 </div>

@@ -1,29 +1,29 @@
 .temp-background {
-    background-color: #003459;
-    position: absolute;
-    height:100%;
+  background-color: #003459;
+  position: absolute;
+  height: 100%;
 }
 
 .section__container {
-    width: 100%;
-    margin-top: 105px;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  margin-top: 105px;
+  display: flex;
+  flex-direction: column;
 }
 
 .section__row {
-    width: 100%;
-    margin-bottom: 10rem;
+  width: 100%;
+  margin-bottom: 10rem;
 }
 
 .left__item {
-    width: 50%;
-    float: left;
-    display: block;
+  width: 50%;
+  float: left;
+  display: block;
 }
 
 .right__item {
-    width: 50%;
-    float: right;
-    display: block;
+  width: 50%;
+  float: right;
+  display: block;
 }
