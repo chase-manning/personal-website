@@ -22,7 +22,7 @@
 .drop-shadow {
   filter: url(#drop-shadow-filter);
   opacity: 0.3;
-  transform: translate(30px, 30px);
+  transform: translate(12px, 12px);
 }
 
 .層いちでかマスク {
