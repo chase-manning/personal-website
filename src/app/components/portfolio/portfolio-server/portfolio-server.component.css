@@ -6,7 +6,15 @@
 }
 
 .second-section__container {
-  transform: translateY(100px);
+  transform: translateY(90px);
+}
+
+.third-section__container {
+  transform: translateY(125px);
+}
+
+.bottom-section__container {
+  transform: translateY(175px);
 }
 
 .body__shape {
@@ -200,7 +208,6 @@
 
 .extractor-fan {
   position: relative;
-  top: 30%;
   left: 50%;
   transform: translateX(-50%);
   height: 15%;
@@ -211,4 +218,12 @@
   border-left: solid 1px rgb(214, 215, 218);
   border-bottom: solid 1px rgb(250, 250, 250);
   border-right: solid 1px rgb(250, 250, 250);
+}
+
+.extractor-fan__top {
+  top: 30%;
+}
+
+.extractor-fan__bottom {
+  top: 60%;
 }
