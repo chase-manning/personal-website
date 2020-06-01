@@ -1,17 +1,6 @@
 <div class="svg__container">
   <svg class="svg-container">
     <defs>
-      <filter id="gooey-filter">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
-        <feColorMatrix
-          in="blur"
-          type="matrix"
-          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-          result="goo"
-        />
-        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-      </filter>
-
       <filter id="drop-shadow-filter">
         <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur" />
       </filter>
@@ -33,7 +22,7 @@
       <rect fill="black" width="100%" height="100%" mask="url(#mask4)"></rect>
     </g>
 
-    <g class="full-screen gooey-filter">
+    <g class="full-screen">
       <rect
         fill="rgb(0, 96, 132)"
         style="transform: translate(18px, 18px);"
@@ -93,7 +82,7 @@
       <rect fill="black" width="100%" height="100%" mask="url(#mask3)"></rect>
     </g>
 
-    <g class="full-screen gooey-filter">
+    <g class="full-screen">
       <rect
         fill="rgb(0,138,202)"
         style="transform: translate(18px, 18px);"
@@ -159,7 +148,7 @@
       <rect fill="black" width="100%" height="100%" mask="url(#mask2)"></rect>
     </g>
 
-    <g class="full-screen gooey-filter">
+    <g class="full-screen">
       <rect
         fill="rgb(217,217,219)"
         style="transform: translate(18px, 18px);"
@@ -225,7 +214,7 @@
       <rect fill="black" width="100%" height="100%" mask="url(#mask1)"></rect>
     </g>
 
-    <g class="full-screen gooey-filter">
+    <g class="full-screen">
       <rect
         fill="rgb(225,225,225)"
         style="transform: translate(18px, 18px);"
