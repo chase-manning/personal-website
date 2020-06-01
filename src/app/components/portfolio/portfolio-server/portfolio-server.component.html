@@ -1,4 +1,25 @@
 <div class="server__container">
+  <!-- Second Layer -->
+  <div class="second-section__container">
+    <div *ngFor="let layer of secondSectionLayers">
+      <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
+    </div>
+    <div class="body__shape body__top"></div>
+    <div class="right__container less-padding">
+      <div class="panel__column">
+        <div class="panel__row">
+          <div class="panel__light light-white light-white__animation4"></div>
+          <div class="panel__light light-grey"></div>
+          <div class="panel__light light-blue light-blue__animation5"></div>
+          <div class="panel__light light-grey"></div>
+          <div class="panel__light"></div>
+          <div class="panel__light"></div>
+          <div class="panel__light light-grey"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Top Layer -->
   <div *ngFor="let layer of topSectionLayers">
     <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
@@ -10,13 +31,24 @@
   <div class="right__container">
     <div class="panel__column">
       <div class="panel__row">
-        <div class="panel__light light-blue"></div>
+        <div class="panel__light light-blue light-blue__animation1"></div>
         <div class="panel__light light-grey"></div>
-        <div class="panel__light light-white"></div>
-        <div class="panel__light light-white"></div>
+        <div class="panel__light light-white light-white__animation4"></div>
+        <div class="panel__light light-white light-white__animation3"></div>
         <div class="panel__light"></div>
         <div class="panel__light"></div>
-        <div class="panel__light light-white"></div>
+        <div class="panel__light light-white light-white__animation2"></div>
+      </div>
+    </div>
+    <div class="panel__column">
+      <div class="panel__row">
+        <div class="panel__light"></div>
+        <div class="panel__light light-grey"></div>
+        <div class="panel__light light-grey"></div>
+        <div class="panel__light"></div>
+        <div class="panel__light"></div>
+        <div class="panel__light light-grey"></div>
+        <div class="panel__light"></div>
       </div>
     </div>
     <div class="panel__column">
@@ -25,18 +57,7 @@
         <div class="panel__light"></div>
         <div class="panel__light"></div>
         <div class="panel__light"></div>
-        <div class="panel__light"></div>
-        <div class="panel__light"></div>
-        <div class="panel__light"></div>
-      </div>
-    </div>
-    <div class="panel__column">
-      <div class="panel__row">
-        <div class="panel__light"></div>
-        <div class="panel__light"></div>
-        <div class="panel__light"></div>
-        <div class="panel__light"></div>
-        <div class="panel__light"></div>
+        <div class="panel__light light-blue light-blue__animation3"></div>
         <div class="panel__light"></div>
         <div class="panel__light"></div>
       </div>
