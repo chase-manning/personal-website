@@ -77,11 +77,11 @@
 }
 
 .light-grey {
+  background-color: rgb(185, 185, 185);
   border-top: solid 1px rgb(210, 210, 210);
   border-left: solid 1px rgb(210, 210, 210);
-  border-bottom: solid 1px rgb(170, 170, 170);
-  border-right: solid 1px rgb(170, 170, 170);
-  background-color: rgb(185, 185, 185);
+  border-bottom: solid 1px rgb(175, 175, 175);
+  border-right: solid 1px rgb(175, 175, 175);
 }
 
 .light-blue {
@@ -99,6 +99,10 @@
   transform: translateX(-50%);
   height: 15%;
   width: 55%;
-  background-color: #e0e1e4;
   border-radius: 7px;
+  background-color: rgb(224, 225, 228);
+  border-top: solid 1px rgb(214, 215, 218);
+  border-left: solid 1px rgb(214, 215, 218);
+  border-bottom: solid 1px rgb(250, 250, 250);
+  border-right: solid 1px rgb(250, 250, 250);
 }
