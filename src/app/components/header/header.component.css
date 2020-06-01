@@ -9,6 +9,18 @@
   transition: all 0.5s ease;
 }
 
+.header-white__container {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 40px 60px;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.5s ease;
+  clip-path: url(#headerClip);
+}
+
 .header__sticky {
   padding: 25px 60px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.066);
@@ -33,6 +45,10 @@
   margin: auto 0;
   float: left;
   cursor: pointer;
+}
+
+.white {
+  color: white !important;
 }
 
 .menu-item__text {
