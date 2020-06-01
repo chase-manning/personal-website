@@ -19,10 +19,6 @@
   fill: white;
 }
 
-.gooey-filter {
-  filter: url(#gooey-filter);
-}
-
 .drop-shadow {
   filter: url(#drop-shadow-filter);
   opacity: 0.3;
