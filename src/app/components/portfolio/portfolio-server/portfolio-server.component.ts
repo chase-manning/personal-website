@@ -6,19 +6,19 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./portfolio-server.component.css"],
 })
 export class PortfolioServerComponent implements OnInit {
-  topSectionLayerCount: number = 60;
-  secoondSectionLayerCount: number = 21;
+  bigSectionLayerCount: number = 60;
+  middleSectionLayerCount: number = 21;
 
-  topSectionLayers: number[] = [];
-  secondSectionLayers: number[] = [];
+  bigSectionLayers: number[] = [];
+  middleSectionLayers: number[] = [];
 
   constructor() {
-    for (var i = 0; i < this.topSectionLayerCount; i++) {
-      this.topSectionLayers.push(i);
+    for (var i = 0; i < this.bigSectionLayerCount; i++) {
+      this.bigSectionLayers.push(i);
     }
 
-    for (var i = 0; i < this.secoondSectionLayerCount; i++) {
-      this.secondSectionLayers.push(i);
+    for (var i = 0; i < this.middleSectionLayerCount; i++) {
+      this.middleSectionLayers.push(i);
     }
   }
 
