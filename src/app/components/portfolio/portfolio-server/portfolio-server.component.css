@@ -82,6 +82,16 @@
   );
 }
 
+.drop-shadow {
+  background-color: black;
+}
+
+.blur {
+  opacity: 0.15;
+  filter: blur(30px);
+  transform: translate(10px, 10px);
+}
+
 .signal__animation1 {
   will-change: transform opacity;
   animation: signal__animation 4s 0s linear infinite;
