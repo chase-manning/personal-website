@@ -1,6 +1,6 @@
 <div class="full-screen background"></div>
 
-<div *ngIf="backgroundEnabled">
+<div *ngIf="backgroundEnabled || true">
   <app-home-background></app-home-background>
 </div>
 
@@ -98,7 +98,7 @@
   </div>
 </div>
 
-<div *ngIf="loadingEnabled">
+<div *ngIf="loadingEnabled && false">
   <app-loading
     (loadingComplete)="enableBackground()"
     (transitionComplete)="disableLoading()"
