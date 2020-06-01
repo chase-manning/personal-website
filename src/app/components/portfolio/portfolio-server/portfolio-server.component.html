@@ -1,6 +1,18 @@
 <div class="server__container">
   <!-- Bottom Layer -->
   <div class="bottom-section__container">
+    <div class="signal__animation1">
+      <div class="body__shape signal"></div>
+    </div>
+    <div class="signal__animation2">
+      <div class="body__shape signal"></div>
+    </div>
+    <div class="signal__animation3">
+      <div class="body__shape signal"></div>
+    </div>
+    <div class="signal__animation4">
+      <div class="body__shape signal"></div>
+    </div>
     <div *ngFor="let layer of bigSectionLayers">
       <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
     </div>
