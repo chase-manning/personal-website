@@ -1,102 +1,108 @@
 .blue__background {
-    background-color: #00A8E8;
-    position: fixed;
-    width: 100%; height: 100%;
-    top: 0px; left: 0px;
-    z-index: 200;
+  background-color: #00a8e8;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 200;
 }
 
 .loading-text__container {
-    position: fixed;
-    width: 100%; height: 100%;
-    top: 0px; left: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 400;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
 }
 
 .loading__text {
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #00A8E8;
-    font-weight: bold;
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
-    opacity: 1;
-    transition: opacity 4s;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #00a8e8;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  opacity: 1;
+  transition: opacity 4s;
 }
 
 .circle__container {
-    width: 100%; height: 100%;
-    filter: url(#fancy-goo);
-    position: fixed;
-    top: 0px; left: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 4s;
-    opacity: 1;
-    z-index: 300;
+  width: 100%;
+  height: 100%;
+  filter: url(#fancy-goo);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 4s;
+  opacity: 1;
+  z-index: 300;
 }
 
 .circle {
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    animation: circle-animation 5s linear infinite;
-    transform: rotate(0deg);
-    transition: height 500ms, width 500ms, left 3s, top 3s;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: circle-animation 5s linear infinite;
+  transform: rotate(0deg);
+  transition: height 500ms, width 500ms, left 3s, top 3s;
 }
 
 .main-circle {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
 @keyframes circle-animation {
-    0% {
-        border-radius: 95% 5% 70% 30% / 52% 30% 70% 48% ;
-        transform: rotate(0deg);
-    }
-    10% {
-        border-radius: 74% 23% 67% 75% / 23% 54% 11% 88% ;
-        transform: rotate(36deg);
-    }
-    20% {
-        border-radius: 22% 55% 11% 9% / 88% 54% 56% 99% ;
-        transform: rotate(70deg);
-    }
-    30% {
-        border-radius: 66% 77% 33% 30% / 22% 67% 11% 77% ;
-        transform: rotate(100deg);
-    }
-    40% {
-        border-radius: 88% 99% 40% 66% / 5% 99% 10% 45% ;
-        transform: rotate(136deg);
-    }
-    50% {
-        border-radius: 95% 89% 55% 70% / 8% 80% 10% 33% ;
-        transform: rotate(170deg);
-    }
-    60% {
-        border-radius: 92% 70% 70% 90% / 30% 66% 10% 15% ;
-        transform: rotate(200deg);
-    }
-    70% {
-        border-radius: 80% 40% 90% 85% / 60% 24% 30% 10% ;
-        transform: rotate(236deg);
-    }
-    80% {
-        border-radius: 70% 13% 98% 50% / 65% 20% 45% 10% ;
-        transform: rotate(280deg);
-    }
-    90% {
-        border-radius: 80% 10% 82% 40% / 58% 25% 60% 30% ;
-        transform: rotate(320deg);
-    }
-    100% {
-        border-radius: 95% 5% 70% 30% / 52% 30% 70% 48% ;
-        transform: rotate(360deg);
-    }
+  0% {
+    border-radius: 95% 5% 70% 30% / 52% 30% 70% 48%;
+    transform: rotate(0deg);
+  }
+  10% {
+    border-radius: 74% 23% 67% 75% / 23% 54% 11% 88%;
+    transform: rotate(36deg);
+  }
+  20% {
+    border-radius: 22% 55% 11% 9% / 88% 54% 56% 99%;
+    transform: rotate(70deg);
+  }
+  30% {
+    border-radius: 66% 77% 33% 30% / 22% 67% 11% 77%;
+    transform: rotate(100deg);
+  }
+  40% {
+    border-radius: 88% 99% 40% 66% / 5% 99% 10% 45%;
+    transform: rotate(136deg);
+  }
+  50% {
+    border-radius: 95% 89% 55% 70% / 8% 80% 10% 33%;
+    transform: rotate(170deg);
+  }
+  60% {
+    border-radius: 92% 70% 70% 90% / 30% 66% 10% 15%;
+    transform: rotate(200deg);
+  }
+  70% {
+    border-radius: 80% 40% 90% 85% / 60% 24% 30% 10%;
+    transform: rotate(236deg);
+  }
+  80% {
+    border-radius: 70% 13% 98% 50% / 65% 20% 45% 10%;
+    transform: rotate(280deg);
+  }
+  90% {
+    border-radius: 80% 10% 82% 40% / 58% 25% 60% 30%;
+    transform: rotate(320deg);
+  }
+  100% {
+    border-radius: 95% 5% 70% 30% / 52% 30% 70% 48%;
+    transform: rotate(360deg);
+  }
 }
