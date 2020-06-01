@@ -1,6 +1,17 @@
 <div class="server__container">
   <!-- Bottom Layer -->
   <div class="bottom-section__container">
+    <!-- Drop Shadow -->
+    <div class="blur">
+      <div *ngFor="let layer of bigSectionLayers">
+        <div
+          class="body__shape drop-shadow"
+          [ngStyle]="{ 'top.px': layer }"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Signal -->
     <div class="signal__animation1">
       <div class="body__shape signal"></div>
     </div>
@@ -13,6 +24,8 @@
     <div class="signal__animation4">
       <div class="body__shape signal"></div>
     </div>
+
+    <!-- Body -->
     <div *ngFor="let layer of bigSectionLayers">
       <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
     </div>
@@ -20,6 +33,8 @@
     <div class="left__container">
       <div class="extractor-fan extractor-fan__bottom"></div>
     </div>
+
+    <!-- Decorations -->
     <div class="right__container">
       <div class="panel__column">
         <div class="panel__row">
@@ -70,10 +85,23 @@
 
   <!-- Third Layer -->
   <div class="third-section__container">
+    <!-- Drop Shadow -->
+    <div class="blur">
+      <div *ngFor="let layer of middleSectionLayers">
+        <div
+          class="body__shape drop-shadow"
+          [ngStyle]="{ 'top.px': layer }"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Body -->
     <div *ngFor="let layer of middleSectionLayers">
       <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
     </div>
     <div class="body__shape body__top"></div>
+
+    <!-- Decorations -->
     <div class="right__container less-padding">
       <div class="panel__column">
         <div class="panel__row">
@@ -91,10 +119,23 @@
 
   <!-- Second Layer -->
   <div class="second-section__container">
+    <!-- Drop Shadow -->
+    <div class="blur">
+      <div *ngFor="let layer of middleSectionLayers">
+        <div
+          class="body__shape drop-shadow"
+          [ngStyle]="{ 'top.px': layer }"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Body -->
     <div *ngFor="let layer of middleSectionLayers">
       <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
     </div>
     <div class="body__shape body__top"></div>
+
+    <!-- Decorations -->
     <div class="right__container less-padding">
       <div class="panel__column">
         <div class="panel__row">
@@ -111,10 +152,23 @@
   </div>
 
   <!-- Top Layer -->
+  <!-- Drop Shadow -->
+  <div class="blur">
+    <div *ngFor="let layer of bigSectionLayers">
+      <div
+        class="body__shape drop-shadow"
+        [ngStyle]="{ 'top.px': layer }"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Body -->
   <div *ngFor="let layer of bigSectionLayers">
     <div class="body__shape body__main" [ngStyle]="{ 'top.px': layer }"></div>
   </div>
   <div class="body__shape body__top"></div>
+
+  <!-- Decorations -->
   <div class="left__container">
     <div class="extractor-fan extractor-fan__top"></div>
   </div>
