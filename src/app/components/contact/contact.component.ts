@@ -9,11 +9,15 @@ import "firebase/firestore";
   styleUrls: ["./contact.component.css"],
 })
 export class ContactComponent implements OnInit {
+  name: string = "Jangnangyrungting";
+
   constructor() {}
 
   ngOnInit() {}
 
   test(): void {
+    var confirmationEmailElement = document.getElementById("confirmationEmail");
+
     firebase.initializeApp({
       apiKey: "AIzaSyDpw02MMAvMb-O6JJmmQnhmhGeMuGJRut0",
       authDomain: "chase-manning-portfolio.firebaseapp.com",
@@ -24,12 +28,12 @@ export class ContactComponent implements OnInit {
 
     db.collection("contacts")
       .add({
-        name: "Lovelace2",
+        name: this.name,
         message: "Hi there, you are so cool!",
         email: "chase@sharpcurrent.com",
         from: "chase@sharpcurrent.com",
         subject: "Thanks for Messaging Me!",
-        html: "<b>Test HTML</b><br/><p style='color:red;'>Meow</p>",
+        html: confirmationEmailElement.innerHTML,
       })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
