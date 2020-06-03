@@ -1,32 +1,23 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  isSticky: boolean = false;
-
-  @HostListener('window:scroll', [])
-  checkScroll() {
-    this.isSticky = window.pageYOffset > 0;
-  }
-
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   get isPortfolioPage(): boolean {
-    return this.router.url === '/portfolio';
+    return this.router.url === "/portfolio";
   }
   get isResumePage(): boolean {
-    return this.router.url === '/resume';
+    return this.router.url === "/resume";
   }
   get isContactPage(): boolean {
-    return this.router.url === '/contact';
+    return this.router.url === "/contact";
   }
 }
