@@ -19,7 +19,6 @@ export class ContactComponent implements OnInit {
     var confirmationEmailElement = document.getElementById("confirmationEmail");
 
     firebase.initializeApp({
-      apiKey: "AIzaSyDpw02MMAvMb-O6JJmmQnhmhGeMuGJRut0",
       authDomain: "chase-manning-portfolio.firebaseapp.com",
       projectId: "chase-manning-portfolio",
     });
