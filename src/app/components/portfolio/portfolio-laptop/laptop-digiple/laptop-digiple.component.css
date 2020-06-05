@@ -1,0 +1,50 @@
+.background {
+  background-color: white;
+}
+
+.page__container {
+  width: 100%;
+  height: 100%;
+  padding: 20px 30px;
+  position: relative;
+}
+
+.header__container {
+  width: 100%;
+  background-color: red;
+}
+
+.logo__container {
+  float: left;
+}
+
+.nav__container {
+  display: flex;
+  float: right;
+}
+
+.nav-font {
+  margin: 5px 10px;
+  font-family: basier-circle;
+  font-size: 0.5rem;
+  font-weight: 900;
+  color: rgb(25, 28, 31);
+  letter-spacing: -0.025em;
+}
+
+.logo-font {
+  font-family: basier-circle;
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgb(25, 28, 31);
+  letter-spacing: -0.025em;
+}
+
+.content__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
