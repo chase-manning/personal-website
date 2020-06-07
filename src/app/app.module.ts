@@ -15,6 +15,7 @@ import { HomeBackgroundComponent } from "./components/home/home-background/home-
 import { PortfolioServerComponent } from "./components/portfolio/portfolio-server/portfolio-server.component";
 import { ConfirmationEmailComponent } from "./components/contact/confimation-email/confirmation-email.component";
 import { LaptopDigipleComponent } from "./components/portfolio/portfolio-laptop/laptop-digiple/laptop-digiple.component";
+import { MobileTracketComponent } from "./components/portfolio/portfolio-mobile/mobile-tracket/mobile-tracket.component";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LaptopDigipleComponent } from "./components/portfolio/portfolio-laptop/
     PortfolioServerComponent,
     ConfirmationEmailComponent,
     LaptopDigipleComponent,
+    MobileTracketComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
