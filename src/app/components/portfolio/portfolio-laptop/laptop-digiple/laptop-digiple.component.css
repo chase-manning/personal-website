@@ -11,12 +11,15 @@
 
 .red-shapes {
   background-color: #ef233c;
+}
+
+.top-left__clip {
+  z-index: 1;
   clip-path: url(#top-left__clip);
 }
 
 .top-left__path {
   will-change: transform d;
-  transform: translate(-270px, -150px);
   animation: top-left__animation 30s ease-in-out infinite alternate;
 }
 
@@ -53,6 +56,10 @@
   }
 }
 
+.white__text {
+  color: #edf2f4 !important;
+}
+
 .page__container {
   width: 100%;
   height: 100%;
@@ -65,7 +72,11 @@
 }
 
 .logo__container {
-  float: left;
+  left: 0px;
+  top: 0px;
+  padding-top: 20px;
+  padding-left: 30px;
+  position: absolute;
 }
 
 .nav__container {
