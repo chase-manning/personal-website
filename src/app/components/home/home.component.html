@@ -98,7 +98,7 @@
   </div>
 </div>
 
-<div *ngIf="loadingEnabled && false">
+<div *ngIf="loadingEnabled">
   <app-loading
     (loadingComplete)="enableBackground()"
     (transitionComplete)="disableLoading()"
