@@ -28,9 +28,8 @@ h1 {
   font-family: basier-circle;
   font-size: 3.5rem;
   font-weight: 900;
-  line-height: 0.7em;
   color: rgb(25, 28, 31);
-  letter-spacing: -0.025em;
+  margin-bottom: 10px;
 }
 
 h2 {
