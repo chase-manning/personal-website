@@ -13,10 +13,3 @@
     </button>
   </div>
 </div>
-
-<div *ngIf="loadingEnabled && false">
-  <app-loading
-    (loadingComplete)="enableBackground()"
-    (transitionComplete)="disableLoading()"
-  ></app-loading>
-</div>
