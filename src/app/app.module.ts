@@ -11,7 +11,6 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { PortfolioMobileComponent } from "./components/portfolio/portfolio-mobile/portfolio-mobile.component";
 import { PortfolioLaptopComponent } from "./components/portfolio/portfolio-laptop/portfolio-laptop.component";
-import { HomeBackgroundComponent } from "./components/home/home-background/home-background.component";
 import { PortfolioServerComponent } from "./components/portfolio/portfolio-server/portfolio-server.component";
 import { ConfirmationEmailComponent } from "./components/contact/confimation-email/confirmation-email.component";
 import { LaptopDigipleComponent } from "./components/portfolio/portfolio-laptop/laptop-digiple/laptop-digiple.component";
@@ -28,7 +27,6 @@ import { MobileTracketComponent } from "./components/portfolio/portfolio-mobile/
     HeaderComponent,
     PortfolioMobileComponent,
     PortfolioLaptopComponent,
-    HomeBackgroundComponent,
     PortfolioServerComponent,
     ConfirmationEmailComponent,
     LaptopDigipleComponent,
