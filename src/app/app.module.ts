@@ -5,7 +5,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
-import { ResumeComponent } from "./components/resume/resume.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { PortfolioMobileComponent } from "./components/portfolio/portfolio-mobile/portfolio-mobile.component";
@@ -20,7 +19,6 @@ import { MobileTracketComponent } from "./components/portfolio/portfolio-mobile/
     AppComponent,
     HomeComponent,
     PortfolioComponent,
-    ResumeComponent,
     ContactComponent,
     HeaderComponent,
     PortfolioMobileComponent,
