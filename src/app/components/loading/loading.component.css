@@ -5,7 +5,7 @@
   height: 100%;
   top: 0px;
   left: 0px;
-  z-index: 200;
+  z-index: 10000;
 }
 
 .loading-text__container {
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 400;
+  z-index: 10002;
 }
 
 .loading__text {
@@ -43,7 +43,7 @@
   justify-content: center;
   transition: opacity 4s;
   opacity: 1;
-  z-index: 300;
+  z-index: 10001;
 }
 
 .circle {
