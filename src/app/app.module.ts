@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { LoadingComponent } from "./components/loading/loading.component";
 import { HomeComponent } from "./components/home/home.component";
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
 import { ResumeComponent } from "./components/resume/resume.component";
@@ -19,7 +18,6 @@ import { MobileTracketComponent } from "./components/portfolio/portfolio-mobile/
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingComponent,
     HomeComponent,
     PortfolioComponent,
     ResumeComponent,
