@@ -21,6 +21,30 @@
         background-color: white;
       }
     </style>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyALPirZqVtPHT_0SPCckqRX9dCQDXudT98",
+        authDomain: "chase-manning-portfolio.firebaseapp.com",
+        databaseURL: "https://chase-manning-portfolio.firebaseio.com",
+        projectId: "chase-manning-portfolio",
+        storageBucket: "chase-manning-portfolio.appspot.com",
+        messagingSenderId: "210573809678",
+        appId: "1:210573809678:web:e60bdb17803371f3e4c45f",
+        measurementId: "G-XYJ5SSE5S6",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </head>
   <body>
     <app-root>
