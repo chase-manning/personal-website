@@ -29,8 +29,8 @@ export class ContactComponent implements OnInit {
       .add({
         name: this.name,
         message: "Hi there, you are so cool!",
-        email: "chase@sharpcurrent.com",
-        from: "chase@sharpcurrent.com",
+        email: "email",
+        from: "email",
         subject: "Thanks for Messaging Me!",
         html: confirmationEmailElement.innerHTML,
       })
