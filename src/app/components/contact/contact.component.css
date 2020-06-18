@@ -73,13 +73,29 @@ input:focus + label {
   transform: translate(12px, -55px);
 }
 
-input.ng-touched + label {
+input.ng-dirty + label {
   font-size: 0.9em;
   transform: translate(12px, -55px);
 }
 
+textarea + label {
+  transform: translate(16px, -87px);
+}
+
+textarea:focus + label {
+  font-size: 0.9em;
+  color: #00a8e8;
+  transform: translate(12px, -110px);
+}
+
+textarea.ng-dirty + label {
+  font-size: 0.9em;
+  transform: translate(12px, -110px);
+}
+
 input {
   margin-top: 5px;
+  width: 300px;
   display: block;
   padding: 12px 15px;
   font-family: roberto;
@@ -96,6 +112,8 @@ input:focus {
 
 textarea {
   margin-top: 5px;
+  width: 300px;
+  height: 100px;
   display: block;
   padding: 12px 15px;
   font-family: roberto;
@@ -104,13 +122,4 @@ textarea {
   font-size: 1em;
   color: #00a8e8;
   resize: none;
-}
-
-.ng-valid[required],
-.ng-valid.required {
-  border-left: 5px solid #42a948; /* green */
-}
-
-.ng-invalid:not(form) {
-  border-left: 5px solid #a94442; /* red */
 }
