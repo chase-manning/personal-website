@@ -1,20 +1,45 @@
-<svg class="full-screen" width="100%" height="100%">
-  <defs>
-    <clipPath id="headerClip">
-      <!--circle fill="black" cx="130" cy="50" r="40" /-->
-      <rect width="100%" height="100%" fill="#00a8e8"></rect>
-    </clipPath>
-  </defs>
-</svg>
-
 <div class="full-screen background">
-  <svg class="full-screen" width="100%" height="100%">
-    <!--circle fill="#00a8e8" cx="130" cy="50" r="40" /-->
-    <rect width="100%" height="100%" fill="#00a8e8"></rect>
-  </svg>
-  <button (click)="test()" style="position: relative; top: 50%; left: 50%;">
-    Test Emails
-  </button>
+  <div class="contact-form__container">
+    <h1>Let's have a chat</h1>
+    <div class="contact-section__container">
+      <div class="contact-left__container">
+        <form
+          class="form__container"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit(contactForm.value)"
+        >
+          <div class="form-input__container">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" />
+          </div>
+          <div class="form-input__container">
+            <label for="email">Email</label>
+            <input id="emaili" type="text" formControlName="email" />
+          </div>
+          <div class="form-input__container">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              type="textarea"
+              formControlName="message"
+            ></textarea>
+          </div>
+          <div>
+            <button class="button" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-right__container">
+        <div class="mail__container"></div>
+        <div class="socials__container">
+          <div>Hi</div>
+          <div>Hi</div>
+          <div>Hi</div>
+          <div>Hi</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<app-confirmation-email [name]="name"></app-confirmation-email>
+<app-confirmation-email></app-confirmation-email>

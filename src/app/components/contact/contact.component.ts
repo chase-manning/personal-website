@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -9,13 +10,23 @@ import "firebase/firestore";
   styleUrls: ["./contact.component.css"],
 })
 export class ContactComponent implements OnInit {
-  name: string = "Jangnangyrungting";
+  contactForm: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {
+    this.contactForm = this.formBuilder.group({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
 
   ngOnInit() {}
 
-  test(): void {
+  onSubmit(contactData): void {
+    this.sendEmail(contactData.name, contactData.email, contactData.message);
+  }
+
+  sendEmail(name: string, email: string, message: string): void {
     var confirmationEmailElement = document.getElementById("confirmationEmail");
 
     firebase.initializeApp({
@@ -27,10 +38,10 @@ export class ContactComponent implements OnInit {
 
     db.collection("contacts")
       .add({
-        name: this.name,
-        message: "Hi there, you are so cool!",
-        email: "email",
-        from: "email",
+        name: name,
+        message: message,
+        email: email,
+        from: "chase",
         subject: "Thanks for Messaging Me!",
         html: confirmationEmailElement.innerHTML,
       })
