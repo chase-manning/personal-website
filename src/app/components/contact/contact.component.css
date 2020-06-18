@@ -73,6 +73,11 @@ input:focus + label {
   transform: translate(12px, -55px);
 }
 
+input.ng-touched + label {
+  font-size: 0.9em;
+  transform: translate(12px, -55px);
+}
+
 input {
   margin-top: 5px;
   display: block;
@@ -82,6 +87,7 @@ input {
   border-radius: 5px;
   font-size: 1em;
   color: #00a8e8;
+  transition: all 0.3s ease-out;
 }
 
 input:focus {
