@@ -9,24 +9,22 @@
           (ngSubmit)="onSubmit(contactForm.value)"
         >
           <div class="form-input__container">
-            <label for="name">Name</label>
             <input id="name" type="text" formControlName="name" />
+            <label for="name">Name</label>
           </div>
           <div class="form-input__container">
-            <label for="email">Email</label>
             <input id="emaili" type="text" formControlName="email" />
+            <label for="email">Email</label>
           </div>
           <div class="form-input__container">
-            <label for="message">Message</label>
             <textarea
               id="message"
               type="textarea"
               formControlName="message"
             ></textarea>
+            <label for="message">Message</label>
           </div>
-          <div>
-            <button class="button" type="submit">Submit</button>
-          </div>
+          <button class="button" type="submit">Submit</button>
         </form>
       </div>
       <div class="contact-right__container">
