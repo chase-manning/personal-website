@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./confirmation-email.component.css"],
 })
 export class ConfirmationEmailComponent implements OnInit {
-  @Input() name: string;
-
   constructor() {}
 
   ngOnInit() {}
