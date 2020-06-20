@@ -88,6 +88,15 @@ button:hover {
   border: solid 2px #007ea7;
 }
 
+.secondary__button {
+  background-color: white;
+  color: #00a8e8;
+}
+
+.secondary__button:hover {
+  color: #007ea7;
+}
+
 @font-face {
   font-family: lato;
   font-display: swap;
