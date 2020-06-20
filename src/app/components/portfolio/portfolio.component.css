@@ -14,10 +14,12 @@
 
 .left__item {
   width: 550px;
+  height: 100%;
   margin: auto;
 }
 
 .right__item {
   width: 550px;
+  height: 100%;
   margin: auto;
 }
