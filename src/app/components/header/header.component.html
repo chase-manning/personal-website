@@ -1,4 +1,4 @@
-<div class="header__container">
+<div *ngIf="isPortfolioPage" class="header__container">
   <a routerLink="" class="home-page__title">Chase</a>
   <div class="navigation__container">
     <a
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="header-white__container">
+<div *ngIf="isPortfolioPage" class="header-white__container">
   <a routerLink="" class="home-page__title white">Chase</a>
   <div class="navigation__container">
     <a
