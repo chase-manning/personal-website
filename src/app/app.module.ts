@@ -15,6 +15,7 @@ import { ConfirmationEmailComponent } from "./components/contact/confimation-ema
 import { LaptopDigipleComponent } from "./components/portfolio/portfolio-laptop/laptop-digiple/laptop-digiple.component";
 import { MobileTracketComponent } from "./components/portfolio/portfolio-mobile/mobile-tracket/mobile-tracket.component";
 import { HomeLiquidComponent } from "./components/home/home-liquid/home-liquid.component";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeLiquidComponent } from "./components/home/home-liquid/home-liquid.c
     LaptopDigipleComponent,
     MobileTracketComponent,
     HomeLiquidComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
