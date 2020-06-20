@@ -8,16 +8,16 @@
 .section__row {
   width: 100%;
   margin-bottom: 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .left__item {
-  width: 50%;
-  float: left;
-  display: block;
+  width: 550px;
+  margin: auto;
 }
 
 .right__item {
-  width: 50%;
-  float: right;
-  display: block;
+  width: 550px;
+  margin: auto;
 }
