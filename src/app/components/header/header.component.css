@@ -32,6 +32,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-family: basier-circle;
+  font-display: swap;
   font-size: 2rem;
   font-weight: 900;
   line-height: 0.7em;
@@ -48,6 +49,7 @@
 
 .menu-item__text {
   font-family: roberto;
+  font-display: swap;
   color: rgb(139, 149, 158);
   line-height: 1.65em;
   float: right;
@@ -61,6 +63,7 @@
 
 .menu-item__button {
   font-family: basier-circle;
+  font-display: swap;
   margin-left: 40px;
   line-height: 1.5rem;
   font-size: 1rem;
@@ -72,6 +75,7 @@
 
 .menu-item-blue__button {
   font-family: basier-circle;
+  font-display: swap;
   margin-left: 40px;
   line-height: 1.5rem;
   font-size: 1rem;
