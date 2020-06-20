@@ -1,0 +1,32 @@
+.page__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.not-found__container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+.not-found {
+  padding: 0;
+  margin: 0;
+  font-size: 20rem;
+}
+
+.button__container {
+  display: flex;
+  margin: auto;
+  width: 500px;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+.space__container {
+}
