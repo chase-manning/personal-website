@@ -14,10 +14,16 @@ export class HeaderComponent implements OnInit {
   get isPortfolioPage(): boolean {
     return this.router.url === "/portfolio";
   }
+
   get isResumePage(): boolean {
     return this.router.url === "/resume";
   }
+
   get isContactPage(): boolean {
     return this.router.url === "/contact";
+  }
+
+  get isNotFoundPage(): boolean {
+    return this.router.url === "/404";
   }
 }
