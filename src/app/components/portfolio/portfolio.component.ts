@@ -10,7 +10,7 @@ export class PortfolioComponent implements OnInit {
   constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit() {
-    this.title.setTitle("Chase Manning Portfolio");
+    this.title.setTitle("Portfolio of Chase Manning");
     this.meta.updateTag({
       name: "description",
       content:
