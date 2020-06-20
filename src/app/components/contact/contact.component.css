@@ -24,6 +24,7 @@
 .contact-left__container {
   margin: auto;
 }
+
 .form__container {
   margin: auto;
 }
@@ -125,4 +126,9 @@ textarea {
   font-size: 1em;
   color: #00a8e8;
   resize: none;
+}
+
+.submit-button {
+  margin: auto;
+  justify-self: center;
 }
