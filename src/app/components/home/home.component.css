@@ -21,12 +21,3 @@
   margin-top: 10px;
   justify-content: space-evenly;
 }
-
-.secondary__button {
-  background-color: white;
-  color: #00a8e8;
-}
-
-.secondary__button:hover {
-  color: #007ea7;
-}
