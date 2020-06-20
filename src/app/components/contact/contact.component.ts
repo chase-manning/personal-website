@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Title, Meta } from "@angular/platform-browser";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import * as firebase from "firebase/app";
 import "firebase/auth";
@@ -12,7 +13,11 @@ import "firebase/firestore";
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private title: Title,
+    private meta: Meta,
+    private formBuilder: FormBuilder
+  ) {
     this.contactForm = this.formBuilder.group({
       name: "",
       email: "",
@@ -20,7 +25,14 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.title.setTitle("Contact Chase Manning");
+    this.meta.updateTag({
+      name: "description",
+      content:
+        "Contact Chase Manning, Freelance Developer for help with your Web or Mobile Development project.",
+    });
+  }
 
   onSubmit(contactData): void {
     this.sendEmail(contactData.name, contactData.email, contactData.message);
