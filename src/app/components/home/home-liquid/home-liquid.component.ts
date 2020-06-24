@@ -10,13 +10,17 @@ export class HomeLiquidComponent implements OnInit {
   svgScale: number;
 
   @HostListener("window:resize", ["$event"])
-  onResize(event?) {
-    this.svgScale = window.innerWidth / 580;
+  onResize(): void {
+    this.setSvgScale();
   }
 
   constructor() {
-    this.svgScale = window.innerWidth / 580;
+    this.setSvgScale();
   }
 
   ngOnInit() {}
+
+  setSvgScale(): void {
+    this.svgScale = window.innerHeight / 400;
+  }
 }
