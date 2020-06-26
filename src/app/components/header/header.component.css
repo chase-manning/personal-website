@@ -59,32 +59,6 @@
   color: rgb(25, 28, 31);
 }
 
-.menu-item__button {
-  font-family: basier-circle;
-  font-display: swap;
-  margin-left: 40px;
-  line-height: 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  padding: 0.625em 1.5em;
-  float: right;
-}
-
-.menu-item-blue__button {
-  font-family: basier-circle;
-  font-display: swap;
-  margin-left: 40px;
-  line-height: 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  padding: 0.625em 1.5em;
-  float: right;
-  background-color: white;
-  color: #00a8e8;
-}
-
 .navigation-underline {
   border-bottom: 2px solid #00a8e8;
 }
