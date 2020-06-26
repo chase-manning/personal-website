@@ -27,6 +27,8 @@
 
 .form__container {
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-right__container {
