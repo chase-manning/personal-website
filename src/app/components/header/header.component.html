@@ -18,7 +18,10 @@
   </div>
 </div>
 
-<div *ngIf="!isNotFoundPage" class="header-white__container">
+<div
+  *ngIf="!isNotFoundPage && !isPortfolioPage"
+  class="header-white__container"
+>
   <a routerLink="" class="home-page__title white">Chase</a>
   <div class="navigation__container">
     <a
