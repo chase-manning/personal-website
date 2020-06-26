@@ -1,5 +1,6 @@
-.background {
-  background-color: #00a8e8;
+.contact-page__container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,9 +8,9 @@
 .contact-form__container {
   background-color: white;
   position: relative;
-  width: 800px;
+  width: 700px;
   height: 600px;
-  border-radius: 40px;
+  border-radius: 20px;
   padding: 40px;
   display: flex;
   flex-direction: column;

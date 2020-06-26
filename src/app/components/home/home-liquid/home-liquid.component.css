@@ -1,5 +1,3 @@
-.blue-liquid {
-  z-index: 999;
-  background-color: #00a8e8;
-  clip-path: url(#headerClip);
+.svg__container {
+  z-index: -1;
 }
