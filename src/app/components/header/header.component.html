@@ -2,11 +2,11 @@
   <a routerLink="" class="home-page__title">Chase</a>
   <div class="navigation__container">
     <a
-      routerLink="/portfolio"
+      routerLink="/services"
       class="menu-item__text"
-      [ngClass]="{ 'navigation-underline': isPortfolioPage }"
+      [ngClass]="{ 'navigation-underline': isServicesPage }"
     >
-      Portfolio
+      Services
     </a>
     <a
       routerLink="/contact"
@@ -19,22 +19,19 @@
 </div>
 
 <div
-  *ngIf="!isNotFoundPage && !isPortfolioPage"
+  *ngIf="!isNotFoundPage && !isServicesPage"
   class="full-screen blue-liquid"
 ></div>
 
-<div
-  *ngIf="!isNotFoundPage && !isPortfolioPage"
-  class="header-white__container"
->
+<div *ngIf="!isNotFoundPage && !isServicesPage" class="header-white__container">
   <a routerLink="" class="home-page__title white">Chase</a>
   <div class="navigation__container">
     <a
-      routerLink="/portfolio"
+      routerLink="/services"
       class="menu-item__text white"
-      [ngClass]="{ 'navigation-underline': isPortfolioPage }"
+      [ngClass]="{ 'navigation-underline': isServicesPage }"
     >
-      Portfolio
+      Services
     </a>
     <a
       routerLink="/contact"
