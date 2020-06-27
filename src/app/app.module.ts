@@ -18,6 +18,7 @@ import { HomeLiquidComponent } from "./components/home/home-liquid/home-liquid.c
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { CardComponent } from "./components/services/mobile/mobile-tracket/card/card.component";
 import { TransactionComponent } from "./components/services/mobile/mobile-tracket/transaction/transaction.component";
+import { TransactionRowComponent } from "./components/services/mobile/mobile-tracket/transaction/transaction-row/transaction-row.component";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TransactionComponent } from "./components/services/mobile/mobile-tracke
     NotFoundComponent,
     CardComponent,
     TransactionComponent,
+    TransactionRowComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
