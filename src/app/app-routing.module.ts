@@ -5,6 +5,16 @@ import { PortfolioComponent } from "./components/portfolio/portfolio.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 
+/* Home
+ * Portfolio/Work/Projects/My Work 17
+ * About Me/About/Info 15
+ * Contact/Hire Me/Hire Now 14
+ * Blog/Articles 9
+ * Services/Skills/Offer 5
+ * Testimonials 1
+ * Resume 1
+ */
+
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "portfolio", component: PortfolioComponent },
