@@ -16,7 +16,7 @@ import { LaptopDigipleComponent } from "./components/services/laptop/laptop-digi
 import { MobileTracketComponent } from "./components/services/mobile/mobile-tracket/mobile-tracket.component";
 import { HomeLiquidComponent } from "./components/home/home-liquid/home-liquid.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
-import { CardComponent } from './card/card.component';
+import { CardComponent } from "./components/services/mobile/mobile-tracket/card/card.component";
 
 @NgModule({
   declarations: [
