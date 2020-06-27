@@ -1,40 +1,38 @@
-<div class="contact-page__container">
-  <div class="contact-form__container">
-    <h1>Let's have a chat</h1>
-    <div class="contact-section__container">
-      <div class="contact-left__container">
-        <form
-          class="form__container"
-          [formGroup]="contactForm"
-          (ngSubmit)="onSubmit(contactForm.value)"
-        >
-          <div class="form-input__container">
-            <input id="name" type="text" formControlName="name" />
-            <label for="name">Name</label>
-          </div>
-          <div class="form-input__container">
-            <input id="emaili" type="text" formControlName="email" />
-            <label for="email">Email</label>
-          </div>
-          <div class="form-input__container">
-            <textarea
-              id="message"
-              type="textarea"
-              formControlName="message"
-            ></textarea>
-            <label for="message">Message</label>
-          </div>
-          <button class="submit-button" type="submit">Submit</button>
-        </form>
-      </div>
-      <div *ngIf="false" class="contact-right__container">
-        <div class="mail__container"></div>
-        <div class="socials__container">
-          <div>Hi</div>
-          <div>Hi</div>
-          <div>Hi</div>
-          <div>Hi</div>
+<div class="contact-form__container">
+  <h1>Let's have a chat</h1>
+  <div class="contact-section__container">
+    <div class="contact-left__container">
+      <form
+        class="form__container"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit(contactForm.value)"
+      >
+        <div class="form-input__container">
+          <input id="name" type="text" formControlName="name" />
+          <label for="name">Name</label>
         </div>
+        <div class="form-input__container">
+          <input id="emaili" type="text" formControlName="email" />
+          <label for="email">Email</label>
+        </div>
+        <div class="form-input__container">
+          <textarea
+            id="message"
+            type="textarea"
+            formControlName="message"
+          ></textarea>
+          <label for="message">Message</label>
+        </div>
+        <button class="submit-button" type="submit">Submit</button>
+      </form>
+    </div>
+    <div *ngIf="false" class="contact-right__container">
+      <div class="mail__container"></div>
+      <div class="socials__container">
+        <div>Hi</div>
+        <div>Hi</div>
+        <div>Hi</div>
+        <div>Hi</div>
       </div>
     </div>
   </div>
