@@ -43,7 +43,7 @@
 
 .card__container {
   display: flex;
-  transform: translateX(0px);
+  transform: translateX(0.5px);
   transition: all 1s ease-in-out;
   animation: card-selection 5s 5s forwards;
 }
@@ -53,10 +53,10 @@
     transform: translateX(0px);
   }
   33% {
-    transform: translateX(-230px);
+    transform: translateX(-230.5px);
   }
   66% {
-    transform: translateX(-230px);
+    transform: translateX(-230.5px);
   }
   100% {
     transform: translateX(-460px);
