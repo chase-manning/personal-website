@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Card } from "./card/card.component";
+import { Transaction } from "./transaction/transaction.component";
 
 @Component({
   selector: "app-mobile-tracket",
@@ -43,6 +44,37 @@ export class MobileTracketComponent implements OnInit {
       number: "3923 8989 7321 1112",
       balance: "$321",
       expiry: "09/22",
+    },
+  ];
+
+  transactions: Transaction[] = [
+    {
+      transactionRows: [
+        {
+          category: "Travel",
+          description: "Air NZ Tickets",
+          price: "-$789.34",
+          date: "05 Jun, 7:45pm",
+        },
+        {
+          category: "Travel",
+          description: "Travel Insurance",
+          price: "-$96.00",
+          date: "04 Jun, 4:23pm",
+        },
+        {
+          category: "Food",
+          description: "Sea Breeze Diner",
+          price: "-$136.76",
+          date: "26 May, 9:23pm",
+        },
+        {
+          category: "Food",
+          description: "Mc Donalds",
+          price: "-$23.21",
+          date: "20 May, 1:23am",
+        },
+      ],
     },
   ];
 
