@@ -4,17 +4,9 @@
     <div class="hamburger-top-bun"></div>
     <div class="hamburger-bottom-bun"></div>
   </div>
-  <div class="card__header">
-    My Cards
-  </div>
+  <div class="card__header">Cards</div>
   <div class="card__container">
-    <div class="card">
-      <div class="blur">
-        <div class="card-background"></div>
-        <div class="circle-bottom-left"></div>
-        <div class="circle-bottom-right"></div>
-        <div class="circle-top-left"></div>
-      </div>
-    </div>
+    <app-card *ngFor="let card of cards" [card]="card"></app-card>
   </div>
+  <div class="card__header">Transactions</div>
 </div>
