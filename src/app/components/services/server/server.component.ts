@@ -1,14 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-portfolio-server",
-  templateUrl: "./portfolio-server.component.html",
-  styleUrls: [
-    "./portfolio-server-animations.component.css",
-    "./portfolio-server.component.css",
-  ],
+  selector: "app-server",
+  templateUrl: "./server.component.html",
+  styleUrls: ["./server-animations.component.css", "./server.component.css"],
 })
-export class PortfolioServerComponent implements OnInit {
+export class ServerComponent implements OnInit {
   bigSectionLayerCount: number = 60;
   middleSectionLayerCount: number = 21;
 

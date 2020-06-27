@@ -11,8 +11,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  get isPortfolioPage(): boolean {
-    return this.router.url === "/portfolio";
+  get isServicesPage(): boolean {
+    return this.router.url === "/services";
   }
 
   get isResumePage(): boolean {
