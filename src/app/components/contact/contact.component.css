@@ -129,5 +129,6 @@ textarea {
 
 .submit-button {
   margin: auto;
+  margin-top: 25px;
   justify-self: center;
 }
