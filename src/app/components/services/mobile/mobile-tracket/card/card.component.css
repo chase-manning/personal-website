@@ -64,18 +64,6 @@
   justify-content: space-between;
   color: white;
   font-family: basier-circle;
-  animation: fade-text 1s ease-in-out 12s forwards;
-}
-
-@keyframes fade-text {
-  from {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(2rem);
-    opacity: 0;
-  }
 }
 
 .card-top {
