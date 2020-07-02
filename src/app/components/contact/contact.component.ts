@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -19,9 +19,9 @@ export class ContactComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.contactForm = this.formBuilder.group({
-      name: "",
-      email: "",
-      message: "",
+      name: ["", Validators.required],
+      email: ["", Validators.required],
+      message: ["", Validators.required],
     });
   }
 

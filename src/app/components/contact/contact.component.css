@@ -1,20 +1,20 @@
 .contact-form__container {
   background-color: white;
-  position: absolute;
-  width: 700px;
-  height: 600px;
-  border-radius: 20px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position        : absolute;
+  width           : 700px;
+  height          : 600px;
+  border-radius   : 20px;
+  padding         : 40px;
+  display         : flex;
+  flex-direction  : column;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
 }
 
 .contact-section__container {
-  width: 100%;
-  margin: auto;
+  width  : 100%;
+  margin : auto;
   display: flex;
 }
 
@@ -23,27 +23,27 @@
 }
 
 .form__container {
-  margin: auto;
-  display: flex;
+  margin        : auto;
+  display       : flex;
   flex-direction: column;
 }
 
 .contact-right__container {
-  margin: auto;
-  display: flex;
+  margin        : auto;
+  display       : flex;
   flex-direction: column;
 }
 
 .mail__container {
-  margin: auto;
-  width: 200px;
-  height: 200px;
+  margin          : auto;
+  width           : 200px;
+  height          : 200px;
   background-color: #00a8e8;
 }
 
 .socials__container {
-  margin: auto;
-  display: flex;
+  margin        : auto;
+  display       : flex;
   flex-direction: row;
 }
 
@@ -53,59 +53,59 @@
 
 h1 {
   margin: 0;
-  color: #00a8e8;
+  color : #00a8e8;
   margin: auto;
 }
 
 label {
-  font-family: roberto;
-  font-display: swap;
-  color: rgb(139, 149, 158);
-  position: absolute;
-  box-shadow: 0 0 3px 2px white;
+  font-family     : roberto;
+  font-display    : swap;
+  color           : rgb(139, 149, 158);
+  position        : absolute;
+  box-shadow      : 0 0 3px 2px white;
   background-color: white;
-  transform: translate(16px, -32px);
-  transition: all 0.3s ease-out;
+  transform       : translate(16px, -32px);
+  transition      : all 0.3s ease-out;
 }
 
-input:focus + label {
+input:focus+label {
   font-size: 0.9em;
-  color: #00a8e8;
+  color    : #00a8e8;
   transform: translate(12px, -55px);
 }
 
-input.ng-dirty + label {
+input.ng-dirty+label {
   font-size: 0.9em;
   transform: translate(12px, -55px);
 }
 
-textarea + label {
+textarea+label {
   transform: translate(16px, -87px);
 }
 
-textarea:focus + label {
+textarea:focus+label {
   font-size: 0.9em;
-  color: #00a8e8;
+  color    : #00a8e8;
   transform: translate(12px, -110px);
 }
 
-textarea.ng-dirty + label {
+textarea.ng-dirty+label {
   font-size: 0.9em;
   transform: translate(12px, -110px);
 }
 
 input {
-  margin-top: 5px;
-  width: 300px;
-  display: block;
-  padding: 12px 15px;
-  font-family: roberto;
-  font-display: swap;
-  border: solid 1px rgb(139, 149, 158);
+  margin-top   : 5px;
+  width        : 300px;
+  display      : block;
+  padding      : 12px 15px;
+  font-family  : roberto;
+  font-display : swap;
+  border       : solid 1px rgb(139, 149, 158);
   border-radius: 5px;
-  font-size: 1em;
-  color: #00a8e8;
-  transition: all 0.3s ease-out;
+  font-size    : 1em;
+  color        : #00a8e8;
+  transition   : all 0.3s ease-out;
 }
 
 input:focus {
@@ -113,22 +113,30 @@ input:focus {
 }
 
 textarea {
-  margin-top: 5px;
-  width: 300px;
-  height: 100px;
-  display: block;
-  padding: 12px 15px;
-  font-family: roberto;
-  font-display: swap;
-  border: solid 1px rgb(139, 149, 158);
+  margin-top   : 5px;
+  width        : 300px;
+  height       : 100px;
+  display      : block;
+  padding      : 12px 15px;
+  font-family  : roberto;
+  font-display : swap;
+  border       : solid 1px rgb(139, 149, 158);
   border-radius: 5px;
-  font-size: 1em;
-  color: #00a8e8;
-  resize: none;
+  font-size    : 1em;
+  color        : #00a8e8;
+  resize       : none;
 }
 
 .submit-button {
-  margin: auto;
-  margin-top: 25px;
+  margin      : auto;
+  margin-top  : 25px;
   justify-self: center;
+}
+
+.validation-message {
+  margin-top: 10px;
+  color     : red;
+  text-align: center;
+  transition: all 1s;
+
 }
