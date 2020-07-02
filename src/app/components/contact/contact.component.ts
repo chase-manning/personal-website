@@ -12,6 +12,7 @@ import "firebase/firestore";
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
+  validated: boolean = false;
 
   constructor(
     private title: Title,
@@ -35,18 +36,9 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(contactData): void {
-    if (contactData.name == "") {
-      alert("please fill in your name");
+    this.validated = true;
+    if (contactData.name + contactData.email + contactData.message == "")
       return;
-    }
-    if (contactData.email == "") {
-      alert("please fill in your email");
-      return;
-    }
-    if (contactData.message == "") {
-      alert("please fill in your message");
-      return;
-    }
     this.sendEmail(contactData.name, contactData.email, contactData.message);
   }
 
