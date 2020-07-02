@@ -138,5 +138,5 @@ textarea {
   color     : red;
   text-align: center;
   transition: all 1s;
-
+  font-size : 0.9rem;
 }
