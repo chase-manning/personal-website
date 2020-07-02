@@ -10,10 +10,34 @@
         <div class="form-input__container">
           <input id="name" type="text" formControlName="name" />
           <label for="name">Name</label>
+          <div
+            *ngIf="
+              contactForm.controls['name'].invalid &&
+              (contactForm.controls['name'].dirty ||
+                contactForm.controls['name'].touched)
+            "
+            class="validation-message"
+          >
+            <div *ngIf="contactForm.controls['name'].errors.required">
+              Oh no! I need to know your name 😲
+            </div>
+          </div>
         </div>
         <div class="form-input__container">
-          <input id="emaili" type="text" formControlName="email" />
+          <input id="email" type="text" formControlName="email" />
           <label for="email">Email</label>
+          <div
+            *ngIf="
+              contactForm.controls['email'].invalid &&
+              (contactForm.controls['email'].dirty ||
+                contactForm.controls['email'].touched)
+            "
+            class="validation-message"
+          >
+            <div *ngIf="contactForm.controls['email'].errors.required">
+              Share your email so I can say hi 🙏
+            </div>
+          </div>
         </div>
         <div class="form-input__container">
           <textarea
@@ -22,6 +46,18 @@
             formControlName="message"
           ></textarea>
           <label for="message">Message</label>
+          <div
+            *ngIf="
+              contactForm.controls['message'].invalid &&
+              (contactForm.controls['message'].dirty ||
+                contactForm.controls['message'].touched)
+            "
+            class="validation-message"
+          >
+            <div *ngIf="contactForm.controls['message'].errors.required">
+              Tell me about your project or idea! 💡
+            </div>
+          </div>
         </div>
         <button class="submit-button" type="submit">Submit</button>
       </form>
