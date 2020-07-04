@@ -13,6 +13,9 @@ import "firebase/firestore";
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   validated: boolean = false;
+  isSent: boolean = false;
+  isLoading: boolean = false;
+  loadingText: string = "";
 
   constructor(
     private title: Title,
@@ -40,6 +43,26 @@ export class ContactComponent implements OnInit {
     if (contactData.name + contactData.email + contactData.message == "")
       return;
     this.sendEmail(contactData.name, contactData.email, contactData.message);
+    this.startLoading();
+  }
+
+  startLoading(): void {
+    this.isSent = true;
+    this.isLoading = true;
+    this.updateLoadingText();
+    setTimeout(() => this.completeLoading(), 2000);
+  }
+
+  updateLoadingText(): void {
+    if (!this.isLoading) return;
+    this.loadingText == "..."
+      ? (this.loadingText = "")
+      : (this.loadingText = this.loadingText += ".");
+    setTimeout(() => this.updateLoadingText(), 300);
+  }
+
+  completeLoading(): void {
+    this.isLoading = false;
   }
 
   sendEmail(name: string, email: string, message: string): void {

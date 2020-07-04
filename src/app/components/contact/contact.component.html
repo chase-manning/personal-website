@@ -1,77 +1,88 @@
 <div class="contact-form__container">
-  <h1>Let's have a chat</h1>
-  <div class="contact-section__container">
-    <div class="contact-left__container">
-      <form
-        class="form__container"
-        [formGroup]="contactForm"
-        (ngSubmit)="onSubmit(contactForm.value)"
-      >
-        <div class="form-input__container">
-          <input id="name" type="text" formControlName="name" />
-          <label for="name">Name</label>
-          <div
-            *ngIf="
-              contactForm.controls['name'].invalid &&
-              (contactForm.controls['name'].dirty ||
-                contactForm.controls['name'].touched ||
-                validated)
-            "
-            class="validation-message"
-          >
-            <div *ngIf="contactForm.controls['name'].errors.required">
-              Oh no! I need to know your name 😲
-            </div>
-          </div>
-        </div>
-        <div class="form-input__container">
-          <input id="email" type="text" formControlName="email" />
-          <label for="email">Email</label>
-          <div
-            *ngIf="
-              contactForm.controls['email'].invalid &&
-              (contactForm.controls['email'].dirty ||
-                contactForm.controls['email'].touched ||
-                validated)
-            "
-            class="validation-message"
-          >
-            <div *ngIf="contactForm.controls['email'].errors.required">
-              Share your email so I can say hi 🙏
-            </div>
-          </div>
-        </div>
-        <div class="form-input__container">
-          <textarea
-            id="message"
-            type="textarea"
-            formControlName="message"
-          ></textarea>
-          <label for="message">Message</label>
-          <div
-            *ngIf="
-              contactForm.controls['message'].invalid &&
-              (contactForm.controls['message'].dirty ||
-                contactForm.controls['message'].touched ||
-                validated)
-            "
-            class="validation-message"
-          >
-            <div *ngIf="contactForm.controls['message'].errors.required">
-              Tell me about your project or idea! 💡
-            </div>
-          </div>
-        </div>
-        <button class="submit-button" type="submit">Submit</button>
-      </form>
+  <div *ngIf="isSent && !isLoading" class="contact-form">
+    <h1>Message Sent!</h1>
+  </div>
+  <div *ngIf="isLoading" class="loading__container">
+    <div class="loading-blob"></div>
+    <div class="loading-text">
+      {{ loadingText }}
     </div>
-    <div *ngIf="false" class="contact-right__container">
-      <div class="mail__container"></div>
-      <div class="socials__container">
-        <div>Hi</div>
-        <div>Hi</div>
-        <div>Hi</div>
-        <div>Hi</div>
+  </div>
+  <div *ngIf="!isSent" class="contact-form">
+    <h1>Let's have a chat</h1>
+    <div class="contact-section__container">
+      <div class="contact-left__container">
+        <form
+          class="form__container"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit(contactForm.value)"
+        >
+          <div class="form-input__container">
+            <input id="name" type="text" formControlName="name" />
+            <label for="name">Name</label>
+            <div
+              *ngIf="
+                contactForm.controls['name'].invalid &&
+                (contactForm.controls['name'].dirty ||
+                  contactForm.controls['name'].touched ||
+                  validated)
+              "
+              class="validation-message"
+            >
+              <div *ngIf="contactForm.controls['name'].errors.required">
+                Oh no! I need to know your name 😲
+              </div>
+            </div>
+          </div>
+          <div class="form-input__container">
+            <input id="email" type="text" formControlName="email" />
+            <label for="email">Email</label>
+            <div
+              *ngIf="
+                contactForm.controls['email'].invalid &&
+                (contactForm.controls['email'].dirty ||
+                  contactForm.controls['email'].touched ||
+                  validated)
+              "
+              class="validation-message"
+            >
+              <div *ngIf="contactForm.controls['email'].errors.required">
+                Share your email so I can say hi 🙏
+              </div>
+            </div>
+          </div>
+          <div class="form-input__container">
+            <textarea
+              id="message"
+              type="textarea"
+              formControlName="message"
+            ></textarea>
+            <label for="message">Message</label>
+            <div
+              *ngIf="
+                contactForm.controls['message'].invalid &&
+                (contactForm.controls['message'].dirty ||
+                  contactForm.controls['message'].touched ||
+                  validated)
+              "
+              class="validation-message"
+            >
+              <div *ngIf="contactForm.controls['message'].errors.required">
+                Tell me about your project or idea! 💡
+              </div>
+            </div>
+          </div>
+          <button class="submit-button" type="submit">Submit</button>
+        </form>
+      </div>
+      <div *ngIf="false" class="contact-right__container">
+        <div class="mail__container"></div>
+        <div class="socials__container">
+          <div>Hi</div>
+          <div>Hi</div>
+          <div>Hi</div>
+          <div>Hi</div>
+        </div>
       </div>
     </div>
   </div>
