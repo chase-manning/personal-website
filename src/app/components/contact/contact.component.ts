@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import { GoogleAnalyticsService } from "../../services/google-analytics.service";
 
 @Component({
   selector: "app-contact",
@@ -20,7 +21,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private title: Title,
     private meta: Meta,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.contactForm = this.formBuilder.group({
       name: ["", Validators.required],
@@ -49,6 +51,12 @@ export class ContactComponent implements OnInit {
   startLoading(): void {
     this.isSent = true;
     this.isLoading = true;
+    this.googleAnalyticsService.eventEmitter(
+      "generate_lead",
+      "Forms",
+      "Submit",
+      "Contact Form"
+    );
     this.updateLoadingText();
     setTimeout(() => this.completeLoading(), 2000);
   }
