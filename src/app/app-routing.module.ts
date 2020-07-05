@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./components/home/home.component";
-import { ServicesComponent } from "./components/services/services.component";
-import { ContactComponent } from "./components/contact/contact.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
+import { HomeComponent } from "./components/pages/home/home.component";
+import { ServicesComponent } from "./components/pages/services/services.component";
+import { ContactComponent } from "./components/pages/contact/contact.component";
+import { NotFoundComponent } from "./components/pages/not-found/not-found.component";
 
 /* Home
  * Portfolio/Work/Projects/My Work 17
