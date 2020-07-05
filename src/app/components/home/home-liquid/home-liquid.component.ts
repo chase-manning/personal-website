@@ -7,7 +7,9 @@ import { HostListener } from "@angular/core";
   styleUrls: ["./home-liquid.component.css"],
 })
 export class HomeLiquidComponent implements OnInit {
-  svgScale: number;
+  svgScaleX: number;
+  svgScaleY: number;
+  meow: boolean = true;
 
   @HostListener("window:resize", ["$event"])
   onResize(): void {
@@ -21,6 +23,7 @@ export class HomeLiquidComponent implements OnInit {
   ngOnInit() {}
 
   setSvgScale(): void {
-    this.svgScale = window.innerHeight / 400;
+    this.svgScaleX = window.innerWidth / 580;
+    this.svgScaleY = window.innerHeight / 400;
   }
 }
