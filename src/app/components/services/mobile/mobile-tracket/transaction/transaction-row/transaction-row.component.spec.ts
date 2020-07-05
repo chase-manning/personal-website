@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TransactionRowComponent } from './transaction-row.component';
+import { TransactionRowComponent } from "./transaction-row.component";
 
-describe('TransactionRowComponent', () => {
+describe("TransactionRowComponent", () => {
   let component: TransactionRowComponent;
   let fixture: ComponentFixture<TransactionRowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TransactionRowComponent ]
-    })
-    .compileComponents();
+      declarations: [TransactionRowComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('TransactionRowComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

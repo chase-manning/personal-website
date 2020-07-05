@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MobileTracketComponent } from './mobile-tracket.component';
+import { MobileTracketComponent } from "./mobile-tracket.component";
 
-describe('MobileTracketComponent', () => {
+describe("MobileTracketComponent", () => {
   let component: MobileTracketComponent;
   let fixture: ComponentFixture<MobileTracketComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MobileTracketComponent ]
-    })
-    .compileComponents();
+      declarations: [MobileTracketComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('MobileTracketComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

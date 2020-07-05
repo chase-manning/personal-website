@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HomeLiquidComponent } from './home-liquid.component';
+import { HomeLiquidComponent } from "./home-liquid.component";
 
-describe('HomeLiquidComponent', () => {
+describe("HomeLiquidComponent", () => {
   let component: HomeLiquidComponent;
   let fixture: ComponentFixture<HomeLiquidComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeLiquidComponent ]
-    })
-    .compileComponents();
+      declarations: [HomeLiquidComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('HomeLiquidComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
