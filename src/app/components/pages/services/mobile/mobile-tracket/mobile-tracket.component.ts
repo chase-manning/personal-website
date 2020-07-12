@@ -70,7 +70,7 @@ export class MobileTracketComponent implements OnInit {
         },
         {
           category: "Food",
-          description: "Mc Donalds",
+          description: "Mc Donald's",
           price: "-$23.21",
           date: "20 May, 1:23am",
         },
