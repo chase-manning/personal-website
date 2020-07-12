@@ -1,12 +1,12 @@
 {
   "hosting": {
-    "public": "dist/chase-manning",
+    "public": "dist/chase-manning/src",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
   "rewrites": [
     {
       "source": "**",
-      "destination": "/src/index.html"
+      "destination": "/index.html"
     }
   ]
 }
