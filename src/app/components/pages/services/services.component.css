@@ -1,25 +1,7 @@
-.section__container {
-  width: 100%;
+.services__container {
   margin-top: 105px;
-  display: flex;
-  flex-direction: column;
-}
-
-.section__row {
-  width: 100%;
-  margin-bottom: 10rem;
   display: grid;
-  grid-template-columns: auto auto;
-}
-
-.portfolio__item {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-
-.text__item {
-  width: 600px;
-  height: 100%;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+  column-gap: 4rem;
+  row-gap: 5rem;
 }
