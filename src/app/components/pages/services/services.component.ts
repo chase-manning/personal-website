@@ -23,6 +23,7 @@ export class ServicesComponent implements OnInit {
 
   setSvgScale(): void {
     this.laptopScale = (window.innerWidth - 61 * 3) / 2 / 724;
+    this.mobileScale = 0.85;
   }
 
   ngOnInit() {
