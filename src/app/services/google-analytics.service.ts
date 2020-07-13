@@ -13,11 +13,17 @@ export class GoogleAnalyticsService {
     eventCategory: string,
     eventAction: string,
     eventLabel: string
-  ) {
+  ): void {
     gtag("event", eventName, {
       eventCategory: eventCategory,
       eventLabel: eventLabel,
       eventAction: eventAction,
+    });
+  }
+
+  public trackConversion(): void {
+    gtag("event", "conversion", {
+      send_to: "AW-661071687/9hJKCJWoitcBEMfOnLsC",
     });
   }
 }

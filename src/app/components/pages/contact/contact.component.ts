@@ -57,6 +57,7 @@ export class ContactComponent implements OnInit {
       "Submit",
       "Contact Form"
     );
+    this.googleAnalyticsService.trackConversion();
     this.updateLoadingText();
     setTimeout(() => this.completeLoading(), 2000);
   }
