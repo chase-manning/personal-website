@@ -1,3 +1,11 @@
+.laptop-container {
+  transform-origin: left;
+  margin: auto;
+  position: relative;
+  width: 724px;
+  height: 419px;
+}
+
 .border {
   position: relative;
   width: 614px;
@@ -5,8 +13,7 @@
   background-color: #f1f3f6;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
-  margin: auto;
-  margin-top: 30px;
+  margin: 0px 55px 0px 55px;
   border-top: solid 1px rgba(255, 255, 255, 1);
   border-left: solid 1px rgba(255, 255, 255, 1);
   border-right: solid 1px rgba(255, 255, 255, 0.4);

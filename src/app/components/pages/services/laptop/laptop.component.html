@@ -1,20 +1,22 @@
-<div class="border">
-  <div class="outside">
-    <div class="camera">
-      <div class="lens"></div>
-    </div>
-    <div class="outside-overlay"></div>
-    <div class="inside">
-      <!-- Content Here -->
-      <app-laptop-digiple></app-laptop-digiple>
-      <!--div class="inside-overlay"></div-->
+<div class="laptop-container" [style.transform]="'scale(' + scale + ')'">
+  <div class="border">
+    <div class="outside">
+      <div class="camera">
+        <div class="lens"></div>
+      </div>
+      <div class="outside-overlay"></div>
+      <div class="inside">
+        <!-- Content Here -->
+        <app-laptop-digiple></app-laptop-digiple>
+        <!--div class="inside-overlay"></div-->
+      </div>
     </div>
   </div>
-</div>
-<div class="highlight">
-  <div class="keyboard">
-    <div class="keyboard-overlay"></div>
-    <div class="keyboard-shadow-overlay"></div>
-    <div class="notch"></div>
+  <div class="highlight">
+    <div class="keyboard">
+      <div class="keyboard-overlay"></div>
+      <div class="keyboard-shadow-overlay"></div>
+      <div class="notch"></div>
+    </div>
   </div>
 </div>
