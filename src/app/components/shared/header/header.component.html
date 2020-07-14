@@ -19,11 +19,14 @@
 </div>
 
 <div
-  *ngIf="!isNotFoundPage && !isServicesPage"
+  *ngIf="!isNotFoundPage && !isServicesPage && !isContactPage"
   class="full-screen blue-liquid"
 ></div>
 
-<div *ngIf="!isNotFoundPage && !isServicesPage" class="header-white__container">
+<div
+  *ngIf="!isNotFoundPage && !isServicesPage && !isContactPage"
+  class="header-white__container"
+>
   <h2><a routerLink="" class="home-page__title white">Chase</a></h2>
   <div class="navigation__container">
     <a
