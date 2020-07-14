@@ -8,14 +8,7 @@
   transition: all 0.5s ease;
 }
 
-.header-white__container {
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  padding: 40px 60px;
-  width: 100%;
-  transition: all 0.5s ease;
+.clip-path {
   clip-path: url(#headerClip);
 }
 
