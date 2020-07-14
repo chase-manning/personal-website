@@ -3,6 +3,7 @@
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.65;
 }
 
 .full-screen {
@@ -17,6 +18,7 @@ h1 {
   color: rgb(25, 28, 31);
   font-size: 4rem;
   font-weight: 500;
+  line-height: 1.2;
 }
 
 h2 {
@@ -35,6 +37,8 @@ h3 {
 
 p {
   color: rgb(139, 149, 158);
+  font-size: 1rem;
+  font-weight: 400;
   margin-top: 0.8rem;
 }
 
