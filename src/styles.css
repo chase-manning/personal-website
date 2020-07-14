@@ -102,3 +102,23 @@ button:hover {
   background-color: white;
   color: #007ea7;
 }
+
+/* Responsive Mobile */
+@media only screen and (max-width: 519px) {
+}
+
+/* Responsive Mobile & Tablet */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Responsive Tablet */
+@media only screen and (min-width: 520px) and (max-width: 1023px) {
+}
+
+/* Responsive Tablet & Desktop */
+@media only screen and (min-width: 520px) {
+}
+
+/* Responsive Desktop */
+@media only screen and (min-width: 1024px) {
+}
