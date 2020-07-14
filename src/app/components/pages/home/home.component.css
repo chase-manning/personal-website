@@ -34,13 +34,3 @@
   margin-top: 30px;
   justify-content: space-evenly;
 }
-
-/* These can be removed after we finish the Google Optimise section on it */
-.content__container > h1 {
-  margin: auto;
-}
-
-.content__container > p {
-  margin: auto;
-  margin-top: 23px;
-}
