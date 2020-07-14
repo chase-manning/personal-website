@@ -20,14 +20,14 @@
 
 <div
   *ngIf="!isNotFoundPage && !isServicesPage && !isContactPage"
-  class="full-screen blue-liquid"
+  class="full-screen blue-liquid clip-path"
 ></div>
 
 <div
   *ngIf="!isNotFoundPage && !isServicesPage && !isContactPage"
   class="header__container clip-path"
 >
-  <a routerLink="" class="home-page__title white"><h2>Chase</h2></a>
+  <a routerLink="" class="home-page__title"><h2 class="white">Chase</h2></a>
   <div class="navigation__container">
     <a
       routerLink="/services"
