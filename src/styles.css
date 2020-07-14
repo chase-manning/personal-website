@@ -49,6 +49,25 @@ p {
   font-weight: 400;
 }
 
+@media only screen and (max-width: 1023px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+  }
+
+  h3 {
+  }
+
+  h4 {
+  }
+
+  p {
+  }
+}
+
 a,
 a:active,
 a:visited {
