@@ -7,11 +7,17 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 47rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/* Responsive Desktop */
+@media only screen and (min-width: 1024px) {
+  .content__container {
+    width: 47rem;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
