@@ -55,22 +55,16 @@
 
 .nav-font {
   margin: 5px 10px;
-  font-family: basier-circle;
-  font-display: swap;
   font-size: 0.5rem;
   font-weight: 900;
   color: #2b2d42;
-  letter-spacing: -0.025em;
   cursor: pointer;
 }
 
 .logo-font {
-  font-family: basier-circle;
-  font-display: swap;
   font-size: 1rem;
   font-weight: 900;
   color: #2b2d42;
-  letter-spacing: -0.025em;
   cursor: pointer;
 }
 
@@ -85,22 +79,16 @@
 }
 
 .content-header {
-  font-family: basier-circle;
-  font-display: swap;
   font-size: 1.7rem;
   font-weight: 900;
   color: #2b2d42;
-  letter-spacing: -0.025em;
   text-align: center;
 }
 
 .content-sub-header {
   margin-top: 10px;
   font-size: 0.7rem;
-  font-family: roberto;
-  font-display: swap;
   color: #2b2d42;
-  line-height: 1.5em;
   text-align: center;
 }
 
@@ -110,8 +98,6 @@
 }
 
 .button {
-  font-family: roberto;
-  font-display: swap;
   font-size: 0.6rem;
   font-weight: bold;
   padding: 7px;

@@ -29,13 +29,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-family: basier-circle;
-  font-display: swap;
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 0.7em;
   color: rgb(25, 28, 31);
-  letter-spacing: -0.025em;
   margin: auto 0;
   float: left;
   cursor: pointer;
@@ -46,10 +40,7 @@
 }
 
 .menu-item__text {
-  font-family: roberto;
-  font-display: swap;
   color: rgb(139, 149, 158);
-  line-height: 1.65em;
   float: right;
   margin: auto 0 auto 40px;
   transition: all 0.2s ease;

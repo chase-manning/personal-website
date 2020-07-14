@@ -64,8 +64,6 @@ h1 {
 }
 
 label {
-  font-family: roberto;
-  font-display: swap;
   color: rgb(139, 149, 158);
   position: absolute;
   box-shadow: 0 0 3px 2px white;
@@ -105,8 +103,6 @@ input {
   width: 300px;
   display: block;
   padding: 12px 15px;
-  font-family: roberto;
-  font-display: swap;
   border: solid 1px rgb(139, 149, 158);
   border-radius: 5px;
   font-size: 1em;
@@ -124,8 +120,6 @@ textarea {
   height: 100px;
   display: block;
   padding: 12px 15px;
-  font-family: roberto;
-  font-display: swap;
   border: solid 1px rgb(139, 149, 158);
   border-radius: 5px;
   font-size: 1em;
