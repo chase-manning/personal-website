@@ -7,6 +7,7 @@
   width: 100%;
 }
 
+/* Responsive Mobile & Tablet */
 @media only screen and (max-width: 1023px) {
   .header__container {
     padding: 2rem 2rem;
