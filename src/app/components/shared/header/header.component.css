@@ -1,10 +1,10 @@
 .header__container {
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  padding: 2.5rem 3rem;
-  width: 100%;
+  display : block;
+  position: absolute;
+  left    : 0;
+  top     : 0;
+  padding : 2.5rem 3rem;
+  width   : 100%;
 }
 
 /* Responsive Mobile & Tablet */
@@ -19,19 +19,19 @@
 }
 
 .navigation__container {
-  display: flex;
+  display    : flex;
   align-items: center;
-  float: right;
+  float      : right;
 }
 
 .home-page__title {
-  position: absolute;
-  top: 50%;
+  position : absolute;
+  top      : 50%;
   transform: translateY(-50%);
-  color: rgb(25, 28, 31);
-  margin: auto 0;
-  float: left;
-  cursor: pointer;
+  color    : rgb(25, 28, 31);
+  margin   : auto 0;
+  float    : left;
+  cursor   : pointer;
 }
 
 .white {
@@ -39,9 +39,9 @@
 }
 
 .menu-item__text {
-  color: rgb(139, 149, 158);
-  float: right;
-  margin: auto 0 auto 40px;
+  color     : rgb(139, 149, 158);
+  float     : right;
+  margin    : auto 0 auto 40px;
   transition: all 0.2s ease;
 }
 
