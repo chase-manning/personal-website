@@ -1,20 +1,31 @@
 .services__container {
-  margin-top: 2rem;
-  display: flex;
+  margin-top    : 2rem;
+  display       : flex;
   flex-direction: column;
 }
 
 .services-row {
-  display: grid;
+  display              : grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
-  margin: 5rem 0;
-}
-
-.reverse > :last-child {
-  grid-row-start: 1;
+  column-gap           : 2rem;
+  margin               : 5rem 0;
 }
 
 .services-section {
   max-width: 30rem;
+}
+
+/* Responsive Mobile */
+@media only screen and (max-width: 519px) {
+  .services-row {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Responsive Tablet & Desktop */
+@media only screen and (min-width: 520px) {
+  .reverse> :last-child {
+    grid-row-start: 1;
+  }
 }
