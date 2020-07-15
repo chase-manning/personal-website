@@ -17,6 +17,7 @@
 
 .services-section {
   max-width: 30rem;
+  margin   : auto;
 }
 
 .reverse> :last-child {
