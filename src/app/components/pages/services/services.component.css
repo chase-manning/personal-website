@@ -11,6 +11,10 @@
   margin               : 5rem 0;
 }
 
+.demo-section {
+  overflow: hidden;
+}
+
 .services-section {
   max-width: 30rem;
 }
