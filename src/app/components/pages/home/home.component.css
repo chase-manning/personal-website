@@ -1,22 +1,30 @@
 .background {
   background-color: white;
-  z-index: -1;
+  z-index         : -1;
 }
 
 .content__container {
-  position: absolute;
-  display: flex;
+  position      : absolute;
+  display       : flex;
   flex-direction: column;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top           : 50%;
+  left          : 50%;
+  transform     : translate(-50%, -50%);
+  text-align    : center;
 }
 
-/* Responsive Desktop */
-@media only screen and (min-width: 1024px) {
-  .content__container {
-    width: 47rem;
+.button__container {
+  display        : flex;
+  margin         : auto;
+  width          : 500px;
+  margin-top     : 30px;
+  justify-content: space-evenly;
+}
+
+/* Responsive Mobile */
+@media only screen and (max-width: 519px) {
+  .button__container {
+    display: none;
   }
 }
 
@@ -27,10 +35,9 @@
   }
 }
 
-.button__container {
-  display: flex;
-  margin: auto;
-  width: 500px;
-  margin-top: 30px;
-  justify-content: space-evenly;
+/* Responsive Desktop */
+@media only screen and (min-width: 1024px) {
+  .content__container {
+    width: 47rem;
+  }
 }
