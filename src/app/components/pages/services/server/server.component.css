@@ -1,24 +1,25 @@
 .services-server__container {
-  width: 100%;
-  height: 100%;
+  width  : 100%;
+  height : 100%;
+  display: flex;
+  ;
+  justify-content: center;
+  align-items    : center;
 }
 
 .server__container {
   position: relative;
-  width: 300px;
-  height: 350px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width   : 300px;
+  height  : 350px;
 }
 
 .second-section__container {
-  animation: second-section__animation 12s 0s ease-in-out infinite;
+  animation  : second-section__animation 12s 0s ease-in-out infinite;
   will-change: transform;
 }
 
 .third-section__container {
-  animation: third-section__animation 15s 0s ease-in-out infinite;
+  animation  : third-section__animation 15s 0s ease-in-out infinite;
   will-change: transform;
 }
 
@@ -27,30 +28,28 @@
 }
 
 .body__shape {
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  width: 140px;
-  height: 100px;
+  position     : absolute;
+  top          : 0px;
+  left         : 50%;
+  width        : 140px;
+  height       : 100px;
   border-radius: 10px;
-  transform: rotate(25deg) skewX(-45deg) translateX(-50%);
+  transform    : rotate(25deg) skewX(-45deg) translateX(-50%);
 }
 
 .body__top {
-  border: 1px solid white;
+  border          : 1px solid white;
   background-color: rgb(245, 245, 245);
 }
 
 .body__main {
-  background-image: linear-gradient(
-    35deg,
-    rgb(250, 250, 250),
-    rgb(240, 240, 240) 5%,
-    rgb(240, 240, 240) 45%,
-    rgb(210, 210, 210) 55%,
-    rgb(210, 210, 210) 95%,
-    rgb(180, 180, 180) 100%
-  );
+  background-image: linear-gradient(35deg,
+      rgb(250, 250, 250),
+      rgb(240, 240, 240) 5%,
+      rgb(240, 240, 240) 45%,
+      rgb(210, 210, 210) 55%,
+      rgb(210, 210, 210) 95%,
+      rgb(180, 180, 180) 100%);
 }
 
 .drop-shadow {
@@ -58,43 +57,43 @@
 }
 
 .blur {
-  opacity: 0.15;
-  filter: blur(30px);
+  opacity  : 0.15;
+  filter   : blur(30px);
   transform: translate(10px, 10px);
 }
 
 .signal__animation1 {
   will-change: transform opacity;
-  animation: signal__animation 4s 0s linear infinite;
+  animation  : signal__animation 4s 0s linear infinite;
 }
 
 .signal__animation2 {
   will-change: transform opacity;
-  animation: signal__animation 4s 1s linear infinite;
+  animation  : signal__animation 4s 1s linear infinite;
 }
 
 .signal__animation3 {
   will-change: transform opacity;
-  animation: signal__animation 4s 2s linear infinite;
+  animation  : signal__animation 4s 2s linear infinite;
 }
 
 .signal__animation4 {
   will-change: transform opacity;
-  animation: signal__animation 4s 3s linear infinite;
+  animation  : signal__animation 4s 3s linear infinite;
 }
 
 .signal {
-  top: 60px;
+  top   : 60px;
   border: solid 1px white;
 }
 
 .right__container {
-  padding: 5px;
-  position: absolute;
-  width: 110px;
-  height: 60px;
-  left: 50%;
-  top: 55px;
+  padding  : 5px;
+  position : absolute;
+  width    : 110px;
+  height   : 60px;
+  left     : 50%;
+  top      : 55px;
   transform: skewX(-25deg) rotate(-24deg) translateX(10px);
 }
 
@@ -103,40 +102,40 @@
 }
 
 .left__container {
-  position: absolute;
-  width: 100px;
-  height: 60px;
-  left: 50%;
-  top: 92px;
+  position : absolute;
+  width    : 100px;
+  height   : 60px;
+  left     : 50%;
+  top      : 92px;
   transform: skewX(30deg) rotate(30deg) translateX(-92%);
 }
 
 .panel__column {
-  display: flex;
+  display       : flex;
   flex-direction: column;
 }
 
 .panel__row {
-  display: flex;
+  display       : flex;
   flex-direction: row;
 }
 
 .panel__light {
-  margin: 3px 2px;
-  width: 10px;
-  height: 7px;
+  margin       : 3px 2px;
+  width        : 10px;
+  height       : 7px;
   border-radius: 2px;
 }
 
 .light-white {
   background-color: rgba(250, 250, 250);
-  border-top: solid 1px rgb(250, 250, 250);
-  border-left: solid 1px rgb(250, 250, 250);
-  border-bottom: solid 1px rgb(220, 220, 220);
-  border-right: solid 1px rgb(220, 220, 220);
-  opacity: 0.5;
-  box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0);
-  will-change: opacity box-shadow;
+  border-top      : solid 1px rgb(250, 250, 250);
+  border-left     : solid 1px rgb(250, 250, 250);
+  border-bottom   : solid 1px rgb(220, 220, 220);
+  border-right    : solid 1px rgb(220, 220, 220);
+  opacity         : 0.5;
+  box-shadow      : 0px 0px 6px 2px rgba(255, 255, 255, 0);
+  will-change     : opacity box-shadow;
 }
 
 .light-white__animation1 {
@@ -161,21 +160,21 @@
 
 .light-grey {
   background-color: rgb(185, 185, 185);
-  border-top: solid 1px rgb(210, 210, 210);
-  border-left: solid 1px rgb(210, 210, 210);
-  border-bottom: solid 1px rgb(175, 175, 175);
-  border-right: solid 1px rgb(175, 175, 175);
+  border-top      : solid 1px rgb(210, 210, 210);
+  border-left     : solid 1px rgb(210, 210, 210);
+  border-bottom   : solid 1px rgb(175, 175, 175);
+  border-right    : solid 1px rgb(175, 175, 175);
 }
 
 .light-blue {
   background-color: rgba(0, 168, 232);
-  border-top: solid 1px rgb(20, 188, 252);
-  border-left: solid 1px rgb(20, 188, 252);
-  border-bottom: solid 1px rgb(0, 153, 217);
-  border-right: solid 1px rgb(0, 153, 217);
-  box-shadow: 0px 0px 6px 2px rgba(0, 168, 232, 0);
-  opacity: 0.5;
-  will-change: opacity box-shadow;
+  border-top      : solid 1px rgb(20, 188, 252);
+  border-left     : solid 1px rgb(20, 188, 252);
+  border-bottom   : solid 1px rgb(0, 153, 217);
+  border-right    : solid 1px rgb(0, 153, 217);
+  box-shadow      : 0px 0px 6px 2px rgba(0, 168, 232, 0);
+  opacity         : 0.5;
+  will-change     : opacity box-shadow;
 }
 
 .light-blue__animation1 {
@@ -199,17 +198,17 @@
 }
 
 .extractor-fan {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 15%;
-  width: 55%;
-  border-radius: 7px;
+  position        : relative;
+  left            : 50%;
+  transform       : translateX(-50%);
+  height          : 15%;
+  width           : 55%;
+  border-radius   : 7px;
   background-color: rgb(224, 225, 228);
-  border-top: solid 1px rgb(214, 215, 218);
-  border-left: solid 1px rgb(214, 215, 218);
-  border-bottom: solid 1px rgb(250, 250, 250);
-  border-right: solid 1px rgb(250, 250, 250);
+  border-top      : solid 1px rgb(214, 215, 218);
+  border-left     : solid 1px rgb(214, 215, 218);
+  border-bottom   : solid 1px rgb(250, 250, 250);
+  border-right    : solid 1px rgb(250, 250, 250);
 }
 
 .extractor-fan__top {
