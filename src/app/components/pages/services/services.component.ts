@@ -22,7 +22,11 @@ export class ServicesComponent implements OnInit {
   }
 
   setSvgScale(): void {
-    this.laptopScale = (window.innerWidth - 61 * 3) / 2 / 724;
+    const targetLaptopWidth =
+      window.innerWidth > 519
+        ? (window.innerWidth - 61 * 3) / 2
+        : window.innerWidth - 32 * 2;
+    this.laptopScale = (targetLaptopWidth - 5) / 724;
     this.mobileScale = 0.85;
   }
 
