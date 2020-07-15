@@ -57,7 +57,7 @@
 
 h1 {
   margin       : auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align   : center;
 }
 
@@ -129,7 +129,7 @@ textarea {
 
 .submit-button {
   margin      : auto;
-  margin-top  : 25px;
+  margin-top  : 1rem;
   justify-self: center;
 }
 
