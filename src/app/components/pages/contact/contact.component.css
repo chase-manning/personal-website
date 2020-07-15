@@ -58,6 +58,7 @@
 h1 {
   margin       : auto;
   margin-bottom: 3rem;
+  text-align   : center;
 }
 
 label {
