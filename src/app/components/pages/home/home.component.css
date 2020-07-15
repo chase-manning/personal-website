@@ -4,12 +4,8 @@
 }
 
 .content__container {
-  position      : absolute;
   display       : flex;
   flex-direction: column;
-  top           : 50%;
-  left          : 50%;
-  transform     : translate(-50%, -50%);
   text-align    : center;
 }
 
@@ -26,12 +22,26 @@
   .button__container {
     display: none;
   }
+
+  .content__container {
+    margin-top: 6rem;
+  }
 }
 
 /* Responsive Mobile & Tablet */
 @media only screen and (max-width: 1023px) {
   .content__container {
     max-width: 45rem;
+  }
+}
+
+/* Responsive Tablet & Desktop */
+@media only screen and (min-width: 520px) {
+  .content__container {
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
