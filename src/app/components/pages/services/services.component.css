@@ -28,6 +28,6 @@
 @media only screen and (max-width: 519px) {
   .services-row {
     display: block;
+    margin : 0;
   }
-
 }
