@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
+import { HostListener } from "@angular/core";
 
 @Component({
   selector: "app-home",
@@ -7,10 +8,22 @@ import { Title, Meta } from "@angular/platform-browser";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
+  isMobile: boolean = false;
   backgroundEnabled: boolean = false;
   loadingEnabled: boolean = true;
 
-  constructor(private title: Title, private meta: Meta) {}
+  @HostListener("window:resize", ["$event"])
+  onResize(): void {
+    this.setIsMobile();
+  }
+
+  constructor(private title: Title, private meta: Meta) {
+    this.setIsMobile();
+  }
+
+  setIsMobile(): void {
+    this.isMobile = window.innerWidth < 520;
+  }
 
   ngOnInit() {
     this.title.setTitle("Chase Manning Freelance Developer");
