@@ -9,8 +9,6 @@ import { HostListener } from "@angular/core";
 })
 export class HomeComponent implements OnInit {
   isMobile: boolean = false;
-  backgroundEnabled: boolean = false;
-  loadingEnabled: boolean = true;
 
   @HostListener("window:resize", ["$event"])
   onResize(): void {
@@ -32,13 +30,5 @@ export class HomeComponent implements OnInit {
       content:
         "Let's Create Something Incredible Together! I'm Chase, a Freelance Developer who can't wait to hear about your exciting project!",
     });
-  }
-
-  enableBackground(): void {
-    this.backgroundEnabled = true;
-  }
-
-  disableLoading(): void {
-    this.loadingEnabled = false;
   }
 }
