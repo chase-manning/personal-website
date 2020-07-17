@@ -9,8 +9,10 @@
     <app-card *ngFor="let card of cards" [card]="card"></app-card>
   </div>
   <div class="card__header">Transactions</div>
-  <app-transaction
-    *ngFor="let transaction of transactions"
-    [transaction]="transaction"
-  ></app-transaction>
+  <div class="transaction__container">
+    <app-transaction
+      *ngFor="let transaction of transactions"
+      [transaction]="transaction"
+    ></app-transaction>
+  </div>
 </div>

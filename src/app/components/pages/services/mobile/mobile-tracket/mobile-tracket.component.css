@@ -1,38 +1,38 @@
 .background {
   background-color: white;
-  border-radius: 25px;
+  border-radius   : 25px;
 }
 
 .overview__container {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  padding: 30px 20px;
+  position     : absolute;
+  top          : 0px;
+  left         : 0px;
+  width        : 100%;
+  height       : 100%;
+  padding      : 30px 20px;
   border-radius: 25px;
-  overflow: hidden;
+  overflow     : hidden;
 }
 
 .hamburger-menu {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  cursor: pointer;
+  cursor        : pointer;
 }
 
 .hamburger-top-bun {
-  width: 15px;
-  height: 2px;
-  margin: 2px;
-  border-radius: 2px;
+  width           : 15px;
+  height          : 2px;
+  margin          : 2px;
+  border-radius   : 2px;
   background-color: grey;
 }
 
 .hamburger-bottom-bun {
-  width: 10px;
-  height: 2px;
-  margin: 2px;
-  border-radius: 2px;
+  width           : 10px;
+  height          : 2px;
+  margin          : 2px;
+  border-radius   : 2px;
   background-color: grey;
 }
 
@@ -41,23 +41,89 @@
 }
 
 .card__container {
-  display: flex;
-  transform: translateX(0.5px);
+  display   : flex;
+  transform : translateX(0.5px);
   transition: all 1s ease-in-out;
-  animation: card-selection 5s 5s forwards;
+}
+
+.card__animation {
+  animation: card-selection 5s forwards;
+}
+
+.transaction__container {
+  transition: all 1s ease-in-out;
+  transform : translateY(0.5px, 0.5px);
+  opacity   : 1;
+}
+
+.transaction__animation {
+  animation: transaction-selection 5s forwards;
 }
 
 @keyframes card-selection {
   0% {
     transform: translateX(0px);
   }
+
   33% {
     transform: translateX(-230.5px);
   }
+
   66% {
     transform: translateX(-230.5px);
   }
+
   100% {
     transform: translateX(-460px);
+  }
+}
+
+@keyframes transaction-selection {
+  0% {
+    transform: translateX(0px);
+    transform: translateY(0.5px);
+    opacity  : 1;
+  }
+
+  10% {
+    transform: translateX(0px);
+    transform: translateY(30px);
+    opacity  : 0;
+  }
+
+  23% {
+    transform: translateX(0px);
+    transform: translateY(30px);
+    opacity  : 0;
+  }
+
+  33% {
+    transform: translateX(-230.5px);
+    transform: translateY(0.5px);
+    opacity  : 1;
+  }
+
+  66% {
+    transform: translateX(-230.5px);
+    transform: translateY(0.5px);
+    opacity  : 1;
+  }
+
+  76% {
+    transform: translateX(-230.5px);
+    transform: translateY(30px);
+    opacity  : 0;
+  }
+
+  90% {
+    transform: translateX(-230.5px);
+    transform: translateY(30px);
+    opacity  : 0;
+  }
+
+  100% {
+    transform: translateX(-460px);
+    transform: translateY(0.5px);
+    opacity  : 1;
   }
 }

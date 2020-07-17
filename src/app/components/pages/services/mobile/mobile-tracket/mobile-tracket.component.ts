@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Card } from "./card/card.component";
 import { Transaction } from "./transaction/transaction.component";
+import { HostListener } from "@angular/core";
 
 @Component({
   selector: "app-mobile-tracket",
@@ -8,6 +9,16 @@ import { Transaction } from "./transaction/transaction.component";
   styleUrls: ["./mobile-tracket.component.css"],
 })
 export class MobileTracketComponent implements OnInit {
+  @HostListener("window:scroll", ["$event"])
+  onScroll() {
+    let cards = document.getElementsByClassName("card__container")[0];
+    setTimeout(() => cards.classList.add("card__animation"), 500);
+    let transactions = document.getElementsByClassName(
+      "transaction__container"
+    )[0];
+    setTimeout(() => transactions.classList.add("transaction__animation"), 500);
+  }
+
   cards: Card[] = [
     {
       color1: "#5c00d1",
@@ -52,6 +63,34 @@ export class MobileTracketComponent implements OnInit {
       transactionRows: [
         {
           category: "Travel",
+          description: "Air NZ Tickets",
+          price: "-$789.34",
+          date: "05 Jun, 7:45pm",
+        },
+        {
+          category: "Travel",
+          description: "Travel Insurance",
+          price: "-$96.00",
+          date: "04 Jun, 4:23pm",
+        },
+        {
+          category: "Food",
+          description: "Sea Breeze Diner",
+          price: "-$136.76",
+          date: "26 May, 9:23pm",
+        },
+        {
+          category: "Food",
+          description: "Mc Donald's",
+          price: "-$23.21",
+          date: "20 May, 1:23am",
+        },
+      ],
+    },
+    {
+      transactionRows: [
+        {
+          category: "Meow",
           description: "Air NZ Tickets",
           price: "-$789.34",
           date: "05 Jun, 7:45pm",
