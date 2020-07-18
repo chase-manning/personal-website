@@ -11,6 +11,14 @@ import { HostListener } from "@angular/core";
 export class MobileTracketComponent implements OnInit {
   @HostListener("window:scroll", ["$event"])
   onScroll() {
+    this.startAnimations();
+  }
+
+  get isMobile(): boolean {
+    return window.innerWidth < 520;
+  }
+
+  startAnimations(): void {
     let cards = document.getElementsByClassName("card__container")[0];
     setTimeout(() => cards.classList.add("card__animation"), 1000);
     let transactions = document.getElementsByClassName(
@@ -150,5 +158,7 @@ export class MobileTracketComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!this.isMobile) this.startAnimations();
+  }
 }
