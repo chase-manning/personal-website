@@ -12,11 +12,14 @@ export class MobileTracketComponent implements OnInit {
   @HostListener("window:scroll", ["$event"])
   onScroll() {
     let cards = document.getElementsByClassName("card__container")[0];
-    setTimeout(() => cards.classList.add("card__animation"), 500);
+    setTimeout(() => cards.classList.add("card__animation"), 1000);
     let transactions = document.getElementsByClassName(
       "transaction__container"
     )[0];
-    setTimeout(() => transactions.classList.add("transaction__animation"), 500);
+    setTimeout(
+      () => transactions.classList.add("transaction__animation"),
+      1000
+    );
   }
 
   cards: Card[] = [
