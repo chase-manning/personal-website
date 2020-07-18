@@ -1,27 +1,23 @@
 # Chase Manning
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+This is the website of Chase Manning, Freelance Developer.  
+See the website live here: https://chasemanning.co.nz
 
-## Development server
+## About The Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This site is built using Angular 9, eveyone's second favourite web development framework.  
+This project is 100% created with good ol' fashioned hand written code.  
 
-## Code scaffolding
+## Run Locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dependencies:
+* [Install Node.js](https://nodejs.org/en/download/)
+* [Install Angular](https://angular.io/cli)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To run the app locally:
+* [Clone the Repository](https://www.google.com/search?q=how+to+clone+a+repository+from+github) to your local machine
+* [Open a Terminal](https://www.google.com/search?q=how+to+open+a+terminal+in+a+directory&oq=how+to+open+a+terminal+in+a+directory) at the app directory
+* [Change directory](https://www.google.com/search?q=how+to+cd+to+a+directory&oq=how+to+cd+to+a+directory) to the `src` directory
+* Run `npm install`
+* Run `npm start`
+* Navigate to `http://localhost:4200/`
