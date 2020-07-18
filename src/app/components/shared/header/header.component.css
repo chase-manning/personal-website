@@ -8,6 +8,7 @@
 }
 
 .clip-path {
+  display  : none;
   clip-path: url(#headerClip);
 }
 
