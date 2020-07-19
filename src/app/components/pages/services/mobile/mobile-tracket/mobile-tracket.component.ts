@@ -9,6 +9,12 @@ import { HostListener } from "@angular/core";
   styleUrls: ["./mobile-tracket.component.css"],
 })
 export class MobileTracketComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit() {
+    if (!this.isMobile) setTimeout(() => this.startAnimations(), 5000);
+  }
+
   @HostListener("window:scroll", ["$event"])
   onScroll() {
     this.startAnimations();
@@ -155,10 +161,4 @@ export class MobileTracketComponent implements OnInit {
       ],
     },
   ];
-
-  constructor() {}
-
-  ngOnInit() {
-    if (!this.isMobile) this.startAnimations();
-  }
 }
