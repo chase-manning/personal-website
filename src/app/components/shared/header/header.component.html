@@ -1,4 +1,4 @@
-<div *ngIf="!isNotFoundPage" class="header__container">
+<div *ngIf="!isNotFoundPage" class="header__container hide-on-mobile">
   <a routerLink="" class="home-page__title"><h2>Chase</h2></a>
   <div class="navigation__container">
     <a
@@ -25,7 +25,7 @@
 
 <div
   *ngIf="!isNotFoundPage && !isServicesPage && !isContactPage"
-  class="header__container clip-path"
+  class="header__container clip-path hide-on-mobile"
 >
   <a routerLink="" class="home-page__title"><h2 class="white">Chase</h2></a>
   <div class="navigation__container">

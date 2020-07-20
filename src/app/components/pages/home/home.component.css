@@ -36,10 +36,6 @@
     display: none;
   }
 
-  .content__container {
-    margin-top: 6rem;
-  }
-
   .mobile-contact__container {
     display: flex;
   }
