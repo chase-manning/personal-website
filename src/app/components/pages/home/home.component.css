@@ -17,6 +17,19 @@
   justify-content: space-evenly;
 }
 
+.mobile-contact__container {
+  display         : none;
+  justify-content : center;
+  align-items     : center;
+  background-color: white;
+  position        : fixed;
+  bottom          : 0;
+  left            : 0;
+  width           : 100%;
+  padding         : 1rem;
+  box-shadow      : 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
   .button__container {
@@ -25,6 +38,10 @@
 
   .content__container {
     margin-top: 6rem;
+  }
+
+  .mobile-contact__container {
+    display: flex;
   }
 }
 
