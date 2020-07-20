@@ -1,129 +1,127 @@
-.background {
-  background-color: #edf2f4;
+section {
+  background-color: var(--white);
+  height          : 100%;
+  --black         : #191c1f;
+  --white         : white;
 }
 
-.red-shapes {
-  background-color: #ef233c;
+* {
+  color: var(--black);
 }
 
-.top-left__clip {
-  z-index: 1;
-  clip-path: url(#top-left__clip);
+header {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
 }
 
-.top-left__path {
-  will-change: transform d;
-  animation: top-left__animation 30s ease-in-out infinite alternate;
-}
-.bottom-right__clip {
-  z-index: 1;
-  clip-path: url(#bottom-right__clip);
+header>div {
+  display    : flex;
+  align-items: center;
 }
 
-.bottom-right__path {
-  will-change: transform d;
-  animation: bottom-right__animation 30s ease-in-out infinite alternate;
-}
-
-.white__text {
-  color: #edf2f4 !important;
-}
-
-.page__container {
-  width: 100%;
-  height: 100%;
-  padding: 20px 30px;
-  position: relative;
-}
-
-.header__container {
-  width: 100%;
-}
-
-.logo__container {
-  left: 0px;
-  top: 0px;
-  padding-top: 20px;
-  padding-left: 30px;
-  position: absolute;
-}
-
-.nav__container {
-  display: flex;
-  float: right;
-}
-
-.nav-font {
-  margin: 5px 10px;
-  font-size: 0.5rem;
-  font-weight: 900;
-  color: #2b2d42;
-  cursor: pointer;
-}
-
-.logo-font {
+h2 {
+  cursor   : pointer;
+  margin   : 0 2rem;
   font-size: 1rem;
-  font-weight: 900;
-  color: #2b2d42;
-  cursor: pointer;
 }
 
-.content__container {
-  margin-top: 10px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+p {
+  cursor   : pointer;
+  margin   : 0 0.5rem;
+  font-size: 0.5rem;
 }
 
-.content-header {
-  font-size: 1.7rem;
-  font-weight: 900;
-  color: #2b2d42;
-  text-align: center;
+header>div>div {
+  cursor          : pointer;
+  font-size       : 0.5rem;
+  padding         : 0.3rem 0.6rem;
+  margin          : 1rem 1rem 1rem 0.5rem;
+  color           : var(--white);
+  background-color: var(--black);
+  border-radius   : 0.15rem;
+  border          : none;
 }
 
-.content-sub-header {
-  margin-top: 10px;
-  font-size: 0.7rem;
-  color: #2b2d42;
-  text-align: center;
+main {
+  width    : 12rem;
+  margin   : 0 0 0 3.5rem;
+  position : absolute;
+  top      : 50%;
+  transform: translateY(-50%);
 }
 
-.button__container {
-  display: flex;
-  justify-content: center;
+h1 {
+  font-size: 2rem;
 }
 
-.button {
-  font-size: 0.6rem;
-  font-weight: bold;
-  padding: 7px;
-  margin: 10px;
-  border-radius: 5px;
-  min-width: 80px;
-  text-align: center;
-  cursor: pointer;
+h4 {
+  font-size  : 0.6rem;
+  line-height: 1.4;
 }
 
-.primary__button {
-  background-color: #ef233c;
-  border: solid 1px #ef233c;
-  color: #edf2f4;
+main>div {
+  cursor       : pointer;
+  font-size    : 0.6rem;
+  padding      : 0.4rem 0;
+  text-align   : center;
+  margin-top   : 1rem;
+  color        : var(--white);
+  background   : linear-gradient(135deg, #5c00d1, #a74ddf);
+  border-radius: 0.15rem;
+  border       : none;
+  width        : 5.3rem;
 }
 
-.primary__button:hover {
-  background-color: #d90429;
-  border: solid 1px #d90429;
+.help-menu {
+  position                  : absolute;
+  right                     : 0;
+  bottom                    : 0;
+  margin                    : 1rem;
+  font-size                 : 0.8rem;
+  background-color          : var(--highlight);
+  color                     : var(--white);
+  background-color          : var(--black);
+  width                     : 1.5rem;
+  height                    : 1.5rem;
+  border-top-left-radius    : 0;
+  border-top-right-radius   : 25%;
+  border-bottom-right-radius: 25%;
+  border-bottom-left-radius : 25%;
+  display                   : flex;
+  justify-content           : center;
+  align-items               : center;
 }
 
-.secondary__button {
-  border: solid 1px #2b2d42;
+.tracket__container {
+  transform: scaleY(0.8);
+  position : absolute;
+  right    : 0;
+  top      : -8rem;
 }
 
-.secondary__button:hover {
-  border: solid 1px black;
-  color: black;
+.tracket__container>div {
+  width           : 261px;
+  height          : 550px;
+  background-color: white;
+  border-radius   : 2rem;
+  box-shadow      : -10px -10px 200px rgba(0, 0, 0, 0.15);
+  transform       : scale(0.3) rotate(-20deg);
+}
+
+.portal__container {
+  transform: scaleY(0.8);
+  position : absolute;
+  right    : -2rem;
+  top      : 6rem;
+}
+
+.portal__container>div {
+  width           : 280px;
+  height          : 180px;
+  background-color: white;
+  border-radius   : 0.5rem;
+  box-shadow      : -10px -10px 200px rgba(0, 0, 0, 0.15);
+  transform       : rotate(-20deg);
+  overflow        : hidden;
 }
