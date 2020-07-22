@@ -21,12 +21,7 @@
             <input id="name" type="text" formControlName="name" />
             <label for="name">Name</label>
             <div
-              *ngIf="
-                contactForm.controls['name'].invalid &&
-                (contactForm.controls['name'].dirty ||
-                  contactForm.controls['name'].touched ||
-                  validated)
-              "
+              *ngIf="validated && contactForm.controls['name'].invalid"
               class="validation-message"
             >
               <div *ngIf="!contactForm.controls['name'].valid">
@@ -38,12 +33,7 @@
             <input id="email" type="text" formControlName="email" />
             <label for="email">Email</label>
             <div
-              *ngIf="
-                contactForm.controls['email'].invalid &&
-                (contactForm.controls['email'].dirty ||
-                  contactForm.controls['email'].touched ||
-                  validated)
-              "
+              *ngIf="validated && contactForm.controls['email'].invalid"
               class="validation-message"
             >
               <div *ngIf="!contactForm.controls['email'].valid">
@@ -59,12 +49,7 @@
             ></textarea>
             <label for="message">Message</label>
             <div
-              *ngIf="
-                contactForm.controls['message'].invalid &&
-                (contactForm.controls['message'].dirty ||
-                  contactForm.controls['message'].touched ||
-                  validated)
-              "
+              *ngIf="validated && contactForm.controls['message'].invalid"
               class="validation-message"
             >
               <div *ngIf="!contactForm.controls['message'].valid">
