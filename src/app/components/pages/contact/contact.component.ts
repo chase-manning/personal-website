@@ -5,7 +5,6 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { GoogleAnalyticsService } from "../../../services/google-analytics.service";
-
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
@@ -25,9 +24,15 @@ export class ContactComponent implements OnInit {
     private googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.contactForm = this.formBuilder.group({
-      name: ["", Validators.required],
-      email: ["", Validators.required],
-      message: ["", Validators.required],
+      name: [
+        "",
+        Validators.compose([Validators.minLength(3), Validators.required]),
+      ],
+      email: ["", Validators.compose([Validators.email, Validators.required])],
+      message: [
+        "",
+        Validators.compose([Validators.minLength(10), Validators.required]),
+      ],
     });
   }
 
@@ -42,8 +47,9 @@ export class ContactComponent implements OnInit {
 
   onSubmit(contactData): void {
     this.validated = true;
-    if (contactData.name + contactData.email + contactData.message == "")
-      return;
+
+    if (!this.contactForm.valid) return;
+
     this.sendEmail(contactData.name, contactData.email, contactData.message);
     this.startLoading();
   }

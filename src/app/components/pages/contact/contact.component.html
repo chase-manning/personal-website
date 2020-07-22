@@ -29,7 +29,7 @@
               "
               class="validation-message"
             >
-              <div *ngIf="contactForm.controls['name'].errors.required">
+              <div *ngIf="!contactForm.controls['name'].valid">
                 Oh no! I need to know your name 😲
               </div>
             </div>
@@ -46,7 +46,7 @@
               "
               class="validation-message"
             >
-              <div *ngIf="contactForm.controls['email'].errors.required">
+              <div *ngIf="!contactForm.controls['email'].valid">
                 Share your email so I can say hi 🙏
               </div>
             </div>
@@ -67,7 +67,7 @@
               "
               class="validation-message"
             >
-              <div *ngIf="contactForm.controls['message'].errors.required">
+              <div *ngIf="!contactForm.controls['message'].valid">
                 Tell me about your project or idea! 💡
               </div>
             </div>
