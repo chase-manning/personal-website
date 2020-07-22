@@ -1,14 +1,14 @@
 .services__container {
-  margin-top    : 2rem;
-  display       : flex;
+  margin-top: 2rem;
+  display: flex;
   flex-direction: column;
 }
 
 .services-row {
-  display              : grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap           : 2rem;
-  margin               : 5rem 0;
+  column-gap: 2rem;
+  margin: 5rem 0;
 }
 
 .demo-section {
@@ -17,10 +17,10 @@
 
 .services-section {
   max-width: 30rem;
-  margin   : auto;
+  margin: auto;
 }
 
-.reverse> :last-child {
+.reverse > :last-child {
   grid-row-start: 1;
 }
 
@@ -28,6 +28,13 @@
 @media only screen and (max-width: 519px) {
   .services-row {
     display: block;
-    margin : 0;
+    margin: 0;
+  }
+}
+
+/* Responsive High Res */
+@media only screen and (min-width: 1500px) {
+  .demo-section {
+    overflow: visible;
   }
 }
