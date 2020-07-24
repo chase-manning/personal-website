@@ -260,6 +260,13 @@ textarea {
   }
 }
 
+.contact__footer {
+  position: fixed;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+}
+
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
   .mobile-exit-button {
