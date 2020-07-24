@@ -21,6 +21,7 @@ import { TransactionComponent } from "./components/pages/services/mobile/mobile-
 import { TransactionRowComponent } from "./components/pages/services/mobile/mobile-tracket/transaction/transaction-row/transaction-row.component";
 import { GoogleAnalyticsService } from "./services/google-analytics.service";
 import { DigiplePortalComponent } from "./components/pages/services/laptop/laptop-digiple/digiple-portal/digiple-portal.component";
+import { SocialsComponent } from "./components/pages/contact/socials/socials.component";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DigiplePortalComponent } from "./components/pages/services/laptop/lapto
     TransactionComponent,
     TransactionRowComponent,
     DigiplePortalComponent,
+    SocialsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [GoogleAnalyticsService],
