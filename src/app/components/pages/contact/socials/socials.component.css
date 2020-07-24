@@ -1,0 +1,5 @@
+.socials__container {
+  display: flex;
+  width: 12rem;
+  justify-content: space-evenly;
+}
