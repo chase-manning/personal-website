@@ -87,12 +87,6 @@
   transform: rotate(54deg) skewY(-20deg);
 }
 
-.socials__container {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
 .form-input__container {
   margin-bottom: 20px;
 }
