@@ -2,6 +2,8 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .services-row {
@@ -9,6 +11,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
   margin: 5rem 0;
+  width: 100%;
 }
 
 .demo-section {
@@ -24,6 +27,14 @@
   grid-row-start: 1;
 }
 
+button {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1.2rem 6rem;
+}
+
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
   .services-row {
@@ -32,6 +43,9 @@
   }
   .services__container {
     margin-bottom: 5rem;
+  }
+  button {
+    display: none;
   }
 }
 
