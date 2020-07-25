@@ -5,6 +5,9 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { GoogleAnalyticsService } from "../../../services/google-analytics.service";
+import { EmailData } from "../../../services/email.service";
+import { EmailService } from "../../../services/email.service";
+
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
@@ -21,7 +24,8 @@ export class ContactComponent implements OnInit {
     private title: Title,
     private meta: Meta,
     private formBuilder: FormBuilder,
-    private googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService,
+    private emailService: EmailService
   ) {
     this.contactForm = this.formBuilder.group({
       name: [
@@ -83,27 +87,16 @@ export class ContactComponent implements OnInit {
   sendEmail(name: string, email: string, message: string): void {
     var confirmationEmailElement = document.getElementById("confirmationEmail");
 
-    firebase.initializeApp({
-      authDomain: "chase-manning-portfolio.firebaseapp.com",
-      projectId: "chase-manning-portfolio",
-    });
+    let emailData: EmailData = new EmailData();
+    emailData.email = email;
+    emailData.subject = "Thanks for Mesaging Me!";
+    emailData.html = confirmationEmailElement.innerHTML;
+    emailData.text =
+      "Thanks for Mesaging Chase, he will get back to you shortly";
 
-    var db = firebase.firestore();
-
-    db.collection("contacts")
-      .add({
-        name: name,
-        message: message,
-        email: email,
-        from: "chase",
-        subject: "Thanks for Messaging Me!",
-        html: confirmationEmailElement.innerHTML,
-      })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
+    this.emailService
+      .sendEmail(emailData)
+      .subscribe((response) => console.log(response));
+    console.log("meow");
   }
 }
