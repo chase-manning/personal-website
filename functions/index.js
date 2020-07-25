@@ -6,15 +6,15 @@ exports.email = functions.https.onRequest((request, response) => {
     .then(() => {
       sgMail.setApiKey(functions.config().sendgrid.key);
       const msg = {
-        to: request.email,
+        to: "me@chasemanning.co.nz",
         from: "me@chasemanning.co.nz",
-        subject: request.subject,
-        text: request.text,
-        html: request.html,
+        subject: "test subject",
+        text: "test ext",
+        html: "amkfjsjsdjkldfj",
       };
       sgMail.send(msg);
       console.log("wood");
-      return response.send("Message Sent!");
+      return response.status("200").send("Message Sent!");
     })
     .catch((err) => {
       console.error(err);
