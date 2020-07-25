@@ -101,9 +101,9 @@ export class ContactComponent implements OnInit {
     let emailData2: EmailData = new EmailData();
     emailData2.email = "me@chasemanning.co.nz";
     emailData2.subject = "New Contact Form Submission";
-    emailData2.html =
-      "Name: " + name + " - Email: " + email + " - Message: " + message;
     emailData2.text =
+      "Name: " + name + " - Email: " + email + " - Message: " + message;
+    emailData2.html =
       "Name: " + name + "<br/>Email: " + email + "<br/>Message: " + message;
 
     this.emailService
