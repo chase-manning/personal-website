@@ -15,8 +15,7 @@ export class EmailData {
 })
 export class EmailService {
   emailUrl: string = "https://chasemanning.co.nz/api/email";
-  //emailUrl: string =
-  "http://localhost:5001/chase-manning-portfolio/us-central1/email";
+  //emailUrl: string = "http://localhost:5001/chase-manning-portfolio/us-central1/email";
 
   constructor(private http: HttpClient) {}
 
