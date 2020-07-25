@@ -17,6 +17,13 @@ jobs:
       - run: npm run build:prod
       - uses: w9jds/firebase-action@master
         with:
-          args: deploy
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - run: cd functions
+      - run: npm install
+      - uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
