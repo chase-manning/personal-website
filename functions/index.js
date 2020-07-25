@@ -23,7 +23,8 @@ exports.email = functions.https.onRequest((req, res) => {
       from: "Chase Manning <me@chasemanning.co.nz>",
       to: req.body.email,
       subject: req.body.subject,
-      message: req.body.text,
+      text: req.body.text,
+      html: req.body.html,
     };
     mg.messages().send(data, (error, body) => {
       console.log("Body:");
