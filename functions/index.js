@@ -15,6 +15,7 @@ exports.email = functions.https.onRequest((req, res) => {
       message: req.body.text,
     };
     mg.messages().send(data, (error, body) => {
+      console.log(body);
       body
         ? res.status(200).send("Email Sent Successfullly !")
         : res.status(500).send(error);
