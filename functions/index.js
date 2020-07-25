@@ -1,8 +1,8 @@
 const functions = require("firebase-functions");
+const sgMail = require("@sendgrid/mail");
 
 exports.contact = functions.https.onRequest((request, response) => {
   functions.logger.info("Start Contact Function");
-  const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(functions.config().sendgrid.key);
   const msg = {
     to: "me@chasemanning.co.nz",
