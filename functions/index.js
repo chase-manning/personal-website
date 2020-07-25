@@ -4,7 +4,11 @@ const mailgun = require("mailgun-js");
 
 const DOMAIN = "chasemanning.co.nz";
 const api_key = functions.config().mailgun.key;
-const mg = mailgun({ apiKey: api_key, domain: DOMAIN });
+const mg = mailgun({
+  apiKey: api_key,
+  domain: DOMAIN,
+  host: "api.eu.mailgun.net",
+});
 
 exports.email = functions.https.onRequest((req, res) => {
   console.log("Key: " + api_key);
