@@ -2,7 +2,7 @@ const functions = require("firebase-functions");
 const cors = require("cors")({ origin: true });
 const mailgun = require("mailgun-js");
 
-const DOMAIN = "chasemanning.co.nz";
+const DOMAIN = functions.config().mailgun.domain;
 const api_key = functions.config().mailgun.key;
 const mg = mailgun({ apiKey: api_key, domain: DOMAIN });
 
