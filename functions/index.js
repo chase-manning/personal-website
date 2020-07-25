@@ -1,8 +1,23 @@
 const functions = require("firebase-functions");
-const sgMail = require("@sendgrid/mail");
+const cors = require("cors")({ origin: true });
+const mailgun = require("mailgun-js");
 
-exports.email = functions.https.onRequest((request, response) => {
-  console.log("test");
-  console.log(request.body.email);
-  response.send("test");
+const DOMAIN = "chasemanning.co.nz";
+const api_key = functions.config().mailgun.key;
+const mg = mailgun({ apiKey: api_key, domain: DOMAIN });
+
+exports.email = functions.https.onRequest((req, res) => {
+  return cors(req, res, () => {
+    const data = {
+      from: "Chase Manning <me@chasemanning.co.nz>",
+      to: req.body.email,
+      subject: req.body.subject,
+      message: req.body.text,
+    };
+    mg.messages().send(data, (error, body) => {
+      body
+        ? res.status(200).send("Email Sent Successfullly !")
+        : res.status(500).send(error);
+    });
+  });
 });
