@@ -1,12 +1,16 @@
 # Chase Manning
 
-This is the website of Chase Manning, Freelance Developer.  
-See the website live here: https://chasemanning.co.nz
+Hi, I'm Chase Manning, Freelance Developer.  
+I have a passion for Web Development, Mobile Development and all the fun things surrounding it!  
+Welcome to my GitHub profile, I only have one repo currently which is an Angular project for my website.  
+If you're interested in hiring me, [check out my website](https://chasemanning.co.nz).  
+Or if you want to learn more about this project, keep reading :)
 
 ## About The Project
 
+This repo is for [the website of Chase Manning](https://chasemanning.co.nz).  
 This site is built using Angular 9, eveyone's second favourite web development framework.  
-This project is 100% created with good ol' fashioned hand written code.  
+This project is 100% created with good ol' fashioned hand written code.
 
 ## Run Locally
 
