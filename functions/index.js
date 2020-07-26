@@ -10,30 +10,43 @@ const mg = mailgun({
   host: "api.eu.mailgun.net",
 });
 
-exports.email = functions.https.onRequest((req, res) => {
-  console.log("Key: " + api_key);
-  console.log("Domain: " + DOMAIN);
-  console.log("Email: " + req.body.email);
-  console.log("Subject: " + req.body.subject);
-  console.log("Text: " + req.body.text);
-  console.log("HTML: " + req.body.html);
+const fromEmail = "Chase Manning <me@chasemanning.co.nz>";
+
+exports.contact = functions.https.onRequest((req, res) => {
+  console.log(req);
 
   return cors(req, res, () => {
     const data = {
-      from: "Chase Manning <me@chasemanning.co.nz>",
-      to: req.body.email,
-      subject: req.body.subject,
-      text: req.body.text,
-      html: req.body.html,
+      from: fromEmail,
+      to: "me@chasemanning.co.nz",
+      subject: "New Contact Form Submission",
+      html:
+        "Name: " +
+        req.body.name +
+        "<br/>Email: " +
+        req.body.email +
+        "<br/>Message: " +
+        req.body.message,
     };
     mg.messages().send(data, (error, body) => {
-      console.log("Body:");
       console.log(body);
-      console.log("Error:");
       console.log(error);
-      body
-        ? res.status(200).send("Email Sent Successfullly !")
-        : res.status(500).send(error);
+
+      const data = {
+        from: fromEmail,
+        to: req.body.email,
+        subject: "Thanks for Contacting Me",
+        template: "thanks-for-contacting-me",
+      };
+
+      mg.messages().send(data, (error, body) => {
+        console.log(body);
+        console.log(error);
+
+        body
+          ? res.status(200).send("Email Sent Successfullly !")
+          : res.status(500).send(error);
+      });
     });
   });
 });

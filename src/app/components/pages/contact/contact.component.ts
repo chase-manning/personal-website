@@ -5,7 +5,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { GoogleAnalyticsService } from "../../../services/google-analytics.service";
-import { EmailData } from "../../../services/email.service";
+import { ContactData } from "../../../services/email.service";
 import { EmailService } from "../../../services/email.service";
 
 @Component({
@@ -85,29 +85,14 @@ export class ContactComponent implements OnInit {
   }
 
   sendEmail(name: string, email: string, message: string): void {
-    var confirmationEmailElement = document.getElementById("confirmationEmail");
-
-    let emailData: EmailData = new EmailData();
-    emailData.email = email;
-    emailData.subject = "Thanks for Mesaging Me!";
-    emailData.html = confirmationEmailElement.innerHTML;
-    emailData.text =
-      "Thanks for Mesaging Chase, he will get back to you shortly";
+    let contactData: ContactData = {
+      name: name,
+      email: email,
+      message: message,
+    };
 
     this.emailService
-      .sendEmail(emailData)
-      .subscribe((response) => console.log(response));
-
-    let emailData2: EmailData = new EmailData();
-    emailData2.email = "me@chasemanning.co.nz";
-    emailData2.subject = "New Contact Form Submission";
-    emailData2.text =
-      "Name: " + name + " - Email: " + email + " - Message: " + message;
-    emailData2.html =
-      "Name: " + name + "<br/>Email: " + email + "<br/>Message: " + message;
-
-    this.emailService
-      .sendEmail(emailData2)
+      .sendEmail(contactData)
       .subscribe((response) => console.log(response));
   }
 }
