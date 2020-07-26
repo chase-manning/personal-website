@@ -92,7 +92,7 @@ export class ContactComponent implements OnInit {
     };
 
     this.emailService
-      .sendEmail(contactData)
+      .contactEmail(contactData)
       .subscribe((response) => console.log(response));
   }
 }
