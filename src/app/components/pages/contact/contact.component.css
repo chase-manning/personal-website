@@ -259,7 +259,7 @@ textarea {
 .contact__footer {
   position: fixed;
   left: 50%;
-  bottom: 3rem;
+  bottom: 2rem;
   transform: translateX(-50%);
 }
 
