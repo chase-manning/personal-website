@@ -11,7 +11,6 @@ import { HeaderComponent } from "./components/shared/header/header.component";
 import { MobileComponent } from "./components/pages/services/mobile/mobile.component";
 import { LaptopComponent } from "./components/pages/services/laptop/laptop.component";
 import { ServerComponent } from "./components/pages/services/server/server.component";
-import { ConfirmationEmailComponent } from "./components/pages/contact/confimation-email/confirmation-email.component";
 import { LaptopDigipleComponent } from "./components/pages/services/laptop/laptop-digiple/laptop-digiple.component";
 import { MobileTracketComponent } from "./components/pages/services/mobile/mobile-tracket/mobile-tracket.component";
 import { HomeLiquidComponent } from "./components/pages/home/home-liquid/home-liquid.component";
@@ -34,7 +33,6 @@ import { HttpClientModule } from "@angular/common/http";
     MobileComponent,
     LaptopComponent,
     ServerComponent,
-    ConfirmationEmailComponent,
     LaptopDigipleComponent,
     MobileTracketComponent,
     HomeLiquidComponent,
