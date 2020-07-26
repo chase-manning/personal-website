@@ -206,10 +206,6 @@ textarea {
   animation: liquid-blob 4s linear forwards;
 }
 
-.hidden {
-  display: none;
-}
-
 @keyframes liquid-blob {
   0% {
     border-top-left-radius: 90%;
