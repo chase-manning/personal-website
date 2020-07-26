@@ -16,7 +16,6 @@ This project is 100% created with good ol' fashioned hand written code.
 
 Dependencies:
 * [Install Node.js](https://nodejs.org/en/download/)
-* [Install Angular](https://angular.io/cli)
 
 To run the app locally:
 * [Clone the Repository](https://www.google.com/search?q=how+to+clone+a+repository+from+github) to your local machine
