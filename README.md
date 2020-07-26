@@ -9,14 +9,14 @@ Or if you want to learn more about this project, keep reading :)
 ## About The Project
 
 This repo is for [the website of Chase Manning](https://chasemanning.co.nz).  
-This site is built using Angular 9, eveyone's second favourite web development framework.  
+This site is built using Angular 9, everyone's second favourite web development framework.  
 This project is 100% created with good ol' fashioned hand written code.
 
 ## Contributing
 
-If you are intersted in contributing, please check out the open issues.  
+If you are interested in contributing, please check out the open issues.  
 Look for the Label `good first issue` as that will be the best place to start.  
-Branch of Master and create a PR with the change.  
+Create a Branch from Master and then a PR with the change.  
 
 Most issues are validated with AB Testing before being merged and closed.  
 Issues that require validation are Labeled with `requires validation`.  
