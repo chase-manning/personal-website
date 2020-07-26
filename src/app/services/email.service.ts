@@ -12,11 +12,10 @@ export class ContactData {
   providedIn: "root",
 })
 export class EmailService {
-  emailUrl: string = "https://chasemanning.co.nz/api/email";
-
   constructor(private http: HttpClient) {}
 
-  sendEmail(contactData: ContactData): Observable<string> {
-    return this.http.post<string>(this.emailUrl, contactData);
+  contactEmail(contactData: ContactData): Observable<string> {
+    const contactEmailUrl: string = "https://chasemanning.co.nz/api/contact";
+    return this.http.post<string>(contactEmailUrl, contactData);
   }
 }
