@@ -25,6 +25,7 @@
 }
 
 .contact-form__container {
+  padding: 5rem 0;
   background-color: white;
   position: absolute;
   border-radius: 20px;
