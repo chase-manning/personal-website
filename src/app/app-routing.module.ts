@@ -25,7 +25,13 @@ const routes: Routes = [
         (m) => m.ContactModule
       ),
   },
-  { path: "404", component: NotFoundComponent },
+  {
+    path: "404",
+    loadChildren: () =>
+      import("./components/pages/not-found/not-found.module").then(
+        (m) => m.NotFoundModule
+      ),
+  },
   { path: "**", redirectTo: "/404" },
 ];
 

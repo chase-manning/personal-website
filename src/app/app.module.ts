@@ -13,7 +13,6 @@ import { ServerComponent } from "./components/pages/services/server/server.compo
 import { LaptopDigipleComponent } from "./components/pages/services/laptop/laptop-digiple/laptop-digiple.component";
 import { MobileTracketComponent } from "./components/pages/services/mobile/mobile-tracket/mobile-tracket.component";
 import { HomeLiquidComponent } from "./components/pages/home/home-liquid/home-liquid.component";
-import { NotFoundComponent } from "./components/pages/not-found/not-found.component";
 import { CardComponent } from "./components/pages/services/mobile/mobile-tracket/card/card.component";
 import { TransactionComponent } from "./components/pages/services/mobile/mobile-tracket/transaction/transaction.component";
 import { TransactionRowComponent } from "./components/pages/services/mobile/mobile-tracket/transaction/transaction-row/transaction-row.component";
@@ -33,7 +32,6 @@ import { HttpClientModule } from "@angular/common/http";
     LaptopDigipleComponent,
     MobileTracketComponent,
     HomeLiquidComponent,
-    NotFoundComponent,
     CardComponent,
     TransactionComponent,
     TransactionRowComponent,
