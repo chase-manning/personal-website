@@ -1,8 +1,9 @@
 section {
   background-color: var(--white);
-  height          : 100%;
-  --black         : #191c1f;
-  --white         : white;
+  height: 100%;
+  --black: #191c1f;
+  --white: white;
+  line-height: 1.65;
 }
 
 * {
@@ -10,44 +11,44 @@ section {
 }
 
 header {
-  display        : flex;
+  display: flex;
   justify-content: space-between;
-  align-items    : center;
+  align-items: center;
 }
 
-header>div {
-  display    : flex;
+header > div {
+  display: flex;
   align-items: center;
 }
 
 h2 {
-  cursor   : pointer;
-  margin   : 0 2rem;
+  cursor: pointer;
+  margin: 0 2rem;
   font-size: 1rem;
 }
 
 p {
-  cursor   : pointer;
-  margin   : 0 0.5rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
   font-size: 0.5rem;
 }
 
-header>div>div {
-  cursor          : pointer;
-  font-size       : 0.5rem;
-  padding         : 0.3rem 0.6rem;
-  margin          : 1rem 1rem 1rem 0.5rem;
-  color           : var(--white);
+header > div > div {
+  cursor: pointer;
+  font-size: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  margin: 1rem 1rem 1rem 0.5rem;
+  color: var(--white);
   background-color: var(--black);
-  border-radius   : 0.15rem;
-  border          : none;
+  border-radius: 0.15rem;
+  border: none;
 }
 
 main {
-  width    : 12rem;
-  margin   : 0 0 0 3.5rem;
-  position : absolute;
-  top      : 50%;
+  width: 12rem;
+  margin: 0 0 0 3.5rem;
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -56,72 +57,72 @@ h1 {
 }
 
 h4 {
-  font-size  : 0.6rem;
+  font-size: 0.6rem;
   line-height: 1.4;
 }
 
-main>div {
-  cursor       : pointer;
-  font-size    : 0.6rem;
-  padding      : 0.4rem 0;
-  text-align   : center;
-  margin-top   : 1rem;
-  color        : var(--white);
-  background   : linear-gradient(135deg, #5c00d1, #a74ddf);
+main > div {
+  cursor: pointer;
+  font-size: 0.6rem;
+  padding: 0.4rem 0;
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--white);
+  background: linear-gradient(135deg, #5c00d1, #a74ddf);
   border-radius: 0.15rem;
-  border       : none;
-  width        : 5.3rem;
+  border: none;
+  width: 5.3rem;
 }
 
 .help-menu {
-  position                  : absolute;
-  right                     : 0;
-  bottom                    : 0;
-  margin                    : 1rem;
-  font-size                 : 0.8rem;
-  background-color          : var(--highlight);
-  color                     : var(--white);
-  background-color          : var(--black);
-  width                     : 1.5rem;
-  height                    : 1.5rem;
-  border-top-left-radius    : 0;
-  border-top-right-radius   : 25%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  font-size: 0.8rem;
+  background-color: var(--highlight);
+  color: var(--white);
+  background-color: var(--black);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 25%;
   border-bottom-right-radius: 25%;
-  border-bottom-left-radius : 25%;
-  display                   : flex;
-  justify-content           : center;
-  align-items               : center;
+  border-bottom-left-radius: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tracket__container {
   transform: scaleY(0.8);
-  position : absolute;
-  right    : 0;
-  top      : -8rem;
+  position: absolute;
+  right: 0;
+  top: -8rem;
 }
 
-.tracket__container>div {
-  width           : 261px;
-  height          : 550px;
+.tracket__container > div {
+  width: 261px;
+  height: 550px;
   background-color: white;
-  border-radius   : 2rem;
-  box-shadow      : -10px -10px 200px rgba(0, 0, 0, 0.15);
-  transform       : scale(0.3) rotate(-20deg);
+  border-radius: 2rem;
+  box-shadow: -10px -10px 200px rgba(0, 0, 0, 0.15);
+  transform: scale(0.3) rotate(-20deg);
 }
 
 .portal__container {
   transform: scaleY(0.8);
-  position : absolute;
-  right    : -2rem;
-  top      : 6rem;
+  position: absolute;
+  right: -2rem;
+  top: 6rem;
 }
 
-.portal__container>div {
-  width           : 280px;
-  height          : 180px;
+.portal__container > div {
+  width: 280px;
+  height: 180px;
   background-color: white;
-  border-radius   : 0.5rem;
-  box-shadow      : -10px -10px 200px rgba(0, 0, 0, 0.15);
-  transform       : rotate(-20deg);
-  overflow        : hidden;
+  border-radius: 0.5rem;
+  box-shadow: -10px -10px 200px rgba(0, 0, 0, 0.15);
+  transform: rotate(-20deg);
+  overflow: hidden;
 }

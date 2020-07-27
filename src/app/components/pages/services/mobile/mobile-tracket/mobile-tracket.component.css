@@ -1,41 +1,41 @@
 .background {
   background-color: white;
-  border-radius   : 25px;
-  position        : absolute;
-  width           : 100%;
-  height          : 100%;
+  border-radius: 25px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .overview__container {
-  position     : absolute;
-  top          : 0px;
-  left         : 0px;
-  width        : 100%;
-  height       : 100%;
-  padding      : 30px 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px;
   border-radius: 25px;
-  overflow     : hidden;
+  overflow: hidden;
 }
 
 .hamburger-menu {
-  display       : flex;
+  display: flex;
   flex-direction: column;
-  cursor        : pointer;
+  cursor: pointer;
 }
 
 .hamburger-top-bun {
-  width           : 15px;
-  height          : 2px;
-  margin          : 2px;
-  border-radius   : 2px;
+  width: 15px;
+  height: 2px;
+  margin: 2px;
+  border-radius: 2px;
   background-color: grey;
 }
 
 .hamburger-bottom-bun {
-  width           : 10px;
-  height          : 2px;
-  margin          : 2px;
-  border-radius   : 2px;
+  width: 10px;
+  height: 2px;
+  margin: 2px;
+  border-radius: 2px;
   background-color: grey;
 }
 
@@ -44,8 +44,8 @@
 }
 
 .card__container {
-  display   : flex;
-  transform : translateX(0.5px);
+  display: flex;
+  transform: translateX(0.5px);
   transition: all 1s ease-in-out;
 }
 
@@ -54,10 +54,10 @@
 }
 
 .transaction__container {
-  display   : flex;
+  display: flex;
   transition: all 1s ease-in-out;
-  transform : translate(0.5px, 0.5px);
-  opacity   : 1;
+  transform: translate(0.5px, 0.5px);
+  opacity: 1;
 }
 
 .transaction__animation {
@@ -85,50 +85,50 @@
 @keyframes transaction-selection {
   0% {
     transform: translate(0px, 0.5px);
-    opacity  : 1;
+    opacity: 1;
   }
 
   10% {
     transform: translate(0px, 30px);
-    opacity  : 0;
+    opacity: 0;
   }
 
   23% {
     transform: translate(-230.5px, 30px);
-    opacity  : 0;
+    opacity: 0;
   }
 
   33% {
     transform: translate(-230.5px, 0.5px);
-    opacity  : 1;
+    opacity: 1;
   }
 
   66% {
     transform: translate(-230.5px, 0.5px);
-    opacity  : 1;
+    opacity: 1;
   }
 
   76% {
     transform: translate(-230.5px, 30px);
-    opacity  : 0;
+    opacity: 0;
   }
 
   90% {
     transform: translate(-460px, 30px);
-    opacity  : 0;
+    opacity: 0;
   }
 
   100% {
     transform: translate(-460px, 0.5px);
-    opacity  : 1;
+    opacity: 1;
   }
 }
 
 .hide-side {
-  position        : absolute;
-  bottom          : 0;
-  left            : 0;
-  width           : 20px;
-  height          : 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 220px;
   background-color: white;
 }
