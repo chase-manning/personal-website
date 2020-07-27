@@ -6,7 +6,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/pages/home/home.component";
 import { ServicesComponent } from "./components/pages/services/services.component";
-import { ContactComponent } from "./components/pages/contact/contact.component";
 import { HeaderComponent } from "./components/shared/header/header.component";
 import { MobileComponent } from "./components/pages/services/mobile/mobile.component";
 import { LaptopComponent } from "./components/pages/services/laptop/laptop.component";
@@ -20,7 +19,6 @@ import { TransactionComponent } from "./components/pages/services/mobile/mobile-
 import { TransactionRowComponent } from "./components/pages/services/mobile/mobile-tracket/transaction/transaction-row/transaction-row.component";
 import { GoogleAnalyticsService } from "./services/google-analytics.service";
 import { DigiplePortalComponent } from "./components/pages/services/laptop/laptop-digiple/digiple-portal/digiple-portal.component";
-import { SocialsComponent } from "./components/pages/contact/socials/socials.component";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -28,7 +26,6 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     HomeComponent,
     ServicesComponent,
-    ContactComponent,
     HeaderComponent,
     MobileComponent,
     LaptopComponent,
@@ -41,7 +38,6 @@ import { HttpClientModule } from "@angular/common/http";
     TransactionComponent,
     TransactionRowComponent,
     DigiplePortalComponent,
-    SocialsComponent,
   ],
   imports: [
     BrowserModule,

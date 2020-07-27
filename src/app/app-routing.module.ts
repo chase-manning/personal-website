@@ -18,7 +18,13 @@ import { NotFoundComponent } from "./components/pages/not-found/not-found.compon
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "services", component: ServicesComponent },
-  { path: "contact", component: ContactComponent },
+  {
+    path: "contact",
+    loadChildren: () =>
+      import("./components/pages/contact/contact.module").then(
+        (m) => m.ContactModule
+      ),
+  },
   { path: "404", component: NotFoundComponent },
   { path: "**", redirectTo: "/404" },
 ];
