@@ -1,9 +1,10 @@
 section {
   background-color: var(--white);
   height: 100%;
+  line-height: 1.65;
+
   --black: #191c1f;
   --white: white;
-  line-height: 1.65;
 }
 
 * {
