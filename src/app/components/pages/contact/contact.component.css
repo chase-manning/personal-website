@@ -106,6 +106,10 @@ label {
   line-height: 1;
 }
 
+textarea + label {
+  transform: translate(16px, -87px);
+}
+
 input:focus + label {
   font-size: 0.9em;
   color: #00a8e8;
@@ -115,10 +119,6 @@ input:focus + label {
 input.ng-dirty + label {
   font-size: 0.9em;
   transform: translate(12px, -55px);
-}
-
-textarea + label {
-  transform: translate(16px, -87px);
 }
 
 textarea:focus + label {
