@@ -7,8 +7,8 @@
 
 .full-screen {
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
@@ -96,24 +96,42 @@ button:hover {
 
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
+  .class {
+    display: none;
+  }
 }
 
 /* Responsive Mobile & Tablet */
 @media only screen and (max-width: 1023px) {
+  .class {
+    display: none;
+  }
 }
 
 /* Responsive Tablet */
 @media only screen and (min-width: 520px) and (max-width: 1023px) {
+  .class {
+    display: none;
+  }
 }
 
 /* Responsive Tablet & Desktop */
 @media only screen and (min-width: 520px) {
+  .class {
+    display: none;
+  }
 }
 
 /* Responsive Desktop */
 @media only screen and (min-width: 1024px) {
+  .class {
+    display: none;
+  }
 }
 
 /* Responsive High Res */
 @media only screen and (min-width: 1500px) {
+  .class {
+    display: none;
+  }
 }
