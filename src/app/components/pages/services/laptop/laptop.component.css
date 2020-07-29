@@ -1,170 +1,180 @@
 .laptop-container {
   transform-origin: left;
-  margin          : auto;
-  position        : relative;
-  width           : 724px;
-  height          : 419px;
+  margin: auto;
+  position: relative;
+  width: 724px;
+  height: 419px;
 }
 
 .border {
-  position        : relative;
-  width           : 614px;
-  height          : 401px;
+  position: relative;
+  width: 614px;
+  height: 401px;
   background-color: #f1f3f6;
-  box-shadow      : 10px 10px 30px rgba(0, 0, 0, 0.15);
-  border-radius   : 15px;
-  margin          : 0px 55px 0px 55px;
-  border-top      : solid 1px rgba(255, 255, 255, 1);
-  border-left     : solid 1px rgba(255, 255, 255, 1);
-  border-right    : solid 1px rgba(255, 255, 255, 0.4);
-  border-bottom   : solid 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  margin: 0px 55px 0px 55px;
+  border-top: solid 1px rgba(255, 255, 255, 1);
+  border-left: solid 1px rgba(255, 255, 255, 1);
+  border-right: solid 1px rgba(255, 255, 255, 0.4);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
 }
 
 .outside {
-  position        : relative;
-  width           : 608px;
-  height          : 395px;
+  position: relative;
+  width: 608px;
+  height: 395px;
   background-color: white;
-  border-radius   : 12px;
-  top             : 50%;
-  left            : 50%;
-  transform       : translate(-50%, -50%);
-  border-right    : solid 1px rgba(255, 255, 255, 0);
-  border-bottom   : solid 1px rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-right: solid 1px rgba(255, 255, 255, 0);
+  border-bottom: solid 1px rgba(255, 255, 255, 0);
 }
 
 .camera {
-  position        : absolute;
-  width           : 8px;
-  height          : 8px;
-  border-radius   : 3px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
   background-color: #777;
-  left            : 50%;
-  top             : 5px;
-  transform       : translateX(-50%);
+  left: 50%;
+  top: 5px;
+  transform: translateX(-50%);
 }
 
 .lens {
-  position        : absolute;
-  top             : 50%;
-  left            : 50%;
-  transform       : translate(-50%, -50%);
-  width           : 4px;
-  height          : 4px;
-  border-radius   : 2px;
-  background-color: #888888;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #888;
 }
 
 .outside-overlay {
   position: absolute;
-  top     : 0;
-  left    : 0;
-  width   : 100%;
-  height  : 100%;
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(0, 0, 0, 0.05),
-      rgba(0, 0, 0, 0.05));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05)
+  );
   border-radius: 11px;
 }
 
 .inside {
-  width           : 568px;
-  height          : 356px;
-  position        : relative;
-  top             : 50%;
-  left            : 50%;
-  transform       : translate(-50%, -50%);
+  width: 568px;
+  height: 356px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #f1f3f6;
-  border          : solid 1px #d3d7db;
-  overflow        : hidden;
+  border: solid 1px #d3d7db;
+  overflow: hidden;
 }
 
 .inside-overlay {
   position: absolute;
-  top     : 0;
-  left    : 0;
-  width   : 100%;
-  height  : 100%;
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(0, 0, 0, 0.1));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(0, 0, 0, 0.1)
+  );
 }
 
 .highlight {
-  width                     : 725px;
-  height                    : 18px;
-  margin                    : auto;
-  transform                 : translateY(-8px);
-  border-top-left-radius    : 3px;
-  border-top-right-radius   : 3px;
-  border-bottom-left-radius : 14px;
+  width: 725px;
+  height: 18px;
+  margin: auto;
+  transform: translateY(-8px);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
-  box-shadow                : 10px 10px 30px rgba(0, 0, 0, 0.15);
-  background-color          : #fafafa;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+  background-color: #fafafa;
 }
 
 .keyboard {
-  width                     : 724px;
-  height                    : 17px;
-  position                  : absolute;
-  left                      : 1px;
-  top                       : 1px;
-  background-color          : white;
-  border-top-left-radius    : 2px;
-  border-top-right-radius   : 2px;
-  border-bottom-left-radius : 13px;
+  width: 724px;
+  height: 17px;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  background-color: white;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
 
 .keyboard-overlay {
-  width                     : 100%;
-  height                    : 100%;
-  border-top-left-radius    : 2px;
-  border-top-right-radius   : 2px;
-  border-bottom-left-radius : 13px;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
-  opacity                   : 0.35;
-  background                : linear-gradient(to right,
-      rgb(225, 225, 225),
-      rgb(253, 253, 253) 5%,
-      rgb(220, 220, 220) 20%,
-      rgb(205, 205, 205) 80%,
-      rgb(235, 235, 235) 95%,
-      rgb(185, 185, 185) 100%);
+  opacity: 0.35;
+  background: linear-gradient(
+    to right,
+    rgb(225, 225, 225),
+    rgb(253, 253, 253) 5%,
+    rgb(220, 220, 220) 20%,
+    rgb(205, 205, 205) 80%,
+    rgb(235, 235, 235) 95%,
+    rgb(185, 185, 185) 100%
+  );
 }
 
 .keyboard-shadow-overlay {
-  position                  : absolute;
-  top                       : 0;
-  left                      : 0;
-  width                     : 100%;
-  height                    : 100%;
-  border-top-left-radius    : 2px;
-  border-top-right-radius   : 2px;
-  border-bottom-left-radius : 13px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
-  opacity                   : 0.1;
-  background                : linear-gradient(rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0) 40%,
-      black 80%,
-      black);
+  opacity: 0.1;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 40%,
+    black 80%,
+    black
+  );
 }
 
 .notch {
-  position                  : absolute;
-  width                     : 103px;
-  height                    : 7px;
-  top                       : 0;
-  left                      : 50%;
-  transform                 : translateX(-50%);
-  border-top-left-radius    : 1px;
-  border-top-right-radius   : 1px;
-  border-bottom-left-radius : 4px;
+  position: absolute;
+  width: 103px;
+  height: 7px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  background                : linear-gradient(to right,
-      rgb(215, 215, 215) 0%,
-      rgb(230, 230, 230) 5%,
-      rgb(229, 229, 229) 95%,
-      rgb(255, 255, 255) 100%);
+  background: linear-gradient(
+    to right,
+    rgb(215, 215, 215) 0%,
+    rgb(230, 230, 230) 5%,
+    rgb(229, 229, 229) 95%,
+    rgb(255, 255, 255) 100%
+  );
 }
