@@ -41,9 +41,11 @@ button {
     display: block;
     margin: 0;
   }
+
   .services__container {
     margin-bottom: 5rem;
   }
+
   button {
     display: none;
   }
