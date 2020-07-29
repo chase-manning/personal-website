@@ -80,7 +80,6 @@ main > div {
   bottom: 0;
   margin: 1rem;
   font-size: 0.8rem;
-  background-color: var(--highlight);
   color: var(--white);
   background-color: var(--black);
   width: 1.5rem;
