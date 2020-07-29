@@ -8,7 +8,7 @@ This project is 100% created with good ol' fashioned hand written code.
 
 If you are interested in contributing, please check out the open issues.  
 Look for the Label `good first issue` as that will be the best place to start.  
-Create a Branch from Master and then a PR with the change.  
+Create a Branch from Master and then a PR with the change.
 
 Most issues are validated with AB Testing before being merged and closed.  
 Issues that require validation are Labeled with `requires validation`.  
@@ -19,12 +19,14 @@ Feel free to contribute any changes though, any cool ideas for improvement or ne
 ## Running Locally
 
 Dependencies:
-* [Install Node.js](https://nodejs.org/en/download/)
+
+- [Install Node.js](https://nodejs.org/en/download/)
 
 To run the app locally:
-* [Clone the Repository](https://www.google.com/search?q=how+to+clone+a+repository+from+github) to your local machine
-* [Open a Terminal](https://www.google.com/search?q=how+to+open+a+terminal+in+a+directory&oq=how+to+open+a+terminal+in+a+directory) at the app directory
-* [Change directory](https://www.google.com/search?q=how+to+cd+to+a+directory&oq=how+to+cd+to+a+directory) to the `src` directory
-* Run `npm install`
-* Run `npm start`
-* Navigate to `http://localhost:4200/`
+
+- [Clone the Repository](https://www.google.com/search?q=how+to+clone+a+repository+from+github) to your local machine
+- [Open a Terminal](https://www.google.com/search?q=how+to+open+a+terminal+in+a+directory&oq=how+to+open+a+terminal+in+a+directory) at the app directory
+- [Change directory](https://www.google.com/search?q=how+to+cd+to+a+directory&oq=how+to+cd+to+a+directory) to the `src` directory
+- Run `npm install`
+- Run `npm start`
+- Navigate to `http://localhost:4200/`
