@@ -3,13 +3,13 @@
     transform: translate(-20px, 90px);
   }
   25% {
-    transform: translate(0px, 95px);
+    transform: translate(0, 95px);
   }
   50% {
     transform: translate(20px, 90px);
   }
   75% {
-    transform: translate(0px, 85px);
+    transform: translate(0, 85px);
   }
   100% {
     transform: translate(-20px, 90px);
@@ -21,13 +21,13 @@
     transform: translate(30px, 125px);
   }
   25% {
-    transform: translate(0px, 130px);
+    transform: translate(0, 130px);
   }
   50% {
     transform: translate(-30px, 125px);
   }
   75% {
-    transform: translate(0px, 120px);
+    transform: translate(0, 120px);
   }
   100% {
     transform: translate(30px, 125px);
@@ -36,7 +36,7 @@
 
 @keyframes signal__animation {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
     opacity: 0.8;
   }
   100% {
