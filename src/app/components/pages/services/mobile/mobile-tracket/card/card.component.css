@@ -3,7 +3,7 @@
   width: 220px;
   height: 130px;
   border-radius: 15px;
-  box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-right: 10px;
   transition: all 1s ease-in-out;
