@@ -17,15 +17,10 @@ h3 {
 }
 
 aside > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-aside > div {
   height: 84%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 aside > div > :first-child > :first-child {
