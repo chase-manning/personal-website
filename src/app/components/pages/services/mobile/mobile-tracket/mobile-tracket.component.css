@@ -127,8 +127,15 @@
 .hide-side {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 20px;
+  width: 15px;
   height: 220px;
   background-color: white;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
