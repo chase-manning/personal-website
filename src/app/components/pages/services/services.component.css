@@ -33,6 +33,7 @@ button {
   font-size: 1.5rem;
   font-weight: 400;
   padding: 1.2rem 6rem;
+  display: none;
 }
 
 /* Responsive Mobile */
