@@ -8,20 +8,7 @@ import { HostListener } from "@angular/core";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  isMobile: boolean = false;
-
-  @HostListener("window:resize", ["$event"])
-  onResize(): void {
-    this.setIsMobile();
-  }
-
-  constructor(private title: Title, private meta: Meta) {
-    this.setIsMobile();
-  }
-
-  setIsMobile(): void {
-    this.isMobile = window.innerWidth < 520;
-  }
+  constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit() {
     this.title.setTitle("Chase Manning Freelance Developer");
