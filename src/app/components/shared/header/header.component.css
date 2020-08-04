@@ -51,13 +51,6 @@
   background: linear-gradient(135deg, #43cbff, #9708cc);
 }
 
-/* Responsive Mobile */
-@media only screen and (max-width: 519px) {
-  .hide-on-mobile {
-    display: none;
-  }
-}
-
 /* Responsive Mobile & Tablet */
 @media only screen and (max-width: 1023px) {
   .header__container {
