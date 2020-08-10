@@ -12,7 +12,7 @@ export class MobileTracketComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (!this.isMobile) setTimeout(() => this.startAnimations(), 5000);
+    if (!this.isMobile) setTimeout(() => this.startAnimations(), 1000);
   }
 
   @HostListener("window:scroll", ["$event"])
