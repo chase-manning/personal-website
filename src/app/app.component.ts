@@ -39,7 +39,7 @@ export class AppComponent {
       description =
         "Looks like you are a bit lost! It's okay you can go home now, or...";
     } else {
-      title = "Chase Manning Freelance Developer";
+      title = "Freelancer Developer | Chase Manning | Websites & Mobile";
       description =
         "Hi, I'm Chase, and I have a passion for development! I love working on web and mobile development and can't wait to hear about your project.";
     }
