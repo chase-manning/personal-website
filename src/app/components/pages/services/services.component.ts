@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { HostListener } from "@angular/core";
 
 @Component({
@@ -17,7 +16,9 @@ export class ServicesComponent implements OnInit {
     this.setSvgScale();
   }
 
-  constructor(private title: Title, private meta: Meta) {
+  ngOnInit() {}
+
+  constructor() {
     this.setSvgScale();
   }
 
@@ -31,14 +32,5 @@ export class ServicesComponent implements OnInit {
       : (window.innerWidth - 61 * 3) / 2;
     this.laptopScale = (targetLaptopWidth - 5) / 724;
     this.mobileScale = 0.85;
-  }
-
-  ngOnInit() {
-    this.title.setTitle("Chase Manning Services");
-    this.meta.updateTag({
-      name: "description",
-      content:
-        "The Services of Chase Manning, Freelance Developer. Including Web, Movile and Back End Development",
-    });
   }
 }

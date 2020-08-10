@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as firebase from "firebase/app";
 import "firebase/auth";
@@ -21,8 +20,6 @@ export class ContactComponent implements OnInit {
   loadingText: string = "";
 
   constructor(
-    private title: Title,
-    private meta: Meta,
     private formBuilder: FormBuilder,
     private googleAnalyticsService: GoogleAnalyticsService,
     private emailService: EmailService
@@ -40,14 +37,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.title.setTitle("Contact Chase Manning");
-    this.meta.updateTag({
-      name: "description",
-      content:
-        "Contact Chase Manning, Freelance Developer for help with your Web or Mobile Development project.",
-    });
-  }
+  ngOnInit() {}
 
   onSubmit(contactData): void {
     this.validated = true;
