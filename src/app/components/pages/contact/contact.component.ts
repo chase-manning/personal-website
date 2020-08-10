@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { GoogleAnalyticsService } from "../../../services/google-analytics.service";
