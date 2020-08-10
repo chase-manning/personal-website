@@ -12,7 +12,7 @@ Create a Branch from Master and then a PR with the change.
 
 Most issues are validated with AB Testing before being merged and closed.  
 Issues that require validation are Labeled with `requires validation`.  
-I will do the validation though so just create the PR and I will merge in when it's been validated.
+I will do the validation though, so just create the PR and I will merge in when it's been validated.
 
 Feel free to contribute any changes though, any cool ideas for improvement or new features are welcome!
 
