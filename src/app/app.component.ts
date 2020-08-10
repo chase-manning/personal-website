@@ -41,7 +41,7 @@ export class AppComponent {
     } else {
       title = "Chase Manning Freelance Developer";
       description =
-        "Let's Create Something Incredible Together! I'm Chase, a Freelance Developer who can't wait to hear about your exciting project!";
+        "Hi, I'm Chase, and I have a passion for development! I love working on web and mobile development and can't wait to hear about your project.";
     }
 
     this.title.setTitle(title);
