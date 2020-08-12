@@ -23,7 +23,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/sitemap.xml",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/assets/open-graph-image.png"
             ],
             "styles": ["src/styles.css"],
             "scripts": []
@@ -88,7 +89,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/sitemap.xml",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/assets/open-graph-image.png"
             ],
             "styles": ["src/styles.css"],
             "scripts": []
