@@ -3,26 +3,72 @@
     <div>
       <app-mobile [scale]="mobileScale"></app-mobile>
     </div>
-    <div class="services-section">
-      <h2>Mobile Development</h2>
-      <h3>Build Your Mobile App</h3>
-      <p>
-        Have you got an idea for the next Uber? I can build it and you can
-        become the next Jeff Bezos! Best idea I had was Tinder for pets,
-        strangely it hasn't taken off yet...
-      </p>
-      <h3>Hybrid App Development</h3>
-      <p>
-        I love a cheeky bit of Hybrid App Development. My favorite tools are
-        React Native, Ionic and Flutter. If you're into these, we should
-        definitely have a chat!
-      </p>
-      <h3>Progressive Web Apps</h3>
-      <p>
-        Progressive Web Apps are a website disguised as an app. They are quicker
-        and cheaper to make and don't rely on having to submit to the IOS and
-        Android App Stores.
-      </p>
+    <div
+      class="services-section"
+      itemscope
+      itemtype="http://schema.org/Service"
+    >
+      <h2 itemprop="serviceType">Mobile Development</h2>
+      <div
+        itemprop="hasOfferCatalog"
+        itemscope
+        itemtype="http://schema.org/OfferCatalog"
+      >
+        <div
+          itemprop="itemListElement"
+          itemscope
+          itemtype="http://schema.org/Offer"
+        >
+          <div
+            itemprop="itemOffered"
+            itemscope
+            itemtype="http://schema.org/Service"
+          >
+            <h3 itemprop="name">Build Your Mobile App</h3>
+            <p itemprop="description">
+              Have you got an idea for the next Uber? I can build it and you can
+              become the next Jeff Bezos! Best idea I had was Tinder for pets,
+              strangely it hasn't taken off yet...
+            </p>
+          </div>
+        </div>
+        <div
+          itemprop="itemListElement"
+          itemscope
+          itemtype="http://schema.org/Offer"
+        >
+          <div
+            itemprop="itemOffered"
+            itemscope
+            itemtype="http://schema.org/Service"
+          >
+            <h3 itemprop="name">Hybrid App Development</h3>
+            <p itemprop="description">
+              I love a cheeky bit of Hybrid App Development. My favorite tools
+              are React Native, Ionic and Flutter. If you're into these, we
+              should definitely have a chat!
+            </p>
+          </div>
+        </div>
+        <div
+          itemprop="itemListElement"
+          itemscope
+          itemtype="http://schema.org/Offer"
+        >
+          <div
+            itemprop="itemOffered"
+            itemscope
+            itemtype="http://schema.org/Service"
+          >
+            <h3 itemprop="name">Progressive Web Apps</h3>
+            <p itemprop="description">
+              Progressive Web Apps are a website disguised as an app. They are
+              quicker and cheaper to make and don't rely on having to submit to
+              the IOS and Android App Stores.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="services-row reverse">
