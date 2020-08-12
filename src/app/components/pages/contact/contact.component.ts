@@ -6,16 +6,6 @@ import { GoogleAnalyticsService } from "../../../services/google-analytics.servi
 import { ContactData } from "../../../services/email.service";
 import { EmailService } from "../../../services/email.service";
 
-/*
- * CONTACT TAB NAME OPTIONS
- *
- * Contact: 28
- * Say Hello: 2
- * Get in Touch: 2
- * Hire me: 1
- * Let's Chat: 1
- */
-
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
