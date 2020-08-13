@@ -58,12 +58,11 @@ main > div {
 header > div > div {
   cursor: pointer;
   font-size: 0.5rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.2rem 0.4rem;
   margin: 1rem 1rem 1rem 0.5rem;
-  color: var(--white);
-  background-color: var(--black);
+  color: #5c00d1;
+  border: 1px solid #5c00d1;
   border-radius: 0.15rem;
-  border: none;
 }
 
 h1 {
