@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./mobile.component.css"],
 })
 export class MobileComponent implements OnInit {
-  @Input() scale: number;
-
   constructor() {}
 
   ngOnInit() {}
