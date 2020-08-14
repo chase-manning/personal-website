@@ -1,0 +1,156 @@
+<div class="container">
+  <aside>
+    <h3>Digiple</h3>
+    <div>
+      <div>
+        <h4>Overview</h4>
+        <h4>Cards</h4>
+        <h4>Payments</h4>
+        <h4>Reports</h4>
+        <h4>Contacts</h4>
+      </div>
+      <div>
+        <h4>Settings</h4>
+        <h4>Help</h4>
+      </div>
+    </div>
+  </aside>
+  <main>
+    <header>
+      <div class="card-header">
+        <h1>Cards</h1>
+        <div class="new-card__container">
+          <span class="new-card__text">New Card</span>
+          <span class="new-card__icon">+</span>
+        </div>
+      </div>
+      <div class="help-icon">?</div>
+    </header>
+    <section class="card__container">
+      <app-card *ngFor="let card of cards" [card]="card"></app-card>
+    </section>
+    <div class="detail__container">
+      <div class="something-else__container">
+        <div class="transaction-header">
+          <span class="transaction-header__text">Spending</span>
+          <div class="view-report__button">View report</div>
+        </div>
+        <div class="spending__container">
+          <div class="pie-chart__container">
+            <div class="pie-chart"></div>
+            <div class="pie-hole"></div>
+          </div>
+          <div class="legend__container">
+            <div class="legend">
+              <div class="legend-color first"></div>
+              <div class="legend-text">Entertainment</div>
+            </div>
+            <div class="legend">
+              <div class="legend-color second"></div>
+              <div class="legend-text">Food</div>
+            </div>
+            <div class="legend">
+              <div class="legend-color third"></div>
+              <div class="legend-text">Travel</div>
+            </div>
+            <div class="legend">
+              <div class="legend-color fourth"></div>
+              <div class="legend-text">Work</div>
+            </div>
+          </div>
+        </div>
+        <div class="payments__container">
+          <div class="transaction-header">
+            <span class="transaction-header__text">Payments</span>
+            <div class="view-report__button">View report</div>
+          </div>
+          <div class="payments">
+            <div class="payment">
+              <div class="payment-number">2</div>
+              <div class="payment-description">Awaiting</div>
+            </div>
+            <div class="payment">
+              <div class="payment-number">1</div>
+              <div class="payment-description">Pending</div>
+            </div>
+            <div class="payment">
+              <div class="payment-number">23</div>
+              <div class="payment-description">Completed</div>
+            </div>
+            <div class="payment">
+              <div class="payment-number">4</div>
+              <div class="payment-description">Canceled</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="transactions__container">
+        <div class="transaction-header">
+          <span class="transaction-header__text">Transactions</span>
+          <div class="view-report__button">View report</div>
+        </div>
+        <div class="transaction-item__container">
+          <div class="transaction-item">
+            <div class="main-text">Food</div>
+            <div class="main-text">$17.23</div>
+          </div>
+          <div class="transaction-item">
+            <div class="sub-text">KFC</div>
+            <div class="sub-text">23/07/2020</div>
+          </div>
+        </div>
+        <div class="transaction-item__container">
+          <div class="transaction-item">
+            <div class="main-text">Entertainment</div>
+            <div class="main-text">$23.22</div>
+          </div>
+          <div class="transaction-item">
+            <div class="sub-text">Event Cinemas</div>
+            <div class="sub-text">13/07/2020</div>
+          </div>
+        </div>
+        <div class="transaction-item__container">
+          <div class="transaction-item">
+            <div class="main-text">Food</div>
+            <div class="main-text">$12.13</div>
+          </div>
+          <div class="transaction-item">
+            <div class="sub-text">Delux Cafe</div>
+            <div class="sub-text">10/07/2020</div>
+          </div>
+        </div>
+        <div class="transaction-item__container">
+          <div class="transaction-item">
+            <div class="main-text">Travel</div>
+            <div class="main-text">$3.50</div>
+          </div>
+          <div class="transaction-item">
+            <div class="sub-text">AT Transport</div>
+            <div class="sub-text">10/07/2020</div>
+          </div>
+        </div>
+        <div class="transaction-item__container">
+          <div class="transaction-item">
+            <div class="main-text">Entertainment</div>
+            <div class="main-text">$19.99</div>
+          </div>
+          <div class="transaction-item">
+            <div class="sub-text">Netflix Subscription</div>
+            <div class="sub-text">01/07/2020</div>
+          </div>
+        </div>
+        <div class="transaction-item__container">
+          <div class="transaction-item">
+            <div class="main-text">Food</div>
+            <div class="main-text">$9.50</div>
+          </div>
+          <div class="transaction-item">
+            <div class="sub-text">Hot Dog Stop</div>
+            <div class="sub-text">23/06/2020</div>
+          </div>
+        </div>
+        <div class="drop-highlight"></div>
+      </div>
+    </div>
+  </main>
+</div>

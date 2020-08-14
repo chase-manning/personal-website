@@ -1,0 +1,82 @@
+<div class="contact__footer">
+  <app-socials></app-socials>
+</div>
+
+<div class="contact-form__container">
+  <div *ngIf="isSent && !isLoading" class="contact-form">
+    <h1>Message Sent!</h1>
+  </div>
+  <div *ngIf="isLoading" class="loading__container">
+    <div class="loading-blob"></div>
+    <div class="loading-text">
+      {{ loadingText }}
+    </div>
+  </div>
+  <div *ngIf="!isSent" class="contact-form">
+    <h1>Let's chat!</h1>
+    <div class="contact-section__container">
+      <div class="contact-left__container">
+        <form
+          class="form__container"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit(contactForm.value)"
+        >
+          <div class="form-input__container">
+            <input id="name" type="text" formControlName="name" />
+            <label for="name">Name</label>
+            <div
+              *ngIf="validated && contactForm.controls['name'].invalid"
+              class="validation-message"
+            >
+              <div *ngIf="!contactForm.controls['name'].valid">
+                Oh no! I need to know your name 😲
+              </div>
+            </div>
+          </div>
+          <div class="form-input__container">
+            <input id="email" type="text" formControlName="email" />
+            <label for="email">Email</label>
+            <div
+              *ngIf="validated && contactForm.controls['email'].invalid"
+              class="validation-message"
+            >
+              <div *ngIf="!contactForm.controls['email'].valid">
+                Share your email so I can say hi 🙏
+              </div>
+            </div>
+          </div>
+          <div class="form-input__container">
+            <textarea
+              id="message"
+              type="textarea"
+              formControlName="message"
+            ></textarea>
+            <label for="message">Message</label>
+            <div
+              *ngIf="validated && contactForm.controls['message'].invalid"
+              class="validation-message"
+            >
+              <div *ngIf="!contactForm.controls['message'].valid">
+                Tell me about your project or idea! 💡
+              </div>
+            </div>
+          </div>
+          <button class="submit-button" type="submit">Submit</button>
+        </form>
+      </div>
+      <div *ngIf="false" class="contact-right__container">
+        <div class="mail__container">
+          <div class="mail-lid__container">
+            <div class="mail-lid"></div>
+          </div>
+        </div>
+        <app-socials></app-socials>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-exit-button" routerLink="/">
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
