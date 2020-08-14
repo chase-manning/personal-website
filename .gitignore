@@ -2,3 +2,6 @@
 /apps/website/dist
 /apps/website/tmp
 /apps/website/node_modules
+
+# Functions
+/functions/node_modules
