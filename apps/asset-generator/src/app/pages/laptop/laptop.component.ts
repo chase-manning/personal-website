@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./laptop.component.css"],
 })
 export class LaptopComponent implements OnInit {
-  @Input() scale: number;
-
   constructor() {}
 
   ngOnInit() {}
