@@ -104,6 +104,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "asset-generator"
+    }
+  },
+  "defaultProject": "asset-generator",
+  "cli": {
+    "analytics": "aa1c97fd-18c8-4dfa-a973-1407e68b9788"
+  }
 }
