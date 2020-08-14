@@ -23,6 +23,10 @@ img {
   height: 550px;
 }
 
+.server-image {
+  height: 550px;
+}
+
 button {
   text-align: center;
   margin: 3rem 0;
