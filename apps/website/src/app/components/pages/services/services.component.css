@@ -1,4 +1,4 @@
-.services__container {
+.services__container2 {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -43,7 +43,7 @@ button {
 
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
-  .services__container {
+  .services__container2 {
     grid-template-columns: 1fr;
     margin: 5rem 0;
     row-gap: 5rem;
@@ -52,7 +52,7 @@ button {
 
 /* Responsive Tablet & Desktop */
 @media only screen and (min-width: 520px) {
-  .services__container > :nth-child(3) {
+  .services__container2 > :nth-child(3) {
     grid-column: 2;
     grid-row: 2;
   }
