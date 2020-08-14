@@ -12,6 +12,8 @@
 
 .services-asset {
   width: 200px;
+  justify-self: center;
+  align-self: center;
 }
 
 button {
