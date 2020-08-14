@@ -10,10 +10,17 @@
   margin: auto;
 }
 
-.services-asset {
-  width: 100%;
+img {
   justify-self: center;
   align-self: center;
+}
+
+.web-image {
+  width: 100%;
+}
+
+.mobile-image {
+  height: 550px;
 }
 
 button {
