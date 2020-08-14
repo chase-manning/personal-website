@@ -23,11 +23,13 @@ img {
 }
 
 .mobile-image {
-  height: 550px;
+  width: 100%;
+  max-width: 333px;
 }
 
 .server-image {
-  height: 550px;
+  width: 100%;
+  max-width: 470px;
 }
 
 button {
@@ -43,7 +45,8 @@ button {
 @media only screen and (max-width: 519px) {
   .services__container {
     grid-template-columns: 1fr;
-    margin-bottom: 5rem;
+    margin: 5rem 0;
+    row-gap: 5rem;
   }
 }
 
