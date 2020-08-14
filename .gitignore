@@ -5,3 +5,8 @@
 
 # Functions
 /functions/node_modules
+
+# Asset Generator
+/apps/asset-generator/dist
+/apps/asset-generator/tmp
+/apps/asset-generator/node_modules
