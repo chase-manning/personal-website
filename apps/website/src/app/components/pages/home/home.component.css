@@ -34,6 +34,11 @@
   display: none;
 }
 
+/* Temporary for AB Testing */
+.content__container > h4 {
+  display: none;
+}
+
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
   .button__container {
