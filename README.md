@@ -8,15 +8,7 @@ This project is 100% created with good ol' fashioned hand written code.
 
 ## Contributing
 
-If you are interested in contributing, please check out the open issues.  
-Look for the Label `good first issue` as that will be the best place to start.  
-Create a Branch from Master and then a PR with the change.
-
-Most issues are validated with AB Testing before being merged and closed.  
-Issues that require validation are Labeled with `requires validation`.  
-I will do the validation though, so just create the PR and I will merge in when it's been validated.
-
-Feel free to contribute any changes though, any cool ideas for improvement or new features are welcome!
+If you are interested in contributing, please check out the [Contribution Guide](https://github.com/chase-manning/Personal-Website/blob/master/.github/CONTRIBUTING.md).
 
 ## Running Locally
 
