@@ -8,7 +8,7 @@ declare let gtag: Function;
 export class GoogleAnalyticsService {
   constructor() {}
 
-  public eventEmitter(
+  eventEmitter(
     eventName: string,
     eventCategory: string,
     eventAction: string,
@@ -21,7 +21,7 @@ export class GoogleAnalyticsService {
     });
   }
 
-  public trackConversion(): void {
+  trackConversion(): void {
     gtag("event", "conversion", {
       send_to: "AW-661071687/9hJKCJWoitcBEMfOnLsC",
     });
