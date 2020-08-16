@@ -43,11 +43,12 @@
 }
 
 .navigation-underline {
-  border-bottom: 2px solid #00a8e8;
+  border-bottom: 2px solid var(--primary);
 }
 
 .blue-liquid {
-  background: linear-gradient(135deg, #43cbff, #9708cc);
+  background-color: var(--primary);
+  /*background: linear-gradient(135deg, #43cbff, #9708cc);*/
 }
 
 /* Responsive Mobile & Tablet */

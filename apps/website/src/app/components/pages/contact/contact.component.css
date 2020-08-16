@@ -15,7 +15,7 @@
   width: 2rem;
   height: 0.2rem;
   border-radius: 0.1rem;
-  background-color: #191c1f;
+  background-color: var(--main-text);
   transform: rotate(45deg);
   position: absolute;
 }
@@ -69,7 +69,7 @@
 .mail__container {
   width: 16rem;
   height: 10rem;
-  border: solid 0.3rem #00a8e8;
+  border: solid 0.3rem var(--primary);
   border-radius: 0.7rem;
   overflow: hidden;
 }
@@ -81,7 +81,7 @@
 .mail-lid {
   width: 16rem;
   height: 16rem;
-  border: solid 0.3rem #00a8e8;
+  border: solid 0.3rem var(--primary);
   border-radius: 1rem;
   transform: rotate(54deg) skewY(-20deg);
 }
@@ -112,7 +112,7 @@ textarea + label {
 
 input:focus + label {
   font-size: 0.9em;
-  color: #00a8e8;
+  color: var(--primary);
   transform: translate(12px, -55px);
 }
 
@@ -123,7 +123,7 @@ input.ng-dirty + label {
 
 textarea:focus + label {
   font-size: 0.9em;
-  color: #00a8e8;
+  color: var(--primary);
   transform: translate(12px, -110px);
 }
 
@@ -140,13 +140,13 @@ input {
   border: solid 1px rgb(139, 149, 158);
   border-radius: 5px;
   font-size: 1em;
-  color: #00a8e8;
+  color: var(--primary);
   transition: all 0.3s ease-out;
   line-height: 1;
 }
 
 input:focus {
-  border: solid 1px #00a8e8;
+  border: solid 1px var(--primary);
 }
 
 textarea {
@@ -158,7 +158,7 @@ textarea {
   border: solid 1px rgb(139, 149, 158);
   border-radius: 5px;
   font-size: 1em;
-  color: #00a8e8;
+  color: var(--primary);
   resize: none;
 }
 
@@ -194,7 +194,7 @@ textarea {
 }
 
 .loading-blob {
-  background-color: #00a8e8;
+  background-color: var(--primary);
   width: 100px;
   height: 100px;
   border-top-left-radius: 90%;

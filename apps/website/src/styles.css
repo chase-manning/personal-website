@@ -1,3 +1,10 @@
+:root {
+  --primary: #00a8e8;
+  --primary-hover: #007ea7;
+  --main-text: #191c1f;
+  --sub-text: #8b959e;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -14,21 +21,21 @@
 }
 
 h1 {
-  color: #191c1f;
+  color: var(--main-text);
   font-size: 4.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 h2 {
-  color: #191c1f;
+  color: var(--main-text);
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.65;
 }
 
 h3 {
-  color: #191c1f;
+  color: var(--main-text);
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 500;
@@ -37,7 +44,7 @@ h3 {
 }
 
 h4 {
-  color: #8b959e;
+  color: var(--sub-text);
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
@@ -45,7 +52,7 @@ h4 {
 }
 
 p {
-  color: #8b959e;
+  color: var(--sub-text);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.65;
@@ -66,32 +73,32 @@ a:visited {
 }
 
 button {
-  background-color: #00a8e8;
+  background-color: var(--primary);
   line-height: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
   color: white;
   cursor: pointer;
   padding: 0.8rem 4rem;
-  border: solid 2px #00a8e8;
+  border: solid 2px var(--primary);
   border-radius: 2rem;
   outline: none;
   transition: all 0.2s ease;
 }
 
 button:hover {
-  background-color: #007ea7;
-  border: solid 2px #007ea7;
+  background-color: var(--primary-hover);
+  border: solid 2px var(--primary-hover);
 }
 
 .secondary__button {
   background-color: white;
-  color: #00a8e8;
+  color: var(--primary);
 }
 
 .secondary__button:hover {
   background-color: white;
-  color: #007ea7;
+  color: var(--primary-hover);
 }
 
 /* Responsive Mobile */
