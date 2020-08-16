@@ -13,7 +13,8 @@
   align-self: center;
 }
 
-img {
+img,
+video {
   justify-self: center;
   align-self: center;
 }
