@@ -1,7 +1,7 @@
 ## About
 
 This repo is for [the website of Chase Manning](https://chasemanning.co.nz).  
-This site is built using Angular 9, everyone's second favourite web development framework.  
+This site is built using Angular 10, everyone's second favourite web development framework.  
 This project is 100% created with good ol' fashioned hand written code.
 
 ## Contributing
