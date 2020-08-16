@@ -26,11 +26,21 @@ Issues that are tagged with [good first issue](https://github.com/chase-manning/
 
 ## Projects
 
-There is one project which contains all of the issues for the repo.  
-The issues in this project are ordered by their perceived priority and so this is a good place to see what to work on.  
+There are two projects which contain all the issues for the repo.  
+
+### Conversion Rate Optimisation
+This project holds all of the issues that are aimed at increasing visitor conversion rate.  
+All of these issues require validation and AB testing before going into production.  
+They are split out in a seperate project from the rest of the issues becuase they have a very different development workflow.  
+These issues are a bit more complicated to contribute to so probably aren't the best place to start as a new contributor.  
+
 The `Requires Validation` column is for Issues that need to be AB Tested to ensure they have a positive impact on conversion.  
 We can only test so many issues at once, so those are ones that are waiting in the queue.  
 Issues tagged with `Validating` are currently in the process of being AB Tested, and will be moved to `Closed` once validated.
+
+### Personal Website
+This project holds all generic issues that don't require validation.  
+The issues in this project are ordered by their perceived priority and so this is a good place to see what to work on.  
 
 ## Development Workflow
 
