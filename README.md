@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/53957795/90324214-fc212680-dfbf-11ea-8ab6-a1e7cd4dd7fa.png)
+
 ## About
 
 This repo is for [the website of Chase Manning](https://chasemanning.co.nz).  
