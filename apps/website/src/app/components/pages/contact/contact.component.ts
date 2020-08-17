@@ -1,17 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import "firebase/auth";
 import "firebase/firestore";
 import { GoogleAnalyticsService } from "../../../services/google-analytics.service";
 import { ContactData } from "../../../services/email.service";
 import { EmailService } from "../../../services/email.service";
+import { GoogleOptimizeService } from "../../../services/google-optimize.service";
 
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
   styleUrls: ["./contact.component.css"],
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, AfterViewInit {
   contactForm: FormGroup;
   validated: boolean = false;
   isSent: boolean = false;
@@ -21,7 +22,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private googleAnalyticsService: GoogleAnalyticsService,
-    private emailService: EmailService
+    private emailService: EmailService,
+    private googleOptimizeService: GoogleOptimizeService
   ) {
     this.contactForm = this.formBuilder.group({
       name: [
@@ -37,6 +39,10 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.googleOptimizeService.triggerActivationEvent();
+  }
 
   onSubmit(contactData): void {
     this.validated = true;
