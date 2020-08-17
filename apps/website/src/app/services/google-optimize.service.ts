@@ -10,5 +10,6 @@ export class GoogleOptimizeService {
 
   triggerActivationEvent(): void {
     dataLayer.push({ event: "optimize.activate" });
+    console.log("meow");
   }
 }
