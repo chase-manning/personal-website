@@ -35,11 +35,13 @@ video {
 
 button {
   text-align: center;
-  margin: 3rem 0;
   font-size: 1.5rem;
   font-weight: 400;
   padding: 1.2rem 6rem;
-  display: none;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  justify-self: center;
+  align-self: center;
 }
 
 /* Responsive Mobile */
