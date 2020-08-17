@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { Title, Meta } from "@angular/platform-browser";
-import { GoogleOptimizeService } from "./services/google-optimize.service";
 
 declare let gtag: Function;
 
@@ -11,12 +10,7 @@ declare let gtag: Function;
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  constructor(
-    public router: Router,
-    private title: Title,
-    private meta: Meta,
-    private googleOptimizeService: GoogleOptimizeService
-  ) {
+  constructor(public router: Router, private title: Title, private meta: Meta) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const route: string = event.urlAfterRedirects;
@@ -24,7 +18,6 @@ export class AppComponent {
           page_path: route,
         });
         this.setMetaData(route);
-        this.googleOptimizeService.triggerActivationEvent();
       }
     });
   }
