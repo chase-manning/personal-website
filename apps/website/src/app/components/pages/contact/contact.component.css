@@ -266,6 +266,6 @@ textarea {
 /* Responsive Mobile */
 @media only screen and (max-width: 519px) {
   .mobile-exit-button {
-    /*display: flex;*/
+    display: flex;
   }
 }
