@@ -46,7 +46,7 @@
   }
 
   .mobile-contact__container {
-    /*display: flex;*/
+    display: flex;
   }
 
   .services__container {
@@ -54,7 +54,7 @@
   }
 
   .content__container {
-    /*margin-top: 3rem;*/
+    /* margin-top: 3rem; */
     margin-top: 50vh;
     transform: translateY(-50%);
   }
