@@ -47,8 +47,8 @@
 }
 
 .blue-liquid {
-  background-color: var(--primary);
-  /*background: linear-gradient(135deg, #43cbff, #9708cc);*/
+  /* background-color: var(--primary); */
+  background: linear-gradient(135deg, #43cbff, #9708cc);
 }
 
 /* Responsive Mobile & Tablet */
