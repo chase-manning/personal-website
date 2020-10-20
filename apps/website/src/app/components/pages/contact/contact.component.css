@@ -260,7 +260,6 @@ textarea {
   left: 50%;
   bottom: 2rem;
   transform: translateX(-50%);
-  display: none;
 }
 
 /* Responsive Mobile */
