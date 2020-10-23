@@ -32,16 +32,15 @@ export class AppComponent {
         "The Services of Chase Manning, Freelance Developer. Including Web, Movile and Back End Development";
     } else if (route === "/contact") {
       title = "Contact Chase Manning";
-      description =
-        "Contact Chase Manning, Freelance Developer for help with your Web or Mobile Development project.";
+      description = "Connect with me and Let's Chat!";
     } else if (route === "/404") {
       title = "Page Not Found";
       description =
         "Looks like you are a bit lost! It's okay you can go home now, or...";
     } else {
-      title = "Freelancer Developer | Chase Manning | Websites & Mobile";
+      title = "Hi, I'm Chase manning";
       description =
-        "Hi, I'm Chase, and I have a passion for development! I love working on web and mobile development and can't wait to hear about your project.";
+        "I'm a Senior Full Stack Developer who has a passion for Web and Mobile. Connect with me and Let's Chat!";
     }
 
     this.title.setTitle(title);
