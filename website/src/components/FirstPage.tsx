@@ -7,10 +7,12 @@ import bg from "../assets/images/bg-main.jpg";
 import FirstPageIllustration from "./FirstPageIllustration";
 
 const StyledFirstPage = styled.div`
-  height: 100vh;
   position: relative;
 
+  height: 100vh;
   @media only screen and (max-width: 639px) {
+    height: 118vh;
+
     ::before {
       content: "";
       position: absolute;
