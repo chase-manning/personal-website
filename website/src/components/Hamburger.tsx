@@ -46,6 +46,7 @@ type Props = {
 };
 
 const Hamburger = (props: Props) => {
+  return <div></div>;
   return (
     <StyledHamburger onClick={() => props.click()}>
       <Lines>
