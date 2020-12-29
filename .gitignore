@@ -2,6 +2,7 @@
 /website/dist
 /website/tmp
 /website/node_modules
+/website/.eslintcache
 
 # Functions
 /functions/node_modules
