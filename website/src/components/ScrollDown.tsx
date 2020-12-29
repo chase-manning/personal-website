@@ -30,7 +30,8 @@ const ScrollDown = () => {
       <Circle>
         <UnfoldMoreIcon fontSize={"large"} />
       </Circle>
-      <Text>Scroll down</Text>
+      {/* <Text>Scroll down</Text> */}
+      <Text>Welcome</Text>
     </StyledScrollDown>
   );
 };
