@@ -47,14 +47,14 @@ type Props = {
 
 const Hamburger = (props: Props) => {
   return <div></div>;
-  return (
-    <StyledHamburger onClick={() => props.click()}>
-      <Lines>
-        <LineTop open={props.open} />
-        <LineBottom open={props.open} />
-      </Lines>
-    </StyledHamburger>
-  );
+  // return (
+  //   <StyledHamburger onClick={() => props.click()}>
+  //     <Lines>
+  //       <LineTop open={props.open} />
+  //       <LineBottom open={props.open} />
+  //     </Lines>
+  //   </StyledHamburger>
+  // );
 };
 
 export default Hamburger;
