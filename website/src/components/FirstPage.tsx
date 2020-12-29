@@ -37,11 +37,17 @@ const Background = styled.img`
 `;
 
 const Illustration = styled.div`
-  width: 50vw;
-  height: 50vw;
   position: absolute;
   bottom: 0;
+
   right: 0;
+  width: 50vw;
+  height: 50vw;
+  @media only screen and (max-width: 639px) {
+    right: -10vw;
+    width: 125vw;
+    height: 125vw;
+  }
 `;
 
 const Content = styled.div`
