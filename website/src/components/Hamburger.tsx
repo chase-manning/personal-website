@@ -21,23 +21,31 @@ type LineProps = {
 const LineTop = styled.div`
   width: 100%;
   height: 2px;
-  background-color: var(--bg);
   transform: ${(props: LineProps) =>
     props.open
       ? "rotate(45deg)  translateY(9px)"
       : "rotate(0deg)  translateY(0)"};
   transition: all 0.2s;
+
+  background-color: var(--bg);
+  @media only screen and (max-width: 639px) {
+    background-color: var(--main);
+  }
 `;
 
 const LineBottom = styled.div`
   width: 100%;
   height: 2px;
-  background-color: var(--bg);
   transform: ${(props: LineProps) =>
     props.open
       ? "rotate(-45deg) translateY(-9px)"
       : "rotate(0deg) translateY(0)"};
   transition: all 0.2s;
+
+  background-color: var(--bg);
+  @media only screen and (max-width: 639px) {
+    background-color: var(--main);
+  }
 `;
 
 type Props = {
