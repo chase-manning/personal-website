@@ -5,32 +5,47 @@ import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 const StyledScrollDown = styled.div`
   display: flex;
   margin-bottom: 20px;
-  margin-left: 15%;
   align-items: center;
+
+  margin-left: 15%;
+  @media only screen and (max-width: 639px) {
+    margin-left: 0;
+    margin-top: 40px;
+  }
 `;
 
 const Circle = styled.div`
-  height: 80px;
-  width: 80px;
   border-radius: 50%;
   background-color: var(--bg);
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  height: 80px;
+  width: 80px;
+  @media only screen and (max-width: 639px) {
+    height: 55px;
+    width: 55px;
+  }
 `;
 
 const Text = styled.div`
   margin-left: 20px;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const ScrollDown = () => {
+  const mobile = window.innerWidth <= 639;
+
   return (
     <StyledScrollDown>
       <Circle>
-        <UnfoldMoreIcon fontSize={"large"} />
+        {mobile ? <UnfoldMoreIcon /> : <UnfoldMoreIcon fontSize={"large"} />}
       </Circle>
-      {/* <Text>Scroll down</Text> */}
       <Text>Welcome</Text>
     </StyledScrollDown>
   );
