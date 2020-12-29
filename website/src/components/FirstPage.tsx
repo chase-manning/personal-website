@@ -49,14 +49,15 @@ const Content = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   padding: 60px;
+  height: 100%;
   @media only screen and (max-width: 639px) {
     padding: 30px;
+    height: auto;
   }
 `;
 

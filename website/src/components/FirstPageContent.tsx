@@ -4,10 +4,13 @@ import styled from "styled-components";
 const StyledFirstPageContent = styled.div`
   display: flex;
   flex-direction: column;
+
   width: 600px;
   margin-left: 15%;
   @media only screen and (max-width: 639px) {
+    width: 250px;
     margin-left: 0;
+    margin-top: 50px;
   }
 `;
 
@@ -24,15 +27,24 @@ const SubHeaderLine = styled.div`
 `;
 
 const SubHeaderText = styled.div`
-  font-size: 20px;
   font-weight: 600;
   color: var(--purple);
+
+  font-size: 20px;
+  @media only screen and (max-width: 639px) {
+    font-size: 16px;
+  }
 `;
 
 const Header = styled.div`
-  font-size: 70px;
   font-weight: 600;
+
+  font-size: 70px;
   line-height: 1.2;
+  @media only screen and (max-width: 639px) {
+    font-size: 30px;
+    line-height: 1.6;
+  }
 `;
 
 const FirstPageContent = () => {
