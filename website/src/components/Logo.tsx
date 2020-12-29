@@ -12,6 +12,7 @@ const StyledLogo = styled.div`
 
 const Icon = styled.div`
   display: flex;
+  letter-spacing: -23px;
 `;
 
 const Text = styled.div`
@@ -19,7 +20,7 @@ const Text = styled.div`
   font-weight: 500;
   font-size: 30px;
   letter-spacing: 10px;
-  margin-left: 10px;
+  margin-left: 30px;
   display: flex;
 `;
 
@@ -40,7 +41,7 @@ const Logo = () => {
     <StyledLogo>
       <Icon>
         <Left>{"<"}</Left>
-        <Right>{">"}</Right>
+        <Right>{"<"}</Right>
       </Icon>
       <Text>
         Chase<Fullstop>.</Fullstop>
