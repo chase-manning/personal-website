@@ -1,3 +1,0 @@
-# there are not robots.txt directives here
-
-Sitemap: https://www.chasemanning.co.nz/sitemap.xml
