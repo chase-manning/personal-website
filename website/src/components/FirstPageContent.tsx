@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledFirstPageContent = styled.div`
-  margin-left: 15%;
   display: flex;
   flex-direction: column;
   width: 600px;
+  margin-left: 15%;
+  @media only screen and (max-width: 639px) {
+    margin-left: 0;
+  }
 `;
 
 const SubHeader = styled.div`
