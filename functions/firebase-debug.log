@@ -17,3 +17,61 @@
 [debug] [2020-07-25T07:58:53.658Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 25 Jul 2020 07:58:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
 [debug] [2020-07-25T07:58:53.660Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/chase-manning-portfolio  
  
+[debug] [2020-12-29T02:59:52.320Z] ----------------------------------------------------------------------
+[debug] [2020-12-29T02:59:52.322Z] Command:       /usr/local/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2020-12-29T02:59:52.322Z] CLI Version:   8.16.2
+[debug] [2020-12-29T02:59:52.322Z] Platform:      darwin
+[debug] [2020-12-29T02:59:52.322Z] Node Version:  v12.18.2
+[debug] [2020-12-29T02:59:52.323Z] Time:          Tue Dec 29 2020 15:59:52 GMT+1300 (New Zealand Daylight Time)
+[debug] [2020-12-29T02:59:52.323Z] ----------------------------------------------------------------------
+[debug] [2020-12-29T02:59:52.323Z] 
+[debug] [2020-12-29T02:59:52.324Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2020-12-29T02:59:52.336Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-29T02:59:52.336Z] > authorizing via signed-in user
+[debug] [2020-12-29T02:59:52.336Z] [iam] checking project chase-manning-portfolio for permissions ["firebase.projects.get"]
+[debug] [2020-12-29T02:59:52.337Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-12-29T02:59:52.338Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-29T02:59:57.901Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 29 Dec 2020 02:59:58 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-29T02:59:57.929Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/chase-manning-portfolio:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-12-29T02:59:59.708Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 29 Dec 2020 02:59:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1012","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version "10" doesn't match your global version "12" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"10\" doesn't match your global version \"12\""}}
+[debug] [2020-12-29T02:59:59.725Z] defaultcredentials: writing to file /Users/chasemanning/.config/firebase/me_chasemanning_co.nz_application_default_credentials.json
+[debug] [2020-12-29T02:59:59.727Z] DEBUG: Setting GAC to /Users/chasemanning/.config/firebase/me_chasemanning_co.nz_application_default_credentials.json
+[debug] [2020-12-29T02:59:59.734Z] [functions] Watching "/Users/chasemanning/Documents/repositories/personal-website/functions" for Cloud Functions...
+[debug] [2020-12-29T02:59:59.742Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-12-29T02:59:59.742Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-12-29T02:59:59.742Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-12-29T02:59:59.742Z] DEBUG: [worker-~diagnostic~-463c5d0a-c036-4ebc-bab7-ff140e8da7be]: Assigning socketPath: /var/folders/6t/87_kb2257cjbg_pd9l0zr2h80000gn/T/fire_emu_27178.sock
+[debug] [2020-12-29T02:59:59.743Z] DEBUG: [worker-~diagnostic~-463c5d0a-c036-4ebc-bab7-ff140e8da7be]: BUSY
+[debug] [2020-12-29T02:59:59.943Z] DEBUG: [runtime-status] [27178] Functions runtime initialized. {"cwd":"/Users/chasemanning/Documents/repositories/personal-website/functions","node_version":"12.18.2"}
+[debug] [2020-12-29T02:59:59.944Z] DEBUG: [runtime-status] [27178] Disabled runtime features: undefined
+[debug] [2020-12-29T02:59:59.949Z] DEBUG: [runtime-status] [27178] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.4.2","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-12-29T02:59:59.952Z] DEBUG: [runtime-status] [27178] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.0","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-12-29T02:59:59.953Z] DEBUG: [runtime-status] [27178] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.0","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-12-29T02:59:59.955Z] DEBUG: [runtime-status] [27178] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2020-12-29T02:59:59.956Z] DEBUG: [runtime-status] [27178] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.0","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-12-29T02:59:59.993Z] DEBUG: [runtime-status] [27178] Checked functions.config() {"config":{}}
+[debug] [2020-12-29T02:59:59.994Z] DEBUG: [runtime-status] [27178] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.0","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2020-12-29T02:59:59.994Z] DEBUG: [runtime-status] [27178] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.0","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-12-29T02:59:59.995Z] DEBUG: [runtime-status] [27178] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.4.2","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-12-29T02:59:59.995Z] DEBUG: [runtime-status] [27178] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.0","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-12-29T02:59:59.995Z] DEBUG: [runtime-status] [27178] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.4.2","resolution":"/Users/chasemanning/Documents/repositories/personal-website/functions/node_modules/firebase-admin/lib/index.js"}}
+[warn] ⚠  It looks like you're trying to access functions.config().mailgun but there is no value there. You can learn more about setting up config here: https://firebase.google.com/docs/functions/local-emulator {"metadata":{"emulator":{"name":"functions"},"message":"It looks like you're trying to access functions.config().mailgun but there is no value there. You can learn more about setting up config here: https://firebase.google.com/docs/functions/local-emulator"}}
+[warn] ⚠  TypeError: Cannot read property 'key' of undefined
+    at Object.<anonymous> (/Users/chasemanning/Documents/repositories/personal-website/functions/index.js:6:43)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:706:33
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:5:58) {"metadata":{"emulator":{"name":"functions"},"message":"TypeError: Cannot read property 'key' of undefined\n    at Object.<anonymous> (/Users/chasemanning/Documents/repositories/personal-website/functions/index.js:6:43)\n    at Module._compile (internal/modules/cjs/loader.js:1138:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)\n    at Module.load (internal/modules/cjs/loader.js:986:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:879:14)\n    at Module.require (internal/modules/cjs/loader.js:1026:19)\n    at require (internal/modules/cjs/helpers.js:72:18)\n    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:706:33\n    at Generator.next (<anonymous>)\n    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:5:58)"}}
+[warn] ⚠  We were unable to load your functions code. (see above) {"metadata":{"emulator":{"name":"functions"}}}
+[debug] [2020-12-29T03:00:00.193Z] DEBUG: [worker-~diagnostic~-463c5d0a-c036-4ebc-bab7-ff140e8da7be]: exited
+[debug] [2020-12-29T03:00:00.193Z] DEBUG: [worker-~diagnostic~-463c5d0a-c036-4ebc-bab7-ff140e8da7be]: FINISHED
+[debug] [2020-12-29T03:00:03.952Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2020-12-29T03:00:03.952Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
