@@ -17,9 +17,9 @@ const Icon = styled.div`
 
 const Text = styled.div`
   text-transform: uppercase;
-  font-weight: 500;
-  font-size: 30px;
-  letter-spacing: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 8px;
   margin-left: 30px;
   display: flex;
 `;
