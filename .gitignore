@@ -1,7 +1,7 @@
 # Website
-/apps/website/dist
-/apps/website/tmp
-/apps/website/node_modules
+/website/build
+/website/node_modules
+/website/.eslintcache
 
 # Functions
 /functions/node_modules
