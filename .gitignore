@@ -1,6 +1,5 @@
 # Website
-/website/dist
-/website/tmp
+/website/build
 /website/node_modules
 /website/.eslintcache
 
