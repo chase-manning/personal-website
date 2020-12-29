@@ -9,6 +9,21 @@ import FirstPageIllustration from "./FirstPageIllustration";
 const StyledFirstPage = styled.div`
   height: 100vh;
   position: relative;
+
+  @media only screen and (max-width: 639px) {
+    ::before {
+      content: "";
+      position: absolute;
+      top: 420px;
+      right: 0;
+      z-index: -1;
+      width: 226px;
+      height: 370px;
+      background: #1b1b87;
+      -webkit-clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
+    }
+  }
 `;
 
 const Background = styled.img`
@@ -16,6 +31,9 @@ const Background = styled.img`
   top: 0;
   right: 0;
   height: 100%;
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const Illustration = styled.div`
@@ -32,10 +50,14 @@ const Content = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding: 60px;
+  @media only screen and (max-width: 639px) {
+    padding: 30px;
+  }
 `;
 
 type Props = {
