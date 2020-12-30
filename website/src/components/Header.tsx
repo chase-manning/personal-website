@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 import PopupDesktop from "./PopupDesktop";
+import MobilePopup from "./MobilePopup";
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -12,11 +13,16 @@ const StyledHeader = styled.div`
 
 const Header = () => {
   const [popupOpen, setPopupOpen] = useState(false);
+  const mobile = window.innerWidth <= 639;
 
   return (
     <StyledHeader>
-      <PopupDesktop open={popupOpen} close={() => setPopupOpen(false)} />
-      <Logo primary={!popupOpen} />
+      {mobile ? (
+        <MobilePopup open={popupOpen} close={() => setPopupOpen(false)} />
+      ) : (
+        <PopupDesktop open={popupOpen} close={() => setPopupOpen(false)} />
+      )}
+      <Logo primary={mobile || !popupOpen} />
       <Hamburger open={popupOpen} click={() => setPopupOpen(!popupOpen)} />
     </StyledHeader>
   );
