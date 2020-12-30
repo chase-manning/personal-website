@@ -54,12 +54,13 @@ const MenuItem = styled.a`
   cursor: pointer;
   font-size: 72px;
   font-weight: 600;
+  transition: color 0.25s;
+  line-height: 1;
+  margin-bottom: 30px;
 
   :hover {
     color: var(--purple);
   }
-
-  transition: color 0.25s;
 `;
 
 type Props = {
