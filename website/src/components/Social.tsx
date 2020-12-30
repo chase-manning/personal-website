@@ -29,7 +29,9 @@ const Social = (props: Props) => {
   return (
     <StyledSocial>
       <Icon>{props.icon}</Icon>
-      <Text href={props.link}>{props.text}</Text>
+      <Text href={props.link} target={"_blank"}>
+        {props.text}
+      </Text>
     </StyledSocial>
   );
 };
