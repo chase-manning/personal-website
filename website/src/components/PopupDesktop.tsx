@@ -4,6 +4,10 @@ import popupIllustration from "../assets/images/bg-header.png";
 import Menus from "./Menus";
 import Socials from "./Socials";
 
+type PopupProps = {
+  open: boolean;
+};
+
 const StyledPopupDesktop = styled.div`
   position: fixed;
   top: 0;
@@ -11,8 +15,8 @@ const StyledPopupDesktop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: var(--bg);
-  display: ${(props: Props) => (props.open ? "flex" : "none")};
-  opacity: ${(props: Props) => (props.open ? "1" : "0")};
+  display: ${(props: PopupProps) => (props.open ? "flex" : "none")};
+  opacity: ${(props: PopupProps) => (props.open ? "1" : "0")};
   transition: opacity 0.4s;
   justify-content: space-between;
 `;
@@ -44,6 +48,7 @@ const ContentContainer = styled.div`
 
 type Props = {
   open: boolean;
+  close: () => void;
 };
 
 const PopupDesktop = (props: Props) => {
