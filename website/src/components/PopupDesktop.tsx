@@ -50,7 +50,7 @@ const Items = styled.div`
   flex-direction: column;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled.a`
   cursor: pointer;
   font-size: 72px;
   font-weight: 600;
