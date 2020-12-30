@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledSocial = styled.div`
+const StyledSocial = styled.a`
   cursor: pointer;
   display: flex;
   margin: 15px 0;
@@ -14,7 +14,7 @@ const Icon = styled.div`
   align-items: center;
 `;
 
-const Text = styled.a`
+const Text = styled.div`
   font-size: 18px;
   font-weight: 400;
 `;
@@ -27,11 +27,9 @@ type Props = {
 
 const Social = (props: Props) => {
   return (
-    <StyledSocial>
+    <StyledSocial href={props.link} target={"_blank"}>
       <Icon>{props.icon}</Icon>
-      <Text href={props.link} target={"_blank"}>
-        {props.text}
-      </Text>
+      <Text>{props.text}</Text>
     </StyledSocial>
   );
 };
