@@ -19,7 +19,11 @@ const MenuItem = styled.a`
   }
 `;
 
-const Menus = () => {
+type Props = {
+  close: () => void;
+};
+
+const Menus = (props: Props) => {
   return (
     <StyledMenus>
       <MenuItem>Home</MenuItem>

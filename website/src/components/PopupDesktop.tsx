@@ -60,7 +60,7 @@ const PopupDesktop = (props: Props) => {
       <ContentPannel>
         <ContentContainer>
           <Socials />
-          <Menus />
+          <Menus close={() => props.close()} />
         </ContentContainer>
       </ContentPannel>
     </StyledPopupDesktop>
