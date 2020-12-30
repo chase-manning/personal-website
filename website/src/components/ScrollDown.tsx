@@ -17,16 +17,17 @@ const StyledScrollDown = styled.div`
 const Circle = styled.div`
   border-radius: 50%;
   background-color: var(--bg);
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
 
   height: 80px;
   width: 80px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.06);
   @media only screen and (max-width: 639px) {
     height: 55px;
     width: 55px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
   }
 `;
 
