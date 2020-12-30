@@ -81,7 +81,7 @@ const PopupDesktop = (props: Props) => {
               text={"GitHub"}
             />
             <Social
-              icon={<LinkedInIcon color={"primary"} />}
+              icon={<LinkedInIcon />}
               link={"https://www.linkedin.com/in/chasemanning"}
               text={"Linked In"}
             />
