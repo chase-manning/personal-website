@@ -54,7 +54,7 @@ const Background = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: var(--pink);
+  background-color: var(--purple);
   width: 60px;
   height: 60px;
   border-radius: 50%;
