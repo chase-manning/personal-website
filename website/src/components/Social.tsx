@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledSocial = styled.div`
   cursor: pointer;
   display: flex;
+  margin: 15px 0;
 `;
 
 const Icon = styled.div`
