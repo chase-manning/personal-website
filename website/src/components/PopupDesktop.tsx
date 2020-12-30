@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Social from "./Social";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import popupIllustration from "../assets/images/bg-header.png";
 
 const StyledPopupDesktop = styled.div`
   position: fixed;
@@ -21,6 +22,12 @@ const ColoredPannel = styled.div`
   width: 100%;
   height: 100%;
   background-color: var(--dark);
+  display: flex;
+  align-items: center;
+`;
+
+const PopupIllustration = styled.img`
+  height: 100%;
 `;
 
 const MiddlePannel = styled.div`
@@ -63,7 +70,9 @@ type Props = {
 const PopupDesktop = (props: Props) => {
   return (
     <StyledPopupDesktop open={props.open}>
-      <ColoredPannel></ColoredPannel>
+      <ColoredPannel>
+        <PopupIllustration src={popupIllustration} />
+      </ColoredPannel>
       <MiddlePannel>
         <Items>
           <Social
