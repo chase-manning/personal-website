@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
+import PopupDesktop from "./PopupDesktop";
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -14,6 +15,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
+      <PopupDesktop open={popupOpen} />
       <Logo />
       <Hamburger open={popupOpen} click={() => setPopupOpen(!popupOpen)} />
     </StyledHeader>
