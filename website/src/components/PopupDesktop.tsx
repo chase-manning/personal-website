@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import popupIllustration from "../assets/images/bg-header.png";
+import Menus from "./Menus";
 import Socials from "./Socials";
 
 const StyledPopupDesktop = styled.div`
@@ -41,24 +42,6 @@ const ContentContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-const Items = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const MenuItem = styled.a`
-  cursor: pointer;
-  font-size: 72px;
-  font-weight: 600;
-  transition: color 0.25s;
-  line-height: 1;
-  margin-bottom: 30px;
-
-  :hover {
-    color: var(--purple);
-  }
-`;
-
 type Props = {
   open: boolean;
 };
@@ -72,12 +55,7 @@ const PopupDesktop = (props: Props) => {
       <ContentPannel>
         <ContentContainer>
           <Socials />
-          <Items>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Home</MenuItem>
-          </Items>
+          <Menus />
         </ContentContainer>
       </ContentPannel>
     </StyledPopupDesktop>
