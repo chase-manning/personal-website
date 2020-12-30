@@ -10,7 +10,7 @@ const StyledPopupDesktop = styled.div`
   background-color: var(--bg);
   opacity: ${(props: Props) => (props.open ? "1" : "0")};
   z-index: ${(props: Props) => (props.open ? "0" : "-100")};
-  transition: opacity 0.2s;
+  transition: opacity 0.4s;
 `;
 
 type Props = {
