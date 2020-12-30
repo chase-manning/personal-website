@@ -20,7 +20,7 @@ const StyledPopupDesktop = styled.div`
 const ColoredPannel = styled.div`
   width: 100%;
   height: 100%;
-  background-color: var(--purple);
+  background-color: var(--dark);
 `;
 
 const Pannel = styled.div`
