@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledSocial = styled.div`
+  cursor: pointer;
   display: flex;
 `;
 
@@ -11,7 +12,8 @@ const Icon = styled.div`
 `;
 
 const Text = styled.a`
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 400;
 `;
 
 type Props = {
