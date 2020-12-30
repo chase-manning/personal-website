@@ -25,7 +25,7 @@ const Text = styled.div`
 `;
 
 const Fullstop = styled.div`
-  color: var(--yellow);
+  color: var(--orange);
 `;
 
 const Left = styled.div`
