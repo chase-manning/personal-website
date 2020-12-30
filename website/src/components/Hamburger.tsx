@@ -61,6 +61,10 @@ const Background = styled.div`
   opacity: ${(props: LineProps) => (props.open ? "1" : "0")};
   transition: opacity 0.2s;
   transform: translate(-50%, -50%);
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 type Props = {
