@@ -21,7 +21,7 @@ const StyledPopupDesktop = styled.div`
 `;
 
 const ColoredPannel = styled.div`
-  width: 30%;
+  width: 27%;
   height: 100%;
   background-color: var(--dark);
   display: flex;
@@ -34,7 +34,7 @@ const PopupIllustration = styled.img`
 
 const ContentPannel = styled.div`
   height: 100%;
-  width: 70%;
+  width: 73%;
   display: flex;
   align-items: center;
 `;
