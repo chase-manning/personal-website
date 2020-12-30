@@ -26,7 +26,7 @@ const SubHeaderLine = styled.div`
   margin-right: 20px;
 `;
 
-const SubHeaderText = styled.div`
+const SubHeaderText = styled.h1`
   font-weight: 600;
   color: var(--purple);
 
@@ -36,7 +36,7 @@ const SubHeaderText = styled.div`
   }
 `;
 
-const Header = styled.div`
+const Header = styled.h2`
   font-weight: 600;
 
   font-size: 70px;
