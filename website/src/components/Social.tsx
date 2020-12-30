@@ -8,7 +8,7 @@ const StyledSocial = styled.div`
 `;
 
 const Icon = styled.div`
-  margin-right: 20px;
+  margin-right: 40px;
   color: var(--purple);
   display: flex;
   align-items: center;
