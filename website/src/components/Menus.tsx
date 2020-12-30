@@ -26,10 +26,7 @@ type Props = {
 const Menus = (props: Props) => {
   return (
     <StyledMenus>
-      <MenuItem>Home</MenuItem>
-      <MenuItem>Home</MenuItem>
-      <MenuItem>Home</MenuItem>
-      <MenuItem>Home</MenuItem>
+      <MenuItem onClick={() => props.close()}>Home</MenuItem>
     </StyledMenus>
   );
 };
