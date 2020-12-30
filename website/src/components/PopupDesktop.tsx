@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Social from "./Social";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import popupIllustration from "../assets/images/bg-header.png";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import Socials from "./Socials";
 
 const StyledPopupDesktop = styled.div`
   position: fixed;
@@ -75,28 +71,7 @@ const PopupDesktop = (props: Props) => {
       </ColoredPannel>
       <ContentPannel>
         <ContentContainer>
-          <Items>
-            <Social
-              icon={<GitHubIcon />}
-              link={"https://github.com/chase-manning"}
-              text={"GitHub"}
-            />
-            <Social
-              icon={<LinkedInIcon />}
-              link={"https://www.linkedin.com/in/chasemanning"}
-              text={"Linked In"}
-            />
-            <Social
-              icon={<TwitterIcon />}
-              link={"https://twitter.com/ChaseManning_NZ"}
-              text={"Twitter"}
-            />
-            <Social
-              icon={<InstagramIcon />}
-              link={"https://www.instagram.com/chase.manning.nz"}
-              text={"Instagram"}
-            />
-          </Items>
+          <Socials />
           <Items>
             <MenuItem>Home</MenuItem>
             <MenuItem>Home</MenuItem>
