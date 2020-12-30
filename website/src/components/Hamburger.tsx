@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const StyledHamburger = styled.button`
   cursor: pointer;
+  z-index: 1;
+  position: relative;
 `;
 
 const Lines = styled.div`
@@ -23,8 +25,8 @@ const LineTop = styled.div`
   height: 2px;
   transform: ${(props: LineProps) =>
     props.open
-      ? "rotate(45deg)  translateY(9px)"
-      : "rotate(0deg)  translateY(0)"};
+      ? "rotate(45deg)  translate(4.5px,4.5px)"
+      : "rotate(0deg)  translateX(0)"};
   transition: all 0.2s;
 
   background-color: var(--bg);
@@ -38,14 +40,27 @@ const LineBottom = styled.div`
   height: 2px;
   transform: ${(props: LineProps) =>
     props.open
-      ? "rotate(-45deg) translateY(-9px)"
-      : "rotate(0deg) translateY(0)"};
+      ? "rotate(-45deg) translate(4.5px,-4.5px)"
+      : "rotate(0deg) translateX(0)"};
   transition: all 0.2s;
 
   background-color: var(--bg);
   @media only screen and (max-width: 639px) {
     background-color: var(--main);
   }
+`;
+
+const Background = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--pink);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: ${(props: LineProps) => (props.open ? "1" : "0")};
+  transition: opacity 0.2s;
+  transform: translate(-50%, -50%);
 `;
 
 type Props = {
@@ -56,6 +71,7 @@ type Props = {
 const Hamburger = (props: Props) => {
   return (
     <StyledHamburger onClick={() => props.click()}>
+      <Background open={props.open} />
       <Lines>
         <LineTop open={props.open} />
         <LineBottom open={props.open} />
