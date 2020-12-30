@@ -21,7 +21,7 @@ const StyledPopupDesktop = styled.div`
 `;
 
 const ColoredPannel = styled.div`
-  width: 100%;
+  width: 30%;
   height: 100%;
   background-color: var(--dark);
   display: flex;
@@ -32,20 +32,17 @@ const PopupIllustration = styled.img`
   height: 100%;
 `;
 
-const MiddlePannel = styled.div`
+const ContentPannel = styled.div`
   height: 100%;
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: center;
   align-items: center;
 `;
 
-const RightPannel = styled.div`
-  height: 100%;
+const ContentContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: space-evenly;
 `;
 
 const Items = styled.div`
@@ -75,38 +72,38 @@ const PopupDesktop = (props: Props) => {
       <ColoredPannel>
         <PopupIllustration src={popupIllustration} />
       </ColoredPannel>
-      <MiddlePannel>
-        <Items>
-          <Social
-            icon={<GitHubIcon />}
-            link={"https://github.com/chase-manning"}
-            text={"GitHub"}
-          />
-          <Social
-            icon={<LinkedInIcon color={"primary"} />}
-            link={"https://www.linkedin.com/in/chasemanning"}
-            text={"Linked In"}
-          />
-          <Social
-            icon={<TwitterIcon />}
-            link={"https://twitter.com/ChaseManning_NZ"}
-            text={"Twitter"}
-          />
-          <Social
-            icon={<InstagramIcon />}
-            link={"https://www.instagram.com/chase.manning.nz"}
-            text={"Instagram"}
-          />
-        </Items>
-      </MiddlePannel>
-      <RightPannel>
-        <Items>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Home</MenuItem>
-        </Items>
-      </RightPannel>
+      <ContentPannel>
+        <ContentContainer>
+          <Items>
+            <Social
+              icon={<GitHubIcon />}
+              link={"https://github.com/chase-manning"}
+              text={"GitHub"}
+            />
+            <Social
+              icon={<LinkedInIcon color={"primary"} />}
+              link={"https://www.linkedin.com/in/chasemanning"}
+              text={"Linked In"}
+            />
+            <Social
+              icon={<TwitterIcon />}
+              link={"https://twitter.com/ChaseManning_NZ"}
+              text={"Twitter"}
+            />
+            <Social
+              icon={<InstagramIcon />}
+              link={"https://www.instagram.com/chase.manning.nz"}
+              text={"Instagram"}
+            />
+          </Items>
+          <Items>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>Home</MenuItem>
+          </Items>
+        </ContentContainer>
+      </ContentPannel>
     </StyledPopupDesktop>
   );
 };
