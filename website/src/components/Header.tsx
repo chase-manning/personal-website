@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <PopupDesktop open={popupOpen} />
-      <Logo />
+      <Logo primary={!popupOpen} />
       <Hamburger open={popupOpen} click={() => setPopupOpen(!popupOpen)} />
     </StyledHeader>
   );
