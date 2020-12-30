@@ -23,11 +23,19 @@ const ColoredPannel = styled.div`
   background-color: var(--dark);
 `;
 
-const Pannel = styled.div`
+const MiddlePannel = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+`;
+
+const RightPannel = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
   align-items: center;
 `;
 
@@ -37,11 +45,15 @@ const Items = styled.div`
 `;
 
 const MenuItem = styled.div`
-  font-size: 30px;
+  cursor: pointer;
+  font-size: 72px;
+  font-weight: 600;
 
   :hover {
     color: var(--purple);
   }
+
+  transition: color 0.25s;
 `;
 
 type Props = {
@@ -52,10 +64,10 @@ const PopupDesktop = (props: Props) => {
   return (
     <StyledPopupDesktop open={props.open}>
       <ColoredPannel></ColoredPannel>
-      <Pannel>
+      <MiddlePannel>
         <Items>
           <Social
-            icon={<LinkedInIcon />}
+            icon={<LinkedInIcon color={"primary"} />}
             link={"https://www.linkedin.com/in/chasemanning/"}
             text={"Linked In"}
           />
@@ -75,15 +87,15 @@ const PopupDesktop = (props: Props) => {
             text={"Linked In"}
           />
         </Items>
-      </Pannel>
-      <Pannel>
+      </MiddlePannel>
+      <RightPannel>
         <Items>
           <MenuItem>Home</MenuItem>
           <MenuItem>Home</MenuItem>
           <MenuItem>Home</MenuItem>
           <MenuItem>Home</MenuItem>
         </Items>
-      </Pannel>
+      </RightPannel>
     </StyledPopupDesktop>
   );
 };
