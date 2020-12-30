@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Social from "./Social";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import popupIllustration from "../assets/images/bg-header.png";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import InstagramIcon from "@material-ui/icons/Instagram";
 
 const StyledPopupDesktop = styled.div`
   position: fixed;
@@ -12,9 +15,8 @@ const StyledPopupDesktop = styled.div`
   height: 100vh;
   background-color: var(--bg);
   opacity: ${(props: Props) => (props.open ? "1" : "0")};
-  z-index: ${(props: Props) => (props.open ? "0" : "-100")};
+  display: ${(props: Props) => (props.open ? "flex" : "none")};
   transition: opacity 0.4s;
-  display: flex;
   justify-content: space-between;
 `;
 
@@ -76,24 +78,24 @@ const PopupDesktop = (props: Props) => {
       <MiddlePannel>
         <Items>
           <Social
+            icon={<GitHubIcon />}
+            link={"https://github.com/chase-manning"}
+            text={"GitHub"}
+          />
+          <Social
             icon={<LinkedInIcon color={"primary"} />}
-            link={"https://www.linkedin.com/in/chasemanning/"}
+            link={"https://www.linkedin.com/in/chasemanning"}
             text={"Linked In"}
           />
           <Social
-            icon={<LinkedInIcon />}
-            link={"https://www.linkedin.com/in/chasemanning/"}
-            text={"Linked In"}
+            icon={<TwitterIcon />}
+            link={"https://twitter.com/ChaseManning_NZ"}
+            text={"Twitter"}
           />
           <Social
-            icon={<LinkedInIcon />}
-            link={"https://www.linkedin.com/in/chasemanning/"}
-            text={"Linked In"}
-          />
-          <Social
-            icon={<LinkedInIcon />}
-            link={"https://www.linkedin.com/in/chasemanning/"}
-            text={"Linked In"}
+            icon={<InstagramIcon />}
+            link={"https://www.instagram.com/chase.manning.nz"}
+            text={"Instagram"}
           />
         </Items>
       </MiddlePannel>
