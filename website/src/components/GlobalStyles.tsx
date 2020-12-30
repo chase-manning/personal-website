@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       outline: none;
     }
+
+    a {
+      text-decoration: none;
+    }
   `;
 
 const GlobalStyles = () => {
