@@ -14,8 +14,8 @@ const StyledPopupDesktop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: var(--bg);
-  opacity: ${(props: Props) => (props.open ? "1" : "0")};
   display: ${(props: Props) => (props.open ? "flex" : "none")};
+  opacity: ${(props: Props) => (props.open ? "1" : "0")};
   transition: opacity 0.4s;
   justify-content: space-between;
 `;
