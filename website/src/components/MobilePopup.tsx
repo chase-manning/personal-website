@@ -21,7 +21,7 @@ const StyledMobilePopup = styled.div`
 const Illustration = styled.img`
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -90px;
   right: 0;
 `;
 
