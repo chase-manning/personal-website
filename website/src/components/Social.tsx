@@ -9,9 +9,13 @@ const StyledSocial = styled.a`
 
 const Icon = styled.div`
   margin-right: 40px;
-  color: var(--purple);
   display: flex;
   align-items: center;
+
+  color: var(--purple);
+  @media only screen and (max-width: 639px) {
+    color: var(--sub);
+  }
 `;
 
 const Text = styled.p`
