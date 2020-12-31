@@ -9,6 +9,10 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 const StyledSocials = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 639px) {
+    margin-top: 30px;
+  }
 `;
 
 const Socials = () => {
