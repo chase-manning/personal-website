@@ -19,22 +19,22 @@ const Socials = () => {
   return (
     <StyledSocials>
       <Social
-        icon={<GitHubIcon />}
+        icon={<GitHubIcon fontSize={"inherit"} />}
         link={"https://github.com/chase-manning"}
         text={"GitHub"}
       />
       <Social
-        icon={<LinkedInIcon />}
+        icon={<LinkedInIcon fontSize={"inherit"} />}
         link={"https://www.linkedin.com/in/chasemanning"}
         text={"Linked In"}
       />
       <Social
-        icon={<TwitterIcon />}
+        icon={<TwitterIcon fontSize={"inherit"} />}
         link={"https://twitter.com/ChaseManning_NZ"}
         text={"Twitter"}
       />
       <Social
-        icon={<InstagramIcon />}
+        icon={<InstagramIcon fontSize={"inherit"} />}
         link={"https://www.instagram.com/chase.manning.nz"}
         text={"Instagram"}
       />
