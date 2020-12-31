@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import illustration from "../assets/images/bg-header-mobile.png";
+import Menus from "./Menus";
 
 type PopupProps = {
   open: boolean;
@@ -16,6 +17,7 @@ const StyledMobilePopup = styled.div`
   background-color: var(--bg);
   transform: translateX(${(props: PopupProps) => (props.open ? "0" : "100%")});
   transition: transform 0.3s;
+  padding: 30px;
 `;
 
 const Illustration = styled.img`
@@ -33,6 +35,7 @@ type Props = {
 const MobilePopup = (props: Props) => {
   return (
     <StyledMobilePopup open={props.open}>
+      <Menus close={() => props.close()} />
       <Illustration src={illustration} />
     </StyledMobilePopup>
   );
