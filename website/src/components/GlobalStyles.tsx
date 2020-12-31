@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
       color: var(--main);
       text-decoration: none;
     }
+
+    p, h1, h2, h3 {
+      color: var(--main);
+    }
   `;
 
 const GlobalStyles = () => {
