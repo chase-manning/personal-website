@@ -34,6 +34,7 @@ const Background = styled.img`
   top: 0;
   right: 0;
   height: 100%;
+
   @media only screen and (max-width: 639px) {
     display: none;
   }
