@@ -16,7 +16,7 @@ const Icon = styled.div`
   align-items: center;
 
   color: var(--purple);
-  font-size: 18px;
+  font-size: 24px;
   margin-right: 40px;
   @media only screen and (max-width: 639px) {
     color: var(--sub);
