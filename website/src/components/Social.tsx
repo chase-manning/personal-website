@@ -14,9 +14,13 @@ const Icon = styled.div`
   align-items: center;
 `;
 
-const Text = styled.div`
+const Text = styled.p`
   font-size: 18px;
   font-weight: 400;
+
+  @media only screen and (max-width: 639px) {
+    color: var(--sub);
+  }
 `;
 
 type Props = {
