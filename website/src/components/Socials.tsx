@@ -11,7 +11,7 @@ const StyledSocials = styled.div`
   flex-direction: column;
 
   @media only screen and (max-width: 639px) {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 `;
 
