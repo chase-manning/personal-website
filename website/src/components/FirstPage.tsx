@@ -12,7 +12,7 @@ const StyledFirstPage = styled.div`
 
   height: 100vh;
   @media only screen and (max-width: 639px) {
-    height: 118vh;
+    height: auto;
 
     ::before {
       content: "";
@@ -41,21 +41,21 @@ const Background = styled.img`
 `;
 
 const Illustration = styled.div`
-  position: absolute;
   bottom: 0;
-
   right: 0;
+
+  position: absolute;
   width: 50vw;
   height: 50vw;
   @media only screen and (max-width: 639px) {
-    right: -10vw;
+    position: relative;
     width: 125vw;
     height: 125vw;
+    transform: translateX(-15vw);
   }
 `;
 
 const Content = styled.div`
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -63,9 +63,11 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  position: absolute;
   padding: 60px;
   height: 100%;
   @media only screen and (max-width: 639px) {
+    position: relative;
     padding: 30px;
     height: auto;
   }
@@ -81,14 +83,14 @@ const FirstPage = (props: Props) => {
   return (
     <StyledFirstPage>
       <Background src={bg} />
-      <Illustration>
-        <FirstPageIllustration scrollPercent={scrollPercent} />
-      </Illustration>
       <Content>
         <Header />
         <FirstPageContent />
         <ScrollDown />
       </Content>
+      <Illustration>
+        <FirstPageIllustration scrollPercent={scrollPercent} />
+      </Illustration>
     </StyledFirstPage>
   );
 };
