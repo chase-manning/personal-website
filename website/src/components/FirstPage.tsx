@@ -8,6 +8,7 @@ import FirstPageIllustration from "./FirstPageIllustration";
 
 const StyledFirstPage = styled.div`
   position: relative;
+  overflow: hidden;
 
   height: 100vh;
   @media only screen and (max-width: 639px) {
