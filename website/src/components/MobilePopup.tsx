@@ -13,7 +13,7 @@ const StyledMobilePopup = styled.div`
   height: calc(100% - 95px);
   width: 100%;
   margin-top: 95px;
-  background-color: red;
+  background-color: var(--bg);
   transform: translateX(${(props: PopupProps) => (props.open ? "0" : "100%")});
   transition: transform 0.3s;
 `;
