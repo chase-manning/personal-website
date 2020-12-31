@@ -7,7 +7,7 @@ const StyledSocial = styled.a`
 
   margin: 15px 0;
   @media only screen and (max-width: 639px) {
-    margin: 7px 0;
+    margin: 6px 0;
   }
 `;
 
