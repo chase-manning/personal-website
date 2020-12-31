@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import illustration from "../assets/images/bg-header-mobile.png";
 import Menus from "./Menus";
+import Socials from "./Socials";
 
 type PopupProps = {
   open: boolean;
@@ -36,6 +37,7 @@ const MobilePopup = (props: Props) => {
   return (
     <StyledMobilePopup open={props.open}>
       <Menus close={() => props.close()} />
+      <Socials />
       <Illustration src={illustration} />
     </StyledMobilePopup>
   );
