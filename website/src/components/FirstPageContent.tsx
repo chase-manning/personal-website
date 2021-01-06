@@ -54,7 +54,7 @@ const FirstPageContent = () => {
         <SubHeaderLine />
         <SubHeaderText>Chase Manning</SubHeaderText>
       </SubHeader>
-      <Header>Hello, my name's Chase. I'm a Software Developer.</Header>
+      <Header>Hi, I'm Chase, your Friendly Neighborhood Developer.</Header>
     </StyledFirstPageContent>
   );
 };
