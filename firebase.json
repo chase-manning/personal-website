@@ -4,14 +4,9 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/api/contact",
-        "function": "contact"
-      },
-      {
         "source": "**",
         "destination": "/index.html"
       }
     ]
-  },
-  "functions": {}
+  }
 }
