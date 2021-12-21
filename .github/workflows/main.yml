@@ -1,4 +1,4 @@
-name: firebase-deploy
+name: Deploy to Firebase Hosting on Merge
 
 on:
   push:
@@ -9,19 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "10.x"
+      - uses: actions/checkout@v2
       - name: Installing App Dependencies
-        run: npm install
-        working-directory: website
-      - name: Installing Function Dependencies
-        run: npm install
-        working-directory: functions
+        run: yarn
       - name: Building App
-        run: npm run build
-        working-directory: website
+        run: yarn run build
       - name: Deploying to Firebase
         uses: w9jds/firebase-action@master
         with:
