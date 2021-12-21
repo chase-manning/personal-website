@@ -2,7 +2,7 @@
 
 ## About
 
-This repo is for [the website of Chase Manning](https://chasemanning.co.nz).  
+This repo is for [the website of Chase Manning](https://chase.manning.dev).  
 This site is built using React, everyone's favourite web development framework!
 
 ## Contributing
