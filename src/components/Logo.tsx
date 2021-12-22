@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledLogo = styled.div`
@@ -40,18 +39,18 @@ const Right = styled.div`
   transition: color 0.4s;
 `;
 
-type Props = {
+interface Props {
   primary: boolean;
-};
+}
 
-const Logo = (props: Props) => {
+const Logo = ({ primary }: Props) => {
   return (
     <StyledLogo>
       <Icon>
         <Left>{"<"}</Left>
-        <Right primary={props.primary}>{"<"}</Right>
+        <Right primary={primary}>{"<"}</Right>
       </Icon>
-      <Text primary={props.primary}>
+      <Text primary={primary}>
         Chase<Fullstop>.</Fullstop>
       </Text>
     </StyledLogo>

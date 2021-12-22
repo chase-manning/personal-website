@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import FirstPage from "./FirstPage";
-// import SecondPage from "./SecondPage";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -18,7 +17,6 @@ const App = () => {
   return (
     <StyledApp>
       <FirstPage scroll={scroll} />
-      {/* <SecondPage scroll={scroll} /> */}
     </StyledApp>
   );
 };

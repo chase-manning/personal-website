@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledSocial = styled.a`
@@ -35,17 +34,17 @@ const Text = styled.p`
   }
 `;
 
-type Props = {
+interface Props {
   icon: JSX.Element;
   text: string;
   link: string;
-};
+}
 
-const Social = (props: Props) => {
+const Social = ({ icon, text, link }: Props) => {
   return (
-    <StyledSocial href={props.link} target={"_blank"}>
-      <Icon>{props.icon}</Icon>
-      <Text>{props.text}</Text>
+    <StyledSocial href={link} target={"_blank"}>
+      <Icon>{icon}</Icon>
+      <Text>{text}</Text>
     </StyledSocial>
   );
 };

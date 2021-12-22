@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledMenus = styled.div`
@@ -23,14 +22,14 @@ const MenuItem = styled.a`
   }
 `;
 
-type Props = {
+interface Props {
   close: () => void;
-};
+}
 
-const Menus = (props: Props) => {
+const Menus = ({ close }: Props) => {
   return (
     <StyledMenus>
-      <MenuItem onClick={() => props.close()}>Home</MenuItem>
+      <MenuItem onClick={() => close()}>Home</MenuItem>
     </StyledMenus>
   );
 };

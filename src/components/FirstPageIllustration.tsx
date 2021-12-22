@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import floor from "../assets/hero/main-pic-6.png";
 import leftBlue from "../assets/hero/main-pic-3.png";
@@ -71,20 +70,20 @@ const FloorBall = styled.img`
   transition: all 0.2s;
 `;
 
-type Props = {
+interface Props {
   scrollPercent: number;
-};
+}
 
-const FirstPageIllustration = (props: Props) => {
+const FirstPageIllustration = ({ scrollPercent }: Props) => {
   return (
     <StyledFirstPageIllustration>
       <Floor src={floor} />
       <LeftBlue src={leftBlue} />
       <RightYellow src={rightYellow} />
-      <PurpleTop src={purpleTop} scrollPercent={props.scrollPercent} />
-      <PinkTop src={pinkTop} scrollPercent={props.scrollPercent} />
-      <OrangeBall src={orangeBall} scrollPercent={props.scrollPercent} />
-      <FloorBall src={floorBall} scrollPercent={props.scrollPercent} />
+      <PurpleTop src={purpleTop} scrollPercent={scrollPercent} />
+      <PinkTop src={pinkTop} scrollPercent={scrollPercent} />
+      <OrangeBall src={orangeBall} scrollPercent={scrollPercent} />
+      <FloorBall src={floorBall} scrollPercent={scrollPercent} />
     </StyledFirstPageIllustration>
   );
 };

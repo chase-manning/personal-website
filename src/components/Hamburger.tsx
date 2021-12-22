@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledHamburger = styled.button`
@@ -16,9 +15,9 @@ const Lines = styled.div`
   align-items: center;
 `;
 
-type LineProps = {
+interface LineProps {
   open: boolean;
-};
+}
 
 const LineTop = styled.div`
   width: 100%;
@@ -67,18 +66,18 @@ const Background = styled.div`
   }
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   click: () => void;
-};
+}
 
-const Hamburger = (props: Props) => {
+const Hamburger = ({ open, click }: Props) => {
   return (
-    <StyledHamburger onClick={() => props.click()}>
-      <Background open={props.open} />
+    <StyledHamburger onClick={() => click()}>
+      <Background open={open} />
       <Lines>
-        <LineTop open={props.open} />
-        <LineBottom open={props.open} />
+        <LineTop open={open} />
+        <LineBottom open={open} />
       </Lines>
     </StyledHamburger>
   );

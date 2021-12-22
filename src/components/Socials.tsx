@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Social from "./Social";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";

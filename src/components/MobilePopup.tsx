@@ -1,12 +1,11 @@
-import React from "react";
 import styled from "styled-components";
 import illustration from "../assets/backgrounds/bg-header-mobile.png";
 import Menus from "./Menus";
 import Socials from "./Socials";
 
-type PopupProps = {
+interface PopupProps {
   open: boolean;
-};
+}
 
 const StyledMobilePopup = styled.div`
   position: fixed;
@@ -28,15 +27,15 @@ const Illustration = styled.img`
   right: 0;
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   close: () => void;
-};
+}
 
-const MobilePopup = (props: Props) => {
+const MobilePopup = ({ open, close }: Props) => {
   return (
-    <StyledMobilePopup open={props.open}>
-      <Menus close={() => props.close()} />
+    <StyledMobilePopup open={open}>
+      <Menus close={() => close()} />
       <Socials />
       <Illustration src={illustration} />
     </StyledMobilePopup>

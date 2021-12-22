@@ -1,12 +1,11 @@
-import React from "react";
 import styled from "styled-components";
 import popupIllustration from "../assets/backgrounds/bg-header.png";
 import Menus from "./Menus";
 import Socials from "./Socials";
 
-type PopupProps = {
+interface PopupProps {
   open: boolean;
-};
+}
 
 const StyledPopupDesktop = styled.div`
   position: fixed;
@@ -46,21 +45,21 @@ const ContentContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   close: () => void;
-};
+}
 
-const PopupDesktop = (props: Props) => {
+const PopupDesktop = ({ open, close }: Props) => {
   return (
-    <StyledPopupDesktop open={props.open}>
+    <StyledPopupDesktop open={open}>
       <ColoredPannel>
         <PopupIllustration src={popupIllustration} />
       </ColoredPannel>
       <ContentPannel>
         <ContentContainer>
           <Socials />
-          <Menus close={() => props.close()} />
+          <Menus close={() => close()} />
         </ContentContainer>
       </ContentPannel>
     </StyledPopupDesktop>

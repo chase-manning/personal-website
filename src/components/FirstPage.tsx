@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import FirstPageContent from "./FirstPageContent";
 import Header from "./Header";
@@ -73,12 +72,12 @@ const Content = styled.div`
   }
 `;
 
-type Props = {
+interface Props {
   scroll: number;
-};
+}
 
-const FirstPage = (props: Props) => {
-  const scrollPercent = props.scroll / window.innerHeight;
+const FirstPage = ({ scroll }: Props) => {
+  const scrollPercent = scroll / window.innerHeight;
 
   return (
     <StyledFirstPage>

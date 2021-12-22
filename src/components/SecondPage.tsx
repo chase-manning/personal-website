@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledSecondPage = styled.div`
@@ -6,12 +5,12 @@ const StyledSecondPage = styled.div`
   height: 100vh;
 `;
 
-type Props = {
+interface Props {
   scroll: number;
-};
+}
 
-const SecondPage = (props: Props) => {
-  return <StyledSecondPage>{props.scroll}</StyledSecondPage>;
+const SecondPage = ({ scroll }: Props) => {
+  return <StyledSecondPage>{scroll}</StyledSecondPage>;
 };
 
 export default SecondPage;
