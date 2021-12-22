@@ -39,7 +39,7 @@ const PurpleTop = styled.img`
   right: 31%;
   bottom: 68%;
   width: 33%;
-  transform: translateY(${(props: Props) => props.scrollPercent * -100 + "px"});
+  transform: translateY(${(props: Props) => `${props.scrollPercent * -100}px`});
   transition: all 0.2s;
 `;
 
@@ -48,7 +48,7 @@ const PinkTop = styled.img`
   right: 39.2%;
   bottom: 76%;
   width: 16.5%;
-  transform: translateY(${(props: Props) => props.scrollPercent * -200 + "px"});
+  transform: translateY(${(props: Props) => `${props.scrollPercent * -200}px`});
   transition: all 0.2s;
 `;
 
@@ -57,7 +57,7 @@ const OrangeBall = styled.img`
   right: 43.2%;
   bottom: 39%;
   width: 8%;
-  transform: translateY(${(props: Props) => props.scrollPercent * -200 + "px"});
+  transform: translateY(${(props: Props) => `${props.scrollPercent * -200}px`});
   transition: all 0.2s;
 `;
 
@@ -66,7 +66,7 @@ const FloorBall = styled.img`
   right: 13%;
   bottom: 16%;
   width: 16%;
-  transform: translateY(${(props: Props) => props.scrollPercent * 100 + "px"});
+  transform: translateY(${(props: Props) => `${props.scrollPercent * 100}px`});
   transition: all 0.2s;
 `;
 
