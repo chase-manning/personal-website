@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import popupIllustration from "../assets/images/bg-header.png";
+import popupIllustration from "../assets/backgrounds/bg-header.png";
 import Menus from "./Menus";
 import Socials from "./Socials";
 

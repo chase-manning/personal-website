@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import illustration from "../assets/images/bg-header-mobile.png";
+import illustration from "../assets/backgrounds/bg-header-mobile.png";
 import Menus from "./Menus";
 import Socials from "./Socials";
 

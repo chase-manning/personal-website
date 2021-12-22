@@ -3,7 +3,7 @@ import styled from "styled-components";
 import FirstPageContent from "./FirstPageContent";
 import Header from "./Header";
 import ScrollDown from "./ScrollDown";
-import bg from "../assets/images/bg-main.jpg";
+import bg from "../assets/backgrounds/bg-main.jpg";
 import FirstPageIllustration from "./FirstPageIllustration";
 
 const StyledFirstPage = styled.div`
