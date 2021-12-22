@@ -18,6 +18,7 @@ const StyledPopupDesktop = styled.div`
   opacity: ${(props: PopupProps) => (props.open ? "1" : "0")};
   transition: opacity 0.4s;
   justify-content: space-between;
+  z-index: 1;
 `;
 
 const ColoredPannel = styled.div`

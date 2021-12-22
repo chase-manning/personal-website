@@ -18,6 +18,7 @@ const StyledMobilePopup = styled.div`
   transform: translateX(${(props: PopupProps) => (props.open ? "0" : "100%")});
   transition: transform 0.3s;
   padding: 30px;
+  z-index: 1;
 `;
 
 const Illustration = styled.img`
