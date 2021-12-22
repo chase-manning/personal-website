@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import floor from "../assets/hero/main-pic-6.png";
-import leftBlue from "../assets/hero/main-pic-3.png";
-import rightYellow from "../assets/hero/main-pic-4.png";
-import purpleTop from "../assets/hero/main-pic-2.png";
-import pinkTop from "../assets/hero/main-pic-1.png";
-import orangeBall from "../assets/hero/main-pic-5.png";
-import floorBall from "../assets/hero/main-pic-7.png";
+import floor from "../../assets/hero/main-pic-6.png";
+import leftBlue from "../../assets/hero/main-pic-3.png";
+import rightYellow from "../../assets/hero/main-pic-4.png";
+import purpleTop from "../../assets/hero/main-pic-2.png";
+import pinkTop from "../../assets/hero/main-pic-1.png";
+import orangeBall from "../../assets/hero/main-pic-5.png";
+import floorBall from "../../assets/hero/main-pic-7.png";
 
 const StyledFirstPageIllustration = styled.div`
   width: 100%;

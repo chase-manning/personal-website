@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import FirstPageContent from "./FirstPageContent";
-import Header from "./Header";
-import ScrollDown from "./ScrollDown";
-import bg from "../assets/backgrounds/bg-main.jpg";
-import FirstPageIllustration from "./FirstPageIllustration";
+import FirstPageContent from "./HeroContent";
+import Header from "../../components/Header";
+import ScrollDown from "../../components/ScrollDown";
+import bg from "../../assets/backgrounds/bg-main.jpg";
+import FirstPageIllustration from "./HeroIllustration";
 
 const StyledFirstPage = styled.div`
   position: relative;
