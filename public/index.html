@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata -->
+    <title>Chase Manning</title>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +11,8 @@
       name="description"
       content="The Personal Website of Chase Manning Software Developer"
     />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- Socials -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,9 +34,20 @@
       rel="stylesheet"
     />
 
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Chase Manning</title>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9FJB1XJVM0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-9FJB1XJVM0");
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
