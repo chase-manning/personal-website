@@ -9,7 +9,7 @@ import floorBall from "../../assets/hero/main-pic-7.png";
 import pinkFloorSquare from "../../assets/hero/main-pic-8.png";
 import whiteFloorSquare from "../../assets/hero/main-pic-9.png";
 
-const StyledFirstPageIllustration = styled.div`
+const StyledHeroIllustration = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
@@ -98,7 +98,7 @@ interface Props {
 
 const FirstPageIllustration = ({ scrollPercent }: Props) => {
   return (
-    <StyledFirstPageIllustration>
+    <StyledHeroIllustration>
       <Floor src={floor} />
       <LeftBlue src={leftBlue} />
       <RightYellow src={rightYellow} />
@@ -139,7 +139,7 @@ const FirstPageIllustration = ({ scrollPercent }: Props) => {
           transform: `translateY(calc(${scrollPercent} * 200px))`,
         }}
       />
-    </StyledFirstPageIllustration>
+    </StyledHeroIllustration>
   );
 };
 
