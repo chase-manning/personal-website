@@ -41,7 +41,6 @@ const PurpleTop = styled.img`
   right: 31%;
   bottom: 68%;
   width: 33%;
-  transform: translateY(${(props: Props) => `${props.scrollPercent * -100}px`});
   transition: all 0.2s;
 `;
 
@@ -50,7 +49,6 @@ const PinkTop = styled.img`
   right: 39.2%;
   bottom: 76%;
   width: 16.5%;
-  transform: translateY(${(props: Props) => `${props.scrollPercent * -200}px`});
   transition: all 0.2s;
 `;
 
@@ -59,7 +57,6 @@ const OrangeBall = styled.img`
   right: 43.2%;
   bottom: 39%;
   width: 8%;
-  transform: translateY(${(props: Props) => `${props.scrollPercent * -200}px`});
   transition: all 0.2s;
 `;
 
@@ -68,7 +65,6 @@ const FloorBall = styled.img`
   right: 13%;
   bottom: 16%;
   width: 16%;
-  transform: translateY(${(props: Props) => `${props.scrollPercent * 100}px`});
   transition: all 0.2s;
 `;
 
@@ -84,7 +80,6 @@ const WhiteFloorSquare = styled.img`
   left: -4%;
   bottom: 19%;
   width: 19%;
-  transform: translateY(${(props: Props) => `${props.scrollPercent * -100}px`});
   transition: all 0.2s;
 `;
 
@@ -94,7 +89,6 @@ const BlurredSquare = styled.img`
   left: 11%;
   width: 20%;
   filter: blur(2px);
-  transform: translateY(${(props: Props) => `${props.scrollPercent * 200}px`});
   transition: all 0.2s;
 `;
 
@@ -108,13 +102,43 @@ const FirstPageIllustration = ({ scrollPercent }: Props) => {
       <Floor src={floor} />
       <LeftBlue src={leftBlue} />
       <RightYellow src={rightYellow} />
-      <PurpleTop src={purpleTop} scrollPercent={scrollPercent} />
-      <PinkTop src={pinkTop} scrollPercent={scrollPercent} />
-      <OrangeBall src={orangeBall} scrollPercent={scrollPercent} />
-      <FloorBall src={floorBall} scrollPercent={scrollPercent} />
+      <PurpleTop
+        src={purpleTop}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * -100px))`,
+        }}
+      />
+      <PinkTop
+        src={pinkTop}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * -200px))`,
+        }}
+      />
+      <OrangeBall
+        src={orangeBall}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * -200px))`,
+        }}
+      />
+      <FloorBall
+        src={floorBall}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * 100px))`,
+        }}
+      />
       <PinkFloorSquare src={pinkFloorSquare} />
-      <WhiteFloorSquare src={whiteFloorSquare} scrollPercent={scrollPercent} />
-      <BlurredSquare src={whiteFloorSquare} scrollPercent={scrollPercent} />
+      <WhiteFloorSquare
+        src={whiteFloorSquare}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * -100px))`,
+        }}
+      />
+      <BlurredSquare
+        src={whiteFloorSquare}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * 200px))`,
+        }}
+      />
     </StyledFirstPageIllustration>
   );
 };
