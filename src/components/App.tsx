@@ -1,7 +1,8 @@
 import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import HeroPage from "../pages/hero/HeroPage";
-import SecondPage from "./SecondPage";
+import SecondPage from "../pages/second/SecondPage";
+import ThirdPage from "../pages/third/ThirdPage";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -22,6 +23,7 @@ const App = () => {
     <StyledApp>
       <HeroPage scroll={scroll} />
       <SecondPage scroll={scroll} />
+      <ThirdPage scroll={scroll} />
     </StyledApp>
   );
 };
