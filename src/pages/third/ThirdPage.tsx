@@ -5,6 +5,7 @@ import LineHeader from "../../components/LineHeader";
 import ScrollDown from "../../components/ScrollDown";
 import lightBlueCube from "../../assets/greeble/light-blue-cube.png";
 import getScrollPercent from "../../utils/scroll-percent";
+import ThirdIllustration from "./ThirdIllustration";
 
 const StyledThirdPage = styled.div`
   position: relative;
@@ -104,6 +105,7 @@ const ThirdPage = ({ scroll }: Props) => {
 
   return (
     <StyledThirdPage ref={pageRef}>
+      <ThirdIllustration scrollPercent={scrollPercent} />
       <Content>
         <div />
         <TextContent>
