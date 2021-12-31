@@ -88,6 +88,16 @@ const WhiteFloorSquare = styled.img`
   transition: all 0.2s;
 `;
 
+const BlurredSquare = styled.img`
+  position: absolute;
+  top: 13%;
+  left: 11%;
+  width: 20%;
+  filter: blur(2px);
+  transform: translateY(${(props: Props) => `${props.scrollPercent * 200}px`});
+  transition: all 0.2s;
+`;
+
 interface Props {
   scrollPercent: number;
 }
@@ -104,6 +114,7 @@ const FirstPageIllustration = ({ scrollPercent }: Props) => {
       <FloorBall src={floorBall} scrollPercent={scrollPercent} />
       <PinkFloorSquare src={pinkFloorSquare} />
       <WhiteFloorSquare src={whiteFloorSquare} scrollPercent={scrollPercent} />
+      <BlurredSquare src={whiteFloorSquare} scrollPercent={scrollPercent} />
     </StyledFirstPageIllustration>
   );
 };
