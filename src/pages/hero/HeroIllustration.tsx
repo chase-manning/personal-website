@@ -6,6 +6,8 @@ import purpleTop from "../../assets/hero/main-pic-2.png";
 import pinkTop from "../../assets/hero/main-pic-1.png";
 import orangeBall from "../../assets/hero/main-pic-5.png";
 import floorBall from "../../assets/hero/main-pic-7.png";
+import pinkFloorSquare from "../../assets/hero/main-pic-8.png";
+import whiteFloorSquare from "../../assets/hero/main-pic-9.png";
 
 const StyledFirstPageIllustration = styled.div`
   width: 100%;
@@ -70,6 +72,22 @@ const FloorBall = styled.img`
   transition: all 0.2s;
 `;
 
+const PinkFloorSquare = styled.img`
+  position: absolute;
+  left: 3%;
+  bottom: 7%;
+  width: 27%;
+`;
+
+const WhiteFloorSquare = styled.img`
+  position: absolute;
+  left: -4%;
+  bottom: 19%;
+  width: 19%;
+  transform: translateY(${(props: Props) => `${props.scrollPercent * -100}px`});
+  transition: all 0.2s;
+`;
+
 interface Props {
   scrollPercent: number;
 }
@@ -84,6 +102,8 @@ const FirstPageIllustration = ({ scrollPercent }: Props) => {
       <PinkTop src={pinkTop} scrollPercent={scrollPercent} />
       <OrangeBall src={orangeBall} scrollPercent={scrollPercent} />
       <FloorBall src={floorBall} scrollPercent={scrollPercent} />
+      <PinkFloorSquare src={pinkFloorSquare} />
+      <WhiteFloorSquare src={whiteFloorSquare} scrollPercent={scrollPercent} />
     </StyledFirstPageIllustration>
   );
 };
