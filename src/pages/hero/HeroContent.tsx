@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import LineHeader from "../../components/LineHeader";
 
 const StyledFirstPageContent = styled.div`
   display: flex;
@@ -22,31 +23,6 @@ const StyledFirstPageContent = styled.div`
   }
 `;
 
-const SubHeader = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-const SubHeaderLine = styled.div`
-  width: 50px;
-  border-bottom: solid 2px var(--purple);
-  margin-right: 20px;
-`;
-
-const SubHeaderText = styled.h1`
-  font-weight: 600;
-  color: var(--purple);
-
-  font-size: 20px;
-  @media only screen and (max-width: 1400px) {
-    font-size: 16px;
-  }
-  @media only screen and (max-width: 639px) {
-    font-size: 16px;
-  }
-`;
-
 const Header = styled.h2`
   font-weight: 600;
 
@@ -65,10 +41,7 @@ const Header = styled.h2`
 const FirstPageContent = () => {
   return (
     <StyledFirstPageContent>
-      <SubHeader>
-        <SubHeaderLine />
-        <SubHeaderText>Chase Manning</SubHeaderText>
-      </SubHeader>
+      <LineHeader text="Chase Manning" />
       <Header>Hi, I'm Chase, your Friendly Neighborhood Developer.</Header>
     </StyledFirstPageContent>
   );
