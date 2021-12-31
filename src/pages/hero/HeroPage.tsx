@@ -97,7 +97,7 @@ const FirstPage = ({ scroll }: Props) => {
       <Content>
         <Header />
         <HeroContent />
-        <ScrollDown />
+        <ScrollDown spacing />
       </Content>
       <Illustration>
         <FirstPageIllustration scrollPercent={scrollPercent} />
