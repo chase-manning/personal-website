@@ -46,7 +46,7 @@ const ScrollDown = () => {
       <Circle>
         {mobile ? <UnfoldMoreIcon /> : <UnfoldMoreIcon fontSize="large" />}
       </Circle>
-      <Text>Welcome</Text>
+      <Text>Scroll down</Text>
     </StyledScrollDown>
   );
 };
