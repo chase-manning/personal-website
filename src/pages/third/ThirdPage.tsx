@@ -69,22 +69,16 @@ const TextContent = styled.div`
   flex-direction: column;
 `;
 
-interface AssetProps {
-  scrollPercent: number;
-}
-
 const LightCube = styled.img`
   position: absolute;
-  top: 13%;
-  left: 11%;
-  width: 20%;
-  transform: translateY(
-    ${(props: AssetProps) => `${props.scrollPercent * 200}px`}
-  );
+  top: -55%;
+  left: 0%;
+  width: 16%;
   transition: all 0.2s;
 `;
 
 const Bold = styled.p`
+  position: relative;
   font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
@@ -93,6 +87,7 @@ const Bold = styled.p`
 `;
 
 const Smaller = styled.p`
+  position: relative;
   font-size: 18px;
   line-height: 1.77778;
   color: var(--bg);
@@ -112,7 +107,12 @@ const ThirdPage = ({ scroll }: Props) => {
       <Content>
         <div />
         <TextContent>
-          <LightCube src={lightBlueCube} scrollPercent={scrollPercent} />
+          <LightCube
+            src={lightBlueCube}
+            style={{
+              transform: `translateY(calc(${scrollPercent} * 200px))`,
+            }}
+          />
           <LineHeader pink text="What tech I use" />
           <Bold>Art Direction for Global Leading Brands.</Bold>
           <Smaller>
