@@ -7,6 +7,12 @@ const StyledScrollDown = styled.div`
   align-items: center;
 
   margin-left: 15%;
+  @media only screen and (max-width: 1550px) {
+    margin-left: 10%;
+  }
+  @media only screen and (max-width: 1450px) {
+    margin-left: 5%;
+  }
   @media only screen and (max-width: 639px) {
     margin-left: 0;
     margin-top: 40px;
@@ -23,6 +29,10 @@ const Circle = styled.div`
   height: 80px;
   width: 80px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.06);
+  @media only screen and (max-width: 1400px) {
+    height: 55px;
+    width: 55px;
+  }
   @media only screen and (max-width: 639px) {
     height: 55px;
     width: 55px;

@@ -6,6 +6,15 @@ const StyledFirstPageContent = styled.div`
 
   width: 600px;
   margin-left: 15%;
+  @media only screen and (max-width: 1550px) {
+    margin-left: 10%;
+  }
+  @media only screen and (max-width: 1450px) {
+    margin-left: 5%;
+  }
+  @media only screen and (max-width: 1400px) {
+    width: 400px;
+  }
   @media only screen and (max-width: 639px) {
     width: 250px;
     margin-left: 0;
@@ -30,6 +39,9 @@ const SubHeaderText = styled.h1`
   color: var(--purple);
 
   font-size: 20px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 16px;
+  }
   @media only screen and (max-width: 639px) {
     font-size: 16px;
   }
@@ -40,6 +52,10 @@ const Header = styled.h2`
 
   font-size: 70px;
   line-height: 1.2;
+  @media only screen and (max-width: 1400px) {
+    font-size: 56px;
+    line-height: 1.3;
+  }
   @media only screen and (max-width: 639px) {
     font-size: 30px;
     line-height: 1.6;

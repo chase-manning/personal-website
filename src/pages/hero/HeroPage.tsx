@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import FirstPageContent from "./HeroContent";
+
+import HeroContent from "./HeroContent";
 import Header from "../../components/Header";
 import ScrollDown from "../../components/ScrollDown";
 import bg from "../../assets/backgrounds/bg-main.jpg";
@@ -10,6 +11,9 @@ const StyledFirstPage = styled.div`
   overflow: hidden;
 
   height: 100vh;
+  @media only screen and (max-width: 1400px) {
+    height: 80vh;
+  }
   @media only screen and (max-width: 639px) {
     height: auto;
 
@@ -44,8 +48,12 @@ const Illustration = styled.div`
   right: 0;
 
   position: absolute;
-  width: 50vw;
-  height: 50vw;
+  width: 89vh;
+  height: 89vh;
+  @media only screen and (max-width: 1400px) {
+    height: 71vh;
+    width: 71vh;
+  }
   @media only screen and (max-width: 639px) {
     position: relative;
     width: 125vw;
@@ -65,6 +73,10 @@ const Content = styled.div`
   position: absolute;
   padding: 60px;
   height: 100%;
+  @media only screen and (max-width: 1400px) {
+    position: relative;
+    padding: 30px 35px;
+  }
   @media only screen and (max-width: 639px) {
     position: relative;
     padding: 30px;
@@ -84,7 +96,7 @@ const FirstPage = ({ scroll }: Props) => {
       <Background src={bg} />
       <Content>
         <Header />
-        <FirstPageContent />
+        <HeroContent />
         <ScrollDown />
       </Content>
       <Illustration>
