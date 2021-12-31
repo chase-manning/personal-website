@@ -30,7 +30,7 @@ const Socials = () => {
       />
       <Social
         icon={<TwitterIcon fontSize="inherit" />}
-        link="https://twitter.com/ChaseManning_NZ"
+        link="https://twitter.com/chase_manning_"
         text="Twitter"
       />
       <Social
