@@ -94,29 +94,19 @@ const Illustration = styled.div`
   overflow: hidden;
 `;
 
-interface AssetProps {
-  scrollPercent: number;
-}
-
 const PinkSquare = styled.img`
   position: absolute;
   right: -34%;
   top: 15%;
   width: 120%;
-  transform: translateY(
-    ${(props: AssetProps) => `${props.scrollPercent * -100}px`}
-  );
   transition: all 0.2s;
 `;
 
 const WhiteSquare = styled.img`
   position: absolute;
   right: 48%;
-  top: 90%;
+  top: 85%;
   width: 30%;
-  transform: translateY(
-    ${(props: AssetProps) => `${props.scrollPercent * -200}px`}
-  );
   transition: all 0.2s;
 `;
 
@@ -126,9 +116,6 @@ const BlurredSquare = styled.img`
   right: 45%;
   top: 4%;
   width: 18%;
-  transform: translateY(
-    ${(props: AssetProps) => `${props.scrollPercent * 100}px`}
-  );
   transition: all 0.2s;
 `;
 
@@ -145,9 +132,24 @@ const SecondPage = ({ scroll }: Props) => {
   return (
     <StyledSecondPage ref={pageRef}>
       <Illustration>
-        <PinkSquare src={pinkSquare} scrollPercent={scrollPercent} />
-        <WhiteSquare src={whiteSquare} scrollPercent={scrollPercent} />
-        <BlurredSquare src={whiteSquare} scrollPercent={scrollPercent} />
+        <PinkSquare
+          src={pinkSquare}
+          style={{
+            transform: `translateY(calc(${scrollPercent} * -200px))`,
+          }}
+        />
+        <WhiteSquare
+          src={whiteSquare}
+          style={{
+            transform: `translateY(calc(${scrollPercent} * -400px))`,
+          }}
+        />
+        <BlurredSquare
+          src={whiteSquare}
+          style={{
+            transform: `translateY(calc(${scrollPercent} * 200px))`,
+          }}
+        />
       </Illustration>
       <Content>
         <TopSection>
