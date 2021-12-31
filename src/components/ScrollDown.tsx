@@ -6,12 +6,12 @@ const StyledScrollDown = styled.div`
   margin-bottom: 20px;
   align-items: center;
 
-  margin-left: 15%;
+  margin-left: ${(props: Props) => (props.spacing ? "15%" : "0")};
   @media only screen and (max-width: 1550px) {
-    margin-left: 10%;
+    margin-left: ${(props: Props) => (props.spacing ? "10%" : "0")};
   }
   @media only screen and (max-width: 1450px) {
-    margin-left: 5%;
+    margin-left: ${(props: Props) => (props.spacing ? "5%" : "0")};
   }
   @media only screen and (max-width: 639px) {
     margin-left: 0;
@@ -42,21 +42,27 @@ const Circle = styled.div`
 
 const Text = styled.div`
   margin-left: 20px;
+  color: ${(props: Props) => (props.white ? "var(--bg)" : "var(--main)")};
 
   @media only screen and (max-width: 639px) {
     display: none;
   }
 `;
 
-const ScrollDown = () => {
+interface Props {
+  white?: boolean;
+  spacing?: boolean;
+}
+
+const ScrollDown = ({ white, spacing }: Props) => {
   const mobile = window.innerWidth <= 639;
 
   return (
-    <StyledScrollDown>
+    <StyledScrollDown spacing={spacing}>
       <Circle>
         {mobile ? <UnfoldMoreIcon /> : <UnfoldMoreIcon fontSize="large" />}
       </Circle>
-      <Text>Scroll down</Text>
+      <Text white={white}>Scroll down</Text>
     </StyledScrollDown>
   );
 };
