@@ -42,7 +42,7 @@ interface Props {
 
 const Social = ({ icon, text, link }: Props) => {
   return (
-    <StyledSocial href={link} target="_blank">
+    <StyledSocial href={link} target="_blank" rel="noopener noreferrer">
       <Icon>{icon}</Icon>
       <Text>{text}</Text>
     </StyledSocial>
