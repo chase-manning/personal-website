@@ -9,7 +9,7 @@ const StyledThanksForVisiting = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 140px 0;
+  padding: 160px 0;
 `;
 
 const Content = styled.div`
