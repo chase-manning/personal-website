@@ -109,6 +109,12 @@ const TABS: TabType[] = [
           "The fastest, and most popular javascript date formatting library on npm.",
         image: dateformat,
       },
+      {
+        name: "Dapp CRA Template",
+        description:
+          "A project boilerplate create react app template for creating EVM dapps.",
+        image: dateformat,
+      },
     ],
   },
 ];
