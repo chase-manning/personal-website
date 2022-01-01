@@ -10,9 +10,13 @@ import getScrollPercent from "../../utils/scroll-percent";
 const StyledAboutMePage = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
+
+  height: 100vh;
+  @media only screen and (max-width: 1400px) {
+    height: 80vh;
+  }
 
   padding: 60px 0;
   padding-left: calc(15% + 60px);
@@ -20,7 +24,7 @@ const StyledAboutMePage = styled.div`
     padding-left: calc(10% + 60px);
   }
   @media only screen and (max-width: 1450px) {
-    padding-left: calc(5% + 60px);
+    padding-left: calc(5% + 35px);
   }
   @media only screen and (max-width: 639px) {
     padding-left: 0;
@@ -45,21 +49,31 @@ const Description = styled.p`
   line-height: 1.3333;
   font-weight: 600;
   max-width: 850px;
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 32px;
+    max-width: 650px;
+  }
 `;
 
 const Bold = styled.p`
-  font-size: 132px;
   line-height: 1.02;
   letter-spacing: -1.3px;
   font-weight: 600;
+
+  font-size: 132px;
   max-width: 850px;
   margin-top: 50px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 96px;
+    max-width: 650px;
+    margin-top: 30px;
+  }
 `;
 
 const Button = styled.button`
   background-color: var(--purple);
   border-radius: 20px;
-  padding: 26px 50px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -72,12 +86,22 @@ const Button = styled.button`
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
     transform: scale(1.01);
   }
+
+  padding: 26px 50px;
+  @media only screen and (max-width: 1400px) {
+    padding: 20px 40px;
+    margin-bottom: 30px;
+  }
 `;
 
 const ButtonText = styled.div`
-  font-size: 18px;
   font-weight: 500;
   color: var(--bg);
+
+  font-size: 18px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 16px;
+  }
 `;
 
 const ButtonArrow = styled.img`
