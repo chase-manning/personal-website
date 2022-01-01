@@ -156,8 +156,8 @@ const Footer = ({ scroll }: Props) => {
                 transform: `translateY(calc(${scrollPercent} * -400px))`,
               }}
             />
-            <Bold>You only have one chance to make a first impression.</Bold>
-            <Sub>Let’s make it an amazing one.</Sub>
+            <Bold>Thanks so much for taking the time to view my site.</Bold>
+            <Sub>Don't hesitate to reach out and say hi.</Sub>
           </TextContainer>
           <NavItems>
             {menuItems.map((menuItem: MenuItemType) => (
