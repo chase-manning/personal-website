@@ -1,17 +1,17 @@
-import { ProjectType } from "./Project";
-import backd from "../../assets/projects/backd.jpg";
-import uwucrew from "../../assets/projects/uwucrew.jpg";
-import waifusion from "../../assets/projects/waifusion.jpg";
-import billionaires from "../../assets/projects/billionaires.jpg";
-import cryptoCapsule from "../../assets/projects/crypto-capsule.jpg";
-import ami from "../../assets/projects/ami.jpg";
-import state from "../../assets/projects/state.jpg";
-import sitesoft from "../../assets/projects/sitesoft.jpg";
-import slingshot from "../../assets/projects/slingshot.jpg";
-import orcon from "../../assets/projects/orcon.jpg";
-import pso from "../../assets/projects/pso.jpg";
-import dateformat from "../../assets/projects/dateformat.jpg";
-import dapp from "../../assets/projects/dapp-template.jpg";
+import { ProjectType } from "../pages/portfolio/Project";
+import backd from "../assets/projects/backd.jpg";
+import uwucrew from "../assets/projects/uwucrew.jpg";
+import waifusion from "../assets/projects/waifusion.jpg";
+import billionaires from "../assets/projects/billionaires.jpg";
+import cryptoCapsule from "../assets/projects/crypto-capsule.jpg";
+import ami from "../assets/projects/ami.jpg";
+import state from "../assets/projects/state.jpg";
+import sitesoft from "../assets/projects/sitesoft.jpg";
+import slingshot from "../assets/projects/slingshot.jpg";
+import orcon from "../assets/projects/orcon.jpg";
+import pso from "../assets/projects/pso.jpg";
+import dateformat from "../assets/projects/dateformat.jpg";
+import dapp from "../assets/projects/dapp-template.jpg";
 
 export interface TabType {
   label: string;

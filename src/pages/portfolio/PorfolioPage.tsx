@@ -4,7 +4,7 @@ import LineHeader from "../../components/LineHeader";
 import Tabs from "../../components/Tabs";
 
 import getScrollPercent from "../../utils/scroll-percent";
-import portfolioTabs, { TabType } from "./portfolio-tabs";
+import portfolioTabs, { TabType } from "../../data/portfolio-tabs";
 import Project, { ProjectType } from "./Project";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
 import pinkSquare from "../../assets/hero/main-pic-8.png";
