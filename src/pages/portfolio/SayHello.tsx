@@ -24,7 +24,7 @@ const Bold = styled.p`
   line-height: 1.16667;
   letter-spacing: -0.5px;
   font-weight: 600;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 `;
 
 const FooterExtension = styled.div`
