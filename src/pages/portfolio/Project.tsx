@@ -8,6 +8,7 @@ export interface ProjectType {
 }
 
 const StyledProject = styled.a`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -15,13 +16,12 @@ const StyledProject = styled.a`
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
+  background: #d7dee855;
 
   transition: all 0.3s;
   box-shadow: 1px 1px 87px rgba(219, 222, 225, 0.2);
-  transform: scale(1);
   :hover {
     box-shadow: 1px 1px 87px rgba(219, 222, 225, 1);
-    transform: scale(1.007);
 
     div {
       transform: scale(1);
