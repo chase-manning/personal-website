@@ -13,7 +13,6 @@ const StyledProject = styled.a`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
   background: #d7dee855;
@@ -26,6 +25,11 @@ const StyledProject = styled.a`
     div {
       transform: scale(1);
     }
+  }
+
+  border-radius: 24px;
+  @media only screen and (max-width: 1400px) {
+    border-radius: 17px;
   }
 `;
 
@@ -42,8 +46,12 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   position: relative;
   width: 100%;
-  border-radius: 18px;
   box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.25);
+
+  border-radius: 18px;
+  @media only screen and (max-width: 1400px) {
+    border-radius: 16px;
+  }
 `;
 
 const BlurredImage = styled.img`
@@ -61,25 +69,38 @@ const TextArea = styled.div`
   width: 100%;
   flex: 1;
   padding: 40px 48px;
-  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   background: var(--bg);
+
+  padding-bottom: 60px;
+  @media only screen and (max-width: 1400px) {
+    padding-bottom: 48px;
+  }
 `;
 
 const Name = styled.h4`
-  font-size: 32px;
   font-weight: 600;
   width: 100%;
   margin-bottom: 10px;
   line-height: 1;
+
+  font-size: 32px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 24px;
+  }
 `;
 
 const Description = styled.p`
   width: 100%;
-  font-size: 18px;
   font-weight: 400;
   color: #6b6b6b;
+
+  font-size: 18px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 `;
 
 const ViewSiteContainer = styled.span`
