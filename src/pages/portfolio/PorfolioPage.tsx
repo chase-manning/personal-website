@@ -6,6 +6,7 @@ import Tabs from "../../components/Tabs";
 import getScrollPercent from "../../utils/scroll-percent";
 import portfolioTabs, { TabType } from "./portfolio-tabs";
 import Project, { ProjectType } from "./Project";
+import whiteSquare from "../../assets/hero/main-pic-9.png";
 
 const StyledPortfolioPage = styled.div`
   position: relative;
@@ -40,6 +41,13 @@ const Content = styled.div`
   max-width: 570px;
 `;
 
+const WhiteSquare = styled.img`
+  position: absolute;
+  right: -240px;
+  bottom: -120px;
+  width: 300px;
+`;
+
 const Bold = styled.p`
   position: relative;
   font-size: 72px;
@@ -56,6 +64,7 @@ const Projects = styled.div`
   grid-gap: 32px;
   width: 100%;
 `;
+
 interface Props {
   scroll: number;
 }
@@ -68,6 +77,7 @@ const PortfolioPage = ({ scroll }: Props) => {
   return (
     <StyledPortfolioPage ref={pageRef}>
       <Content>
+        <WhiteSquare src={whiteSquare} />
         <LineHeader text="Portfolio" />
         <Bold>Some things I've worked on.</Bold>
       </Content>
