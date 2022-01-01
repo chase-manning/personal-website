@@ -8,7 +8,7 @@ import portfolioTabs, { TabType } from "../../data/portfolio-tabs";
 import Project, { ProjectType } from "./Project";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
 import pinkSquare from "../../assets/hero/main-pic-8.png";
-import ThanksForVisiting from "./ThanksForVisiting";
+import FavouriteQuote from "./FavouriteQuote";
 import SayHello from "./SayHello";
 
 const StyledPortfolioPage = styled.div`
@@ -107,7 +107,7 @@ const PortfolioPage = ({ scroll }: Props) => {
           <Project key={project.name} project={project} />
         ))}
       </Projects>
-      <ThanksForVisiting scroll={scroll} />
+      <FavouriteQuote scroll={scroll} />
       <SayHello scroll={scroll} />
     </StyledPortfolioPage>
   );

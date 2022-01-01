@@ -4,12 +4,12 @@ import styled from "styled-components";
 import whiteCube from "../../assets/hero/main-pic-9.png";
 import getScrollPercent from "../../utils/scroll-percent";
 
-const StyledThanksForVisiting = styled.div`
+const StyledFavouriteQuote = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 160px 0;
+  padding: 180px 0;
 `;
 
 const Content = styled.div`
@@ -17,12 +17,12 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 400px;
+  width: 1000px;
 `;
 
 const WhiteCube = styled.img`
   position: absolute;
-  left: -58%;
+  left: 7%;
   top: -300%;
   width: 800px;
   opacity: 0.6;
@@ -49,12 +49,12 @@ interface Props {
   scroll: number;
 }
 
-const ThanksForVisiting = ({ scroll }: Props) => {
+const FavouriteQuote = ({ scroll }: Props) => {
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 
   return (
-    <StyledThanksForVisiting ref={pageRef}>
+    <StyledFavouriteQuote ref={pageRef}>
       <Content>
         <WhiteCube
           src={whiteCube}
@@ -62,11 +62,11 @@ const ThanksForVisiting = ({ scroll }: Props) => {
             transform: `translateY(calc(${scrollPercent} * 300px))`,
           }}
         />
-        <Header>That's it!</Header>
-        <Bold>Thanks for visiting.</Bold>
+        <Header>My favourite quote</Header>
+        <Bold>"The best way to predict the future is to create it."</Bold>
       </Content>
-    </StyledThanksForVisiting>
+    </StyledFavouriteQuote>
   );
 };
 
-export default ThanksForVisiting;
+export default FavouriteQuote;

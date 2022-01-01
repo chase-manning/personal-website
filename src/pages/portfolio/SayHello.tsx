@@ -9,7 +9,7 @@ import SayHelloIllustration from "./SayHelloIllustration";
 const StyledSayHello = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 40px;
 `;
 
 const Container = styled.div`
