@@ -22,6 +22,10 @@ const StyledProject = styled.a`
   :hover {
     box-shadow: 1px 1px 87px rgba(219, 222, 225, 1);
     transform: scale(1.007);
+
+    div {
+      transform: scale(1);
+    }
   }
 `;
 
@@ -78,6 +82,29 @@ const Description = styled.p`
   color: #6b6b6b;
 `;
 
+const ViewSiteContainer = styled.span`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const ViewSite = styled.div`
+  height: 150px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #00113b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  font-size: 18px;
+  color: var(--bg);
+  transform: scale(0);
+  transition: all 0.3s;
+`;
+
 interface Props {
   project: ProjectType;
 }
@@ -92,6 +119,9 @@ const Project = ({ project }: Props) => {
       <ImageContainer>
         <BlurredImage src={project.image} />
         <Image src={project.image} />
+        <ViewSiteContainer>
+          <ViewSite>View Site</ViewSite>
+        </ViewSiteContainer>
       </ImageContainer>
       <TextArea>
         <Name>{project.name}</Name>
