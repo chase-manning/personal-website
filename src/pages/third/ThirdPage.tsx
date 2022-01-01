@@ -116,10 +116,11 @@ const ThirdPage = ({ scroll }: Props) => {
             }}
           />
           <LineHeader pink text="What tech I use" />
-          <Bold>Art Direction for Global Leading Brands.</Bold>
+          <Bold>I love creating beautiful user experiences.</Bold>
           <Smaller>
-            I research and create breakthrough - delightful ideas, leading
-            visual designers.
+            Most of my development experience and interest is in React front end
+            development. More recently I have also been using Solidity to write
+            smart contracts on Ethereum.
           </Smaller>
         </TextContent>
         <ScrollDown white />
