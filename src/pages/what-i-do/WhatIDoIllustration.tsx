@@ -8,11 +8,17 @@ import whiteBall from "../../assets/expanding/white-ball.png";
 
 const Illustration = styled.div`
   position: absolute;
-  right: 30%;
   top: 50%;
   transform: translate(50%, -50%);
+
   height: 100vh;
   width: 100vh;
+  right: 30%;
+  @media only screen and (max-width: 1400px) {
+    height: 80vh;
+    width: 80vh;
+    right: 25%;
+  }
 `;
 
 const OrangeBall = styled.img`
