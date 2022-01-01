@@ -14,6 +14,7 @@ import ami from "../../assets/projects/ami.jpg";
 import state from "../../assets/projects/state.jpg";
 import sitesoft from "../../assets/projects/sitesoft.jpg";
 import slingshot from "../../assets/projects/slingshot.jpg";
+import orcon from "../../assets/projects/orcon.jpg";
 
 interface TabType {
   label: string;
@@ -76,6 +77,12 @@ const TABS: TabType[] = [
         description:
           "New Zealand's leading site management & health and safety system for construction and property management.",
         image: sitesoft,
+      },
+      {
+        name: "Orcon Power",
+        description:
+          "From broadband to power and mobile plans, Orcon offers a range of services to make your life simpler, easier & faster.",
+        image: orcon,
       },
       {
         name: "Slingshot Power",
