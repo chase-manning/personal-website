@@ -93,7 +93,7 @@ const ViewSite = styled.div`
   height: 150px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #00113b;
+  background: var(--dark-bg);
   display: flex;
   justify-content: center;
   align-items: center;
