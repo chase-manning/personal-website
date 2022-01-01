@@ -10,6 +10,8 @@ import uwucrew from "../../assets/projects/uwucrew.jpg";
 import waifusion from "../../assets/projects/waifusion.jpg";
 import billionaires from "../../assets/projects/billionaires.jpg";
 import cryptoCapsule from "../../assets/projects/crypto-capsule.jpg";
+import ami from "../../assets/projects/ami.jpg";
+import state from "../../assets/projects/state.jpg";
 
 interface TabType {
   label: string;
@@ -56,10 +58,16 @@ const TABS: TabType[] = [
     label: "Web2",
     projects: [
       {
-        name: "Uwucrew",
+        name: "State Insurance",
         description:
-          "uwucrew is a generative collection of 9670 avatars inspired by anime and pop culture, aiming to be both inclusive and expressive.",
-        image: "uwucrew",
+          "State Insurance protects over 400,000 New Zealanders. Recipient of Reader's Digest Trusted Brand Award.",
+        image: state,
+      },
+      {
+        name: "AMI Insurance",
+        description:
+          "AMI is one of New Zealand's most trusted insurers, receiving the trusted Brand award for eight years running.",
+        image: ami,
       },
     ],
   },
