@@ -4,20 +4,24 @@ export interface ProjectType {
   name: string;
   description: string;
   image: string;
+  link: string;
 }
 
-const StyledProject = styled.div`
+const StyledProject = styled.a`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
 
   transition: all 0.3s;
   box-shadow: 1px 1px 87px rgba(219, 222, 225, 0.2);
+  transform: scale(1);
   :hover {
     box-shadow: 1px 1px 87px rgba(219, 222, 225, 1);
+    transform: scale(1.007);
   }
 `;
 
@@ -35,7 +39,7 @@ const Image = styled.img`
   position: relative;
   width: 100%;
   border-radius: 18px;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.25);
 `;
 
 const BlurredImage = styled.img`
@@ -46,11 +50,12 @@ const BlurredImage = styled.img`
   height: 100%;
   filter: blur(40px);
   transform: scale(1.2) rotate(180deg);
-  opacity: 0.4;
+  opacity: 0.5;
 `;
 
 const TextArea = styled.div`
   width: 100%;
+  flex: 1;
   padding: 40px 48px;
   padding-bottom: 60px;
   display: flex;
@@ -79,7 +84,11 @@ interface Props {
 
 const Project = ({ project }: Props) => {
   return (
-    <StyledProject>
+    <StyledProject
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <ImageContainer>
         <BlurredImage src={project.image} />
         <Image src={project.image} />
