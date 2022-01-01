@@ -34,33 +34,50 @@ const TopSection = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
   margin-bottom: 113px;
+  @media only screen and (max-width: 1400px) {
+    margin-bottom: 90px;
+  }
 `;
 
 const TextContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+
   max-width: 670px;
+  @media only screen and (max-width: 1400px) {
+    max-width: 580px;
+  }
 `;
 
 const Bold = styled.p`
   position: relative;
-  font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
   font-weight: 600;
   color: var(--bg);
+
+  font-size: 72px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 42px;
+  }
 `;
 
 const Sub = styled.p`
   position: relative;
-  font-size: 32px;
   line-height: 1.5;
   letter-spacing: -0.15px;
   font-weight: 600;
   color: var(--pink);
+
+  font-size: 32px;
   margin-top: 50px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 20px;
+    margin-top: 30px;
+  }
 `;
 
 const NavItems = styled.div`
@@ -73,8 +90,6 @@ const NavItem = styled(Link)`
   color: var(--bg);
   line-height: 1.44444;
   font-weight: 500;
-  margin-bottom: 23px;
-  font-size: 18px;
   cursor: pointer;
 
   opacity: 1;
@@ -82,38 +97,61 @@ const NavItem = styled(Link)`
   :hover {
     opacity: 0.4;
   }
+
+  font-size: 18px;
+  margin-bottom: 23px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
 `;
 
 const BottomSection = styled.div`
   border-top: 1px solid rgba(216, 216, 216, 0.2);
   padding-bottom: 67px;
-  padding-top: 58px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding-top: 58px;
+  @media only screen and (max-width: 1400px) {
+    padding-top: 45px;
+  }
 `;
 
 const DesignBy = styled.div`
-  font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
   color: var(--bg);
+
+  font-size: 16px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 14px;
+  }
 `;
 
 const DesignedByLink = styled.a`
-  font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
   color: var(--bg);
   text-decoration: underline;
+
+  font-size: 16px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 14px;
+  }
 `;
 
 const BackToTop = styled(Link)`
-  font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
   color: var(--bg);
   cursor: pointer;
+
+  font-size: 16px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 14px;
+  }
 `;
 
 const LeftCube = styled.img`
@@ -127,7 +165,11 @@ const RightCube = styled.img`
   position: absolute;
   width: 60px;
   right: 80px;
+
   bottom: -170px;
+  @media only screen and (max-width: 1400px) {
+    bottom: -140px;
+  }
 `;
 
 interface Props {
