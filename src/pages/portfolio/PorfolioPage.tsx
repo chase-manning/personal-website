@@ -12,6 +12,7 @@ import billionaires from "../../assets/projects/billionaires.jpg";
 import cryptoCapsule from "../../assets/projects/crypto-capsule.jpg";
 import ami from "../../assets/projects/ami.jpg";
 import state from "../../assets/projects/state.jpg";
+import sitesoft from "../../assets/projects/sitesoft.jpg";
 
 interface TabType {
   label: string;
@@ -68,6 +69,12 @@ const TABS: TabType[] = [
         description:
           "AMI is one of New Zealand's most trusted insurers, receiving the trusted Brand award for eight years running.",
         image: ami,
+      },
+      {
+        name: "Site Connect",
+        description:
+          "New Zealand's leading site management & health and safety system for construction and property management.",
+        image: sitesoft,
       },
     ],
   },
