@@ -4,6 +4,7 @@ import HeroPage from "../pages/hero/HeroPage";
 import PortfolioPage from "../pages/portfolio/PorfolioPage";
 import SecondPage from "../pages/second/SecondPage";
 import ThirdPage from "../pages/third/ThirdPage";
+import Footer from "./Footer";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -26,6 +27,7 @@ const App = () => {
       <SecondPage scroll={scroll} />
       <ThirdPage scroll={scroll} />
       <PortfolioPage scroll={scroll} />
+      <Footer />
     </StyledApp>
   );
 };
