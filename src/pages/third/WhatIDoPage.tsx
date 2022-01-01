@@ -5,9 +5,9 @@ import LineHeader from "../../components/LineHeader";
 import ScrollDown from "../../components/ScrollDown";
 import lightBlueCube from "../../assets/greeble/light-blue-cube.png";
 import getScrollPercent from "../../utils/scroll-percent";
-import ThirdIllustration from "./ThirdIllustration";
+import WhatIDoIllustration from "./WhatIDoIllustration";
 
-const StyledThirdPage = styled.div`
+const StyledWhatIDoPage = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
@@ -99,13 +99,13 @@ interface Props {
   scroll: number;
 }
 
-const ThirdPage = ({ scroll }: Props) => {
+const WhatIDoPage = ({ scroll }: Props) => {
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 
   return (
-    <StyledThirdPage ref={pageRef}>
-      <ThirdIllustration scrollPercent={scrollPercent} />
+    <StyledWhatIDoPage ref={pageRef}>
+      <WhatIDoIllustration scrollPercent={scrollPercent} />
       <Content>
         <div />
         <TextContent>
@@ -115,7 +115,7 @@ const ThirdPage = ({ scroll }: Props) => {
               transform: `translateY(calc(${scrollPercent} * 200px))`,
             }}
           />
-          <LineHeader pink text="What tech I use" />
+          <LineHeader pink text="What I do" />
           <Bold>I love creating beautiful user experiences.</Bold>
           <Smaller>
             Most of my development experience and interest is in React front end
@@ -125,8 +125,8 @@ const ThirdPage = ({ scroll }: Props) => {
         </TextContent>
         <ScrollDown white />
       </Content>
-    </StyledThirdPage>
+    </StyledWhatIDoPage>
   );
 };
 
-export default ThirdPage;
+export default WhatIDoPage;

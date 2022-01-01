@@ -153,7 +153,7 @@ const AboutMePage = ({ scroll }: Props) => {
       </Illustration>
       <Content>
         <TopSection>
-          <LineHeader text="What I do" />
+          <LineHeader text="About me" />
           <Description>
             I'm a developer living in London building DeFi and NFT products.
           </Description>

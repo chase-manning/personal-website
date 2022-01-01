@@ -6,7 +6,7 @@ import purpleCube from "../../assets/expanding/dark-purple-cube.png";
 import lightCube from "../../assets/expanding/light-purple-cube.png";
 import whiteBall from "../../assets/expanding/white-ball.png";
 
-const StyledThirdIllustration = styled.div`
+const Illustration = styled.div`
   position: absolute;
   right: 30%;
   top: 50%;
@@ -68,9 +68,9 @@ interface Props {
   scrollPercent: number;
 }
 
-const ThirdIllustration = ({ scrollPercent }: Props) => {
+const WhatIDoIllustration = ({ scrollPercent }: Props) => {
   return (
-    <StyledThirdIllustration>
+    <Illustration>
       <OrangeBall src={orangeBall} />
       <PinkCube
         src={pinkCube}
@@ -108,8 +108,8 @@ const ThirdIllustration = ({ scrollPercent }: Props) => {
           transform: `translate(calc(${scrollPercent} * 300px), calc(${scrollPercent} * -300px))`,
         }}
       />
-    </StyledThirdIllustration>
+    </Illustration>
   );
 };
 
-export default ThirdIllustration;
+export default WhatIDoIllustration;
