@@ -108,7 +108,7 @@ const PortfolioPage = ({ scroll }: Props) => {
         ))}
       </Projects>
       <ThanksForVisiting scroll={scroll} />
-      <SayHello />
+      <SayHello scroll={scroll} />
     </StyledPortfolioPage>
   );
 };
