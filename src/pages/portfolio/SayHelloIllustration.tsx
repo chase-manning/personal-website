@@ -8,10 +8,15 @@ import whiteBall from "../../assets/socials/white-ball.png";
 
 const Illustration = styled.div`
   position: absolute;
-  right: 0;
   bottom: 0;
-  width: 600px;
   aspect-ratio: 1;
+
+  width: 600px;
+  right: 0;
+  @media only screen and (max-width: 1400px) {
+    right: 10%;
+    width: 500px;
+  }
 `;
 
 const Floor = styled.img`
