@@ -8,6 +8,8 @@ import portfolioTabs, { TabType } from "./portfolio-tabs";
 import Project, { ProjectType } from "./Project";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
 import pinkSquare from "../../assets/hero/main-pic-8.png";
+import ThanksForVisiting from "./ThanksForVisiting";
+import SayHello from "./SayHello";
 
 const StyledPortfolioPage = styled.div`
   position: relative;
@@ -105,6 +107,8 @@ const PortfolioPage = ({ scroll }: Props) => {
           <Project project={project} />
         ))}
       </Projects>
+      <ThanksForVisiting scroll={scroll} />
+      <SayHello />
     </StyledPortfolioPage>
   );
 };
