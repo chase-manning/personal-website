@@ -30,7 +30,8 @@ const StyledPortfolioPage = styled.div`
     padding: 120px calc(10% + 60px);
   }
   @media only screen and (max-width: 1450px) {
-    padding: 120px calc(5% + 60px);
+    padding-left: calc(5% + 35px);
+    padding-right: calc(5% + 35px);
   }
   @media only screen and (max-width: 639px) {
     padding-left: 0;
@@ -60,11 +61,16 @@ const WhiteSquare = styled.img`
 
 const Bold = styled.p`
   position: relative;
-  font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
   font-weight: 600;
+
+  font-size: 72px;
   margin-bottom: 80px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 56px;
+    margin-bottom: 50px;
+  }
 `;
 
 const Projects = styled.div`
