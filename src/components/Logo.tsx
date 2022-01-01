@@ -1,18 +1,11 @@
 import styled from "styled-components";
+import LogoIcon from "./LogoIcon";
 
 const StyledLogo = styled.div`
   display: flex;
-  font-size: 70px;
-  font-weight: 700;
-  line-height: 0;
-  height: 40px;
   align-items: center;
   z-index: 1;
-`;
-
-const Icon = styled.div`
-  display: flex;
-  letter-spacing: -23px;
+  height: 40px;
 `;
 
 const Text = styled.div`
@@ -30,26 +23,14 @@ const Fullstop = styled.div`
   color: var(--orange);
 `;
 
-const Left = styled.div`
-  color: var(--pink);
-`;
-
-const Right = styled.div`
-  color: ${(props: Props) => (props.primary ? "var(--purple)" : "var(--bg)")};
-  transition: color 0.4s;
-`;
-
 interface Props {
-  primary: boolean;
+  primary?: boolean;
 }
 
 const Logo = ({ primary }: Props) => {
   return (
     <StyledLogo>
-      <Icon>
-        <Left>{"<"}</Left>
-        <Right primary={primary}>{"<"}</Right>
-      </Icon>
+      <LogoIcon primary={primary} />
       <Text primary={primary}>
         Chase<Fullstop>.</Fullstop>
       </Text>
