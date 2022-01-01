@@ -1,9 +1,9 @@
 import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
-import HomePage from "../pages/hero/HomePage";
+import HomePage from "../pages/home/HomePage";
 import PortfolioPage from "../pages/portfolio/PorfolioPage";
-import AboutMePage from "../pages/second/AboutMePage";
-import WhatIDoPage from "../pages/third/WhatIDoPage";
+import AboutMePage from "../pages/about-me/AboutMePage";
+import WhatIDoPage from "../pages/what-i-do/WhatIDoPage";
 import Footer from "./Footer";
 
 const StyledApp = styled.div`
