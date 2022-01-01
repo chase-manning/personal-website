@@ -9,7 +9,11 @@ const StyledFavouriteQuote = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 180px 0;
+  @media only screen and (max-width: 1400px) {
+    padding: 160px 0;
+  }
 `;
 
 const Content = styled.div`
@@ -17,32 +21,50 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
   width: 1000px;
+  @media only screen and (max-width: 1400px) {
+    width: 700px;
+  }
 `;
 
 const WhiteCube = styled.img`
   position: absolute;
+  opacity: 0.6;
+
+  width: 800px;
   left: 7%;
   top: -300%;
-  width: 800px;
-  opacity: 0.6;
+  @media only screen and (max-width: 1400px) {
+    width: 650px;
+    left: 0%;
+    top: -320%;
+  }
 `;
 
 const Header = styled.div`
   position: relative;
-  font-size: 20px;
   color: var(--purple);
   font-weight: 600;
+
+  font-size: 20px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 16px;
+  }
 `;
 
 const Bold = styled.div`
   position: relative;
-  font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
   font-weight: 600;
   text-align: center;
   margin-top: 20px;
+
+  font-size: 72px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 56px;
+  }
 `;
 
 interface Props {
