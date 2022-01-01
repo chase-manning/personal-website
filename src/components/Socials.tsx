@@ -24,14 +24,14 @@ const Socials = () => {
         text="GitHub"
       />
       <Social
-        icon={<LinkedInIcon fontSize="inherit" />}
-        link="https://www.linkedin.com/in/chasemanning"
-        text="Linked In"
-      />
-      <Social
         icon={<TwitterIcon fontSize="inherit" />}
         link="https://twitter.com/chase_manning_"
         text="Twitter"
+      />
+      <Social
+        icon={<LinkedInIcon fontSize="inherit" />}
+        link="https://www.linkedin.com/in/chasemanning"
+        text="Linked In"
       />
       <Social
         icon={<InstagramIcon fontSize="inherit" />}
