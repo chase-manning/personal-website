@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import HeroPage from "../pages/hero/HeroPage";
 import PortfolioPage from "../pages/portfolio/PorfolioPage";
-import SecondPage from "../pages/second/SecondPage";
+import AboutMePage from "../pages/second/AboutMePage";
 import ThirdPage from "../pages/third/ThirdPage";
 import Footer from "./Footer";
 
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <StyledApp>
       <HeroPage scroll={scroll} />
-      <SecondPage scroll={scroll} />
+      <AboutMePage scroll={scroll} />
       <ThirdPage scroll={scroll} />
       <PortfolioPage scroll={scroll} />
       <Footer />

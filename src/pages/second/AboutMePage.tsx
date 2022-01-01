@@ -7,7 +7,7 @@ import pinkSquare from "../../assets/hero/main-pic-8.png";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
 import getScrollPercent from "../../utils/scroll-percent";
 
-const StyledSecondPage = styled.div`
+const StyledAboutMePage = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
@@ -123,14 +123,14 @@ interface Props {
   scroll: number;
 }
 
-const SecondPage = ({ scroll }: Props) => {
+const AboutMePage = ({ scroll }: Props) => {
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 
   console.log(scrollPercent);
 
   return (
-    <StyledSecondPage ref={pageRef}>
+    <StyledAboutMePage ref={pageRef}>
       <Illustration>
         <PinkSquare
           src={pinkSquare}
@@ -172,8 +172,8 @@ const SecondPage = ({ scroll }: Props) => {
           </Button>
         </div>
       </Content>
-    </StyledSecondPage>
+    </StyledAboutMePage>
   );
 };
 
-export default SecondPage;
+export default AboutMePage;
