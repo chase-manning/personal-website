@@ -15,6 +15,7 @@ import state from "../../assets/projects/state.jpg";
 import sitesoft from "../../assets/projects/sitesoft.jpg";
 import slingshot from "../../assets/projects/slingshot.jpg";
 import orcon from "../../assets/projects/orcon.jpg";
+import pso from "../../assets/projects/pso.jpg";
 
 interface TabType {
   label: string;
@@ -96,9 +97,10 @@ const TABS: TabType[] = [
     label: "Other",
     projects: [
       {
-        name: "",
-        description: "",
-        image: "",
+        name: "Photoshop Online",
+        description:
+          "An ongoing attempt to rebuild Photoshop as a online web application with live editing using websockets.",
+        image: pso,
       },
     ],
   },
