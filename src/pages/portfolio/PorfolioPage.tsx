@@ -7,6 +7,7 @@ import getScrollPercent from "../../utils/scroll-percent";
 import portfolioTabs, { TabType } from "./portfolio-tabs";
 import Project, { ProjectType } from "./Project";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
+import pinkSquare from "../../assets/hero/main-pic-8.png";
 
 const StyledPortfolioPage = styled.div`
   position: relative;
@@ -32,6 +33,13 @@ const StyledPortfolioPage = styled.div`
   @media only screen and (max-width: 639px) {
     padding-left: 0;
   }
+`;
+
+const PinkSquare = styled.img`
+  position: absolute;
+  top: 450px;
+  left: -29%;
+  width: 68%;
 `;
 
 const Content = styled.div`
@@ -76,6 +84,12 @@ const PortfolioPage = ({ scroll }: Props) => {
 
   return (
     <StyledPortfolioPage ref={pageRef}>
+      <PinkSquare
+        src={pinkSquare}
+        style={{
+          transform: `translateY(calc(${scrollPercent} * 400px))`,
+        }}
+      />
       <Content>
         <WhiteSquare src={whiteSquare} />
         <LineHeader text="Portfolio" />
