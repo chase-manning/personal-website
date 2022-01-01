@@ -13,6 +13,7 @@ import cryptoCapsule from "../../assets/projects/crypto-capsule.jpg";
 import ami from "../../assets/projects/ami.jpg";
 import state from "../../assets/projects/state.jpg";
 import sitesoft from "../../assets/projects/sitesoft.jpg";
+import slingshot from "../../assets/projects/slingshot.jpg";
 
 interface TabType {
   label: string;
@@ -75,6 +76,12 @@ const TABS: TabType[] = [
         description:
           "New Zealand's leading site management & health and safety system for construction and property management.",
         image: sitesoft,
+      },
+      {
+        name: "Slingshot Power",
+        description:
+          "Slingshot is the fourth largest telecommunications company in New Zealand that bundles power into a single plan.",
+        image: slingshot,
       },
     ],
   },
