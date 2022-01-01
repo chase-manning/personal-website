@@ -7,6 +7,9 @@ import getScrollPercent from "../../utils/scroll-percent";
 import Project, { ProjectType } from "./Project";
 import backd from "../../assets/projects/backd.jpg";
 import uwucrew from "../../assets/projects/uwucrew.jpg";
+import waifusion from "../../assets/projects/waifusion.jpg";
+import billionaires from "../../assets/projects/billionaires.jpg";
+import cryptoCapsule from "../../assets/projects/crypto-capsule.jpg";
 
 interface TabType {
   label: string;
@@ -26,8 +29,26 @@ const TABS: TabType[] = [
       {
         name: "Uwucrew",
         description:
-          "uwucrew is a generative collection of 9,670 avatar NFTs inspired by anime and pop culture",
+          "uwucrew is a generative collection of 9,670 avatar NFTs inspired by anime and pop culture.",
         image: uwucrew,
+      },
+      {
+        name: "Waifusion",
+        description:
+          "Waifusion is a set of 16,384 uniquely generated, anime inspired, digital waifu NFT collectibles on Ethereum and Binance Smart Chain.",
+        image: waifusion,
+      },
+      {
+        name: "Crypto Capsule",
+        description:
+          "Crypto Capsule is a tool for creating timelock contracts that can be used as a decentralised term deposit or trust fund.",
+        image: cryptoCapsule,
+      },
+      {
+        name: "Bitcoin Billionaires",
+        description:
+          "A collection of unique pixel art NFTs from the creators of Bitcoin Billionaire, the hit mobile game with over 10 million downloads.",
+        image: billionaires,
       },
     ],
   },
