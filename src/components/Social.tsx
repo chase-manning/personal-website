@@ -5,6 +5,9 @@ const StyledSocial = styled.a`
   display: flex;
 
   margin: 15px 0;
+  @media only screen and (max-width: 1400px) {
+    margin: 12px 0;
+  }
   @media only screen and (max-width: 639px) {
     margin: 6px 0;
   }
