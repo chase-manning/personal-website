@@ -10,18 +10,24 @@ interface ButtonProps {
 
 const Button = styled.button`
   position: relative;
-  width: 70px;
   height: 40px;
-  font-size: 16px;
   font-weight: 400;
   cursor: pointer;
-  margin-right: 90px;
   color: ${(props: ButtonProps) =>
     props.active ? "var(--main)" : "var(--sub)"};
 
   transition: all 0.3s;
   :hover {
     color: var(--main);
+  }
+
+  font-size: 16px;
+  width: 70px;
+  margin-right: 90px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 14px;
+    width: 55px;
+    margin-right: 70px;
   }
 `;
 
@@ -40,6 +46,12 @@ const Line = styled.div`
   transform: translateX(
     ${(props: LineProps) => `${props.activeIndex * 160}px`}
   );
+
+  @media only screen and (max-width: 1400px) {
+    transform: translateX(
+      ${(props: LineProps) => `${props.activeIndex * 125}px`}
+    );
+  }
 `;
 
 interface Props {
