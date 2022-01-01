@@ -20,11 +20,16 @@ const Container = styled.div`
 `;
 
 const Bold = styled.p`
-  font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
   font-weight: 600;
+
+  font-size: 72px;
   margin-bottom: 60px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 56px;
+    margin-bottom: 50px;
+  }
 `;
 
 const FooterExtension = styled.div`
