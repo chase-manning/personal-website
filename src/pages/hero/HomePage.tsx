@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-import HeroContent from "./HeroContent";
+import HeroContent from "./HomeContent";
 import Header from "../../components/Header";
 import ScrollDown from "../../components/ScrollDown";
 import bg from "../../assets/backgrounds/bg-main.jpg";
-import FirstPageIllustration from "./HeroIllustration";
+import HomeIllustration from "./HomeIllustration";
 
-const StyledFirstPage = styled.div`
+const StyledHomePage = styled.div`
   position: relative;
   overflow: hidden;
 
@@ -88,11 +88,11 @@ interface Props {
   scroll: number;
 }
 
-const FirstPage = ({ scroll }: Props) => {
+const HomePage = ({ scroll }: Props) => {
   const scrollPercent = scroll / window.innerHeight;
 
   return (
-    <StyledFirstPage>
+    <StyledHomePage id="home-scroll">
       <Background src={bg} />
       <Content>
         <Header />
@@ -100,10 +100,10 @@ const FirstPage = ({ scroll }: Props) => {
         <ScrollDown spacing />
       </Content>
       <Illustration>
-        <FirstPageIllustration scrollPercent={scrollPercent} />
+        <HomeIllustration scrollPercent={scrollPercent} />
       </Illustration>
-    </StyledFirstPage>
+    </StyledHomePage>
   );
 };
 
-export default FirstPage;
+export default HomePage;

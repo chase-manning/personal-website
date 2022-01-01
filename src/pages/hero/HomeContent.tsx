@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import LineHeader from "../../components/LineHeader";
 
-const StyledFirstPageContent = styled.div`
+const StyledHomeContent = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -38,13 +38,13 @@ const Header = styled.h2`
   }
 `;
 
-const FirstPageContent = () => {
+const HomeContent = () => {
   return (
-    <StyledFirstPageContent>
+    <StyledHomeContent>
       <LineHeader text="Chase Manning" />
       <Header>Hi, I'm Chase, your Friendly Neighborhood Developer.</Header>
-    </StyledFirstPageContent>
+    </StyledHomeContent>
   );
 };
 
-export default FirstPageContent;
+export default HomeContent;
