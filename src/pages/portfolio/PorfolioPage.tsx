@@ -17,6 +17,7 @@ import slingshot from "../../assets/projects/slingshot.jpg";
 import orcon from "../../assets/projects/orcon.jpg";
 import pso from "../../assets/projects/pso.jpg";
 import dateformat from "../../assets/projects/dateformat.jpg";
+import dapp from "../../assets/projects/dapp-template.jpg";
 
 interface TabType {
   label: string;
@@ -113,7 +114,7 @@ const TABS: TabType[] = [
         name: "Dapp CRA Template",
         description:
           "A project boilerplate create react app template for creating EVM dapps.",
-        image: dateformat,
+        image: dapp,
       },
     ],
   },
