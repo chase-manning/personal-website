@@ -155,10 +155,10 @@ const SecondPage = ({ scroll }: Props) => {
         <TopSection>
           <LineHeader text="What I do" />
           <Description>
-            I'm a software developer living in London building DeFi and NFTs.
+            I'm a developer living in London building DeFi and NFT products.
           </Description>
         </TopSection>
-        <Bold>Check out my work</Bold>
+        <Bold>Check out my work.</Bold>
         <div>
           <Button
             onClick={() =>
