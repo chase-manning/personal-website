@@ -1,7 +1,11 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+
 import menuItems, { MenuItemType } from "../data/menu-items";
 import LogoIcon from "./LogoIcon";
+import cube from "../assets/greeble/dark-blue-cube.png";
+import getScrollPercent from "../utils/scroll-percent";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -23,6 +27,7 @@ const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 40px;
 `;
 
 const TopSection = styled.div`
@@ -33,12 +38,14 @@ const TopSection = styled.div`
 `;
 
 const TextContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 670px;
 `;
 
 const Bold = styled.p`
+  position: relative;
   font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
@@ -47,6 +54,7 @@ const Bold = styled.p`
 `;
 
 const Sub = styled.p`
+  position: relative;
   font-size: 32px;
   line-height: 1.5;
   letter-spacing: -0.15px;
@@ -108,13 +116,46 @@ const BackToTop = styled(Link)`
   cursor: pointer;
 `;
 
-const Footer = () => {
+const LeftCube = styled.img`
+  position: absolute;
+  width: 145px;
+  top: -80px;
+  left: -50px;
+`;
+
+const RightCube = styled.img`
+  position: absolute;
+  width: 60px;
+  right: 80px;
+  bottom: -170px;
+`;
+
+interface Props {
+  scroll: number;
+}
+
+const Footer = ({ scroll }: Props) => {
+  const pageRef = useRef<HTMLDivElement>(null);
+  const scrollPercent = getScrollPercent(pageRef.current, scroll);
+
   return (
-    <StyledFooter>
+    <StyledFooter ref={pageRef}>
       <Content>
         <TopSection>
           <LogoIcon large />
           <TextContainer>
+            <LeftCube
+              src={cube}
+              style={{
+                transform: `translateY(calc(${scrollPercent} * 200px))`,
+              }}
+            />
+            <RightCube
+              src={cube}
+              style={{
+                transform: `translateY(calc(${scrollPercent} * -400px))`,
+              }}
+            />
             <Bold>You only have one chance to make a first impression.</Bold>
             <Sub>Let’s make it an amazing one.</Sub>
           </TextContainer>

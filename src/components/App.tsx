@@ -27,7 +27,7 @@ const App = () => {
       <AboutMePage scroll={scroll} />
       <WhatIDoPage scroll={scroll} />
       <PortfolioPage scroll={scroll} />
-      <Footer />
+      <Footer scroll={scroll} />
     </StyledApp>
   );
 };
