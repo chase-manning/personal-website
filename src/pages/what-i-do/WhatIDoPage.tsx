@@ -10,11 +10,15 @@ import WhatIDoIllustration from "./WhatIDoIllustration";
 const StyledWhatIDoPage = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   background: var(--dark);
   overflow: hidden;
+
+  height: 100vh;
+  @media only screen and (max-width: 1400px) {
+    height: 80vh;
+  }
 
   padding: 60px 0;
   padding-left: calc(15% + 60px);
@@ -22,7 +26,7 @@ const StyledWhatIDoPage = styled.div`
     padding-left: calc(10% + 60px);
   }
   @media only screen and (max-width: 1450px) {
-    padding-left: calc(5% + 60px);
+    padding-left: calc(5% + 35px);
   }
   @media only screen and (max-width: 639px) {
     padding-left: 0;
@@ -31,27 +35,39 @@ const StyledWhatIDoPage = styled.div`
   ::before {
     content: "";
     position: absolute;
-    height: 160vh;
-    width: 160vh;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.15);
 
-    right: 30%;
     top: 50%;
     transform: translate(50%, -50%);
+
+    right: 30%;
+    height: 160vh;
+    width: 160vh;
+    @media only screen and (max-width: 1400px) {
+      right: 25%;
+      height: 130vh;
+      width: 130vh;
+    }
   }
 
   ::after {
     content: "";
     position: absolute;
-    height: 100vh;
-    width: 100vh;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.15);
 
-    right: 30%;
     top: 50%;
     transform: translate(50%, -50%);
+
+    right: 30%;
+    height: 100vh;
+    width: 100vh;
+    @media only screen and (max-width: 1400px) {
+      right: 25%;
+      height: 80vh;
+      width: 80vh;
+    }
   }
 `;
 
@@ -80,19 +96,27 @@ const LightCube = styled.img`
 
 const Bold = styled.p`
   position: relative;
-  font-size: 72px;
   line-height: 1.16667;
   letter-spacing: -0.5px;
   font-weight: 600;
   color: var(--bg);
+
+  font-size: 72px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 56px;
+  }
 `;
 
 const Smaller = styled.p`
   position: relative;
-  font-size: 18px;
   line-height: 1.77778;
   color: var(--bg);
   margin-top: 50px;
+
+  font-size: 18px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 16px;
+  }
 `;
 
 interface Props {
