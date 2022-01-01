@@ -97,7 +97,7 @@ const HomePage = ({ scroll }: Props) => {
       <Content>
         <Header />
         <HeroContent />
-        <ScrollDown spacing />
+        <ScrollDown target="about-me-scroll" spacing />
       </Content>
       <Illustration>
         <HomeIllustration scrollPercent={scrollPercent} />

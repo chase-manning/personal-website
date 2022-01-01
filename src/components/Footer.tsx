@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-scroll";
+import menuItems, { MenuItemType } from "../data/menu-items";
 import LogoIcon from "./LogoIcon";
 
 const StyledFooter = styled.div`
@@ -59,7 +61,7 @@ const NavItems = styled.div`
   margin-top: 10px;
 `;
 
-const NavItem = styled.button`
+const NavItem = styled(Link)`
   color: var(--bg);
   line-height: 1.44444;
   font-weight: 500;
@@ -90,7 +92,7 @@ const DesignBy = styled.div`
   color: var(--bg);
 `;
 
-const Link = styled.a`
+const DesignedByLink = styled.a`
   font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
@@ -98,7 +100,7 @@ const Link = styled.a`
   text-decoration: underline;
 `;
 
-const BackToTop = styled.button`
+const BackToTop = styled(Link)`
   font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
@@ -117,25 +119,33 @@ const Footer = () => {
             <Sub>Let’s make it an amazing one.</Sub>
           </TextContainer>
           <NavItems>
-            <NavItem>Home</NavItem>
-            <NavItem>Home</NavItem>
-            <NavItem>Home</NavItem>
-            <NavItem>Home</NavItem>
-            <NavItem>Home</NavItem>
+            {menuItems.map((menuItem: MenuItemType) => (
+              <NavItem
+                key={menuItem.value}
+                to={menuItem.value}
+                spy
+                smooth
+                duration={2000}
+              >
+                {menuItem.label}
+              </NavItem>
+            ))}
           </NavItems>
         </TopSection>
         <BottomSection>
           <DesignBy>
             Design by:{" "}
-            <Link
+            <DesignedByLink
               href="https://dribbble.com/tranmautritam"
               target="_blank"
               rel="noopener noreferrer"
             >
               Tran Mau Tri Tam
-            </Link>
+            </DesignedByLink>
           </DesignBy>
-          <BackToTop>Back to top</BackToTop>
+          <BackToTop to="home-scroll" spy smooth duration={2000}>
+            Back to top
+          </BackToTop>
         </BottomSection>
       </Content>
     </StyledFooter>

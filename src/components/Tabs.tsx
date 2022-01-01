@@ -53,6 +53,7 @@ const Tabs = ({ activeIndex, options, setActiveIndex }: Props) => {
     <StyledTabs>
       {options.map((option: string, index: number) => (
         <Button
+          key={option}
           active={index === activeIndex}
           onClick={() => setActiveIndex(index)}
         >

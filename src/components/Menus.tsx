@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import { Link } from "react-scroll";
+import menuItems, { MenuItemType } from "../data/menu-items";
 
 const StyledMenus = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const MenuItem = styled.a`
+const MenuItem = styled(Link)`
   cursor: pointer;
   transition: color 0.25s;
   font-weight: 600;
@@ -29,7 +31,18 @@ interface Props {
 const Menus = ({ close }: Props) => {
   return (
     <StyledMenus>
-      <MenuItem onClick={() => close()}>Home</MenuItem>
+      {menuItems.map((menuItem: MenuItemType) => (
+        <MenuItem
+          key={menuItem.value}
+          to={menuItem.value}
+          spy
+          smooth
+          duration={2000}
+          onClick={() => close()}
+        >
+          {menuItem.label}
+        </MenuItem>
+      ))}
     </StyledMenus>
   );
 };

@@ -1,17 +1,24 @@
 import styled from "styled-components";
+import { Link } from "react-scroll";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 
-const StyledScrollDown = styled.div`
+interface ScrollDownProps {
+  white?: boolean;
+  spacing?: boolean;
+}
+
+const StyledScrollDown = styled(Link)`
   display: flex;
   margin-bottom: 20px;
   align-items: center;
+  cursor: pointer;
 
-  margin-left: ${(props: Props) => (props.spacing ? "15%" : "0")};
+  margin-left: ${(props: ScrollDownProps) => (props.spacing ? "15%" : "0")};
   @media only screen and (max-width: 1550px) {
-    margin-left: ${(props: Props) => (props.spacing ? "10%" : "0")};
+    margin-left: ${(props: ScrollDownProps) => (props.spacing ? "10%" : "0")};
   }
   @media only screen and (max-width: 1450px) {
-    margin-left: ${(props: Props) => (props.spacing ? "5%" : "0")};
+    margin-left: ${(props: ScrollDownProps) => (props.spacing ? "5%" : "0")};
   }
   @media only screen and (max-width: 639px) {
     margin-left: 0;
@@ -42,7 +49,8 @@ const Circle = styled.div`
 
 const Text = styled.div`
   margin-left: 20px;
-  color: ${(props: Props) => (props.white ? "var(--bg)" : "var(--main)")};
+  color: ${(props: ScrollDownProps) =>
+    props.white ? "var(--bg)" : "var(--main)"};
 
   @media only screen and (max-width: 639px) {
     display: none;
@@ -50,15 +58,16 @@ const Text = styled.div`
 `;
 
 interface Props {
+  target: string;
   white?: boolean;
   spacing?: boolean;
 }
 
-const ScrollDown = ({ white, spacing }: Props) => {
+const ScrollDown = ({ target, white, spacing }: Props) => {
   const mobile = window.innerWidth <= 639;
 
   return (
-    <StyledScrollDown spacing={spacing}>
+    <StyledScrollDown to={target} spy smooth duration={2000} spacing={spacing}>
       <Circle>
         {mobile ? <UnfoldMoreIcon /> : <UnfoldMoreIcon fontSize="large" />}
       </Circle>

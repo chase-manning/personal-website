@@ -130,7 +130,7 @@ const AboutMePage = ({ scroll }: Props) => {
   console.log(scrollPercent);
 
   return (
-    <StyledAboutMePage ref={pageRef}>
+    <StyledAboutMePage ref={pageRef} id="about-me-scroll">
       <Illustration>
         <PinkSquare
           src={pinkSquare}

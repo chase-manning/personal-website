@@ -85,7 +85,7 @@ const PortfolioPage = ({ scroll }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledPortfolioPage ref={pageRef}>
+    <StyledPortfolioPage ref={pageRef} id="portfolio-scroll">
       <PinkSquare
         src={pinkSquare}
         style={{
@@ -104,7 +104,7 @@ const PortfolioPage = ({ scroll }: Props) => {
       />
       <Projects>
         {portfolioTabs[activeIndex].projects.map((project: ProjectType) => (
-          <Project project={project} />
+          <Project key={project.name} project={project} />
         ))}
       </Projects>
       <ThanksForVisiting scroll={scroll} />

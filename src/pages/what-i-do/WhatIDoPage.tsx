@@ -104,7 +104,7 @@ const WhatIDoPage = ({ scroll }: Props) => {
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 
   return (
-    <StyledWhatIDoPage ref={pageRef}>
+    <StyledWhatIDoPage ref={pageRef} id="what-i-do-scroll">
       <WhatIDoIllustration scrollPercent={scrollPercent} />
       <Content>
         <div />
@@ -123,7 +123,7 @@ const WhatIDoPage = ({ scroll }: Props) => {
             smart contracts on Ethereum.
           </Smaller>
         </TextContent>
-        <ScrollDown white />
+        <ScrollDown target="portfolio-scroll" white />
       </Content>
     </StyledWhatIDoPage>
   );
