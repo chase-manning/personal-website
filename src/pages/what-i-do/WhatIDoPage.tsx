@@ -6,6 +6,7 @@ import ScrollDown from "../../components/ScrollDown";
 import lightBlueCube from "../../assets/greeble/light-blue-cube.png";
 import getScrollPercent from "../../utils/scroll-percent";
 import WhatIDoIllustration from "./WhatIDoIllustration";
+import { useScroll } from "../../hooks/use-scroll";
 
 const StyledWhatIDoPage = styled.div`
   position: relative;
@@ -153,11 +154,8 @@ const ScrollDownContainer = styled.div`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const WhatIDoPage = ({ scroll }: Props) => {
+const WhatIDoPage = () => {
+  const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 

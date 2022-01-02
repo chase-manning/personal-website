@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import ScrollDown from "../../components/ScrollDown";
 import bg from "../../assets/backgrounds/bg-main.jpg";
 import HomeIllustration from "./HomeIllustration";
+import { useScroll } from "../../hooks/use-scroll";
 
 const StyledHomePage = styled.div`
   position: relative;
@@ -84,11 +85,8 @@ const Content = styled.div`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const HomePage = ({ scroll }: Props) => {
+const HomePage = () => {
+  const scroll = useScroll();
   const scrollPercent = scroll / window.innerHeight;
 
   return (

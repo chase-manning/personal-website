@@ -1,4 +1,3 @@
-import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import HomePage from "../pages/home/HomePage";
 import PortfolioPage from "../pages/portfolio/PorfolioPage";
@@ -11,23 +10,13 @@ const StyledApp = styled.div`
 `;
 
 const App = () => {
-  const [scroll, setScroll] = useState(0);
-
-  useLayoutEffect(() => {
-    const onScroll = () => setScroll(window.scrollY);
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
   return (
     <StyledApp>
-      <HomePage scroll={scroll} />
-      <AboutMePage scroll={scroll} />
-      <WhatIDoPage scroll={scroll} />
-      <PortfolioPage scroll={scroll} />
-      <Footer scroll={scroll} />
+      <HomePage />
+      <AboutMePage />
+      <WhatIDoPage />
+      <PortfolioPage />
+      <Footer />
     </StyledApp>
   );
 };

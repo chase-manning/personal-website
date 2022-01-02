@@ -7,6 +7,7 @@ import LogoIcon from "./LogoIcon";
 import cube from "../assets/greeble/dark-blue-cube.png";
 import getScrollPercent from "../utils/scroll-percent";
 import { useDevice } from "../hooks/use-device";
+import { useScroll } from "../hooks/use-scroll";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -205,11 +206,8 @@ const RightCube = styled.img`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const Footer = ({ scroll }: Props) => {
+const Footer = () => {
+  const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
   const { isMobile } = useDevice();

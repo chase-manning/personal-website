@@ -10,6 +10,7 @@ import whiteSquare from "../../assets/hero/main-pic-9.png";
 import pinkSquare from "../../assets/hero/main-pic-8.png";
 import FavouriteQuote from "./FavouriteQuote";
 import SayHello from "./SayHello";
+import { useScroll } from "../../hooks/use-scroll";
 
 const StyledPortfolioPage = styled.div`
   position: relative;
@@ -101,11 +102,8 @@ const Projects = styled.div`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const PortfolioPage = ({ scroll }: Props) => {
+const PortfolioPage = () => {
+  const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -133,8 +131,8 @@ const PortfolioPage = ({ scroll }: Props) => {
           <Project key={project.name} project={project} />
         ))}
       </Projects>
-      <FavouriteQuote scroll={scroll} />
-      <SayHello scroll={scroll} />
+      <FavouriteQuote />
+      <SayHello />
     </StyledPortfolioPage>
   );
 };

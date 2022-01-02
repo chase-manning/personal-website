@@ -7,6 +7,7 @@ import pinkSquare from "../../assets/hero/main-pic-8.png";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
 import getScrollPercent from "../../utils/scroll-percent";
 import { useDevice } from "../../hooks/use-device";
+import { useScroll } from "../../hooks/use-scroll";
 
 const StyledAboutMePage = styled.div`
   position: relative;
@@ -185,11 +186,8 @@ const BlurredSquare = styled.img`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const AboutMePage = ({ scroll }: Props) => {
+const AboutMePage = () => {
+  const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
   const { isMobile } = useDevice();

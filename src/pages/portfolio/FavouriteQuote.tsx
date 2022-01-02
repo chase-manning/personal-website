@@ -2,6 +2,7 @@ import { useRef } from "react";
 import styled from "styled-components";
 
 import whiteCube from "../../assets/hero/main-pic-9.png";
+import { useScroll } from "../../hooks/use-scroll";
 import getScrollPercent from "../../utils/scroll-percent";
 
 const StyledFavouriteQuote = styled.div`
@@ -79,11 +80,8 @@ const Bold = styled.div`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const FavouriteQuote = ({ scroll }: Props) => {
+const FavouriteQuote = () => {
+  const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 

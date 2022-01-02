@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import LineHeader from "../../components/LineHeader";
 import Socials from "../../components/Socials";
+import { useScroll } from "../../hooks/use-scroll";
 import getScrollPercent from "../../utils/scroll-percent";
 import SayHelloIllustration from "./SayHelloIllustration";
 
@@ -97,11 +98,8 @@ const ThirdLayer = styled.div`
   }
 `;
 
-interface Props {
-  scroll: number;
-}
-
-const SayHello = ({ scroll }: Props) => {
+const SayHello = () => {
+  const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 
