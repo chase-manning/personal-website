@@ -31,6 +31,12 @@ const StyledProject = styled.a`
   @media only screen and (max-width: 1400px) {
     border-radius: 17px;
   }
+
+  @media only screen and (max-width: 639px) {
+    border-radius: 0;
+    width: calc(100% + 60px);
+    left: -30px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -39,8 +45,12 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
   overflow: hidden;
+
+  padding: 30px;
+  @media only screen and (max-width: 639px) {
+    padding: 15px;
+  }
 `;
 
 const Image = styled.img`
@@ -51,6 +61,9 @@ const Image = styled.img`
   border-radius: 18px;
   @media only screen and (max-width: 1400px) {
     border-radius: 16px;
+  }
+  @media only screen and (max-width: 639px) {
+    border-radius: 14px;
   }
 `;
 
@@ -76,6 +89,9 @@ const TextArea = styled.div`
   padding-bottom: 60px;
   @media only screen and (max-width: 1400px) {
     padding-bottom: 48px;
+  }
+  @media only screen and (max-width: 639px) {
+    padding: 32px;
   }
 `;
 
