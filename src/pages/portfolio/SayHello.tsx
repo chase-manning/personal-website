@@ -10,13 +10,30 @@ const StyledSayHello = styled.div`
   position: relative;
   width: 100%;
   margin-top: 40px;
+
+  @media only screen and (max-width: 639px) {
+    margin-top: 0;
+    width: calc(100% + 60px);
+    left: -30px;
+  }
+  @media only screen and (max-width: 639px) {
+    padding: 0 30px;
+    padding-top: 30px;
+  }
 `;
 
 const Container = styled.div`
   position: relative;
   padding: 60px;
   background: var(--bg);
+
   border-radius: 48px;
+  @media only screen and (max-width: 639px) {
+    border-radius: 0;
+  }
+  @media only screen and (max-width: 639px) {
+    padding: 0;
+  }
 `;
 
 const Bold = styled.p`
@@ -30,6 +47,10 @@ const Bold = styled.p`
     font-size: 56px;
     margin-bottom: 50px;
   }
+  @media only screen and (max-width: 639px) {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
 `;
 
 const FooterExtension = styled.div`
@@ -40,6 +61,10 @@ const FooterExtension = styled.div`
   top: 50%;
   transform: translateX(-50%) rotate(-20deg);
   background: var(--dark-bg);
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const SecondLayer = styled.div`
@@ -51,6 +76,10 @@ const SecondLayer = styled.div`
   border-radius: 34px;
   height: 100%;
   width: calc(100% - 48px);
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const ThirdLayer = styled.div`
@@ -62,6 +91,10 @@ const ThirdLayer = styled.div`
   border-radius: 34px;
   height: 100%;
   width: calc(100% - 98px);
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 interface Props {
