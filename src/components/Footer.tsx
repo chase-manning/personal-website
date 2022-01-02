@@ -6,6 +6,7 @@ import menuItems, { MenuItemType } from "../data/menu-items";
 import LogoIcon from "./LogoIcon";
 import cube from "../assets/greeble/dark-blue-cube.png";
 import getScrollPercent from "../utils/scroll-percent";
+import { useDevice } from "../hooks/use-device";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -19,7 +20,7 @@ const StyledFooter = styled.div`
     padding: 0 calc(5% + 60px);
   }
   @media only screen and (max-width: 639px) {
-    padding-left: 0;
+    padding: 60px 30px;
   }
 `;
 
@@ -28,6 +29,10 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 40px;
+
+  @media only screen and (max-width: 639px) {
+    padding-top: 0;
+  }
 `;
 
 const TopSection = styled.div`
@@ -39,6 +44,11 @@ const TopSection = styled.div`
   @media only screen and (max-width: 1400px) {
     margin-bottom: 90px;
   }
+
+  @media only screen and (max-width: 639px) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -49,6 +59,7 @@ const TextContainer = styled.div`
   max-width: 670px;
   @media only screen and (max-width: 1400px) {
     max-width: 580px;
+    margin-top: 2rem;
   }
 `;
 
@@ -62,6 +73,9 @@ const Bold = styled.p`
   font-size: 72px;
   @media only screen and (max-width: 1400px) {
     font-size: 42px;
+  }
+  @media only screen and (max-width: 639px) {
+    line-height: 1.33333;
   }
 `;
 
@@ -78,12 +92,20 @@ const Sub = styled.p`
     font-size: 20px;
     margin-top: 30px;
   }
+  @media only screen and (max-width: 639px) {
+    font-size: 16px;
+    margin-top: 20px;
+  }
 `;
 
 const NavItems = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const NavItem = styled(Link)`
@@ -107,15 +129,19 @@ const NavItem = styled(Link)`
 `;
 
 const BottomSection = styled.div`
-  border-top: 1px solid rgba(216, 216, 216, 0.2);
-  padding-bottom: 67px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding-top: 58px;
+  border-top: 1px solid rgba(216, 216, 216, 0.2);
+  padding-bottom: 67px;
   @media only screen and (max-width: 1400px) {
     padding-top: 45px;
+  }
+  @media only screen and (max-width: 639px) {
+    border-top: none;
+    padding-bottom: 0;
   }
 `;
 
@@ -152,6 +178,9 @@ const BackToTop = styled(Link)`
   @media only screen and (max-width: 1400px) {
     font-size: 14px;
   }
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const LeftCube = styled.img`
@@ -159,6 +188,10 @@ const LeftCube = styled.img`
   width: 145px;
   top: -80px;
   left: -50px;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const RightCube = styled.img`
@@ -179,12 +212,13 @@ interface Props {
 const Footer = ({ scroll }: Props) => {
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
+  const { isMobile } = useDevice();
 
   return (
     <StyledFooter ref={pageRef}>
       <Content>
         <TopSection>
-          <LogoIcon large />
+          <LogoIcon large={!isMobile} />
           <TextContainer>
             <LeftCube
               src={cube}
