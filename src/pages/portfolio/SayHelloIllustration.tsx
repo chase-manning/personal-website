@@ -5,17 +5,23 @@ import yellowCube from "../../assets/socials/yellow-cube.png";
 import tealCube from "../../assets/socials/teal-cube.png";
 import orangeBall from "../../assets/hero/main-pic-5.png";
 import whiteBall from "../../assets/socials/white-ball.png";
+import { useDevice } from "../../hooks/use-device";
 
 const Illustration = styled.div`
   position: absolute;
-  bottom: 0;
   aspect-ratio: 1;
 
   width: 600px;
+  bottom: 0;
   right: 0;
   @media only screen and (max-width: 1400px) {
     right: 10%;
     width: 500px;
+  }
+  @media only screen and (max-width: 639px) {
+    right: -3%;
+    bottom: -20%;
+    width: 200px;
   }
 `;
 
@@ -31,6 +37,10 @@ const TealCube = styled.img`
   right: 19%;
   bottom: 18%;
   width: 36%;
+
+  @media only screen and (max-width: 639px) {
+    bottom: 5%;
+  }
 `;
 
 const YellowCube = styled.img`
@@ -45,6 +55,10 @@ const OrangeBall = styled.img`
   right: 60.5%;
   bottom: -32%;
   width: 11%;
+
+  @media only screen and (max-width: 639px) {
+    bottom: -87%;
+  }
 `;
 
 const RightWhiteBall = styled.img`
@@ -52,6 +66,10 @@ const RightWhiteBall = styled.img`
   right: -15%;
   bottom: -33%;
   width: 70%;
+
+  @media only screen and (max-width: 639px) {
+    bottom: -53%;
+  }
 `;
 
 const LeftWhiteBall = styled.img`
@@ -59,6 +77,10 @@ const LeftWhiteBall = styled.img`
   right: 67%;
   bottom: 43%;
   width: 40%;
+
+  @media only screen and (max-width: 639px) {
+    bottom: 58%;
+  }
 `;
 
 interface Props {
@@ -66,32 +88,42 @@ interface Props {
 }
 
 const SayHelloIllustration = ({ scrollPercent }: Props) => {
+  const { isMobile } = useDevice();
+
   return (
     <Illustration>
       <Floor src={floor} />
       <TealCube
         src={tealCube}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -100px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 50 : 100
+          }px))`,
         }}
       />
       <OrangeBall
         src={orangeBall}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -300px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 150 : 300
+          }px))`,
         }}
       />
       <YellowCube src={yellowCube} />
       <RightWhiteBall
         src={whiteBall}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -100px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 50 : 100
+          }px))`,
         }}
       />
       <LeftWhiteBall
         src={whiteBall}
         style={{
-          transform: `translateY(calc(${scrollPercent} * 100px))`,
+          transform: `translateY(calc(${scrollPercent} * ${
+            isMobile ? 50 : 100
+          }px))`,
         }}
       />
     </Illustration>
