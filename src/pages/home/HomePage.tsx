@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import HeroContent from "./HomeContent";
+import HomeContent from "./HomeContent";
 import Header from "../../components/Header";
 import ScrollDown from "../../components/ScrollDown";
 import bg from "../../assets/backgrounds/bg-main.jpg";
@@ -96,7 +96,7 @@ const HomePage = ({ scroll }: Props) => {
       <Background src={bg} />
       <Content>
         <Header />
-        <HeroContent />
+        <HomeContent scrollPercent={scrollPercent} />
         <ScrollDown target="about-me-scroll" spacing />
       </Content>
       <Illustration>
