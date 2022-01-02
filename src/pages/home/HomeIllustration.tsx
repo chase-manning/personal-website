@@ -8,6 +8,7 @@ import orangeBall from "../../assets/hero/main-pic-5.png";
 import floorBall from "../../assets/hero/main-pic-7.png";
 import pinkFloorSquare from "../../assets/hero/main-pic-8.png";
 import whiteFloorSquare from "../../assets/hero/main-pic-9.png";
+import { useDevice } from "../../hooks/use-device";
 
 const StyledHomeIllustration = styled.div`
   width: 100%;
@@ -73,6 +74,10 @@ const PinkFloorSquare = styled.img`
   left: 3%;
   bottom: 7%;
   width: 27%;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const WhiteFloorSquare = styled.img`
@@ -81,6 +86,10 @@ const WhiteFloorSquare = styled.img`
   bottom: 19%;
   width: 19%;
   transition: all 0.2s;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const BlurredSquare = styled.img`
@@ -90,6 +99,10 @@ const BlurredSquare = styled.img`
   width: 20%;
   filter: blur(2px);
   transition: all 0.2s;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 interface Props {
@@ -97,6 +110,8 @@ interface Props {
 }
 
 const HomeIllustration = ({ scrollPercent }: Props) => {
+  const { isMobile } = useDevice();
+
   return (
     <StyledHomeIllustration>
       <Floor src={floor} />
@@ -105,38 +120,50 @@ const HomeIllustration = ({ scrollPercent }: Props) => {
       <PurpleTop
         src={purpleTop}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -100px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 50 : 100
+          }px))`,
         }}
       />
       <PinkTop
         src={pinkTop}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -200px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 100 : 200
+          }px))`,
         }}
       />
       <OrangeBall
         src={orangeBall}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -200px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 100 : 200
+          }px))`,
         }}
       />
       <FloorBall
         src={floorBall}
         style={{
-          transform: `translateY(calc(${scrollPercent} * 100px))`,
+          transform: `translateY(calc(${scrollPercent} * ${
+            isMobile ? 50 : 100
+          }px))`,
         }}
       />
       <PinkFloorSquare src={pinkFloorSquare} />
       <WhiteFloorSquare
         src={whiteFloorSquare}
         style={{
-          transform: `translateY(calc(${scrollPercent} * -100px))`,
+          transform: `translateY(calc(${scrollPercent} * -${
+            isMobile ? 50 : 100
+          }px))`,
         }}
       />
       <BlurredSquare
         src={whiteFloorSquare}
         style={{
-          transform: `translateY(calc(${scrollPercent} * 200px))`,
+          transform: `translateY(calc(${scrollPercent} * ${
+            isMobile ? 100 : 200
+          }px))`,
         }}
       />
     </StyledHomeIllustration>
