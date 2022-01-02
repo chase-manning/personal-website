@@ -19,6 +19,9 @@ const StyledWhatIDoPage = styled.div`
   @media only screen and (max-width: 1400px) {
     height: 80vh;
   }
+  @media only screen and (max-width: 639px) {
+    height: auto;
+  }
 
   padding: 60px 0;
   padding-left: calc(15% + 60px);
@@ -31,6 +34,9 @@ const StyledWhatIDoPage = styled.div`
   @media only screen and (max-width: 639px) {
     padding-left: 0;
   }
+  @media only screen and (max-width: 639px) {
+    padding: 60px 30px;
+  }
 
   ::before {
     content: "";
@@ -38,9 +44,9 @@ const StyledWhatIDoPage = styled.div`
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.15);
 
-    top: 50%;
     transform: translate(50%, -50%);
 
+    top: 50%;
     right: 30%;
     height: 160vh;
     width: 160vh;
@@ -48,6 +54,12 @@ const StyledWhatIDoPage = styled.div`
       right: 25%;
       height: 130vh;
       width: 130vh;
+    }
+    @media only screen and (max-width: 639px) {
+      top: 30%;
+      right: 50%;
+      height: 150vw;
+      width: 150vw;
     }
   }
 
@@ -57,9 +69,9 @@ const StyledWhatIDoPage = styled.div`
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.15);
 
-    top: 50%;
     transform: translate(50%, -50%);
 
+    top: 50%;
     right: 30%;
     height: 100vh;
     width: 100vh;
@@ -67,6 +79,12 @@ const StyledWhatIDoPage = styled.div`
       right: 25%;
       height: 80vh;
       width: 80vh;
+    }
+    @media only screen and (max-width: 639px) {
+      top: 30%;
+      right: 50%;
+      height: 100vw;
+      width: 100vw;
     }
   }
 `;
@@ -105,17 +123,33 @@ const Bold = styled.p`
   @media only screen and (max-width: 1400px) {
     font-size: 56px;
   }
+  @media only screen and (max-width: 639px) {
+    font-size: 42px;
+    line-height: 1.33333;
+  }
 `;
 
 const Smaller = styled.p`
   position: relative;
-  line-height: 1.77778;
   color: var(--bg);
-  margin-top: 50px;
 
   font-size: 18px;
+  line-height: 1.77778;
+  margin-top: 50px;
   @media only screen and (max-width: 1400px) {
     font-size: 16px;
+  }
+  @media only screen and (max-width: 639px) {
+    font-size: 16px;
+    line-height: 1.75;
+    margin-top: 30px;
+    margin-bottom: 450px;
+  }
+`;
+
+const ScrollDownContainer = styled.div`
+  @media only screen and (max-width: 639px) {
+    display: none;
   }
 `;
 
@@ -147,7 +181,9 @@ const WhatIDoPage = ({ scroll }: Props) => {
             smart contracts on Ethereum.
           </Smaller>
         </TextContent>
-        <ScrollDown target="portfolio-scroll" white />
+        <ScrollDownContainer>
+          <ScrollDown target="portfolio-scroll" white />
+        </ScrollDownContainer>
       </Content>
     </StyledWhatIDoPage>
   );
