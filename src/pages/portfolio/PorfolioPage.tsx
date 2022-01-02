@@ -14,7 +14,6 @@ import SayHello from "./SayHello";
 const StyledPortfolioPage = styled.div`
   position: relative;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -24,6 +23,9 @@ const StyledPortfolioPage = styled.div`
     #ffffff 0%,
     rgba(228, 231, 233, 0.502295) 100%
   );
+  @media only screen and (max-width: 639px) {
+    background: var(--bg);
+  }
 
   padding: 120px calc(15% + 60px);
   @media only screen and (max-width: 1550px) {
@@ -34,7 +36,7 @@ const StyledPortfolioPage = styled.div`
     padding-right: calc(5% + 35px);
   }
   @media only screen and (max-width: 639px) {
-    padding-left: 0;
+    padding: 60px 30px;
   }
 `;
 
@@ -43,6 +45,10 @@ const PinkSquare = styled.img`
   top: 450px;
   left: -29%;
   width: 68%;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
@@ -57,6 +63,10 @@ const WhiteSquare = styled.img`
   right: -240px;
   bottom: -120px;
   width: 300px;
+
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
 `;
 
 const Bold = styled.p`
@@ -71,14 +81,24 @@ const Bold = styled.p`
     font-size: 56px;
     margin-bottom: 50px;
   }
+  @media only screen and (max-width: 639px) {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
 `;
 
 const Projects = styled.div`
   display: grid;
-  margin-top: 80px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 32px;
   width: 100%;
+
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 80px;
+  grid-gap: 32px;
+  @media only screen and (max-width: 639px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 40px;
+    grid-gap: 0;
+  }
 `;
 
 interface Props {
