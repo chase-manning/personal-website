@@ -222,7 +222,7 @@ const AboutMePage = () => {
         <TopSection>
           <LineHeader text="About me" />
           <Description>
-            I'm a developer living in London building DeFi and NFT products.
+            I'm a developer living in London, building DeFi and NFT products.
           </Description>
         </TopSection>
         <Bold>Check out my work.</Bold>
