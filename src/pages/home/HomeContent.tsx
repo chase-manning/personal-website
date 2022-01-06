@@ -74,7 +74,7 @@ const HomeContent = ({ scrollPercent }: Props) => {
   return (
     <StyledHomeContent>
       <LineHeader text="Chase Manning" />
-      <Header>Hi, I'm Chase, your Friendly Neighborhood Developer.</Header>
+      <Header>Hi, I'm Chase, your friendly neighborhood developer.</Header>
       <WhiteSquare
         src={whiteSquare}
         style={{
