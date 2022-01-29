@@ -4,6 +4,7 @@ import uwucrew from "../assets/projects/uwucrew.jpg";
 import waifusion from "../assets/projects/waifusion.jpg";
 import billionaires from "../assets/projects/billionaires.jpg";
 import cryptoCapsule from "../assets/projects/crypto-capsule.jpg";
+import killerGF from "../assets/projects/killer-gf.jpg";
 import ami from "../assets/projects/ami.jpg";
 import state from "../assets/projects/state.jpg";
 import sitesoft from "../assets/projects/sitesoft.jpg";
@@ -35,6 +36,13 @@ const portfolioTabs: TabType[] = [
           "uwucrew is a generative collection of 9,670 avatar NFTs inspired by anime and pop culture.",
         image: uwucrew,
         link: "https://uwucrew.art/",
+      },
+      {
+        name: "Killer GF",
+        description:
+          "An anime art NFT collection on Ethereum, featuring cute girlfriends that are also killer assassins. Art by ex-Riot Games artist Zeronis.",
+        image: killerGF,
+        link: "https://killergf.com/",
       },
       {
         name: "Waifusion",
