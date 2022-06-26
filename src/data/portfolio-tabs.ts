@@ -1,6 +1,7 @@
 import { ProjectType } from "../pages/portfolio/Project";
 import backd from "../assets/projects/backd.jpg";
 import uwucrew from "../assets/projects/uwucrew.jpg";
+import aiko from "../assets/projects/aiko.jpg";
 import waifusion from "../assets/projects/waifusion.jpg";
 import billionaires from "../assets/projects/billionaires.jpg";
 import cryptoCapsule from "../assets/projects/crypto-capsule.jpg";
@@ -43,6 +44,13 @@ const portfolioTabs: TabType[] = [
           "An anime art NFT collection on Ethereum, featuring cute girlfriends that are also killer assassins. Art by ex-Riot Games artist Zeronis.",
         image: killerGF,
         link: "https://killergf.com/",
+      },
+      {
+        name: "Aiko Virtual",
+        description:
+          "A collection of 8,888 NFTs that are all about 'Cyber Cute', an aesthetic that blends future tech with anime.",
+        image: aiko,
+        link: "https://aikovirtual.com/",
       },
       {
         name: "Waifusion",
