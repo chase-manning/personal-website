@@ -2,4 +2,4 @@
 build
 node_modules
 .eslintcache
-.DS_Store
+**/.DS_Store
