@@ -14,6 +14,7 @@ import orcon from "../assets/projects/orcon.jpg";
 import pso from "../assets/projects/pso.jpg";
 import dateformat from "../assets/projects/dateformat.jpg";
 import dapp from "../assets/projects/dapp-template.jpg";
+import debtFarming from "../assets/projects/debt-farming.jpg";
 
 export interface TabType {
   label: string;
@@ -32,11 +33,11 @@ const portfolioTabs: TabType[] = [
         link: "https://backd.fund/",
       },
       {
-        name: "Uwucrew",
+        name: "Crypto Capsule",
         description:
-          "uwucrew is a generative collection of 9,670 avatar NFTs inspired by anime and pop culture.",
-        image: uwucrew,
-        link: "https://uwucrew.art/",
+          "Crypto Capsule is a tool for creating timelock contracts that can be used as a decentralised term deposit or trust fund.",
+        image: cryptoCapsule,
+        link: "https://cryptocapsule.io/",
       },
       {
         name: "Killer GF",
@@ -46,6 +47,13 @@ const portfolioTabs: TabType[] = [
         link: "https://killergf.com/",
       },
       {
+        name: "Debt Farming",
+        description:
+          "The best DeFi yields on Ethereum for your favourite crypto assets.",
+        image: debtFarming,
+        link: "https://debtfarming.com/",
+      },
+      {
         name: "Aiko Virtual",
         description:
           "A collection of 8,888 NFTs that are all about 'Cyber Cute', an aesthetic that blends future tech with anime.",
@@ -53,25 +61,25 @@ const portfolioTabs: TabType[] = [
         link: "https://aikovirtual.com/",
       },
       {
-        name: "Waifusion",
-        description:
-          "Waifusion is a set of 16,384 uniquely generated, anime inspired, digital waifu NFT collectibles on Ethereum and Binance Smart Chain.",
-        image: waifusion,
-        link: "https://waifusion.io/",
-      },
-      {
-        name: "Crypto Capsule",
-        description:
-          "Crypto Capsule is a tool for creating timelock contracts that can be used as a decentralised term deposit or trust fund.",
-        image: cryptoCapsule,
-        link: "https://cryptocapsule.io/",
-      },
-      {
         name: "Bitcoin Billionaires",
         description:
           "A collection of unique pixel art NFTs from the creators of Bitcoin Billionaire, the hit mobile game with over 10 million downloads.",
         image: billionaires,
         link: "https://billionaires.io/",
+      },
+      {
+        name: "Uwucrew",
+        description:
+          "uwucrew is a generative collection of 9,670 avatar NFTs inspired by anime and pop culture.",
+        image: uwucrew,
+        link: "https://uwucrew.art/",
+      },
+      {
+        name: "Waifusion",
+        description:
+          "Waifusion is a set of 16,384 uniquely generated, anime inspired, digital waifu NFT collectibles on Ethereum and Binance Smart Chain.",
+        image: waifusion,
+        link: "https://waifusion.io/",
       },
     ],
   },
