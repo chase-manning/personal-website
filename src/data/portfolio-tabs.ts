@@ -16,6 +16,7 @@ import dateformat from "../assets/projects/dateformat.jpg";
 import dapp from "../assets/projects/dapp-template.jpg";
 import debtFarming from "../assets/projects/debt-farming.jpg";
 import akula from "../assets/projects/akula.jpg";
+import gummy from "../assets/projects/gummy.jpg";
 
 export interface TabType {
   label: string;
@@ -147,6 +148,13 @@ const portfolioTabs: TabType[] = [
           "The fastest, and most popular javascript date formatting library on npm.",
         image: dateformat,
         link: "https://github.com/felixge/node-dateformat",
+      },
+      {
+        name: "Gummy Dashboard",
+        description:
+          "A simple and free dashboard for displaying your favourite sites using iframes",
+        image: gummy,
+        link: "https://gummy.fun/",
       },
       {
         name: "Dapp CRA Template",
