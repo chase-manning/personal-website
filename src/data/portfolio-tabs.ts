@@ -15,6 +15,7 @@ import pso from "../assets/projects/pso.jpg";
 import dateformat from "../assets/projects/dateformat.jpg";
 import dapp from "../assets/projects/dapp-template.jpg";
 import debtFarming from "../assets/projects/debt-farming.jpg";
+import akula from "../assets/projects/akula.jpg";
 
 export interface TabType {
   label: string;
@@ -40,18 +41,25 @@ const portfolioTabs: TabType[] = [
         link: "https://cryptocapsule.io/",
       },
       {
-        name: "Killer GF",
-        description:
-          "An anime art NFT collection on Ethereum, featuring cute girlfriends that are also killer assassins. Art by ex-Riot Games artist Zeronis.",
-        image: killerGF,
-        link: "https://killergf.com/",
-      },
-      {
         name: "Debt Farming",
         description:
           "The best DeFi yields on Ethereum for your favourite crypto assets.",
         image: debtFarming,
         link: "https://debtfarming.com/",
+      },
+      {
+        name: "Akula",
+        description:
+          "Akula is the fastest Ethereum protocol client implementation. It supports Faster sync speeds, crash resilience and a state API.",
+        image: akula,
+        link: "https://akula.app/",
+      },
+      {
+        name: "Killer GF",
+        description:
+          "An anime art NFT collection on Ethereum, featuring cute girlfriends that are also killer assassins. Art by ex-Riot Games artist Zeronis.",
+        image: killerGF,
+        link: "https://killergf.com/",
       },
       {
         name: "Aiko Virtual",
