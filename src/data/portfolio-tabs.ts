@@ -154,7 +154,7 @@ const portfolioTabs: TabType[] = [
         description:
           "A simple and free dashboard for displaying your favourite sites using iframes",
         image: gummy,
-        link: "https://gummy.fun/",
+        link: "https://gummy-a10e0.web.app/",
       },
       {
         name: "Dapp CRA Template",
