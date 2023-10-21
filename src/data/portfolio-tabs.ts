@@ -11,7 +11,7 @@ import state from "../assets/projects/state.jpg";
 import sitesoft from "../assets/projects/sitesoft.jpg";
 import slingshot from "../assets/projects/slingshot.jpg";
 import orcon from "../assets/projects/orcon.jpg";
-import pso from "../assets/projects/pso.jpg";
+import reactPhotoStudio from "../assets/projects/react-photo-studio.jpg";
 import dateformat from "../assets/projects/dateformat.jpg";
 import dapp from "../assets/projects/dapp-template.jpg";
 import debtFarming from "../assets/projects/debt-farming.jpg";
@@ -136,11 +136,11 @@ const portfolioTabs: TabType[] = [
     label: "Other",
     projects: [
       {
-        name: "Photoshop Online",
+        name: "React Photo Studio",
         description:
-          "An ongoing attempt to rebuild Photoshop as a online web application with live editing using websockets.",
-        image: pso,
-        link: "https://photoshoponline.app/",
+          "React Photo Studio is a free online photo editor for photography and design",
+        image: reactPhotoStudio,
+        link: "https://reactphotostudio.app/",
       },
       {
         name: "Dateformat",
