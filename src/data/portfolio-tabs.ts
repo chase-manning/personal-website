@@ -28,11 +28,11 @@ const portfolioTabs: TabType[] = [
     label: "Web3",
     projects: [
       {
-        name: "Backd Fund",
+        name: "Mero Finance",
         description:
           "The DeFi protocol for increasing the yield and utility of your crypto assets with reactive liquidity.",
         image: backd,
-        link: "https://backd.fund/",
+        link: "https://mero.finance/",
       },
       {
         name: "Crypto Capsule",
