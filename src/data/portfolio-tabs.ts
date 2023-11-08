@@ -39,7 +39,7 @@ const portfolioTabs: TabType[] = [
         description:
           "Crypto Capsule is a tool for creating timelock contracts that can be used as a decentralised term deposit or trust fund.",
         image: cryptoCapsule,
-        link: "https://cryptocapsule.io/",
+        link: "https://blockchain-time-capsule.web.app/",
       },
       {
         name: "Debt Farming",
