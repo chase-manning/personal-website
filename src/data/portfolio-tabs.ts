@@ -17,6 +17,7 @@ import dapp from "../assets/projects/dapp-template.jpg";
 import debtFarming from "../assets/projects/debt-farming.jpg";
 import akula from "../assets/projects/akula.jpg";
 import gummy from "../assets/projects/gummy.jpg";
+import tlx from "../assets/projects/tlx.jpg";
 
 export interface TabType {
   label: string;
@@ -27,6 +28,13 @@ const portfolioTabs: TabType[] = [
   {
     label: "Web3",
     projects: [
+      {
+        name: "TLX",
+        description:
+          "TLX provides leveraged tokens for over 50 assets with up to 20x leverage, powered by Synthetix, on the Optimism platform.",
+        image: tlx,
+        link: "https://tlx.fi/",
+      },
       {
         name: "Mero Finance",
         description:
