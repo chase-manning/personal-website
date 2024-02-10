@@ -8,6 +8,10 @@
         "function": "email"
       },
       {
+        "source": "/api/ai",
+        "function": "ai"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
