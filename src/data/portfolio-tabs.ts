@@ -31,7 +31,7 @@ const portfolioTabs: TabType[] = [
       {
         name: "TLX",
         description:
-          "TLX provides leveraged tokens for over 50 assets with up to 20x leverage, powered by Synthetix, on the Optimism platform.",
+          "TLX provides leveraged tokens for over 50 assets with up to 20x leverage, powered by Synthetix, on the Optimism blockchain.",
         image: tlx,
         link: "https://tlx.fi/",
       },
@@ -61,7 +61,7 @@ const portfolioTabs: TabType[] = [
         description:
           "Akula is the fastest Ethereum protocol client implementation. It supports Faster sync speeds, crash resilience and a state API.",
         image: akula,
-        link: "https://akula.app/",
+        link: "https://akula-dac7e.web.app/",
       },
       {
         name: "Killer GF",
