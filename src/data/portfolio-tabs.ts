@@ -61,7 +61,7 @@ const portfolioTabs: TabType[] = [
         description:
           "Akula is the fastest Ethereum protocol client implementation. It supports Faster sync speeds, crash resilience and a state API.",
         image: akula,
-        link: "https://akula.app/",
+        link: "https://akula-dac7e.web.app/",
       },
       {
         name: "Killer GF",
