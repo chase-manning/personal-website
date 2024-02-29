@@ -31,7 +31,7 @@ const portfolioTabs: TabType[] = [
       {
         name: "TLX",
         description:
-          "TLX provides leveraged tokens for over 50 assets with up to 20x leverage, powered by Synthetix, on the Optimism platform.",
+          "TLX provides leveraged tokens for over 50 assets with up to 20x leverage, powered by Synthetix, on the Optimism blockchain.",
         image: tlx,
         link: "https://tlx.fi/",
       },
