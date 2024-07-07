@@ -13,6 +13,7 @@ const MenuItem = styled(Link)`
   font-weight: 600;
   line-height: 1;
   margin-bottom: 30px;
+  z-index: 1;
 
   :hover {
     color: var(--purple);
