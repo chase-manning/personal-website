@@ -13,7 +13,6 @@ const StyledProject = styled.a`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   cursor: pointer;
   background: #d7dee855;
 
@@ -47,9 +46,18 @@ const ImageContainer = styled.div`
   justify-content: center;
   overflow: hidden;
 
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  @media only screen and (max-width: 1400px) {
+    border-top-right-radius: 17px;
+    border-top-left-radius: 17px;
+  }
+
   padding: 30px;
   @media only screen and (max-width: 639px) {
     padding: 15px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
   }
 `;
 
@@ -87,11 +95,17 @@ const TextArea = styled.div`
   background: var(--bg);
 
   padding-bottom: 60px;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
   @media only screen and (max-width: 1400px) {
     padding-bottom: 48px;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
   }
   @media only screen and (max-width: 639px) {
     padding: 32px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
 `;
 
