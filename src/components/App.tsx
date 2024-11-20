@@ -19,6 +19,8 @@ const App = () => {
             path="building-decentralised-applications"
             element={<BuildingDecentralisedApplications />}
           />
+
+          <Route path="*" element={<LandingPage />} />
         </Route>
       </Routes>
     </StyledApp>
