@@ -10,7 +10,7 @@ import pinkFloorSquare from "../../assets/hero/main-pic-8.png";
 import whiteFloorSquare from "../../assets/hero/main-pic-9.png";
 import { useDevice } from "../../hooks/use-device";
 
-const StyledHomeIllustration = styled.div`
+const StyledHeroIllustration = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
@@ -109,11 +109,11 @@ interface Props {
   scrollPercent: number;
 }
 
-const HomeIllustration = ({ scrollPercent }: Props) => {
+const HeroIllustration = ({ scrollPercent }: Props) => {
   const { isMobile } = useDevice();
 
   return (
-    <StyledHomeIllustration>
+    <StyledHeroIllustration>
       <Floor src={floor} />
       <LeftBlue src={leftBlue} />
       <RightYellow src={rightYellow} />
@@ -166,8 +166,8 @@ const HomeIllustration = ({ scrollPercent }: Props) => {
           }px))`,
         }}
       />
-    </StyledHomeIllustration>
+    </StyledHeroIllustration>
   );
 };
 
-export default HomeIllustration;
+export default HeroIllustration;

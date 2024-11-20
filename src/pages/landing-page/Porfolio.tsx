@@ -12,7 +12,7 @@ import FavouriteQuote from "./FavouriteQuote";
 import SayHello from "./SayHello";
 import { useScroll } from "../../hooks/use-scroll";
 
-const StyledPortfolioPage = styled.div`
+const StyledPortfolio = styled.div`
   position: relative;
   width: 100%;
   display: flex;
@@ -102,14 +102,14 @@ const Projects = styled.div`
   }
 `;
 
-const PortfolioPage = () => {
+const Portfolio = () => {
   const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledPortfolioPage ref={pageRef} id="portfolio-scroll">
+    <StyledPortfolio ref={pageRef} id="portfolio-scroll">
       <PinkSquare
         src={pinkSquare}
         style={{
@@ -133,8 +133,8 @@ const PortfolioPage = () => {
       </Projects>
       <FavouriteQuote />
       <SayHello />
-    </StyledPortfolioPage>
+    </StyledPortfolio>
   );
 };
 
-export default PortfolioPage;
+export default Portfolio;

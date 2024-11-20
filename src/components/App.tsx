@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import HomePage from "../pages/home/HomePage";
-import PortfolioPage from "../pages/portfolio/PorfolioPage";
-import AboutMePage from "../pages/about-me/AboutMePage";
-import WhatIDoPage from "../pages/what-i-do/WhatIDoPage";
-import Footer from "./Footer";
+import { Route, Routes } from "react-router-dom";
+
+import LandingPage from "../pages/landing-page/LandingPage";
+import BuildingDecentralisedApplications from "../pages/presentations/BuildingDecentralisedApplications";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -12,11 +11,16 @@ const StyledApp = styled.div`
 const App = () => {
   return (
     <StyledApp>
-      <HomePage />
-      <AboutMePage />
-      <WhatIDoPage />
-      <PortfolioPage />
-      <Footer />
+      <Routes>
+        <Route path="/">
+          <Route index element={<LandingPage />} />
+
+          <Route
+            path="building-decentralised-applications"
+            element={<BuildingDecentralisedApplications />}
+          />
+        </Route>
+      </Routes>
     </StyledApp>
   );
 };

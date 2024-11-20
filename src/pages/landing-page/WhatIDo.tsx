@@ -8,7 +8,7 @@ import getScrollPercent from "../../utils/scroll-percent";
 import WhatIDoIllustration from "./WhatIDoIllustration";
 import { useScroll } from "../../hooks/use-scroll";
 
-const StyledWhatIDoPage = styled.div`
+const StyledWhatIDo = styled.div`
   position: relative;
   width: 100%;
   display: flex;
@@ -154,13 +154,13 @@ const ScrollDownContainer = styled.div`
   }
 `;
 
-const WhatIDoPage = () => {
+const WhatIDo = () => {
   const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
 
   return (
-    <StyledWhatIDoPage ref={pageRef} id="what-i-do-scroll">
+    <StyledWhatIDo ref={pageRef} id="what-i-do-scroll">
       <WhatIDoIllustration scrollPercent={scrollPercent} />
       <Content>
         <div />
@@ -183,8 +183,8 @@ const WhatIDoPage = () => {
           <ScrollDown target="portfolio-scroll" white />
         </ScrollDownContainer>
       </Content>
-    </StyledWhatIDoPage>
+    </StyledWhatIDo>
   );
 };
 
-export default WhatIDoPage;
+export default WhatIDo;
