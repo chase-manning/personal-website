@@ -80,11 +80,14 @@ By default, smart contracts are immutable and can't be changed after deployment.
 
 DApps are natively composable. If you wanted to build some product on top of Facebook that integrated with their product directly. You would need to reach out to them, create some sort of agreement, gain permissioned access to the API etc. However with Uniswap for example, you can grab their Router contract address, and integrate a new front end or wrapper contract any time without them even knowing. Some products lean into this composability such as Liquity L-I-Q-U-I-T-Y, who created a lending protocol that doesn't have an official front end. Instead they encourage their community to build their own front ends and share them so that the front end of their application is decentralised. Similarly Synthetix S-Y-N-T-H-E-T-I-X is a perpetual futures product that also doesn't have any official front end, but instead pitches itself as a liquidity layer that other products can build on top of. They make profit from the fees charged to users who integrate.
 
-By default, when you deploy a smart contract to the blockchain, the bytecode for this is open source. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' your project. For this reason, community is considered quite important for DApps.
+By default, when you deploy a smart contract to the blockchain, the bytecode for this is public. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' (meaning copy) your project. For this reason, community is considered quite important for DApps.
 
 There are hard limitations on the amount of data you can store per transaction on blockchains, and the number of transactions that can be processed per second. By modern standards these are quite low. Meaning there are large categories of Applications that would not be suitable to be built as a DApp. Anything that requires very fast transaction times and large amounts of data would be better suited as a traditional application.
 
 In traditional app development, you can often expect actions to take a fraction of a second. However with most blockchains, transactions can take a few seconds to go through. There are some new blockchains being developed that have faster transaction speeds. But they sometimes come at the cost of being more centralised.
+---
+TODO: I would add one slide here saying something like: So far you have seen how to develop and interact with contracts using command line tools (eclair/foundry) and how to interact with applications using a wallet and their front-end (website). Today we are looking at how to actually build these front-ends and how they communicate/interact with your wallets and applications
+
 
 ---
 
@@ -106,7 +109,7 @@ Next we're going to talk about how you integrate a Front End, so usually a websi
 
 ???
 
-I understand you've learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
+I understand you've briefly learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
 
 RPCs are the primary way that front ends will interact with blockchains. They work by making REST requests to query data from nodes.
 
@@ -451,6 +454,8 @@ However, sometimes it is not practical to add a view like this. Maybe because th
 
 If the function we're calling returns the output. For example, say your `swap` function returns the amount of tokens you get back at the end, then we can use Ethers `staticCall` for this. `staticCall` is an Ethers feature that pretends to call a function, and returns the result as if it was called. You may recall we did this a few slides ago with the aggregate3 call. The reason we needed it here, is that aggregate3 isn't actually a view, but is a function. They do this so that you can also use this function for executing multiple transactions within one transaction.
 
+TODO: maybe mention that this does not guarantee that the outcome will be what you simulated. We did talk about front-running and transaction ordering etc.
+
 ---
 
 ## staticCall Example Code
@@ -580,7 +585,7 @@ So, from a front end integration perspective, how can we mitigate risk here for 
 - Private RPCs function similarly to public RPCs with some notable differences
 - Private RPCs often don't allow for reading views, only submitting transactions
 - Private RPCs do not submit transactions to the public Mempool
-- Private PRCs only share transactions with a subset of builders
+- Private PRCs only share transactions with a subset of block proposers
 - Those builders pinky promise not to frontrun your transaction maliciously
 - Often the transaction will be frontrun, but they will give you around 90% of the profits
 
