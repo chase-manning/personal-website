@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import HomeContent from "./HomeContent";
+import HeroContent from "./HeroContent";
 import Header from "../../components/Header";
 import ScrollDown from "../../components/ScrollDown";
 import bg from "../../assets/backgrounds/bg-main.jpg";
-import HomeIllustration from "./HomeIllustration";
+import HeroIllustration from "./HomeIllustration";
 import { useScroll } from "../../hooks/use-scroll";
 
-const StyledHomePage = styled.div`
+const StyledHero = styled.div`
   position: relative;
   overflow: hidden;
 
@@ -85,23 +85,23 @@ const Content = styled.div`
   }
 `;
 
-const HomePage = () => {
+const Hero = () => {
   const scroll = useScroll();
   const scrollPercent = scroll / window.innerHeight;
 
   return (
-    <StyledHomePage id="home-scroll">
+    <StyledHero id="home-scroll">
       <Background src={bg} />
       <Content>
         <Header />
-        <HomeContent scrollPercent={scrollPercent} />
+        <HeroContent scrollPercent={scrollPercent} />
         <ScrollDown target="about-me-scroll" spacing />
       </Content>
       <Illustration>
-        <HomeIllustration scrollPercent={scrollPercent} />
+        <HeroIllustration scrollPercent={scrollPercent} />
       </Illustration>
-    </StyledHomePage>
+    </StyledHero>
   );
 };
 
-export default HomePage;
+export default Hero;

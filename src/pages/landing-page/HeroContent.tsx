@@ -3,7 +3,7 @@ import styled from "styled-components";
 import LineHeader from "../../components/LineHeader";
 import whiteSquare from "../../assets/hero/main-pic-9.png";
 
-const StyledHomeContent = styled.div`
+const StyledHeroContent = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -70,9 +70,9 @@ interface Props {
   scrollPercent: number;
 }
 
-const HomeContent = ({ scrollPercent }: Props) => {
+const HeroContent = ({ scrollPercent }: Props) => {
   return (
-    <StyledHomeContent>
+    <StyledHeroContent>
       <LineHeader text="Chase Manning" />
       <Header>Hi, I'm Chase, your friendly neighborhood developer.</Header>
       <WhiteSquare
@@ -87,8 +87,8 @@ const HomeContent = ({ scrollPercent }: Props) => {
           transform: `translateY(calc(${scrollPercent} * 100px))`,
         }}
       />
-    </StyledHomeContent>
+    </StyledHeroContent>
   );
 };
 
-export default HomeContent;
+export default HeroContent;

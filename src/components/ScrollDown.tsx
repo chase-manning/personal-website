@@ -4,7 +4,7 @@ import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 
 interface ScrollDownProps {
   white?: boolean;
-  spacing?: boolean;
+  $spacing?: boolean;
 }
 
 const StyledScrollDown = styled(Link)`
@@ -13,12 +13,12 @@ const StyledScrollDown = styled(Link)`
   align-items: center;
   cursor: pointer;
 
-  margin-left: ${(props: ScrollDownProps) => (props.spacing ? "15%" : "0")};
+  margin-left: ${(props: ScrollDownProps) => (props.$spacing ? "15%" : "0")};
   @media only screen and (max-width: 1550px) {
-    margin-left: ${(props: ScrollDownProps) => (props.spacing ? "10%" : "0")};
+    margin-left: ${(props: ScrollDownProps) => (props.$spacing ? "10%" : "0")};
   }
   @media only screen and (max-width: 1450px) {
-    margin-left: ${(props: ScrollDownProps) => (props.spacing ? "5%" : "0")};
+    margin-left: ${(props: ScrollDownProps) => (props.$spacing ? "5%" : "0")};
   }
   @media only screen and (max-width: 639px) {
     margin-left: 0;
@@ -67,7 +67,7 @@ const ScrollDown = ({ target, white, spacing }: Props) => {
   const mobile = window.innerWidth <= 639;
 
   return (
-    <StyledScrollDown to={target} spy smooth duration={2000} spacing={spacing}>
+    <StyledScrollDown to={target} spy smooth duration={2000} $spacing={spacing}>
       <Circle>
         {mobile ? <UnfoldMoreIcon /> : <UnfoldMoreIcon fontSize="large" />}
       </Circle>

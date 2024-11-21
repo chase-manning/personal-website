@@ -1,4 +1,4 @@
-import { ProjectType } from "../pages/portfolio/Project";
+import { ProjectType } from "../pages/landing-page/Project";
 import backd from "../assets/projects/backd.jpg";
 import uwucrew from "../assets/projects/uwucrew.jpg";
 import aiko from "../assets/projects/aiko.jpg";

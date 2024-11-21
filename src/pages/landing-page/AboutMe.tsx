@@ -9,7 +9,7 @@ import getScrollPercent from "../../utils/scroll-percent";
 import { useDevice } from "../../hooks/use-device";
 import { useScroll } from "../../hooks/use-scroll";
 
-const StyledAboutMePage = styled.div`
+const StyledAboutMe = styled.div`
   position: relative;
   width: 100%;
   display: flex;
@@ -186,14 +186,14 @@ const BlurredSquare = styled.img`
   }
 `;
 
-const AboutMePage = () => {
+const AboutMe = () => {
   const scroll = useScroll();
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollPercent = getScrollPercent(pageRef.current, scroll);
   const { isMobile } = useDevice();
 
   return (
-    <StyledAboutMePage ref={pageRef} id="about-me-scroll">
+    <StyledAboutMe ref={pageRef} id="about-me-scroll">
       <Illustration>
         <PinkSquare
           src={pinkSquare}
@@ -241,8 +241,8 @@ const AboutMePage = () => {
           </Button>
         </div>
       </Content>
-    </StyledAboutMePage>
+    </StyledAboutMe>
   );
 };
 
-export default AboutMePage;
+export default AboutMe;
