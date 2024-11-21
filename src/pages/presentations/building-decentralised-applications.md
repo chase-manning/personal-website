@@ -747,3 +747,116 @@ Here is an example of querying the metadata for an NFT. In this example it is a 
 ???
 
 Here is an example one, you can see the title of this JSON at the top. The name of the NFT. The description. And at the end there is the image, which is a link to an image that you can render on your UI. Unfortunately, because the NFT space developed so fast and rather chaotically. There are many NFTs that use slightly different standards for this response data. And it sometimes needs to be looked at on a case by case basis. But this is a common response you would expect to see from a modern NFT collection.
+
+---
+
+## Querying Events
+
+- Contracts emit events for some transactions
+- We can query these when integrating with smart contracts
+- Events allow us to query large amounts of data that would be impractical to query through views
+- They are often querying to show data on the front end or for data analysis
+
+???
+
+As you have probably worked on before, smart contracts can emit events for transactions. For example, you might emit a Transfer event when a token is transferred. When you are integrating with smart contracts, you can query this data. A nice thing about events is that you can query large amounts of data quite quickly, including some data that isn't stored anywhere on chain, or would just generally be impractical to query through contract views. It's common to query events when integrating with a front end, for showing some history, or stats or something.
+
+---
+
+## Querying Events Example
+
+```javascript
+import ethers from "ethers";
+import erc20Abi from "./erc20-abi.json";
+
+const RPC = "https://my-cool-rpc.com/";
+const CHASE = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+
+const provider = new ethers.JsonRpcProvider(RPC);
+
+const uniContract = new ethers.Contract(UNI_ADDRESS, erc20Abi, provider);
+
+// event Transfer(address indexed from, address indexed to, uint256 value);
+const transferEvents = await uniContract.queryFilter(
+  uniContract.filters.Transfer(null, CHASE)
+);
+
+console.log(transferEvents); // Logs: Data for all of the UNI transfers to Chase
+```
+
+???
+
+Here is an example of querying events on chain using Ethers. We're using a function here queryFilter which queries the events for that specific contract. This function takes a filter as an input, and we are using a filer here of the Transfer event. Looking above in that comment, this is showing what the event looks like for an ERC20 token. You'll notice that the from and to parameters are indexed. What this means is that we can filter on them when we query them. The Transfer filter takes in a parameter for each indexed value. Entering null means that there won't be filtering on that value. You can see I've entered null for the from value here, and CHASE for the to. Meaning this will return a list of all of the transfer events to Chase.
+
+Another option for querying events is using the getLogs function. This has a few benefits, such as being able to query events from multiple contracts at once. And multiple events at once. So is better suited when querying lots of data.
+
+---
+
+## Caching Data
+
+- For large datasets, it becomes slow and impractical to query all of this data directly from views and events
+- For example, if you wanted to show total trading volume for your product on your home page
+- This could involve querying hundreds of thousands of events or views, which would be slow to load
+- For some use cases it makes sense to cache data and expose an endpoint for querying this
+- One way to do this, is to have a script that runs every X period, querying recent data and saving it in a database
+- Then exposing a restful endpoint that surfaces this data
+- A downside of this approach is that it is centralised
+- Another approach is to use a decentralised data provider such as The Graph
+
+???
+
+For large datasets, it becomes slow and impractical to query all of this data directly from views and events. For example, if you wanted to show total trading volume for your product on your home page. This could involve querying hundreds of thousands of events or views, which would be slow to load. For some use cases it makes sense to cache data and expose an endpoint for querying this. One way to do this is to have a script that runs every X period, querying recent data and saving it in a database. Then exposing a restful endpoint that surfaces this data. A downside of this approach is that it is centralised, so it's prone to going down, and relies on a single server or person or team to keep this online and accurate.
+
+An alternative approach is to use a decentralised data provider such as The Graph.
+
+## The Graph
+
+<image width="100%"  src="https://i.imgur.com/n3982lO.png" />
+
+???
+
+The Graph is a service that indexes data from the blockchain, and exposes it with a GraphQL API that you can query from your interface. This is nice, as once you have set up the subgraph, then anyone can query this at any time, and you can have confidence that the data will have a high uptime and be accurate. For The Graph to index your data you need to first build and submit a Subgraph. We won't go into the technical implementation details for how to create a subgraph, but at a high level it involves creating a yml file that outlines your smart contracts and how the views and events relate to each other.
+
+## Reading From The Graph
+
+```javasript
+query CompoundMarkets {
+  markets {
+    borrowRate
+    cash
+    collateralFactor
+  }
+}
+```
+
+???
+
+This is an example query, it is querying data from Compound, a popular CFD protocol. Here it is querying a list of all of the available Compound markets. Including the borrow rate, cash, and collateral factor of each market. This is all done in a single call, and can query as much data as you like. You can even include queries with more complex and nested relationships that would be impractical to do without such a large index.
+
+---
+
+## Conclusion
+
+- This is the end of the lecture content
+- We've covered the basics of how to connect a front end ui to a smart contract
+- To read data on chain and create transactions
+- We've covered interacting with a smart contract using Typescript
+- Enabling you to create your own scripts, APIs, automation or caches using Typescript
+- We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this
+- You should now hopefully have some core knowledge to start playing around with these tools to create your own Full Stack Decentralised Applications
+
+???
+
+And that's the end of the lecture content for today. We've covered the basics of how to connect a front end uI to a smart contract. To read data on chain and create transactions. We've covered interacting with a smart contract using Typescript. Enabling you to create your own scripts, APIs, automation or caches using Typescript. We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this. You should now hopefully have some core knowledge to start playing around with these tools to create your own Full Stack Decentralised Applications.
+
+---
+
+## Thanks for Having Me
+
+- Big thanks to Sam/Daniel/Paul/Will and Imperial College for having me
+- You can contact me at: chase@manning.dev with any questions or just generally to chat
+
+???
+
+A big thanks to Sam/Daniel/Paul/Will for having me. You can contact me at: chase@manning.dev with any questions or just generally to chat
