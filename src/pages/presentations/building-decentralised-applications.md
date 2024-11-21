@@ -335,6 +335,14 @@ And here we have another example, this time of sending a transaction. Similar to
 
 ---
 
+class: center, middle
+
+background-image: url("https://i.imgur.com/BqF88iw.png")
+
+# Challenges when Reading Data
+
+---
+
 ## Multicall
 
 - For some DApps you may need to query significant amounts of data on-chain
@@ -523,6 +531,14 @@ query CompoundMarkets {
 ???
 
 This is an example query, it is querying data from Compound, a popular CFD protocol. Here it is querying a list of all of the available Compound markets. Including the borrow rate, cash, and collateral factor of each market. This is all done in a single call, and can query as much data as you like. You can even include queries with more complex and nested relationships that would be impractical to do without such a large index.
+
+---
+
+class: center, middle
+
+background-image: url("https://i.imgur.com/BqF88iw.png")
+
+# Challenges when Writing Data
 
 ---
 
@@ -732,6 +748,14 @@ So this transaction will be submitted as before, but this time through a private
 
 ---
 
+class: center, middle
+
+background-image: url("https://i.imgur.com/BqF88iw.png")
+
+# Common Integrations
+
+---
+
 ## ENS
 
 - ENS is a service that gives your wallet address an easier to read username
@@ -830,6 +854,14 @@ Here is an example of querying the metadata for an NFT. In this example it is a 
 ???
 
 Here is an example one, you can see the title of this JSON at the top. The name of the NFT. The description. And at the end there is the image, which is a link to an image that you can render on your UI. Unfortunately, because the NFT space developed so fast and rather chaotically. There are many NFTs that use slightly different standards for this response data. And it sometimes needs to be looked at on a case by case basis. But this is a common response you would expect to see from a modern NFT collection.
+
+---
+
+class: center, middle
+
+background-image: url("https://i.imgur.com/BqF88iw.png")
+
+# Conclusion
 
 ---
 
