@@ -25,7 +25,7 @@ Welcome to my guest lecture on Building Full Stack Decentralised Applications. I
 ## What is a Decentralised Application?
 
 - Also known as a `DApp`
-- A DApp is an application that manages it's state primarily on a blockchain
+- A DApp is an application that manages its state primarily on a blockchain
 
 ???
 
@@ -78,13 +78,13 @@ Blockchain hosting is indefinite and paid upfront. Meaning there are no technica
 
 By default, smart contracts are immutable and can't be changed after deployment. One benefit of this for users is that there is less trust required for them when using your product. There is no fear that the developer could change things unexpectedly. The downside to this is that it makes it harder to fix bugs and introduce features.
 
-DApps are natively composable. If you wanted to build some product on top of Facebook that integrated with their product directly. You would need to reach out to them, create some sort of aggreement, gain permissioned access to the API etc. However with Uniswap for example, you can grab their Router contract address, and integrate a new front end or wrapper contract any time without them even knowing. Some products lean into this composability such as Liquity L-I-Q-U-I-T-Y, who created a lending protocol that doesn't have an official front end. Instead they encourage their community to build their own front ends and share them so that the front end of their application is decentralised. Similarly Synthetix S-Y-N-T-H-E-T-I-X is a perpetual futures product, that also doesn't have any official front end, but instead pitches itself as a liquidity layer that other products can build on top of. They make profit from the fees charged to users who integrate.
+DApps are natively composable. If you wanted to build some product on top of Facebook that integrated with their product directly. You would need to reach out to them, create some sort of agreement, gain permissioned access to the API etc. However with Uniswap for example, you can grab their Router contract address, and integrate a new front end or wrapper contract any time without them even knowing. Some products lean into this composability such as Liquity L-I-Q-U-I-T-Y, who created a lending protocol that doesn't have an official front end. Instead they encourage their community to build their own front ends and share them so that the front end of their application is decentralised. Similarly Synthetix S-Y-N-T-H-E-T-I-X is a perpetual futures product that also doesn't have any official front end, but instead pitches itself as a liquidity layer that other products can build on top of. They make profit from the fees charged to users who integrate.
 
-By default, when you deploy a smart contract to the blockchain, the bytecode for this is open source. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects and reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' your project. For this reason, community is considered quite important for DApps.
+By default, when you deploy a smart contract to the blockchain, the bytecode for this is open source. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' your project. For this reason, community is considered quite important for DApps.
 
-There are hard limitations on the amount of data you can store per transaction on blockchains, and the number of transactions that can be processed per second. By modern standards these are quite low. Meaning there are large categories of Applications that would not be suitable to be build as a DApp. Anything that requires very fast transaction times and large amounts of data would be better suited as a traditional application.
+There are hard limitations on the amount of data you can store per transaction on blockchains, and the number of transactions that can be processed per second. By modern standards these are quite low. Meaning there are large categories of Applications that would not be suitable to be built as a DApp. Anything that requires very fast transaction times and large amounts of data would be better suited as a traditional application.
 
-In traditional app development, you can often expect actions to take a fraction of a second. However with most blockchains, transactions can take a few seconds to go through. There are some new blockchains being developed that have faster transaction speeds. But there sometimes come at a cost of being more centralised.
+In traditional app development, you can often expect actions to take a fraction of a second. However with most blockchains, transactions can take a few seconds to go through. There are some new blockchains being developed that have faster transaction speeds. But they sometimes come at the cost of being more centralised.
 
 ---
 
@@ -108,7 +108,7 @@ Next we're going to talk about how you integrate a Front End, so usually a websi
 
 I understand you've learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
 
-RPCs are the primary way that front ends will interract with blockchains. They work by making REST requests to query data from nodes.
+RPCs are the primary way that front ends will interact with blockchains. They work by making REST requests to query data from nodes.
 
 It is possible to build a complete full stack DApp using only RPC requests. However, it would be quite a verbose way to make these requests, and would quickly get messy for larger applications.
 
@@ -139,19 +139,19 @@ console.log(data); // Logs: { jsonrpc: '2.0', id: 0, result: '0xdc83a6f1f92553' 
 
 ???
 
-Here is an example request/response. Using the `eth_getBalance` method this is requesting what the ETH balance is for the given address. The resopnse is returning this value in hexidecimal. So on your front end, you would need to handle converting this hexidecimal to something that can be presented more easily to the user. The id here is arbitrary, it's just to identify which response matches which request for when you are batching requests.
+Here is an example request/response. Using the `eth_getBalance` method this is requesting what the ETH balance is for the given address. The response is returning this value in hexadecimal. So on your front end, you would need to handle converting this hexadecimal to something that can be presented more easily to the user. The id here is arbitrary, it's just to identify which response matches which request for when you are batching requests.
 
 ---
 
 ## Ethers library
 
-- Ethers is a simple library for interracting with blockchains
+- Ethers is a simple library for interacting with blockchains
 - It is written in TypeScript
-- It wraps the RPC calls to create a easier to use API for these calls
+- It wraps the RPC calls to create an easier to use API for these calls
 
 ???
 
-Ethers is a simple library for interracing with blockchains. It's written in Typescript, which is also the language that is most commonly used for building front ends for DApps. We will be focusing on TypeScript for the majority of this lecture. Ethers abstracts away the RPC calls directly, replacing them with more convenient functions. It is possible to build a front end integration using only ethers, and it is fairly common to do so.
+Ethers is a simple library for interacting with blockchains. It's written in Typescript, which is also the language that is most commonly used for building front ends for DApps. We will be focusing on TypeScript for the majority of this lecture. Ethers abstracts away the RPC calls directly, replacing them with more convenient functions. It is possible to build a front end integration using only ethers, and it is fairly common to do so.
 
 ---
 
@@ -174,7 +174,7 @@ console.log(ethers.formatEther(ethBalance)); // Logs: 0.062069247923791187
 
 ???
 
-In this example we are importing the ethers package at the top here. We have the same constants as before. And then we are creating a provider. A provider is an abstraction of a connection to the Ethereum network providing a concise, consistent interface to standard Ethereum node functionality. One of the functions the provider object provides is a getbalance function, which returns the ETH balance for the given address. Here we are using this to get the eth balance. You'll notice immmediately that this is much less code than the direct RPC requests. And also is more intuitive to read and write. We're logging the response here, and you'll notice the first log is a very large number followed by a small `n`. This is the version of the balance that is scaled to 18 decimals, and that small `n` represents that it is a bigint type, which can support no decimals, but very large numbers. Ethers has a utilitiy function `formatEther` which scales this down to a number that is a bit more legible and can be displayed on the UI.
+In this example we are importing the ethers package at the top here. We have the same constants as before. And then we are creating a provider. A provider is an abstraction of a connection to the Ethereum network providing a concise, consistent interface to standard Ethereum node functionality. One of the functions the provider object provides is a getbalance function, which returns the ETH balance for the given address. Here we are using this to get the eth balance. You'll notice immediately that this is much less code than the direct RPC requests. And also it is more intuitive to read and write. We're logging the response here, and you'll notice the first log is a very large number followed by a small `n`. This is the version of the balance that is scaled to 18 decimals, and that small `n` represents that it is a bigint type, which can support no decimals, but very large numbers. Ethers has a utility function `formatEther` which scales this down to a number that is a bit more legible and can be displayed on the UI.
 
 ---
 
@@ -210,11 +210,11 @@ console.log(receipt); // Logs: (an object with transaction data)
 
 We'll now introduce another feature of Ethers which is commonly used which is the Contract object. This allows you to create a TypeScript object that represents your smart contract on chain. Which you can then use to conveniently query views from your contract. Or call functions to create transactions.
 
-We have a new import at the start here, it is importing the ABI for an ERC20 contract. As a reminder, an API is a JSON object the lists all of the functions, views and events that a smart contract has. We have a couple of new constants here, one is a dummy address for myself, one is the Uniswap Token UNI and one is the users private key. Which we would never store in plain text like this, but this is just for an example. Just further down we have the creation of the Contract object for the UNI Token. We pass as an input here the address of the token, the ABI, and the signer. A signer is similar to a provider, other than it also allows for posting transactions for the user. We could also create this contract passing through the provider here instead, and the contract object would still work, but would only allow for reading views.
+We have a new import at the start here, it is importing the ABI for an ERC20 contract. As a reminder, an ABI is a JSON object that lists all of the functions, views and events that a smart contract has. We have a couple of new constants here, one is a dummy address for myself, one is the Uniswap Token UNI and one is the user's private key. Which we would never store in plain text like this, but this is just for an example. Just further down we have the creation of the Contract object for the UNI Token. We pass as an input here the address of the token, the ABI, and the signer. A signer is similar to a provider, other than it also allows for posting transactions for the user. We could also create this contract passing through the provider here instead, and the contract object would still work, but would only allow for reading views.
 
-From there it's just one line to query a view, so here we're getting the users balance of the UNI token. And it's also just one line to call a function and raise a transaction, here we're doing that to call the transfer function to send the users UNI balance to myself. Optionally, calling a function returns a transaction object, which we can then wait to load until the transaction has been executed on chain.
+From there it's just one line to query a view, so here we're getting the user's balance of the UNI token. And it's also just one line to call a function and raise a transaction, here we're doing that to call the transfer function to send the users UNI balance to myself. Optionally, calling a function returns a transaction object, which we can then wait to load until the transaction has been executed on chain.
 
-So you can see with this code, it you could now use this to link up to a front end to display some data abou the users state on the blockchain. And with the press of a button you could transfer tokens to another address.
+So you can see with this code, you could now use this to link up to a front end to display some data about the user's state on the blockchain. And with the press of a button you could transfer tokens to another address.
 
 ---
 
@@ -227,9 +227,9 @@ So you can see with this code, it you could now use this to link up to a front e
 
 ???
 
-wagmi is yet antoher abstraction layer for blockchain intergration. It's going to help out mostly for React or maybe Vue front end integrations. Exposing a lot of react hooks that are useful in building out DApp front ends. wagmi consideres itself too cool to use ethers, the team created their own variant called viem. But for the purpose of general wagmi usage, we don't need to understand the nuances in the tech they are using under the hood.
+wagmi is yet another abstraction layer for blockchain integration. It's going to help out mostly for React or maybe Vue front end integrations. Exposing a lot of react hooks that are useful in building out DApp front ends. wagmi considers itself too cool to use ethers, the team created their own variant called viem. But for the purpose of general wagmi usage, we don't need to understand the nuances in the tech they are using under the hood.
 
-wagmi got it's name from a popular crypto meme "We're All Going to Make It" which is associated with community celebrating the success of their product or token.
+wagmi got its name from a popular crypto meme "We're All Going to Make It" which is associated with a community celebrating the success of their product or token.
 
 ---
 
@@ -260,19 +260,19 @@ function App() {
 
 ???
 
-Here is some example code for reading a view using wagmi. Things look a little different now as we're inside a React component. For those who aren't farmiliar with a React component, it's just a lightweight way to break you front end code up into smaller sections. Just like functions, but they will return some HTML.
+Here is some example code for reading a view using wagmi. Things look a little different now as we're inside a React component. For those who aren't familiar with a React component, it's just a lightweight way to break your front end code up into smaller sections. Just like functions, but they will return some HTML.
 
 You'll notice there's a few things we're missing here, such as the RPC, and the provider. That is because those are created globally as part of setting up wagmi and connecting the users wallet. So they are nicely abstracted away.
 
 For reading the contract we're using a react hook from wagmi called useReadContract. Similar to the Ethers contract object, this takes the address of the contract and the abi. We also specify here the view we want to call, and the input parameters for this function.
 
-The result object it retuns has lots of useful data on it, including if the result is still pending, if it has an error, the data from the call and much more.
+The result object it returns has lots of useful data on it, including if the result is still pending, if it has an error, the data from the call and much more.
 
-Here we're doing some conditional rendering, showing a loading state while the view call is pending. An error state if there is an error. And then returning the users balance once we have it.
+Here we're doing some conditional rendering, showing a loading state while the view call is pending. An error state if there is an error. And then returning the user's balance once we have it.
 
-One nice feature about wagmi compared to using Ethers directly, is this view is going to automatically update whenever the state changes on chain. With Ethers, the call we made was only accurate at that block, and if the data changed later on it would be outdated. Using `useReadContract` however will automatically update as the users balance changes.
+One nice feature about wagmi compared to using Ethers directly, is that this view is going to automatically update whenever the state changes on the chain. With Ethers, the call we made was only accurate at that block, and if the data changed later on it would be outdated. Using `useReadContract` however will automatically update as the user's balance changes.
 
-While this code looks a bit harder to read at first, it has many more features built in that make our lives easeir when integrating.
+While this code looks a bit harder to read at first, it has many more features built in that make our lives easier when integrating.
 
 ---
 
@@ -322,7 +322,7 @@ And here we have another example, this time of sending a transaction. Similar to
 
 ???
 
-For some dapps you may need to query a significant amount of data on chain. With what we learned so far, this would require one RPC call per query. This can be slow and also transaction heavy. Lots of RPCs that people use have rate limits built in. So if you build your site like this, they can encounter errros from many concurrent requests that can cause your site not to load. Multicall allows for you to make several requests in the same transaction. Which should reduce errors and speed up load time.
+For some dapps you may need to query a significant amount of data on chain. With what we learned so far, this would require one RPC call per query. This can be slow and also transaction heavy. Lots of RPCs that people use have rate limits built in. So if you build your site like this, they can encounter errors from many concurrent requests that can cause your site not to load. Multicall allows for you to make several requests in the same transaction. Which should reduce errors and speed up load time.
 
 ---
 
@@ -391,7 +391,7 @@ console.log(result[0]); // Logs: UNI
 console.log(result[1]); // Logs: 18
 ```
 
-So here we have an exmpla of using multicall with Ethers. You can see at the top we're importing the multicall abi. We're also setting the address here, and creating the contract. Now the multicall contract works just like any other contract, so to use multicall, we're going to call the aggregate3 function. This function takes a list as an input, where each item in the list is a view that we want to query. The struct for this requires the target address of the contract we want to read, in this case, the UNI token contract again. Allow failure is pretty much just if this call should be wrapped in a try/catch or not. And the calldata is the hexidecimal data for the view you would like to query and the parameters. Here we are querying two views, symbol and decimals. Thankfully Ethers has a nice helper function for us that allows us to encode the function data so we can just enter the name of the view we want. We can see what is returned from here is a list of the results.
+So here we have an example of using multicall with Ethers. You can see at the top we're importing the multicall abi. We're also setting the address here, and creating the contract. Now the multicall contract works just like any other contract, so to use multicall, we're going to call the aggregate3 function. This function takes a list as an input, where each item in the list is a view that we want to query. The struct for this requires the target address of the contract we want to read, in this case, the UNI token contract again. Allow failure is pretty much just if this call should be wrapped in a try/catch or not. And the calldata is the hexadecimal data for the view you would like to query and the parameters. Here we are querying two views, symbols and decimals. Thankfully Ethers has a nice helper function for us that allows us to encode the function data so we can just enter the name of the view we want. We can see what is returned from here is a list of the results.
 
 So this is just one contract call, so you can see how this would reduce RPC calls and speed up queries.
 
@@ -445,11 +445,11 @@ And here's the same thing implemented in wagmi. It's quite similar to what we di
 
 ???
 
-There is often the need when integrating with blockchains that you will want to know the outcome of a transaction before you execute it. For example, if you're integrating with Uniswap, you want to know how much of the token you will receive after you swap, and what the price impact is of that swaps. Some contracts have dedicated views for this, so if there was a `swap` function on a contract, they would also have a view `getSwapResult` that returns what the result of the swap would be. It's good to keep in mind when developing Solidity that you always want to be adding these type of views in where you can.
+There is often the need when integrating with blockchains that you will want to know the outcome of a transaction before you execute it. For example, if you're integrating with Uniswap, you want to know how much of the token you will receive after you swap, and what the price impact is of that swap. Some contracts have dedicated views for this, so if there was a `swap` function on a contract, they would also have a view `getSwapResult` that returns what the result of the swap would be. It's good to keep in mind when developing Solidity that you always want to be adding these types of views where you can.
 
 However, sometimes it is not practical to add a view like this. Maybe because the business logic requires modifying state which means you can't make it a view. In this case there's a couple of ways we can simulate the transaction.
 
-If the function we're calling returns the output. For example say your `swap` function returns the amount of tokens you get back at the end, then we can use Ethers `staticCall` for this. `staticCall` is an Ethers feature that pretends to call a function, and returns the result as if it was called. You may recall we did this a few slides ago with the aggregate3 call. The reason we needed it here, is that aggregate3 isn't actually a view, but is a function. They do this so that you can also use this function for executing multiple transactions within one transaction.
+If the function we're calling returns the output. For example, say your `swap` function returns the amount of tokens you get back at the end, then we can use Ethers `staticCall` for this. `staticCall` is an Ethers feature that pretends to call a function, and returns the result as if it was called. You may recall we did this a few slides ago with the aggregate3 call. The reason we needed it here, is that aggregate3 isn't actually a view, but is a function. They do this so that you can also use this function for executing multiple transactions within one transaction.
 
 ---
 
@@ -487,17 +487,17 @@ But what if the solidity developer wasn't as helpful, and didn't include a retur
 
 ---
 
-## Fork Simulating Transacions
+## Fork Simulating Transactions
 
-- Another way to simulate a transation is to first fork the chain
+- Another way to simulate a transaction is to first fork the chain
 - From there you can run transactions against this fork state
 - Then query the chain afterwards to see the change in state
-- One prduct that provides this as a service is Tenderly (tenderly.co)
+- One product that provides this as a service is Tenderly (tenderly.co)
 - They have APIs that expose this functionality
 
 ???
 
-So if there is not a return on the function, then the only way to simulate this is to run this against a forked environment. So, forking the chain, running those transactions in this forked environment, then querying the chain afterwards to see the change in state. Tenderly is a product that provides this as a service. So you don't need to worry about setting up this infrustructure yourself. They have convenient APIs that handle the forking and simulating for you.
+So if there is not a return on the function, then the only way to simulate this is to run this against a forked environment. So, forking the chain, running those transactions in this forked environment, then querying the chain afterwards to see the change in state. Tenderly is a product that provides this as a service. So you don't need to worry about setting up this infrastructure yourself. They have convenient APIs that handle the forking and simulating for you.
 
 ---
 
@@ -539,7 +539,7 @@ console.log(data); // Logs: Lots of data about the transaction
 
 ???
 
-So here is some example code that is running a simulation in tenderly of this swap. You can see this is a rest request to the tenderly API, similar to what we did earlier in this lecture with direct RPC calls. The method we're using here is `tenderly_simulateBundle`, which allows us to simulate multiple transactions at once, for example you could use this to simulate approving a token, and then swapping it, all at once. In this example though we are just simulating one function call though, which is our swap from earlier. We're entering the user that is calling this function, the address, and the function data which in this case is our swap data. What is returned from this is an object that contains a significant amount of data from the transaction. Including all the events that were triggered, the balance changes of all addresses, the USD value of the changes, the gas used, and much more. Generally this type of simulation should be able to cover all of your needs in terms of getting output data to display on the UI.
+So here is some example code that is running a simulation of this swap. You can see this is a rest request to the Tenderly API, similar to what we did earlier in this lecture with direct RPC calls. The method we're using here is `tenderly_simulateBundle`, which allows us to simulate multiple transactions at once, for example you could use this to simulate approving a token, and then swapping it, all at once. In this example though we are just simulating one function call though, which is our swap from earlier. We're entering the user that is calling this function, the address, and the function data which in this case is our swap data. What is returned from this is an object that contains a significant amount of data from the transaction. Including all the events that were triggered, the balance changes of all addresses, the USD value of the changes, the gas used, and much more. Generally this type of simulation should be able to cover all of your needs in terms of getting output data to display on the UI.
 
 But you can tell even just at first glance that this is a lot slower, and more complex than simply calling a contract view. So something to always remember when developing solidity, is to add views for anything the front end might want to query or simulate. And where you can't add a view, add a return statement so you can use staticCall to simulate it. Tenderly is slow and expensive, you don't want this to be your primary way of integrating with your contracts.
 
@@ -567,9 +567,9 @@ await dexContract.swap(UNI_ADDRESS, USDC_ADDRESS, ethers.parseEther("100"));
 
 A quick pop quiz, what could be wrong with this code?
 ....
-I'm after specfically something that could be wrong with the last line of the code where we do the swap.
+I'm after specifically something that could be wrong with the last line of the code where we do the swap.
 ...
-Okay the answer I'm looking for is that this transaction could potentially be sandwhich attacked. An attacker could frontrunning this transaction by manipulating the state of the dex so that we get barely any USDC. Commonly this type of attack is mitigated by passing through some minAmountOut as an input to the swap, so that if the state is manipualted the transaction will revert. But we can see here that this is not an option with this function. So, depending on how the logic works inside this swap function, they may have some other protective systems in place here, but there is a risk that we could get sandwich attacked.
+Okay the answer I'm looking for is that this transaction could potentially be sandwich attacked. An attacker could front-run this transaction by manipulating the state of the dex so that we get barely any USDC. Commonly this type of attack is mitigated by passing through some minAmountOut as an input to the swap, so that if the state is manipulated the transaction will revert. But we can see here that this is not an option with this function. So, depending on how the logic works inside this swap function, they may have some other protective systems in place here, but there is a risk that we could get sandwich attacks.
 
 So, from a front end integration perspective, how can we mitigate risk here for the user?
 
@@ -586,9 +586,9 @@ So, from a front end integration perspective, how can we mitigate risk here for 
 
 ??
 
-Private RPCs are an alternative to traditional RPCs for submitting transations. They function similarly to a normal RPC with some notable differences. One is that most private RPCs don't allow you to read views from them. They are not there to help you read data off chain. They only allow you to submit transactions. Unlike most RPCs that broadcast your transaction to the public mempool, private RPCs will keep your transaction locally, and only use the transaction when they are building a block. The transaction will be shared only with a subset of builders. Some private RPCs belong to the builders themselves, others are aggregators that share it with multiple builders. You need to be careful which builders you share your transactions with, as you are trusting them that they won't frontrun your transaction maliciously. Generally they won't, as it would harm their reputation as a builder, and users would stop sending private transactions to them. But this appraoch does carry risk.
+Private RPCs are an alternative to traditional RPCs for submitting transactions. They function similarly to a normal RPC with some notable differences. One is that most private RPCs don't allow you to read views from them. They are not there to help you read data off chain. They only allow you to submit transactions. Unlike most RPCs that broadcast your transaction to the public mempool, private RPCs will keep your transaction locally, and only use the transaction when they are building a block. The transaction will be shared only with a subset of builders. Some private RPCs belong to the builders themselves, others are aggregators that share it with multiple builders. You need to be careful which builders you share your transactions with, as you are trusting them that they won't frontrun your transaction maliciously. Generally they won't, as it would harm their reputation as a builder, and users would stop sending private transactions to them. But this approach does carry risk.
 
-One approach you will often see with private RPCs, particularly Flashbots. Is that they builder will actually frontrun your transaction, and try extract as much MEV as they can from it. However, they will return the magority of this MEV to you (around 90%), and give the other 10% to the validator. While it would be better for the user to have no MEV, if there is no practical way to avoid this frontrunning through the contract, thsi can be a nice alternative. And acts as somewhat of a safety net against these types of attacks.
+One approach you will often see with private RPCs, particularly Flashbots. Is that the builder will actually frontrun your transaction, and try to extract as much MEV as they can from it. However, they will return the majority of this MEV to you (around 90%), and give the other 10% to the validator. While it would be better for the user to have no MEV, if there is no practical way to avoid this front running through the contract, this can be a nice alternative. And acts as somewhat of a safety net against these types of attacks.
 
 ---
 
@@ -643,7 +643,7 @@ await signer.sendTransaction(tx);
 
 ???
 
-Sending a transaction through a private RPC is a bit different. We need to construc the transaction data ourselves and user the signer.sendTransaction function at the bottom here. Which means we need a few additional details. One is that we need to find out how much gas the transaction will consume. We do this with the estimateGas function at the top here. And then later on, we multiply that by 2 to introduce lots of buffer. In production you would probably add a tighter margin here of maybe 20%. We also need to pass through the transaction data, so we'll use encodeFunctionData again which we've done a couple of times now. And finally, we need to pass through the gas price that we want to submit the trasaction for, here we're just setting it to the current gas price which we can get with provider.getGasPrice.
+Sending a transaction through a private RPC is a bit different. We need to construct the transaction data ourselves and use the signer.sendTransaction function at the bottom here. Which means we need a few additional details. One is that we need to find out how much gas the transaction will consume. We do this with the estimateGas function at the top here. And then later on, we multiply that by 2 to introduce lots of buffers. In production you would probably add a tighter margin here of maybe 20%. We also need to pass through the transaction data, so we'll use encodeFunctionData again which we've done a couple of times now. And finally, we need to pass through the gas price that we want to submit the transaction for, here we're just setting it to the current gas price which we can get with provider.getGasPrice.
 
 So this transaction will be submitted as before, but this time through a private RPC adding some additional protection.
 
@@ -691,9 +691,9 @@ Here is a code sample for getting the users address from an ENS name using wagmi
 
 ???
 
-NFTs are seeing more and more use in products across the space. They are a useful standard and can see uses outside of monkey pictures. We're even seeing them used in DeFi with Uniswap V3 using them to represent financial positions. When working with NFTs you will often want to display the NFT metadata on the UI for the user to see. We touched before on the size limitations with storing data on chain. This is particularly an issue with NFTs, where the data that needs to be stored is sometimes large PNGs that would be impossible or too expensive to store on chain. Because of this, many developers choose to store the images off chain, in a centralsied database exposed via a public link. The url to the images is then stored on chain in the NFT metadata.
+NFTs are seeing more and more use in products across the space. They are a useful standard and can see uses outside of monkey pictures. We're even seeing them used in DeFi with Uniswap V3 using them to represent financial positions. When working with NFTs you will often want to display the NFT metadata on the UI for the user to see. We touched before on the size limitations with storing data on chains. This is particularly an issue with NFTs, where the data that needs to be stored is sometimes large PNGs that would be impossible or too expensive to store on chain. Because of this, many developers choose to store the images off chain, in a centralised database exposed via a public link. The url to the images is then stored on chain in the NFT metadata.
 
-It is possible to store NFT images entirely on-chain. There are several NFT projects that have done this. Including Uniswap who stores their data on chain. This works by building the image with purely SVGs, and customising them using string concatination and some other on chain data.
+It is possible to store NFT images entirely on-chain. There are several NFT projects that have done this. Including Uniswap who stores their data on chain. This works by building the image with purely SVGs, and customising them using string concatenation and some other on chain data.
 
 ---
 
@@ -717,7 +717,7 @@ console.log(tokenUri); // Logs: ERC721 Metadata JSON Schema
 
 ???
 
-Here is an exaple of querying the metadata for an NFT. In this example it is a cat NFT collection. The core function that you call to get this data is the tokenURI function. Notice this takes an input, this is the ID of the NFT. An NFT contract could have any amount of NFTs linked to it, and they are indexed by their ID. This retuns the token URI data, which is a JSON file with data about the NFT.
+Here is an example of querying the metadata for an NFT. In this example it is a cat NFT collection. The core function that you call to get this data is the tokenURI function. Notice this takes an input, this is the ID of the NFT. An NFT contract could have any amount of NFTs linked to it, and they are indexed by their ID. This returns the token URI data, which is a JSON file with data about the NFT.
 
 ---
 
@@ -746,4 +746,4 @@ Here is an exaple of querying the metadata for an NFT. In this example it is a c
 
 ???
 
-Here is an example one, you can see the title of this JSON at the top. The name of the NFT. The description. And at the end there the image, which is a link to an image that you can render on your UI. Unfortunately, because the NFT space developed so fast and rather chaotically. There are many NFTs that use slightly different standards for this response data. And it sometimes needs to be looked at on a case by case basis. But this is a common response you would expect to see from a modern NFT collection.
+Here is an example one, you can see the title of this JSON at the top. The name of the NFT. The description. And at the end there is the image, which is a link to an image that you can render on your UI. Unfortunately, because the NFT space developed so fast and rather chaotically. There are many NFTs that use slightly different standards for this response data. And it sometimes needs to be looked at on a case by case basis. But this is a common response you would expect to see from a modern NFT collection.
