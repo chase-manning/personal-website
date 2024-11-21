@@ -214,8 +214,6 @@ const tx = await uniContract.transfer(CHASE, uniBalance);
 console.log(tx.hash); // Logs: 0xbed1ab34efcea49dd55c51134916a6ea8b28967fe32509573039e565102f2a75
 
 const receipt = await tx.wait();
-
-console.log(receipt); // Logs: (an object with transaction data)
 ```
 
 ???
@@ -291,12 +289,6 @@ While this code looks a bit harder to read at first, it has many more features b
 ### Sending Transaction Example
 
 ```javascript
-import { useWriteContract } from "wagmi";
-import erc20Abi from "./erc20-abi.json";
-
-const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
-const CHASE = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
-
 function App() {
   const { writeContract } = useWriteContract();
 
@@ -342,18 +334,13 @@ For some dapps you may need to query a significant amount of data on chain. With
 
 ```solidity
 struct Call3 {
-    // Target contract to call.
     address target;
-    // If false, the entire call will revert if the call fails.
     bool allowFailure;
-    // Data to call on the target contract.
     bytes callData;
 }
 
 struct Result {
-    // True if the call succeeded, false otherwise.
     bool success;
-    // Return data if the call succeeded, or revert data if the call reverted.
     bytes returnData;
 }
 
@@ -372,18 +359,9 @@ Multicall is based on a contract that is deployed on lots of EVM blockchains. It
 ### Ethers Example
 
 ```javascript
-import ethers from "ethers";
-import erc20Abi from "./erc20-abi.json";
-import multAbi from "./multicall-abi.json";
-
-const RPC = "https://my-cool-rpc.com/";
-const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
 const MULTI_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11";
 
-const provider = new ethers.JsonRpcProvider(RPC);
-
 const multicall = new ethers.Contract(MULTI_ADDRESS, multiAbi, provider);
-const uniContract = new ethers.Contract(UNI_ADDRESS, erc20Abi, provider);
 
 const result = await multicall.aggregate3.staticCall([
   {
@@ -403,6 +381,8 @@ console.log(result[0]); // Logs: UNI
 console.log(result[1]); // Logs: 18
 ```
 
+???
+
 So here we have an example of using multicall with Ethers. You can see at the top we're importing the multicall abi. We're also setting the address here, and creating the contract. Now the multicall contract works just like any other contract, so to use multicall, we're going to call the aggregate3 function. This function takes a list as an input, where each item in the list is a view that we want to query. The struct for this requires the target address of the contract we want to read, in this case, the UNI token contract again. Allow failure is pretty much just if this call should be wrapped in a try/catch or not. And the calldata is the hexadecimal data for the view you would like to query and the parameters. Here we are querying two views, symbols and decimals. Thankfully Ethers has a nice helper function for us that allows us to encode the function data so we can just enter the name of the view we want. We can see what is returned from here is a list of the results.
 
 So this is just one contract call, so you can see how this would reduce RPC calls and speed up queries.
@@ -414,12 +394,6 @@ You may notice that instead of calling the function directly here, we are using 
 ### Wagmi Example
 
 ```javascript
-import { useReadContracts } from "wagmi";
-import erc20Abi from "./erc20-abi.json";
-
-const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
-const USER = "0x15463F7566d797a4b36517eB3A1cAFaB58f1A381";
-
 function App() {
   const result = useReadContracts({
     contracts: [
@@ -440,7 +414,7 @@ function App() {
 }
 ```
 
-??
+???
 
 And here's the same thing implemented in wagmi. It's quite similar to what we did before for reading views, although we're now using the useReadContracts hook. A nice thing about wagmi, is that it automatically uses multicall when we're querying multiple contract views for this. So there's no need to think about it and you can be confident it's taking care of that under the hood.
 
@@ -516,37 +490,26 @@ So if there is not a return on the function, then the only way to simulate this 
 ### Tenderly Example
 
 ```javascript
-const TENDERLY = "https://optimism.gateway.tenderly.co/my_api_key";
-
 const response = await fetch(TENDERLY, {
   method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
     id: 0,
     jsonrpc: "2.0",
     method: "tenderly_simulateBundle",
     params: [
-      [
-        {
-          from: USER,
-          to: DEX_ADDRESS,
-          data: dexContract.interface.encodeFunctionData("swap", [
-            UNI_ADDRESS,
-            USDC_ADDRESS,
-            ethers.parseEther("100"),
-          ]),
-        },
-      ],
-      "latest",
+      {
+        from: USER,
+        to: DEX_ADDRESS,
+        data: dexContract.interface.encodeFunctionData("swap", [
+          UNI_ADDRESS,
+          USDC_ADDRESS,
+          ethers.parseEther("100"),
+        ]),
+      },
     ],
   }),
 });
-
-const data = await response.json();
-
-console.log(data); // Logs: Lots of data about the transaction
 ```
 
 ???
@@ -577,6 +540,8 @@ const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, signer);
 await dexContract.swap(UNI_ADDRESS, USDC_ADDRESS, ethers.parseEther("100"));
 ```
 
+???
+
 A quick pop quiz, what could be wrong with this code?
 ....
 I'm after specifically something that could be wrong with the last line of the code where we do the swap.
@@ -596,7 +561,7 @@ So, from a front end integration perspective, how can we mitigate risk here for 
 - Those builders pinky promise not to frontrun your transaction maliciously
 - Often the transaction will be frontrun, but they will give you around 90% of the profits
 
-??
+???
 
 Private RPCs are an alternative to traditional RPCs for submitting transactions. They function similarly to a normal RPC with some notable differences. One is that most private RPCs don't allow you to read views from them. They are not there to help you read data off chain. They only allow you to submit transactions. Unlike most RPCs that broadcast your transaction to the public mempool, private RPCs will keep your transaction locally, and only use the transaction when they are building a block. The transaction will be shared only with a subset of builders. Some private RPCs belong to the builders themselves, others are aggregators that share it with multiple builders. You need to be careful which builders you share your transactions with, as you are trusting them that they won't frontrun your transaction maliciously. Generally they won't, as it would harm their reputation as a builder, and users would stop sending private transactions to them. But this approach does carry risk.
 
