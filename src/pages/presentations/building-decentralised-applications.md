@@ -24,6 +24,35 @@ Welcome to my guest lecture on Building Full Stack Decentralised Applications. I
 
 ---
 
+background-image: url("https://i.imgur.com/GH81CLE.png")
+
+### Contents
+
+- About Decentralised Applications
+  - What is a Decentralised Application?
+  - Example DApps
+  - Differences between DApps and Apps
+  - Pros/Cons of Building DApps
+- Integrating with Smart Contracts
+  - RPCs
+  - Ethers library
+  - wagmi
+- Challenges when Reading Data
+  - Multicall
+  - Querying Events
+  - Indexing Data
+  - The Graph
+- Challenges when Writing Data
+  - Simulating Transactions
+  - staticCall Example
+  - Fork Simulating Transactions
+  - Private RPCs
+- Common Integrations
+  - ENS
+  - NFTs (ERC-721)
+
+---
+
 ## What is a Decentralised Application?
 
 - Also known as a `DApp`
@@ -73,12 +102,36 @@ Polymarket
 
 ---
 
-## Differences Building DApps vs Apps
+## Differences between DApps and Apps
+
+#### Web2 app:
+
+- Client <-> server architecture
+- DB is private and both reads/writes have access control
+- Auth can be done using various means: email/password, SMS, passkey
+
+#### Web3 app:
+
+- Client <-> blockchain (often no need for a centralized server)
+- No DB per-se, data is stored in smart contracts: reads are public, writes can have access control
+- Auth is always done using wallet
+
+---
+
+## Pros/Cons of Building DApps
+
+#### Pros:
 
 - DApps have no ongoing technical maintenance costs
-- DApp back end code is immutable
 - DApps are composable
+
+#### Differences:
+
+- DApp back end code is immutable
 - DApps are open source by default
+
+#### Cons:
+
 - DApps have limited storage and throughput
 - DApps are slow
 
@@ -86,18 +139,15 @@ Polymarket
 
 Blockchain hosting is indefinite and paid upfront. Meaning there are no technical costs in maintaining the back end after deployment. There's many cases where a person has deployed a DApp once, and it's existed and had ongoing use for years without any additional costs or maintenance from the developer.
 
-By default, smart contracts are immutable and can't be changed after deployment. One benefit of this for users is that there is less trust required for them when using your product. There is no fear that the developer could change things unexpectedly. The downside to this is that it makes it harder to fix bugs and introduce features.
-
 DApps are natively composable. If you wanted to build some product on top of Facebook that integrated with their product directly. You would need to reach out to them, create some sort of agreement, gain permissioned access to the API etc. However with Uniswap for example, you can grab their Router contract address, and integrate a new front end or wrapper contract any time without them even knowing. Some products lean into this composability such as Liquity L-I-Q-U-I-T-Y, who created a lending protocol that doesn't have an official front end. Instead they encourage their community to build their own front ends and share them so that the front end of their application is decentralised. Similarly Synthetix S-Y-N-T-H-E-T-I-X is a perpetual futures product that also doesn't have any official front end, but instead pitches itself as a liquidity layer that other products can build on top of. They make profit from the fees charged to users who integrate.
 
-By default, when you deploy a smart contract to the blockchain, the bytecode for this is public. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' (meaning copy) your project. For this reason, community is considered quite important for DApps.
+By default, smart contracts are immutable and can't be changed after deployment. One benefit of this for users is that there is less trust required for them when using your product. There is no fear that the developer could change things unexpectedly. The downside to this is that it makes it harder to fix bugs and introduce features.
+
+By default, when you deploy a smart contract to the blockchain, the bytecode for this is open source. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' your project. For this reason, community is considered quite important for DApps.
 
 There are hard limitations on the amount of data you can store per transaction on blockchains, and the number of transactions that can be processed per second. By modern standards these are quite low. Meaning there are large categories of Applications that would not be suitable to be built as a DApp. Anything that requires very fast transaction times and large amounts of data would be better suited as a traditional application.
 
 In traditional app development, you can often expect actions to take a fraction of a second. However with most blockchains, transactions can take a few seconds to go through. There are some new blockchains being developed that have faster transaction speeds. But they sometimes come at the cost of being more centralised.
----
-TODO: I would add one slide here saying something like: So far you have seen how to develop and interact with contracts using command line tools (eclair/foundry) and how to interact with applications using a wallet and their front-end (website). Today we are looking at how to actually build these front-ends and how they communicate/interact with your wallets and applications
-
 
 ---
 
@@ -105,7 +155,7 @@ class: center, middle
 
 background-image: url("https://i.imgur.com/GH81CLE.png")
 
-# How to integrate a Front End with Smart Contracts
+# Integrating with Smart Contracts
 
 ???
 
@@ -116,14 +166,15 @@ Next we're going to talk about how you integrate a Front End, so usually a websi
 ## RPCs
 
 - RPC (Remote Procedure Call)
-- RPCs allow a Front End to connect to blockchain data
-- Possible to use only an RPC to connect a Front End to a Smart Contract
+- RPCs can allow a Front End to connect to blockchain data
+- It's technically possible to use only an RPC to connect to a Smart Contract
+- RPCs are a lower level way of exchanging data, and not commonly used for primary integrations
 
 ???
 
-I understand you've briefly learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
+I understand you've learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
 
-RPCs are the primary way that front ends will interact with blockchains. They work by making REST requests to query data from nodes.
+RPCs are the primary way that front ends will interact with blockchains. They work by making HTTP requests to query data from nodes.
 
 It is possible to build a complete full stack DApp using only RPC requests. However, it would be quite a verbose way to make these requests, and would quickly get messy for larger applications.
 
@@ -221,11 +272,11 @@ const receipt = await tx.wait();
 
 ???
 
-We'll now introduce another feature of Ethers which is commonly used which is the Contract object. This allows you to create a TypeScript object that represents your smart contract on chain. Which you can then use to conveniently query views from your contract. Or call functions to create transactions.
+We'll now introduce another feature of Ethers which is commonly used which is the Contract object. This allows you to create a TypeScript object that represents your smart contract on-chain. Which you can then use to conveniently query views from your contract. Or call functions to create transactions.
 
 We have a new import at the start here, it is importing the ABI for an ERC20 contract. As a reminder, an ABI is a JSON object that lists all of the functions, views and events that a smart contract has. We have a couple of new constants here, one is a dummy address for myself, one is the Uniswap Token UNI and one is the user's private key. Which we would never store in plain text like this, but this is just for an example. Just further down we have the creation of the Contract object for the UNI Token. We pass as an input here the address of the token, the ABI, and the signer. A signer is similar to a provider, other than it also allows for posting transactions for the user. We could also create this contract passing through the provider here instead, and the contract object would still work, but would only allow for reading views.
 
-From there it's just one line to query a view, so here we're getting the user's balance of the UNI token. And it's also just one line to call a function and raise a transaction, here we're doing that to call the transfer function to send the users UNI balance to myself. Optionally, calling a function returns a transaction object, which we can then wait to load until the transaction has been executed on chain.
+From there it's just one line to query a view, so here we're getting the user's balance of the UNI token. And it's also just one line to call a function and raise a transaction, here we're doing that to call the transfer function to send the users UNI balance to myself. Optionally, calling a function returns a transaction object, which we can then wait to load until the transaction has been executed on-chain.
 
 So you can see with this code, you could now use this to link up to a front end to display some data about the user's state on the blockchain. And with the press of a button you could transfer tokens to another address.
 
@@ -234,13 +285,13 @@ So you can see with this code, you could now use this to link up to a front end 
 ## wagmi
 
 - wagmi is yet another abstraction layer for blockchain integration
-- It focuses mostly on integrating with React front ends
+- It focuses mostly on integrating with React (a front end development library)
 - It doesn't use `ethers` under the hood, but rather `viem` (a similar library)
 - It helps with things such as connecting wallets, live polling data and managing state
 
 ???
 
-wagmi is yet another abstraction layer for blockchain integration. It's going to help out mostly for React or maybe Vue front end integrations. Exposing a lot of react hooks that are useful in building out DApp front ends. wagmi considers itself too cool to use ethers, the team created their own variant called viem. But for the purpose of general wagmi usage, we don't need to understand the nuances in the tech they are using under the hood.
+wagmi is yet another abstraction layer for blockchain integration. It's going to help out mostly for React or maybe Vue front end integrations. Exposing a lot of react funcions that are useful in building out DApp front ends. wagmi considers itself too cool to use ethers, the team created their own variant called viem. But for the purpose of general wagmi usage, we don't need to understand the nuances in the tech they are using under the hood.
 
 wagmi got its name from a popular crypto meme "We're All Going to Make It" which is associated with a community celebrating the success of their product or token.
 
@@ -250,7 +301,7 @@ wagmi got its name from a popular crypto meme "We're All Going to Make It" which
 
 ```javascript
 import { useReadContract } from "wagmi";
-import erc20Abi from "./erc20-abi.json";
+import { erc20Abi } from "viem";
 
 const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
 const USER = "0x15463F7566d797a4b36517eB3A1cAFaB58f1A381";
@@ -277,7 +328,9 @@ Here is some example code for reading a view using wagmi. Things look a little d
 
 You'll notice there's a few things we're missing here, such as the RPC, and the provider. That is because those are created globally as part of setting up wagmi and connecting the users wallet. So they are nicely abstracted away.
 
-For reading the contract we're using a react hook from wagmi called useReadContract. Similar to the Ethers contract object, this takes the address of the contract and the abi. We also specify here the view we want to call, and the input parameters for this function.
+For reading the contract we're using a react function from wagmi called useReadContract. Similar to the Ethers contract object, this takes the address of the contract and the abi. We also specify here the view we want to call, and the input parameters for this function.
+
+You'll notice here we're getting the abi from viem instead of our own file. Viem comes with some useful utilities so it's nice we can use that here.
 
 The result object it returns has lots of useful data on it, including if the result is still pending, if it has an error, the data from the call and much more.
 
@@ -314,22 +367,22 @@ function App() {
 
 ???
 
-And here we have another example, this time of sending a transaction. Similar to the example before with Ethers, this is transferring some UNI tokens to another user. The hook we are using for this is `userWriteContract` which we call by passing through the details of the contract we're calling, the function, and the args. Note that for creating this transaction, we don't need the private key of the user. That's because wagmi will handle that for us in the background, it will prompt the user to sign the transaction in their connected wallet when we call the `writeContract` function. So this implementation is much more suitable for a customer facing DApp.
+And here we have another example, this time of sending a transaction. Similar to the example before with Ethers, this is transferring some UNI tokens to another user. The function we are using for this is `userWriteContract` which we call by passing through the details of the contract we're calling, the function, and the args. Note that for creating this transaction, we don't need the private key of the user. That's because wagmi will handle that for us in the background, it will prompt the user to sign the transaction in their connected wallet when we call the `writeContract` function. So this implementation is much more suitable for a customer facing DApp.
 
 ---
 
 ## Multicall
 
-- For some DApps you may need to query significant amounts of data on chain
+- For some DApps you may need to query significant amounts of data on-chain
 - With what we learned so far, this would require one RPC call per query
-- This can be slow, and also transaction heavy
+- This can be slow and require many contract calls
 - Many RPCs have rate limits and will error for lots of concurrent requests
 - Multicall allows for batching these into a single call
 - This saves requests, reduces errors, and speeds up load time
 
 ???
 
-For some dapps you may need to query a significant amount of data on chain. With what we learned so far, this would require one RPC call per query. This can be slow and also transaction heavy. Lots of RPCs that people use have rate limits built in. So if you build your site like this, they can encounter errors from many concurrent requests that can cause your site not to load. Multicall allows for you to make several requests in the same transaction. Which should reduce errors and speed up load time.
+For some dapps you may need to query a significant amount of data on-chain. With what we learned so far, this would require one RPC call per query. This can be slow and require many contract calls. Lots of RPCs that people use have rate limits built in. So if you build your site like this, they can encounter errors from many concurrent requests that can cause your site not to load. Multicall allows for you to make several requests in the same transaction. Which should reduce errors and speed up load time.
 
 ---
 
@@ -423,6 +476,97 @@ And here's the same thing implemented in wagmi. It's quite similar to what we di
 
 ---
 
+## Querying Events
+
+- Contracts emit events for some transactions
+- We can query these when integrating with smart contracts
+- Events allow us to query large amounts of data that would be impractical to query through views
+- They are often querying to show data on the front end or for data analysis
+- They allow for querying historic data, unlike views
+
+???
+
+As you have probably worked on before, smart contracts can emit events for transactions. For example, you might emit a Transfer event when a token is transferred. When you are integrating with smart contracts, you can query this data. A nice thing about events is that you can query large amounts of data quite quickly, including some data that isn't stored anywhere on-chain, or would just generally be impractical to query through contract views. It's common to query events when integrating with a front end, for showing some history, or stats or something.
+
+---
+
+### Querying Events Example
+
+```javascript
+import ethers from "ethers";
+import erc20Abi from "./erc20-abi.json";
+
+const RPC = "https://my-cool-rpc.com/";
+const CHASE = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+
+const provider = new ethers.JsonRpcProvider(RPC);
+
+const uniContract = new ethers.Contract(UNI_ADDRESS, erc20Abi, provider);
+
+// event Transfer(address indexed from, address indexed to, uint256 value);
+const transferEvents = await uniContract.queryFilter(
+  uniContract.filters.Transfer(null, CHASE)
+);
+
+console.log(transferEvents); // Logs: Data for all of the UNI transfers to Chase
+```
+
+???
+
+Here is an example of querying events on-chain using Ethers. We're using a function here queryFilter which queries the events for that specific contract. This function takes a filter as an input, and we are using a filer here of the Transfer event. Looking above in that comment, this is showing what the event looks like for an ERC20 token. You'll notice that the from and to parameters are indexed. What this means is that we can filter on them when we query them. The Transfer filter takes in a parameter for each indexed value. Entering null means that there won't be filtering on that value. You can see I've entered null for the from value here, and CHASE for the to. Meaning this will return a list of all of the transfer events to Chase.
+
+Another option for querying events is using the getLogs function. This has a few benefits, such as being able to query events from multiple contracts at once. And multiple events at once. So is better suited when querying lots of data.
+
+---
+
+## Indexing Data
+
+- For large datasets, it becomes slow and impractical to query all of this data directly from views and events
+- For example, if you wanted to show total trading volume for your product on your home page
+- This could involve querying hundreds of thousands of events or views, which would be slow to load
+- For some use cases it makes sense to index data on a server and expose an endpoint for querying this
+- One way to do this, is to have a script that runs every X period, querying recent data and saving it in a database
+- Then exposing a restful endpoint that surfaces this data
+- A downside of this approach is that it is centralised
+- Another approach is to use a decentralised data provider such as The Graph
+
+???
+
+For large datasets, it becomes slow and impractical to query all of this data directly from views and events. For example, if you wanted to show total trading volume for your product on your home page. This could involve querying hundreds of thousands of events or views, which would be slow to load. For some use cases it makes sense to index data and expose an endpoint for querying this. One way to do this is to have a script that runs every X period, querying recent data and saving it in a database. Then exposing a restful endpoint that surfaces this data. A downside of this approach is that it is centralised, so it's prone to going down, and relies on a single server or person or team to keep this online and accurate.
+
+An alternative approach is to use a decentralised data provider such as The Graph.
+
+## The Graph
+
+class: center, middle
+
+<image width="100%"  src="https://i.imgur.com/n3982lO.png" />
+
+???
+
+The Graph is a service that indexes data from the blockchain, and exposes it with a GraphQL API that you can query from your interface. This is nice, as once you have set up the subgraph, then anyone can query this at any time, and you can have confidence that the data will have a high uptime and be accurate. For The Graph to index your data you need to first build and submit a Subgraph. We won't go into the technical implementation details for how to create a subgraph, but at a high level it involves creating a yml file that outlines your smart contracts and how the views and events relate to each other.
+
+---
+
+### Reading From The Graph
+
+```javasript
+query CompoundMarkets {
+  markets {
+    borrowRate
+    cash
+    collateralFactor
+  }
+}
+```
+
+???
+
+This is an example query, it is querying data from Compound, a popular CFD protocol. Here it is querying a list of all of the available Compound markets. Including the borrow rate, cash, and collateral factor of each market. This is all done in a single call, and can query as much data as you like. You can even include queries with more complex and nested relationships that would be impractical to do without such a large index.
+
+---
+
 ## Simulating Transactions
 
 - There is often the need to know the outcome of a transaction before executing it
@@ -430,6 +574,7 @@ And here's the same thing implemented in wagmi. It's quite similar to what we di
 - Some contracts have dedicated views for this, that simulate the execution logic
 - However, this is sometimes not practical and they don't exist
 - One way to simulate transactions is with staticCall if the function returns the data you want
+- However, staticCall only works for single calls. So you couldn't simulate an approval and swap together
 - And another way is to run on a forked environment
 
 ???
@@ -440,7 +585,9 @@ However, sometimes it is not practical to add a view like this. Maybe because th
 
 If the function we're calling returns the output. For example, say your `swap` function returns the amount of tokens you get back at the end, then we can use Ethers `staticCall` for this. `staticCall` is an Ethers feature that pretends to call a function, and returns the result as if it was called. You may recall we did this a few slides ago with the aggregate3 call. The reason we needed it here, is that aggregate3 isn't actually a view, but is a function. They do this so that you can also use this function for executing multiple transactions within one transaction.
 
-TODO: maybe mention that this does not guarantee that the outcome will be what you simulated. We did talk about front-running and transaction ordering etc.
+`staticCall` only works for a single function call though. So you could only simulate the outcome of a swap for example, if the user had already approved the spending of the asset. As the transaction would revert if they hadn't.
+
+The final option is to run on a forked environment, which we will touch on soon.
 
 ---
 
@@ -461,7 +608,7 @@ const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, provider);
 
 // function swap(address assetIn, address assetOut,
 //      uint256 amountIn) external returns (uint256 amountOut);
-const amountOut = await dexContract.swap.callStatic(
+const amountOut = await dexContract.swap.staticCallc(
   UNI_ADDRESS,
   USDC_ADDRESS,
   ethers.parseEther("100")
@@ -472,7 +619,7 @@ console.log(amountOut); // Logs: 20000000000
 
 ???
 
-So in this example we have an imaginary dex, and this dex just has one function, swap. It takes the input token, and the output token, and the input amount. And then it sends you the output amount and returns the output amount. Because this function returns the amount the user received, we're able to use callStatic here to get this before executing the transaction.
+So in this example we have an imaginary dex, and this dex just has one function, swap. It takes the input token, and the output token, and the input amount. And then it sends you the output amount and returns the output amount. Because this function returns the amount the user received, we're able to use staticCallc here to get this before executing the transaction.
 
 But what if the solidity developer wasn't as helpful, and didn't include a return here? How could we simulate this?
 
@@ -537,12 +684,13 @@ const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
 const USDC_ADDRESS = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
-const provider = new ethers.JsonRpcProvider(RPC);
-const signer = new ethers.Wallet(pk, PROVIDER);
+const provider = new ethers.BrowserProvider(window.ethereum);
 
-const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, signer);
+const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, provider);
 
-await dexContract.swap(UNI_ADDRESS, USDC_ADDRESS, ethers.parseEther("100"));
+// function swap(address assetIn, address assetOut,
+//      uint256 amountIn, uint256 minAmountOut) external;
+await dexContract.swap(UNI_ADDRESS, USDC_ADDRESS, ethers.parseEther("1"), 0);
 ```
 
 ???
@@ -562,13 +710,13 @@ So, from a front end integration perspective, how can we mitigate risk here for 
 - Private RPCs function similarly to public RPCs with some notable differences
 - Private RPCs often don't allow for reading views, only submitting transactions
 - Private RPCs do not submit transactions to the public Mempool
-- Private PRCs only share transactions with a subset of block proposers
-- Those builders pinky promise not to frontrun your transaction maliciously
+- Private PRCs only share transactions with a subset of block producers
+- Those block producers pinky promise not to frontrun your transaction maliciously
 - Often the transaction will be frontrun, but they will give you around 90% of the profits
 
 ???
 
-Private RPCs are an alternative to traditional RPCs for submitting transactions. They function similarly to a normal RPC with some notable differences. One is that most private RPCs don't allow you to read views from them. They are not there to help you read data off chain. They only allow you to submit transactions. Unlike most RPCs that broadcast your transaction to the public mempool, private RPCs will keep your transaction locally, and only use the transaction when they are building a block. The transaction will be shared only with a subset of builders. Some private RPCs belong to the builders themselves, others are aggregators that share it with multiple builders. You need to be careful which builders you share your transactions with, as you are trusting them that they won't frontrun your transaction maliciously. Generally they won't, as it would harm their reputation as a builder, and users would stop sending private transactions to them. But this approach does carry risk.
+Private RPCs are an alternative to traditional RPCs for submitting transactions. They function similarly to a normal RPC with some notable differences. One is that most private RPCs don't allow you to read views from them. They are not there to help you read data off-chain. They only allow you to submit transactions. Unlike most RPCs that broadcast your transaction to the public mempool, private RPCs will keep your transaction locally, and only use the transaction when they are building a block. The transaction will be shared only with a subset of block producers. Some private RPCs belong to the block producers themselves, others are aggregators that share it with multiple block producers. You need to be careful which block producers you share your transactions with, as you are trusting them that they won't frontrun your transaction maliciously. Generally they won't, as it would harm their reputation as a builder, and users would stop sending private transactions to them. But this approach does carry risk.
 
 One approach you will often see with private RPCs, particularly Flashbots. Is that the builder will actually frontrun your transaction, and try to extract as much MEV as they can from it. However, they will return the majority of this MEV to you (around 90%), and give the other 10% to the validator. While it would be better for the user to have no MEV, if there is no practical way to avoid this front running through the contract, this can be a nice alternative. And acts as somewhat of a safety net against these types of attacks.
 
@@ -596,7 +744,7 @@ const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, provider);
 
 ???
 
-Here is a code example for sending a transaction using a private RPC. In this case Flashbots which is one of the popular ones. It is an aggregator over many builders with lots of customisation options. You'll see the endpoint is set at the top here. You'll also notice there are two providers set, one as we had before which we will use for reading views. And one below which we will use for the private transaction call.
+Here is a code example for sending a transaction using a private RPC. In this case Flashbots which is one of the popular ones. It is an aggregator over many block producers with lots of customisation options. You'll see the endpoint is set at the top here. You'll also notice there are two providers set, one as we had before which we will use for reading views. And one below which we will use for the private transaction call.
 
 ---
 
@@ -634,9 +782,10 @@ So this transaction will be submitted as before, but this time through a private
 ## ENS
 
 - ENS is a service that gives your wallet address an easier to read username
-- They are usually in the format `vitalik.eth`, similar to a domain name
+- They are usually in the format `vitalik.eth` or `chase.eth`
 - When registering an ENS domain, you can set up a bidirectional mapping between your wallet address and ENS
 - Allowing users to send tokens to vitalik.eth instead of your wallet address
+- This is a similar concept to DNS, how a user would navigate to google.com instead of 172.217.0.46
 - This makes it more user friendly to share your address with others
 - This is not supported natively by the EVM, and requires integrators to support this
 
@@ -665,17 +814,16 @@ Here is a code sample for getting the users address from an ENS name using wagmi
 ## NFTs (ERC-721)
 
 - NFTs are becoming a common part of products across the space
-- Uniswap uses NFTs to represent positions on chain
 - There is sometimes a need to display NFT metadata in a UI
-- NFT data is often stored partially on chain, and partially off chain
-- This is because of size restrictions on chain
-- There are ways to store NFT data on chain using SVGs
+- NFT data is split between on and off-chain
+- This is because of size restrictions on-chain
+- The ownership of the NFTs is always on-chain
+- The metadata of the NFTs is usually off-chain
+- The image asset of the NFTs is almost always off-chain
 
 ???
 
-NFTs are seeing more and more use in products across the space. They are a useful standard and can see uses outside of monkey pictures. We're even seeing them used in DeFi with Uniswap V3 using them to represent financial positions. When working with NFTs you will often want to display the NFT metadata on the UI for the user to see. We touched before on the size limitations with storing data on chains. This is particularly an issue with NFTs, where the data that needs to be stored is sometimes large PNGs that would be impossible or too expensive to store on chain. Because of this, many developers choose to store the images off chain, in a centralised database exposed via a public link. The url to the images is then stored on chain in the NFT metadata.
-
-It is possible to store NFT images entirely on-chain. There are several NFT projects that have done this. Including Uniswap who stores their data on chain. This works by building the image with purely SVGs, and customising them using string concatenation and some other on chain data.
+NFTs are seeing more and more use in products across the space. They are a useful standard and can see uses outside of monkey pictures. We're even seeing them used in DeFi with Uniswap V3 using them to represent financial positions. When working with NFTs you will often want to display the NFT metadata on the UI for the user to see. We touched before on the size limitations with storing data on-chains. This is particularly an issue with NFTs, where the data that needs to be stored is sometimes large PNGs that would be impossible or too expensive to store on-chain. Because of this, many developers choose to store the images off-chain, in a centralised database exposed via a public link. The url to the images is then stored on-chain in the NFT metadata.
 
 ---
 
@@ -732,99 +880,11 @@ Here is an example one, you can see the title of this JSON at the top. The name 
 
 ---
 
-## Querying Events
-
-- Contracts emit events for some transactions
-- We can query these when integrating with smart contracts
-- Events allow us to query large amounts of data that would be impractical to query through views
-- They are often querying to show data on the front end or for data analysis
-
-???
-
-As you have probably worked on before, smart contracts can emit events for transactions. For example, you might emit a Transfer event when a token is transferred. When you are integrating with smart contracts, you can query this data. A nice thing about events is that you can query large amounts of data quite quickly, including some data that isn't stored anywhere on chain, or would just generally be impractical to query through contract views. It's common to query events when integrating with a front end, for showing some history, or stats or something.
-
----
-
-### Querying Events Example
-
-```javascript
-import ethers from "ethers";
-import erc20Abi from "./erc20-abi.json";
-
-const RPC = "https://my-cool-rpc.com/";
-const CHASE = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
-const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
-
-const provider = new ethers.JsonRpcProvider(RPC);
-
-const uniContract = new ethers.Contract(UNI_ADDRESS, erc20Abi, provider);
-
-// event Transfer(address indexed from, address indexed to, uint256 value);
-const transferEvents = await uniContract.queryFilter(
-  uniContract.filters.Transfer(null, CHASE)
-);
-
-console.log(transferEvents); // Logs: Data for all of the UNI transfers to Chase
-```
-
-???
-
-Here is an example of querying events on chain using Ethers. We're using a function here queryFilter which queries the events for that specific contract. This function takes a filter as an input, and we are using a filer here of the Transfer event. Looking above in that comment, this is showing what the event looks like for an ERC20 token. You'll notice that the from and to parameters are indexed. What this means is that we can filter on them when we query them. The Transfer filter takes in a parameter for each indexed value. Entering null means that there won't be filtering on that value. You can see I've entered null for the from value here, and CHASE for the to. Meaning this will return a list of all of the transfer events to Chase.
-
-Another option for querying events is using the getLogs function. This has a few benefits, such as being able to query events from multiple contracts at once. And multiple events at once. So is better suited when querying lots of data.
-
----
-
-## Caching Data
-
-- For large datasets, it becomes slow and impractical to query all of this data directly from views and events
-- For example, if you wanted to show total trading volume for your product on your home page
-- This could involve querying hundreds of thousands of events or views, which would be slow to load
-- For some use cases it makes sense to cache data and expose an endpoint for querying this
-- One way to do this, is to have a script that runs every X period, querying recent data and saving it in a database
-- Then exposing a restful endpoint that surfaces this data
-- A downside of this approach is that it is centralised
-- Another approach is to use a decentralised data provider such as The Graph
-
-???
-
-For large datasets, it becomes slow and impractical to query all of this data directly from views and events. For example, if you wanted to show total trading volume for your product on your home page. This could involve querying hundreds of thousands of events or views, which would be slow to load. For some use cases it makes sense to cache data and expose an endpoint for querying this. One way to do this is to have a script that runs every X period, querying recent data and saving it in a database. Then exposing a restful endpoint that surfaces this data. A downside of this approach is that it is centralised, so it's prone to going down, and relies on a single server or person or team to keep this online and accurate.
-
-An alternative approach is to use a decentralised data provider such as The Graph.
-
-## The Graph
-
-class: center, middle
-
-<image width="100%"  src="https://i.imgur.com/n3982lO.png" />
-
-???
-
-The Graph is a service that indexes data from the blockchain, and exposes it with a GraphQL API that you can query from your interface. This is nice, as once you have set up the subgraph, then anyone can query this at any time, and you can have confidence that the data will have a high uptime and be accurate. For The Graph to index your data you need to first build and submit a Subgraph. We won't go into the technical implementation details for how to create a subgraph, but at a high level it involves creating a yml file that outlines your smart contracts and how the views and events relate to each other.
-
-### Reading From The Graph
-
-```javasript
-query CompoundMarkets {
-  markets {
-    borrowRate
-    cash
-    collateralFactor
-  }
-}
-```
-
-???
-
-This is an example query, it is querying data from Compound, a popular CFD protocol. Here it is querying a list of all of the available Compound markets. Including the borrow rate, cash, and collateral factor of each market. This is all done in a single call, and can query as much data as you like. You can even include queries with more complex and nested relationships that would be impractical to do without such a large index.
-
----
-
 ## Conclusion
 
 - This is the end of the lecture content
 - We've covered the basics of how to connect a front end ui to a smart contract
-- To read data on chain and create transactions
+- To read data on-chain and create transactions
 - We've covered interacting with a smart contract using Typescript
 - Enabling you to create your own scripts, APIs, automation or caches using Typescript
 - We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this
@@ -832,7 +892,7 @@ This is an example query, it is querying data from Compound, a popular CFD proto
 
 ???
 
-And that's the end of the lecture content for today. We've covered the basics of how to connect a front end uI to a smart contract. To read data on chain and create transactions. We've covered interacting with a smart contract using Typescript. Enabling you to create your own scripts, APIs, automation or caches using Typescript. We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this. You should now hopefully have some core knowledge to start playing around with these tools to create your own Full Stack Decentralised Applications.
+And that's the end of the lecture content for today. We've covered the basics of how to connect a front end uI to a smart contract. To read data on-chain and create transactions. We've covered interacting with a smart contract using Typescript. Enabling you to create your own scripts, APIs, automation or caches using Typescript. We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this. You should now hopefully have some core knowledge to start playing around with these tools to create your own Full Stack Decentralised Applications.
 
 ---
 

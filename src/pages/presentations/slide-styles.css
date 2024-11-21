@@ -35,6 +35,13 @@ h3 {
   margin-bottom: 2%;
 }
 
+h4 {
+  margin-top: 2%;
+  position: relative;
+  color: #4c3ff7 !important;
+  font-size: 20px !important;
+}
+
 li::marker {
   color: #ff6804;
 }
@@ -43,6 +50,12 @@ li {
   font-size: 20px !important;
   font-weight: 600;
   max-width: 80%;
+}
+
+ul li li {
+  font-size: 14px !important;
+  font-weight: 600;
+  margin-left: 10px;
 }
 
 /* pre element to h2 */
