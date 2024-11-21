@@ -30,6 +30,7 @@ const BuildingDecentralisedApplications = () => {
       })
       .then((text) => {
         remark.create({
+          ratio: "16:9",
           source: text,
           container: containerRef.current,
         });

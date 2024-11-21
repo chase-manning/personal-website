@@ -1,6 +1,6 @@
 class: center, middle
 
-background-image: url("https://i.imgur.com/GH81CLE.png")
+background-image: url("https://i.imgur.com/BqF88iw.png")
 
 # Building Full Stack Decentralised Applications
 
@@ -24,7 +24,7 @@ Welcome to my guest lecture on Building Full Stack Decentralised Applications. I
 
 ---
 
-background-image: url("https://i.imgur.com/GH81CLE.png")
+background-image: url("https://i.imgur.com/BqF88iw.png")
 
 ### Contents
 
@@ -115,7 +115,7 @@ In traditional app development, you can often expect actions to take a fraction 
 
 class: center, middle
 
-background-image: url("https://i.imgur.com/GH81CLE.png")
+background-image: url("https://i.imgur.com/BqF88iw.png")
 
 # Example DApp
 
@@ -123,7 +123,7 @@ background-image: url("https://i.imgur.com/GH81CLE.png")
 
 class: center, middle
 
-background-image: url("https://i.imgur.com/GH81CLE.png")
+background-image: url("https://i.imgur.com/BqF88iw.png")
 
 # Integrating with Smart Contracts
 
@@ -234,10 +234,6 @@ const uniContract = new ethers.Contract(UNI_ADDRESS, erc20Abi, signer);
 const uniBalance = await uniContract.balanceOf(USER);
 
 const tx = await uniContract.transfer(CHASE, uniBalance);
-
-console.log(tx.hash); // Logs: 0xbed1ab34efcea49dd55c51134916a6ea8b28967fe32509573039e565102f2a75
-
-const receipt = await tx.wait();
 ```
 
 ???
@@ -285,8 +281,6 @@ function App() {
   });
 
   if (result.isPending) return <div>Loading...</div>;
-
-  if (result.isError) return <div>{result.error}</div>;
 
   return <div>{`User's Balance: ${result.data}`}</div>;
 }
@@ -386,7 +380,6 @@ Multicall is based on a contract that is deployed on lots of EVM blockchains. It
 
 ```javascript
 const MULTI_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11";
-
 const multicall = new ethers.Contract(MULTI_ADDRESS, multiAbi, provider);
 
 const result = await multicall.aggregate3.staticCall([
@@ -403,7 +396,6 @@ const result = await multicall.aggregate3.staticCall([
 ]);
 
 console.log(result[0]); // Logs: UNI
-
 console.log(result[1]); // Logs: 18
 ```
 
@@ -499,13 +491,10 @@ Another option for querying events is using the getLogs function. This has a few
 - One way to do this, is to have a script that runs every X period, querying recent data and saving it in a database
 - Then exposing a restful endpoint that surfaces this data
 - A downside of this approach is that it is centralised
-- Another approach is to use a decentralised data provider such as The Graph
 
 ???
 
 For large datasets, it becomes slow and impractical to query all of this data directly from views and events. For example, if you wanted to show total trading volume for your product on your home page. This could involve querying hundreds of thousands of events or views, which would be slow to load. For some use cases it makes sense to index data and expose an endpoint for querying this. One way to do this is to have a script that runs every X period, querying recent data and saving it in a database. Then exposing a restful endpoint that surfaces this data. A downside of this approach is that it is centralised, so it's prone to going down, and relies on a single server or person or team to keep this online and accurate.
-
-An alternative approach is to use a decentralised data provider such as The Graph.
 
 ## The Graph
 
@@ -564,9 +553,6 @@ The final option is to run on a forked environment, which we will touch on soon.
 ### staticCall Example Code
 
 ```javascript
-import ethers from "ethers";
-import dexAbi from "./dex-abi.json";
-
 const RPC = "https://my-cool-rpc.com/";
 const DEX_ADDRESS = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
 const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
@@ -612,6 +598,7 @@ So if there is not a return on the function, then the only way to simulate this 
 ### Tenderly Example
 
 ```javascript
+const params = [UNI_ADDRESS, USDC_ADDRESS, ethers.parseEther("100")];
 const response = await fetch(TENDERLY, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -623,11 +610,7 @@ const response = await fetch(TENDERLY, {
       {
         from: USER,
         to: DEX_ADDRESS,
-        data: dexContract.interface.encodeFunctionData("swap", [
-          UNI_ADDRESS,
-          USDC_ADDRESS,
-          ethers.parseEther("100"),
-        ]),
+        data: dexContract.interface.encodeFunctionData("swap", params),
       },
     ],
   }),
@@ -866,7 +849,7 @@ And that's the end of the lecture content for today. We've covered the basics of
 
 ---
 
-## Thanks for Having Me
+## Thanks for Having Me! :D
 
 - Big thanks to Sam/Daniel/Paul/Will and Imperial College for having me
 - You can contact me at: chase@manning.dev with any questions or just generally to chat
