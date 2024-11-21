@@ -4,10 +4,12 @@ import React, { useEffect } from "react";
 import Remark from "remark-slide";
 import RemarkPolyfills from "remark-slide/src/polyfills";
 import RemarkStyler from "remark-slide/src/remark/components/styler/styler";
+import { solidity } from "highlightjs-solidity";
 import md from "./building-decentralised-applications.md";
 import "./slide-styles.css";
 
 const remark = new Remark();
+remark.highlighter.engine.registerLanguage("solidity", solidity);
 
 const StyledBuildingDecentralisedApplications = styled.div`
   position: fixed;
