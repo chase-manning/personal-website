@@ -4,6 +4,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "highlightjs-solidity": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.28.0",
