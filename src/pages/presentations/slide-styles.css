@@ -3,9 +3,9 @@ body {
   color: #121128;
 }
 
-h1,
-h2,
-h3 {
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3 {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-weight: 600;
@@ -13,13 +13,13 @@ h3 {
   line-height: 1.2;
 }
 
-h1 {
+.remark-slide-content h1 {
   text-align: left;
   max-width: 65%;
   margin-left: 5%;
 }
 
-h2 {
+.remark-slide-content h2 {
   margin-top: 15%;
   margin-left: 5%;
   position: relative;
@@ -28,7 +28,7 @@ h2 {
   margin-bottom: 3%;
 }
 
-h3 {
+.remark-slide-content h3 {
   margin-top: 8%;
   position: relative;
   color: #4c3ff7 !important;
@@ -36,7 +36,7 @@ h3 {
   margin-bottom: 2%;
 }
 
-h4 {
+.remark-slide-content h4 {
   margin-top: 2%;
   position: relative;
   color: #4c3ff7 !important;
@@ -60,7 +60,7 @@ ul li li {
 }
 
 /* pre element to h2 */
-h2::before {
+.remark-slide-content h2::before {
   content: "";
   position: absolute;
   top: 50%;
