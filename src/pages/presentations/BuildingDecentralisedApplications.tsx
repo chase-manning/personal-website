@@ -5,6 +5,7 @@ import Remark from "remark-slide";
 import RemarkPolyfills from "remark-slide/src/polyfills";
 import RemarkStyler from "remark-slide/src/remark/components/styler/styler";
 import md from "./building-decentralised-applications.md";
+import "./slide-styles.css";
 
 const remark = new Remark();
 

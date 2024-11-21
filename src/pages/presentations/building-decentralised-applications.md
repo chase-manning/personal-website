@@ -1,5 +1,7 @@
 class: center, middle
 
+background-image: url("https://i.imgur.com/GH81CLE.png")
+
 # Building Full Stack Decentralised Applications
 
 ???
@@ -35,9 +37,13 @@ Give a simple example, such as a TODO app
 
 class: center, middle
 
+background-image: url("https://i.imgur.com/GH81CLE.png")
+
 # Example DApps
 
 ---
+
+### Uniswap
 
 <image width="100%"  src="https://i.imgur.com/gfrIU81.png" />
 
@@ -47,6 +53,8 @@ Uniswap
 
 ---
 
+### Aave
+
 <image width="100%"  src="https://i.imgur.com/jOgYLqq.png" />
 
 ???
@@ -54,6 +62,8 @@ Uniswap
 Aave
 
 ---
+
+### Polymarket
 
 <image width="100%"  src="https://i.imgur.com/iM5XFSt.png" />
 
@@ -90,6 +100,8 @@ In traditional app development, you can often expect actions to take a fraction 
 
 class: center, middle
 
+background-image: url("https://i.imgur.com/GH81CLE.png")
+
 # How to integrate a Front End with Smart Contracts
 
 ???
@@ -114,7 +126,7 @@ It is possible to build a complete full stack DApp using only RPC requests. Howe
 
 ---
 
-## RPC Request Example
+### RPC Request Example
 
 ```javascript
 const RPC = "https://my-cool-rpc.com/";
@@ -155,7 +167,7 @@ Ethers is a simple library for interacting with blockchains. It's written in Typ
 
 ---
 
-## Example
+### Example
 
 ```javascript
 import ethers from "ethers";
@@ -178,7 +190,7 @@ In this example we are importing the ethers package at the top here. We have the
 
 ---
 
-## Ethers Contract Object
+### Ethers Contract Object
 
 ```javascript
 import ethers from "ethers";
@@ -233,7 +245,7 @@ wagmi got its name from a popular crypto meme "We're All Going to Make It" which
 
 ---
 
-## Reading View Example
+### Reading View Example
 
 ```javascript
 import { useReadContract } from "wagmi";
@@ -276,7 +288,7 @@ While this code looks a bit harder to read at first, it has many more features b
 
 ---
 
-## Sending Transaction Example
+### Sending Transaction Example
 
 ```javascript
 import { useWriteContract } from "wagmi";
@@ -326,7 +338,7 @@ For some dapps you may need to query a significant amount of data on chain. With
 
 ---
 
-## Multicall Contract
+### Multicall Contract
 
 ```solidity
 struct Call3 {
@@ -357,7 +369,7 @@ Multicall is based on a contract that is deployed on lots of EVM blockchains. It
 
 ---
 
-## Ethers Example
+### Ethers Example
 
 ```javascript
 import ethers from "ethers";
@@ -399,7 +411,7 @@ You may notice that instead of calling the function directly here, we are using 
 
 ---
 
-## Wagmi Example
+### Wagmi Example
 
 ```javascript
 import { useReadContracts } from "wagmi";
@@ -453,7 +465,7 @@ If the function we're calling returns the output. For example, say your `swap` f
 
 ---
 
-## staticCall Example Code
+### staticCall Example Code
 
 ```javascript
 import ethers from "ethers";
@@ -501,7 +513,7 @@ So if there is not a return on the function, then the only way to simulate this 
 
 ---
 
-## Tenderly Example
+### Tenderly Example
 
 ```javascript
 const TENDERLY = "https://optimism.gateway.tenderly.co/my_api_key";
@@ -545,7 +557,7 @@ But you can tell even just at first glance that this is a lot slower, and more c
 
 ---
 
-## Pop Quiz! What could be wrong with this code?
+### Pop Quiz! What could be wrong with this code?
 
 ```javascript
 import ethers from "ethers";
@@ -592,7 +604,7 @@ One approach you will often see with private RPCs, particularly Flashbots. Is th
 
 ---
 
-## Flashbots Example
+### Flashbots Example
 
 ```javascript
 import ethers from "ethers";
@@ -618,7 +630,7 @@ Here is a code example for sending a transaction using a private RPC. In this ca
 
 ---
 
-## Flashbots Example
+### Flashbots Example
 
 ```javascript
 const estimatedGas = dexContract.estimateGas.swap(
@@ -664,7 +676,7 @@ ENS is a service that gives your wallet address an easier to read username. They
 
 ---
 
-## Get Address From ENS
+### Get Address From ENS
 
 ```javascript
 import { getEnsAddress } from "@wagmi/core";
@@ -697,7 +709,7 @@ It is possible to store NFT images entirely on-chain. There are several NFT proj
 
 ---
 
-## Displaying NFTs
+### Displaying NFTs
 
 ```javascript
 import ethers from "ethers";
@@ -721,7 +733,7 @@ Here is an example of querying the metadata for an NFT. In this example it is a 
 
 ---
 
-## Displaying NFTs
+### Displaying NFTs
 
 ```json
 {
@@ -763,7 +775,7 @@ As you have probably worked on before, smart contracts can emit events for trans
 
 ---
 
-## Querying Events Example
+### Querying Events Example
 
 ```javascript
 import ethers from "ethers";
@@ -812,13 +824,15 @@ An alternative approach is to use a decentralised data provider such as The Grap
 
 ## The Graph
 
+class: center, middle
+
 <image width="100%"  src="https://i.imgur.com/n3982lO.png" />
 
 ???
 
 The Graph is a service that indexes data from the blockchain, and exposes it with a GraphQL API that you can query from your interface. This is nice, as once you have set up the subgraph, then anyone can query this at any time, and you can have confidence that the data will have a high uptime and be accurate. For The Graph to index your data you need to first build and submit a Subgraph. We won't go into the technical implementation details for how to create a subgraph, but at a high level it involves creating a yml file that outlines your smart contracts and how the views and events relate to each other.
 
-## Reading From The Graph
+### Reading From The Graph
 
 ```javasript
 query CompoundMarkets {
