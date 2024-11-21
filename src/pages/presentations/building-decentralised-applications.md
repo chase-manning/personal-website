@@ -648,3 +648,102 @@ Sending a transaction through a private RPC is a bit different. We need to const
 So this transaction will be submitted as before, but this time through a private RPC adding some additional protection.
 
 ---
+
+## ENS
+
+- ENS is a service that gives your wallet address an easier to read username
+- They are usually in the format `vitalik.eth`, similar to a domain name
+- When registering an ENS domain, you can set up a bidirectional mapping between your wallet address and ENS
+- Allowing users to send tokens to vitalik.eth instead of your wallet address
+- This makes it more user friendly to share your address with others
+- This is not supported natively by the EVM, and requires integrators to support this
+
+???
+
+ENS is a service that gives your wallet address an easier to read username. They are usually in the format `vitalik.eth`, similar to a domain name. When registering an ENS domain, you can set up a bidirectional mapping between your wallet address and ENS. Allowing users to send tokens to vitalik.eth instead of your wallet address. This makes it more user friendly to share your address with others, as you can just share chase.eth instead of some long string of characters that they would need to copy paste. However, this isn't supported naively by the EVM, and it requires integrators such as us to support this.
+
+---
+
+## Get Address From ENS
+
+```javascript
+import { getEnsAddress } from "@wagmi/core";
+
+const usersAddress = getEnsAddress({
+  name: "vitalik.eth",
+});
+```
+
+???
+
+Here is a code sample for getting the users address from an ENS name using wagmi. In practice you would use something like this from an address input field. Conditionally checking if what they entered was an ENS, and if it is, getting the address to use for the transaction. Ideally all address input fields should seamlessly support ENS or address inputs.
+
+---
+
+## NFTs (ERC-721)
+
+- NFTs are becoming a common part of products across the space
+- Uniswap uses NFTs to represent positions on chain
+- There is sometimes a need to display NFT metadata in a UI
+- NFT data is often stored partially on chain, and partially off chain
+- This is because of size restrictions on chain
+- There are ways to store NFT data on chain using SVGs
+
+???
+
+NFTs are seeing more and more use in products across the space. They are a useful standard and can see uses outside of monkey pictures. We're even seeing them used in DeFi with Uniswap V3 using them to represent financial positions. When working with NFTs you will often want to display the NFT metadata on the UI for the user to see. We touched before on the size limitations with storing data on chain. This is particularly an issue with NFTs, where the data that needs to be stored is sometimes large PNGs that would be impossible or too expensive to store on chain. Because of this, many developers choose to store the images off chain, in a centralsied database exposed via a public link. The url to the images is then stored on chain in the NFT metadata.
+
+It is possible to store NFT images entirely on-chain. There are several NFT projects that have done this. Including Uniswap who stores their data on chain. This works by building the image with purely SVGs, and customising them using string concatination and some other on chain data.
+
+---
+
+## Displaying NFTs
+
+```javascript
+import ethers from "ethers";
+import nftAbi from "./nft-abi.json";
+
+const RPC = "https://my-cool-rpc.com/";
+const CAT_NFT_ADDRESS = "0x15463f7566d797a4b36517eb3a1cafab58f1a381";
+
+const provider = new ethers.JsonRpcProvider(RPC);
+
+const catNftContract = new Contract(CAT_NFT_ADDRESS, nftAbi, provider);
+
+const tokenUri = await catNftContract.tokenURI(123);
+
+console.log(tokenUri); // Logs: ERC721 Metadata JSON Schema
+```
+
+???
+
+Here is an exaple of querying the metadata for an NFT. In this example it is a cat NFT collection. The core function that you call to get this data is the tokenURI function. Notice this takes an input, this is the ID of the NFT. An NFT contract could have any amount of NFTs linked to it, and they are indexed by their ID. This retuns the token URI data, which is a JSON file with data about the NFT.
+
+---
+
+## Displaying NFTs
+
+```json
+{
+  "title": "Cat NFT Metadata",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Cute cat #123"
+    },
+    "description": {
+      "type": "string",
+      "description": "This cat is very cute"
+    },
+    "image": {
+      "type": "string",
+      "description": "https://miro.medium.com/v2/resize:fit:1080/0*A7MUqyCLvZDcHkfM.jpg"
+    }
+  }
+}
+```
+
+???
+
+Here is an example one, you can see the title of this JSON at the top. The name of the NFT. The description. And at the end there the image, which is a link to an image that you can render on your UI. Unfortunately, because the NFT space developed so fast and rather chaotically. There are many NFTs that use slightly different standards for this response data. And it sometimes needs to be looked at on a case by case basis. But this is a common response you would expect to see from a modern NFT collection.
