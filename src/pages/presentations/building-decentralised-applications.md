@@ -30,9 +30,9 @@ background-image: url("https://i.imgur.com/GH81CLE.png")
 
 - About Decentralised Applications
   - What is a Decentralised Application?
-  - Example DApps
   - Differences between DApps and Apps
   - Pros/Cons of Building DApps
+  - Example DApps
 - Integrating with Smart Contracts
   - RPCs
   - Ethers library
@@ -64,53 +64,15 @@ Give a simple example, such as a TODO app
 
 ---
 
-class: center, middle
-
-background-image: url("https://i.imgur.com/GH81CLE.png")
-
-# Example DApps
-
----
-
-### Uniswap
-
-<image width="100%"  src="https://i.imgur.com/gfrIU81.png" />
-
-???
-
-Uniswap
-
----
-
-### Aave
-
-<image width="100%"  src="https://i.imgur.com/jOgYLqq.png" />
-
-???
-
-Aave
-
----
-
-### Polymarket
-
-<image width="100%"  src="https://i.imgur.com/iM5XFSt.png" />
-
-???
-
-Polymarket
-
----
-
 ## Differences between DApps and Apps
 
-#### Web2 app:
+#### App (Web2):
 
 - Client <-> server architecture
 - DB is private and both reads/writes have access control
 - Auth can be done using various means: email/password, SMS, passkey
 
-#### Web3 app:
+#### DApp (Web3):
 
 - Client <-> blockchain (often no need for a centralized server)
 - No DB per-se, data is stored in smart contracts: reads are public, writes can have access control
@@ -148,6 +110,14 @@ By default, when you deploy a smart contract to the blockchain, the bytecode for
 There are hard limitations on the amount of data you can store per transaction on blockchains, and the number of transactions that can be processed per second. By modern standards these are quite low. Meaning there are large categories of Applications that would not be suitable to be built as a DApp. Anything that requires very fast transaction times and large amounts of data would be better suited as a traditional application.
 
 In traditional app development, you can often expect actions to take a fraction of a second. However with most blockchains, transactions can take a few seconds to go through. There are some new blockchains being developed that have faster transaction speeds. But they sometimes come at the cost of being more centralised.
+
+---
+
+class: center, middle
+
+background-image: url("https://i.imgur.com/GH81CLE.png")
+
+# Example DApp
 
 ---
 
