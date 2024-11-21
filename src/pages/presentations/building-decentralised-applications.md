@@ -105,7 +105,7 @@ DApps are natively composable. If you wanted to build some product on top of Fac
 
 By default, smart contracts are immutable and can't be changed after deployment. One benefit of this for users is that there is less trust required for them when using your product. There is no fear that the developer could change things unexpectedly. The downside to this is that it makes it harder to fix bugs and introduce features.
 
-By default, when you deploy a smart contract to the blockchain, the bytecode for this is open source. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' your project. For this reason, community is considered quite important for DApps.
+By default, when you deploy a smart contract to the blockchain, the bytecode for this is public. Usually developers will verify the smart contract also, which makes the Solidity (or Vyper) source code open source. This can lead to a faster paced development environment, as projects can reference and build on top of the work of other projects, instead of starting from 0. One downside of this is that it makes it easier for people to steal your project code and 'fork' (meaning copy) your project. For this reason, community is considered quite important for DApps.
 
 There are hard limitations on the amount of data you can store per transaction on blockchains, and the number of transactions that can be processed per second. By modern standards these are quite low. Meaning there are large categories of Applications that would not be suitable to be built as a DApp. Anything that requires very fast transaction times and large amounts of data would be better suited as a traditional application.
 
@@ -129,7 +129,7 @@ background-image: url("https://i.imgur.com/BqF88iw.png")
 
 ???
 
-Next we're going to talk about how you integrate a Front End, so usually a website, with a Smart Contract. Which will be the main content of this lecture.
+So far you have seen how to develop and interact with contracts using command line tools (eclair/foundry) and how to interact with applications using a wallet and their front-end (website). Today we are looking at how to actually build these front-ends and how they communicate/interact with your wallets and applications.
 
 ---
 
@@ -142,7 +142,7 @@ Next we're going to talk about how you integrate a Front End, so usually a websi
 
 ???
 
-I understand you've learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
+I understand you've briefly learned about RPCs already, but just a quick refresher as we'll be building on top of this knowledge next.
 
 RPCs are the primary way that front ends will interact with blockchains. They work by making HTTP requests to query data from nodes.
 
