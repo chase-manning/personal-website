@@ -360,5 +360,291 @@ Multicall is based on a contract that is deployed on lots of EVM blockchains. It
 ## Ethers Example
 
 ```javascript
+import ethers from "ethers";
+import erc20Abi from "./erc20-abi.json";
+import multAbi from "./multicall-abi.json";
 
+const RPC = "https://my-cool-rpc.com/";
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+const MULTI_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11";
+
+const provider = new ethers.JsonRpcProvider(RPC);
+
+const multicall = new ethers.Contract(MULTI_ADDRESS, multiAbi, provider);
+const uniContract = new ethers.Contract(UNI_ADDRESS, erc20Abi, provider);
+
+const result = await multicall.aggregate3.staticCall([
+  {
+    target: UNI_ADDRESS,
+    allowFailure: false,
+    callData: uniContract.interface.encodeFunctionData("symbol()"),
+  },
+  {
+    target: UNI_ADDRESS,
+    allowFailure: false,
+    callData: uniContract.interface.encodeFunctionData("decimals()"),
+  },
+]);
+
+console.log(result[0]); // Logs: UNI
+
+console.log(result[1]); // Logs: 18
 ```
+
+So here we have an exmpla of using multicall with Ethers. You can see at the top we're importing the multicall abi. We're also setting the address here, and creating the contract. Now the multicall contract works just like any other contract, so to use multicall, we're going to call the aggregate3 function. This function takes a list as an input, where each item in the list is a view that we want to query. The struct for this requires the target address of the contract we want to read, in this case, the UNI token contract again. Allow failure is pretty much just if this call should be wrapped in a try/catch or not. And the calldata is the hexidecimal data for the view you would like to query and the parameters. Here we are querying two views, symbol and decimals. Thankfully Ethers has a nice helper function for us that allows us to encode the function data so we can just enter the name of the view we want. We can see what is returned from here is a list of the results.
+
+So this is just one contract call, so you can see how this would reduce RPC calls and speed up queries.
+
+You may notice that instead of calling the function directly here, we are using statiCall here. We'll come back to this in a bit to explain what that means and why we are doing it here.
+
+---
+
+## Wagmi Example
+
+```javascript
+import { useReadContracts } from "wagmi";
+import erc20Abi from "./erc20-abi.json";
+
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+const USER = "0x15463F7566d797a4b36517eB3A1cAFaB58f1A381";
+
+function App() {
+  const result = useReadContracts({
+    contracts: [
+      {
+        abi: erc20Abi,
+        address: UNI_ADDRESS,
+        functionName: "symbol",
+      },
+      {
+        abi: erc20Abi,
+        address: UNI_ADDRESS,
+        functionName: "decimals",
+      },
+    ],
+  });
+
+  return <div>{`Symbol: ${result.data[0]}, Decimals: ${result.data[1]}`}</div>;
+}
+```
+
+??
+
+And here's the same thing implemented in wagmi. It's quite similar to what we did before for reading views, although we're now using the useReadContracts hook. A nice thing about wagmi, is that it automatically uses multicall when we're querying multiple contract views for this. So there's no need to think about it and you can be confident it's taking care of that under the hood.
+
+---
+
+## Simulating Transactions
+
+- There is often the need to know the outcome of a transaction before executing it
+- For example, showing the user how many tokens they will receive from a Unsiwap swap
+- Some contracts have dedicated views for this, that simulate the execution logic
+- However, this is sometimes not practical and they don't exist
+- One way to simulate transactions is with staticCall if the function returns the data you want
+- And another way is to run on a forked environment
+
+???
+
+There is often the need when integrating with blockchains that you will want to know the outcome of a transaction before you execute it. For example, if you're integrating with Uniswap, you want to know how much of the token you will receive after you swap, and what the price impact is of that swaps. Some contracts have dedicated views for this, so if there was a `swap` function on a contract, they would also have a view `getSwapResult` that returns what the result of the swap would be. It's good to keep in mind when developing Solidity that you always want to be adding these type of views in where you can.
+
+However, sometimes it is not practical to add a view like this. Maybe because the business logic requires modifying state which means you can't make it a view. In this case there's a couple of ways we can simulate the transaction.
+
+If the function we're calling returns the output. For example say your `swap` function returns the amount of tokens you get back at the end, then we can use Ethers `staticCall` for this. `staticCall` is an Ethers feature that pretends to call a function, and returns the result as if it was called. You may recall we did this a few slides ago with the aggregate3 call. The reason we needed it here, is that aggregate3 isn't actually a view, but is a function. They do this so that you can also use this function for executing multiple transactions within one transaction.
+
+---
+
+## staticCall Example Code
+
+```javascript
+import ethers from "ethers";
+import dexAbi from "./dex-abi.json";
+
+const RPC = "https://my-cool-rpc.com/";
+const DEX_ADDRESS = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+const USDC_ADDRESS = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+
+const provider = new ethers.JsonRpcProvider(RPC);
+
+const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, provider);
+
+// function swap(address assetIn, address assetOut,
+//      uint256 amountIn) external returns (uint256 amountOut);
+const amountOut = await dexContract.swap.callStatic(
+  UNI_ADDRESS,
+  USDC_ADDRESS,
+  ethers.parseEther("100")
+);
+
+console.log(amountOut); // Logs: 20000000000
+```
+
+???
+
+So in this example we have an imaginary dex, and this dex just has one function, swap. It takes the input token, and the output token, and the input amount. And then it sends you the output amount and returns the output amount. Because this function returns the amount the user received, we're able to use callStatic here to get this before executing the transaction.
+
+But what if the solidity developer wasn't as helpful, and didn't include a return here? How could we simulate this?
+
+---
+
+## Fork Simulating Transacions
+
+- Another way to simulate a transation is to first fork the chain
+- From there you can run transactions against this fork state
+- Then query the chain afterwards to see the change in state
+- One prduct that provides this as a service is Tenderly (tenderly.co)
+- They have APIs that expose this functionality
+
+???
+
+So if there is not a return on the function, then the only way to simulate this is to run this against a forked environment. So, forking the chain, running those transactions in this forked environment, then querying the chain afterwards to see the change in state. Tenderly is a product that provides this as a service. So you don't need to worry about setting up this infrustructure yourself. They have convenient APIs that handle the forking and simulating for you.
+
+---
+
+## Tenderly Example
+
+```javascript
+const TENDERLY = "https://optimism.gateway.tenderly.co/my_api_key";
+
+const response = await fetch(TENDERLY, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    id: 0,
+    jsonrpc: "2.0",
+    method: "tenderly_simulateBundle",
+    params: [
+      [
+        {
+          from: USER,
+          to: DEX_ADDRESS,
+          data: dexContract.interface.encodeFunctionData("swap", [
+            UNI_ADDRESS,
+            USDC_ADDRESS,
+            ethers.parseEther("100"),
+          ]),
+        },
+      ],
+      "latest",
+    ],
+  }),
+});
+
+const data = await response.json();
+
+console.log(data); // Logs: Lots of data about the transaction
+```
+
+???
+
+So here is some example code that is running a simulation in tenderly of this swap. You can see this is a rest request to the tenderly API, similar to what we did earlier in this lecture with direct RPC calls. The method we're using here is `tenderly_simulateBundle`, which allows us to simulate multiple transactions at once, for example you could use this to simulate approving a token, and then swapping it, all at once. In this example though we are just simulating one function call though, which is our swap from earlier. We're entering the user that is calling this function, the address, and the function data which in this case is our swap data. What is returned from this is an object that contains a significant amount of data from the transaction. Including all the events that were triggered, the balance changes of all addresses, the USD value of the changes, the gas used, and much more. Generally this type of simulation should be able to cover all of your needs in terms of getting output data to display on the UI.
+
+But you can tell even just at first glance that this is a lot slower, and more complex than simply calling a contract view. So something to always remember when developing solidity, is to add views for anything the front end might want to query or simulate. And where you can't add a view, add a return statement so you can use staticCall to simulate it. Tenderly is slow and expensive, you don't want this to be your primary way of integrating with your contracts.
+
+---
+
+## Pop Quiz! What could be wrong with this code?
+
+```javascript
+import ethers from "ethers";
+import dexAbi from "./dex-abi.json";
+
+const RPC = "https://my-cool-rpc.com/";
+const DEX_ADDRESS = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+const USDC_ADDRESS = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+const provider = new ethers.JsonRpcProvider(RPC);
+const signer = new ethers.Wallet(pk, PROVIDER);
+
+const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, signer);
+
+await dexContract.swap(UNI_ADDRESS, USDC_ADDRESS, ethers.parseEther("100"));
+```
+
+A quick pop quiz, what could be wrong with this code?
+....
+I'm after specfically something that could be wrong with the last line of the code where we do the swap.
+...
+Okay the answer I'm looking for is that this transaction could potentially be sandwhich attacked. An attacker could frontrunning this transaction by manipulating the state of the dex so that we get barely any USDC. Commonly this type of attack is mitigated by passing through some minAmountOut as an input to the swap, so that if the state is manipualted the transaction will revert. But we can see here that this is not an option with this function. So, depending on how the logic works inside this swap function, they may have some other protective systems in place here, but there is a risk that we could get sandwich attacked.
+
+So, from a front end integration perspective, how can we mitigate risk here for the user?
+
+---
+
+## Private RPCs
+
+- Private RPCs function similarly to public RPCs with some notable differences
+- Private RPCs often don't allow for reading views, only submitting transactions
+- Private RPCs do not submit transactions to the public Mempool
+- Private PRCs only share transactions with a subset of builders
+- Those builders pinky promise not to frontrun your transaction maliciously
+- Often the transaction will be frontrun, but they will give you around 90% of the profits
+
+??
+
+Private RPCs are an alternative to traditional RPCs for submitting transations. They function similarly to a normal RPC with some notable differences. One is that most private RPCs don't allow you to read views from them. They are not there to help you read data off chain. They only allow you to submit transactions. Unlike most RPCs that broadcast your transaction to the public mempool, private RPCs will keep your transaction locally, and only use the transaction when they are building a block. The transaction will be shared only with a subset of builders. Some private RPCs belong to the builders themselves, others are aggregators that share it with multiple builders. You need to be careful which builders you share your transactions with, as you are trusting them that they won't frontrun your transaction maliciously. Generally they won't, as it would harm their reputation as a builder, and users would stop sending private transactions to them. But this appraoch does carry risk.
+
+One approach you will often see with private RPCs, particularly Flashbots. Is that they builder will actually frontrun your transaction, and try extract as much MEV as they can from it. However, they will return the magority of this MEV to you (around 90%), and give the other 10% to the validator. While it would be better for the user to have no MEV, if there is no practical way to avoid this frontrunning through the contract, thsi can be a nice alternative. And acts as somewhat of a safety net against these types of attacks.
+
+---
+
+## Flashbots Example
+
+```javascript
+import ethers from "ethers";
+import dexAbi from "./dex-abi.json";
+
+const RPC = "https://my-cool-rpc.com/";
+const PRIVATE_RPC = "https://rpc.flashbots.net/fast";
+const DEX_ADDRESS = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
+const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+const USDC_ADDRESS = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+const provider = new ethers.JsonRpcProvider(RPC);
+const privateProvider = new ethers.JsonRpcProvider(PRIVATE_RPC);
+const signer = new ethers.Wallet(pk, privateProvider);
+
+const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, provider);
+```
+
+???
+
+Here is a code example for sending a transaction using a private RPC. In this case Flashbots which is one of the popular ones. It is an aggregator over many builders with lots of customisation options. You'll see the endpoint is set at the top here. You'll also notice there are two providers set, one as we had before which we will use for reading views. And one below which we will use for the private transaction call.
+
+---
+
+## Flashbots Example
+
+```javascript
+const estimatedGas = dexContract.estimateGas.swap(
+  UNI_ADDRESS,
+  USDC_ADDRESS,
+  ethers.parseEther("100")
+);
+const txData = dexContract.interface.encodeFunctionData("swap", [
+  UNI_ADDRESS,
+  USDC_ADDRESS,
+  ethers.parseEther("100"),
+]);
+const currentGasPrice = await provider.getGasPrice();
+const tx = {
+  to: DEX_ADDRESS,
+  gasPrice: currentGasPrice,
+  gasLimit: estimatedGas * BigInt(2),
+  data: txData,
+};
+await signer.sendTransaction(tx);
+```
+
+???
+
+Sending a transaction through a private RPC is a bit different. We need to construc the transaction data ourselves and user the signer.sendTransaction function at the bottom here. Which means we need a few additional details. One is that we need to find out how much gas the transaction will consume. We do this with the estimateGas function at the top here. And then later on, we multiply that by 2 to introduce lots of buffer. In production you would probably add a tighter margin here of maybe 20%. We also need to pass through the transaction data, so we'll use encodeFunctionData again which we've done a couple of times now. And finally, we need to pass through the gas price that we want to submit the trasaction for, here we're just setting it to the current gas price which we can get with provider.getGasPrice.
+
+So this transaction will be submitted as before, but this time through a private RPC adding some additional protection.
+
+---
