@@ -496,7 +496,7 @@ Another option for querying events is using the getLogs function. This has a few
 
 For large datasets, it becomes slow and impractical to query all of this data directly from views and events. For example, if you wanted to show total trading volume for your product on your home page. This could involve querying hundreds of thousands of events or views, which would be slow to load. For some use cases it makes sense to index data and expose an endpoint for querying this. One way to do this is to have a script that runs every X period, querying recent data and saving it in a database. Then exposing a restful endpoint that surfaces this data. A downside of this approach is that it is centralised, so it's prone to going down, and relies on a single server or person or team to keep this online and accurate.
 
-## The Graph
+---
 
 class: center, middle
 
