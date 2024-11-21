@@ -580,7 +580,7 @@ const dexContract = new ethers.Contract(DEX_ADDRESS, dexAbi, provider);
 
 // function swap(address assetIn, address assetOut,
 //      uint256 amountIn) external returns (uint256 amountOut);
-const amountOut = await dexContract.swap.staticCallc(
+const amountOut = await dexContract.swap.staticCall(
   UNI_ADDRESS,
   USDC_ADDRESS,
   ethers.parseEther("100")
@@ -591,7 +591,7 @@ console.log(amountOut); // Logs: 20000000000
 
 ???
 
-So in this example we have an imaginary dex, and this dex just has one function, swap. It takes the input token, and the output token, and the input amount. And then it sends you the output amount and returns the output amount. Because this function returns the amount the user received, we're able to use staticCallc here to get this before executing the transaction.
+So in this example we have an imaginary dex, and this dex just has one function, swap. It takes the input token, and the output token, and the input amount. And then it sends you the output amount and returns the output amount. Because this function returns the amount the user received, we're able to use staticCall here to get this before executing the transaction.
 
 But what if the solidity developer wasn't as helpful, and didn't include a return here? How could we simulate this?
 
@@ -647,11 +647,9 @@ But you can tell even just at first glance that this is a lot slower, and more c
 import ethers from "ethers";
 import dexAbi from "./dex-abi.json";
 
-const RPC = "https://my-cool-rpc.com/";
 const DEX_ADDRESS = "0x3A61da6D37493E2f248A6832F49b52Af0a6f4Fbb";
 const UNI_ADDRESS = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
 const USDC_ADDRESS = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 const provider = new ethers.BrowserProvider(window.ethereum);
 
@@ -720,7 +718,7 @@ Here is a code example for sending a transaction using a private RPC. In this ca
 ### Flashbots Example
 
 ```javascript
-const estimatedGas = dexContract.estimateGas.swap(
+const estimatedGas = await dexContract.estimateGas.swap(
   UNI_ADDRESS,
   USDC_ADDRESS,
   ethers.parseEther("100")
@@ -862,22 +860,6 @@ class: center, middle
 background-image: url("https://i.imgur.com/BqF88iw.png")
 
 # Conclusion
-
----
-
-## Conclusion
-
-- This is the end of the lecture content
-- We've covered the basics of how to connect a front end ui to a smart contract
-- To read data on-chain and create transactions
-- We've covered interacting with a smart contract using Typescript
-- Enabling you to create your own scripts, APIs, automation or caches using Typescript
-- We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this
-- You should now hopefully have some core knowledge to start playing around with these tools to create your own Full Stack Decentralised Applications
-
-???
-
-And that's the end of the lecture content for today. We've covered the basics of how to connect a front end uI to a smart contract. To read data on-chain and create transactions. We've covered interacting with a smart contract using Typescript. Enabling you to create your own scripts, APIs, automation or caches using Typescript. We've covered some of the unique constraints that you might encounter, and what tools there are out there to help with this. You should now hopefully have some core knowledge to start playing around with these tools to create your own Full Stack Decentralised Applications.
 
 ---
 
